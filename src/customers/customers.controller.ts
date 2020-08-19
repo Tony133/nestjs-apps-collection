@@ -9,17 +9,19 @@ import {
   NotFoundException,
   Delete,
   Param,
+  Query,
 } from '@nestjs/common';
 import { CustomersService } from './customers.service';
 import { CreateCustomerDto, UpdateCustomerDto } from './dto';
+import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 
 @Controller('api/customers')
 export class CustomersController {
   constructor(private customersService: CustomersService) {}
 
   @Get()
-  public async getAllCustomer(@Res() res) {
-    const customers = await this.customersService.findAll();
+  public async getAllCustomer(@Res() res, @Query() paginationQuery: PaginationQueryDto) {
+    const customers = await this.customersService.findAll(paginationQuery);
     return res.status(HttpStatus.OK).json(customers);
   }
 

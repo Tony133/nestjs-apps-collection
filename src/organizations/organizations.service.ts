@@ -4,6 +4,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { IOrganization } from './interfaces/organization.interface';
 import { CreateOrganizationDto, UpdateOrganizationDto } from './dto';
 import { Organization } from './schemas/organization.schema';
+import { PaginationQueryDto } from 'src/common/dto/pagination-query.dto';
 
 @Injectable()
 export class OrganizationsService {
@@ -12,12 +13,14 @@ export class OrganizationsService {
     private readonly organizationModel: Model<Organization>,
   ) {}
 
-  public async findAll(): Promise<Organization[]> {
-    const organizations = await this.organizationModel
+  public async findAll(paginationQuery: PaginationQueryDto): Promise<Organization[]> {
+    const { limit, offset } = paginationQuery;
+    return await this.organizationModel
       .find()
+      .skip(offset)
+      .limit(limit)
       .populate('customers')
       .exec();
-    return organizations;
   }
 
   public async findOne(organizationID: string): Promise<Organization> {

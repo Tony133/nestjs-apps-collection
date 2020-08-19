@@ -4,6 +4,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { ICustomer } from './interfaces/customer.interface';
 import { CreateCustomerDto, UpdateCustomerDto } from './dto';
 import { Customer } from './schemas/customer.schema';
+import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 
 @Injectable()
 export class CustomersService {
@@ -11,9 +12,13 @@ export class CustomersService {
     @InjectModel(Customer.name) private readonly customerModel: Model<Customer>,
   ) {}
 
-  public async findAll(): Promise<Customer[]> {
+  public async findAll(paginationQuery: PaginationQueryDto): Promise<Customer[]> {
+    const { limit, offset } = paginationQuery;
+
     return await this.customerModel
       .find()
+      .skip(offset)
+      .limit(limit)
       .populate('organizations')
       .exec();
   }

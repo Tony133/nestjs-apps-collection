@@ -9,17 +9,19 @@ import {
   NotFoundException,
   Delete,
   Param,
+  Query,
 } from '@nestjs/common';
 import { OrganizationsService } from './organizations.service';
 import { CreateOrganizationDto, UpdateOrganizationDto } from './dto';
+import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 
 @Controller('api/organizations')
 export class OrganizationsController {
   constructor(private readonly organizationsService: OrganizationsService) {}
 
   @Get()
-  public async getAllOrganization(@Res() res) {
-    const organizations = await this.organizationsService.findAll();
+  public async getAllOrganization(@Res() res, @Query() paginationQuery: PaginationQueryDto) {
+    const organizations = await this.organizationsService.findAll(paginationQuery);
     return res.status(HttpStatus.OK).json(organizations);
   }
 
