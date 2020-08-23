@@ -10,6 +10,7 @@ import { OrganizationsModule } from './organizations/organizations.module';
     MongooseModule.forRoot('mongodb://127.0.0.1:27017/nest', {
       useNewUrlParser: true,
       useFindAndModify: false,
+      useCreateIndex: true
     }),
     CustomersModule,
     OrganizationsModule,

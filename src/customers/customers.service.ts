@@ -19,14 +19,14 @@ export class CustomersService {
       .find()
       .skip(offset)
       .limit(limit)
-      .populate('organizations')
+      .populate('organization')
       .exec();
   }
 
   public async findOne(customerID: string): Promise<Customer> {
     const customer = await this.customerModel
       .findById(customerID)
-      .populate('Organization')
+      .populate('organization')
       .exec();
 
     if (!customer) {

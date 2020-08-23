@@ -14,4 +14,7 @@ export class CreateOrganizationDto {
   @IsString()
   @MaxLength(50)
   readonly description: string;
+
+  @IsString()
+  readonly customers: string;
 }

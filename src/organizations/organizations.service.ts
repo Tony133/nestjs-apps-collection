@@ -19,14 +19,14 @@ export class OrganizationsService {
       .find()
       .skip(offset)
       .limit(limit)
-      .populate('customers')
+      .populate('customer')
       .exec();
   }
 
   public async findOne(organizationID: string): Promise<Organization> {
     const organization = await this.organizationModel
       .findById({ _id: organizationID })
-      .populate('customers')
+      .populate('customer')
       .exec();
     if (!organization) {
       throw new NotFoundException(`Organization #${organizationID} not found`);

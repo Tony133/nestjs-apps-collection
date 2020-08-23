@@ -29,4 +29,7 @@ export class CreateCustomerDto {
   @IsString()
   @MaxLength(50)
   readonly description: string;
+
+  @IsString()
+  readonly organizations: string
 }
