@@ -23,7 +23,7 @@ $ npm run start:prod
 
 ## Docker
 
-There is a `docker-compose.yml` file for starting MySQL with Docker.
+There is a `docker-compose.yml` file for starting MongoDB with Docker.
 
 `$ docker-compose up`
 
