@@ -31,15 +31,22 @@ After running, you can stop the Docker container with
 
 `$ docker-compose down`
 
-## Test
+## Getting with Curl Customers
 
 ```bash
-# unit tests
-$ npm run test
+    $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:3000/api/customers  -H 'Authorization: Bearer [:token]'
+    $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:3000/api/customers/:id -H 'Authorization: Bearer [:token]'
+    $ curl -H 'content-type: application/json' -v -X POST -d '{"firstName": "firstName #1", "lastName": "lastName #1", "email": "example@nest.it", "phone": "1234567890", "address": "street 1","description": "Lorem ipsum", "organizations": ":OrganizationId"}' http://127.0.0.1:3000/api/customers -H 'Authorization: Bearer [:token]'
+    $ curl -H 'content-type: application/json' -v -X PUT -d '{"firstName": "firstName #1", "lastName": "lastName #1", "email": "example@nest.it", "phone": "1234567890", "address": "street 1","description": "Lorem ipsum", "organizations": ":OrganizationId"}' http://127.0.0.1:3000/api/customers/:id -H 'Authorization: Bearer [:token]'
+    $ curl -H 'content-type: application/json' -v -X DELETE http://127.0.0.1:3000/api/customers/:id -H 'Authorization: Bearer [:token]'
+```
 
-# e2e tests
-$ npm run test:e2e
+## Getting with Curl Organization
 
-# test coverage
-$ npm run test:cov
+```bash
+    $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:3000/api/organizations  -H 'Authorization: Bearer [:token]'
+    $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:3000/api/organizations/:id -H 'Authorization: Bearer [:token]'
+    $ curl -H 'content-type: application/json' -v -X POST -d '{"name":"Foo bar", "addess": "street 1", "description": "lorem ipsum"}' http://127.0.0.1:3000/api/organizations -H 'Authorization: Bearer [:token]'
+    $ curl -H 'content-type: application/json' -v -X PUT -d '{"name":"Foo bar", "addess": "street 1", "description": "lorem ipsum"}' http://127.0.0.1:3000/api/organizations/:id -H 'Authorization: Bearer [:token]'
+    $ curl -H 'content-type: application/json' -v -X DELETE http://127.0.0.1:3000/api/organizations/:id -H 'Authorization: Bearer [:token]'
 ```
