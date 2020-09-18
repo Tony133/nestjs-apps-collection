@@ -27,7 +27,7 @@ export class CustomersService {
 
   public async findOne(customerId: string): Promise<Customer> {
     const customer = await this.customerModel
-      .findById(customerId)
+      .findById({ _id: customerId })
       .populate('organization')
       .exec();
 
@@ -50,7 +50,7 @@ export class CustomersService {
     updateCustomerDto: UpdateCustomerDto,
   ): Promise<ICustomer> {
     const existingCustomer = await this.customerModel.findByIdAndUpdate(
-      customerId,
+      { _id: customerId },
       updateCustomerDto,
     );
 
