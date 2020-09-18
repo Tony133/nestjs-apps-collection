@@ -20,18 +20,23 @@ export class OrganizationsController {
   constructor(private readonly organizationsService: OrganizationsService) {}
 
   @Get()
-  public async getAllOrganization(@Res() res, @Query() paginationQuery: PaginationQueryDto) {
-    const organizations = await this.organizationsService.findAll(paginationQuery);
+  public async getAllOrganization(
+    @Res() res,
+    @Query() paginationQuery: PaginationQueryDto,
+  ) {
+    const organizations = await this.organizationsService.findAll(
+      paginationQuery,
+    );
     return res.status(HttpStatus.OK).json(organizations);
   }
 
   @Get('/:id')
   public async getOrganization(
     @Res() res,
-    @Param('id') organizationID: string,
+    @Param('id') organizationId: string,
   ) {
     const organization = await this.organizationsService.findOne(
-      organizationID,
+      organizationId,
     );
     if (!organization) {
       throw new NotFoundException('organization does not exist!');
@@ -63,12 +68,12 @@ export class OrganizationsController {
   @Put('/:id')
   public async updateOrganization(
     @Res() res,
-    @Param('id') organizationID: string,
+    @Param('id') organizationId: string,
     @Body() updateOrganizationDto: UpdateOrganizationDto,
   ) {
     try {
       const organization = await this.organizationsService.update(
-        organizationID,
+        organizationId,
         updateOrganizationDto,
       );
       if (!organization) {
@@ -89,13 +94,13 @@ export class OrganizationsController {
   @Delete('/:id')
   public async deleteOrganization(
     @Res() res,
-    @Param('id') organizationID: string,
+    @Param('id') organizationId: string,
   ) {
-    if (!organizationID) {
+    if (!organizationId) {
       throw new NotFoundException('organization ID does not exist');
     }
 
-    const organization = await this.organizationsService.remove(organizationID);
+    const organization = await this.organizationsService.remove(organizationId);
 
     if (!organization) {
       throw new NotFoundException('organization does not exist');

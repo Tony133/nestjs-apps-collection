@@ -12,7 +12,9 @@ export class CustomersService {
     @InjectModel(Customer.name) private readonly customerModel: Model<Customer>,
   ) {}
 
-  public async findAll(paginationQuery: PaginationQueryDto): Promise<Customer[]> {
+  public async findAll(
+    paginationQuery: PaginationQueryDto,
+  ): Promise<Customer[]> {
     const { limit, offset } = paginationQuery;
 
     return await this.customerModel
@@ -23,40 +25,45 @@ export class CustomersService {
       .exec();
   }
 
-  public async findOne(customerID: string): Promise<Customer> {
+  public async findOne(customerId: string): Promise<Customer> {
     const customer = await this.customerModel
-      .findById(customerID)
+      .findById(customerId)
       .populate('organization')
       .exec();
 
     if (!customer) {
-      throw new NotFoundException(`Customer #${customerID} not found`);
+      throw new NotFoundException(`Customer #${customerId} not found`);
     }
 
     return customer;
   }
 
   public async create(
-    createCustomerDTO: CreateCustomerDto,
+    createCustomerDto: CreateCustomerDto,
   ): Promise<ICustomer> {
-    const newCustomer = await new this.customerModel(createCustomerDTO);
+    const newCustomer = await new this.customerModel(createCustomerDto);
     return newCustomer.save();
   }
 
   public async update(
-    customerID: string,
+    customerId: string,
     updateCustomerDto: UpdateCustomerDto,
   ): Promise<ICustomer> {
-    const updatedCustomer = await this.customerModel.findByIdAndUpdate(
-      customerID,
+    const existingCustomer = await this.customerModel.findByIdAndUpdate(
+      customerId,
       updateCustomerDto,
     );
-    return updatedCustomer;
+
+    if (!existingCustomer) {
+      throw new NotFoundException(`Customer #${customerId} not found`);
+    }
+
+    return existingCustomer;
   }
 
-  public async remove(customerID: string): Promise<any> {
+  public async remove(customerId: string): Promise<any> {
     const deletedCustomer = await this.customerModel.findByIdAndRemove(
-      customerID,
+      customerId,
     );
     return deletedCustomer;
   }

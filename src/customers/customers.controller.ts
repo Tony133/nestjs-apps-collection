@@ -20,14 +20,17 @@ export class CustomersController {
   constructor(private customersService: CustomersService) {}
 
   @Get()
-  public async getAllCustomer(@Res() res, @Query() paginationQuery: PaginationQueryDto) {
+  public async getAllCustomer(
+    @Res() res,
+    @Query() paginationQuery: PaginationQueryDto,
+  ) {
     const customers = await this.customersService.findAll(paginationQuery);
     return res.status(HttpStatus.OK).json(customers);
   }
 
   @Get('/:id')
-  public async getCustomer(@Res() res, @Param('id') customerID: string) {
-    const customer = await this.customersService.findOne(customerID);
+  public async getCustomer(@Res() res, @Param('id') customerId: string) {
+    const customer = await this.customersService.findOne(customerId);
     if (!customer) {
       throw new NotFoundException('Customer does not exist!');
     }
@@ -37,10 +40,10 @@ export class CustomersController {
   @Post()
   public async addCustomer(
     @Res() res,
-    @Body() createCustomerDTO: CreateCustomerDto,
+    @Body() createCustomerDto: CreateCustomerDto,
   ) {
     try {
-      const customer = await this.customersService.create(createCustomerDTO);
+      const customer = await this.customersService.create(createCustomerDto);
       return res.status(HttpStatus.OK).json({
         message: 'Customer has been created successfully',
         customer,
@@ -56,13 +59,13 @@ export class CustomersController {
   @Put('/:id')
   public async updateCustomer(
     @Res() res,
-    @Param('id') customerID: string,
-    @Body() updateCustomerDTO: UpdateCustomerDto,
+    @Param('id') customerId: string,
+    @Body() updateCustomerDto: UpdateCustomerDto,
   ) {
     try {
       const customer = await this.customersService.update(
-        customerID,
-        updateCustomerDTO,
+        customerId,
+        updateCustomerDto,
       );
       if (!customer) {
         throw new NotFoundException('Customer does not exist!');
@@ -80,12 +83,12 @@ export class CustomersController {
   }
 
   @Delete('/:id')
-  public async deleteCustomer(@Res() res, @Param('id') customerID: string) {
-    if (!customerID) {
+  public async deleteCustomer(@Res() res, @Param('id') customerId: string) {
+    if (!customerId) {
       throw new NotFoundException('Customer ID does not exist');
     }
 
-    const customer = await this.customersService.remove(customerID);
+    const customer = await this.customersService.remove(customerId);
 
     if (!customer) {
       throw new NotFoundException('Customer does not exist');

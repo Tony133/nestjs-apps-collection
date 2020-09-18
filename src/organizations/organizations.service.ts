@@ -13,7 +13,9 @@ export class OrganizationsService {
     private readonly organizationModel: Model<Organization>,
   ) {}
 
-  public async findAll(paginationQuery: PaginationQueryDto): Promise<Organization[]> {
+  public async findAll(
+    paginationQuery: PaginationQueryDto,
+  ): Promise<Organization[]> {
     const { limit, offset } = paginationQuery;
     return await this.organizationModel
       .find()
@@ -23,41 +25,46 @@ export class OrganizationsService {
       .exec();
   }
 
-  public async findOne(organizationID: string): Promise<Organization> {
+  public async findOne(organizationId: string): Promise<Organization> {
     const organization = await this.organizationModel
-      .findById({ _id: organizationID })
+      .findById({ _id: organizationId })
       .populate('customer')
       .exec();
+
     if (!organization) {
-      throw new NotFoundException(`Organization #${organizationID} not found`);
+      throw new NotFoundException(`Organization #${organizationId} not found`);
     }
     return organization;
   }
 
   public async create(
-    createOrganizationDTO: CreateOrganizationDto,
+    createOrganizationDto: CreateOrganizationDto,
   ): Promise<IOrganization> {
     const organization = await new this.organizationModel(
-      createOrganizationDTO,
+      createOrganizationDto,
     );
     return organization.save();
   }
 
   public async update(
-    organizationID: string,
+    organizationId: string,
     updateOrganizationDto: UpdateOrganizationDto,
   ): Promise<IOrganization> {
-    const updatedOrganization = await this.organizationModel.findByIdAndUpdate(
-      { _id: organizationID },
+    const existingOrganization = await this.organizationModel.findByIdAndUpdate(
+      { _id: organizationId },
       updateOrganizationDto,
       { new: true },
     );
-    return updatedOrganization;
+
+    if (!existingOrganization) {
+      throw new NotFoundException(`Customer #${organizationId} not found`);
+    }
+    return existingOrganization;
   }
 
-  public async remove(organizationID: string): Promise<any> {
+  public async remove(organizationId: string): Promise<any> {
     const organization = await this.organizationModel.findByIdAndRemove(
-      organizationID,
+      organizationId,
     );
     return organization;
   }
