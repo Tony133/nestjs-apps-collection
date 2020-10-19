@@ -9,7 +9,7 @@ export class Customer extends Document {
   @Prop()
   lastName: string;
 
-  @Prop()
+  @Prop({ unique: true})
   email: string;
 
   @Prop()
