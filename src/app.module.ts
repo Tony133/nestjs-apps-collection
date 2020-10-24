@@ -7,10 +7,13 @@ import { OrganizationsModule } from './organizations/organizations.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/nest', {
-      useNewUrlParser: true,
-      useFindAndModify: false,
-      useCreateIndex: true
+    MongooseModule.forRootAsync({
+      useFactory: () => ({
+        uri: 'mongodb://127.0.0.1:27017/nest',
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useCreateIndex: true
+      }),
     }),
     CustomersModule,
     OrganizationsModule,
