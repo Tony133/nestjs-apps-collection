@@ -1,6 +1,6 @@
 # nestjs-api-mongoose
 
-Simple example Api Rest with Nestjs 7.x and Mongoose
+Simple example Api Rest with Nestjs 7.x and Mongoose 😻
 
 ## Installation
 
@@ -46,8 +46,8 @@ After running, you can stop the Docker container with
 ```bash
     $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:3000/api/organizations  
     $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:3000/api/organizations/:id 
-    $ curl -H 'content-type: application/json' -v -X POST -d '{"name":"Foo bar", "addess": "street 1", "description": "lorem ipsum"}' http://127.0.0.1:3000/api/organizations 
-    $ curl -H 'content-type: application/json' -v -X PUT -d '{"name":"Foo bar", "addess": "street 1", "description": "lorem ipsum"}' http://127.0.0.1:3000/api/organizations/:id 
+    $ curl -H 'content-type: application/json' -v -X POST -d '{"name":"Foo bar", "address": "street 1", "description": "lorem ipsum"}' http://127.0.0.1:3000/api/organizations 
+    $ curl -H 'content-type: application/json' -v -X PUT -d '{"name":"Foo bar", "address": "street 1", "description": "lorem ipsum"}' http://127.0.0.1:3000/api/organizations/:id 
     $ curl -H 'content-type: application/json' -v -X DELETE http://127.0.0.1:3000/api/organizations/:id
 ```
 
