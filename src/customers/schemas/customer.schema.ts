@@ -6,7 +6,7 @@ export class Customer extends Document {
   @Prop()
   firstName: string;
 
-  @Prop()
+  @Prop({ unique: true})
   lastName: string;
 
   @Prop({ unique: true})

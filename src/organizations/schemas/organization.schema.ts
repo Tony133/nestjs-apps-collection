@@ -3,7 +3,7 @@ import { Document, Types } from 'mongoose';
 
 @Schema()
 export class Organization extends Document {
-  @Prop()
+  @Prop({ unique: true })
   name: string;
 
   @Prop()
