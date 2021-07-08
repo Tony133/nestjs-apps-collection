@@ -15,7 +15,7 @@ import { OrganizationsService } from './organizations.service';
 import { CreateOrganizationDto, UpdateOrganizationDto } from './dto';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 
-@Controller('api/organizations')
+@Controller('organizations')
 export class OrganizationsController {
   constructor(private readonly organizationsService: OrganizationsService) {}
 

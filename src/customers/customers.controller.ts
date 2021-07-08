@@ -15,7 +15,7 @@ import { CustomersService } from './customers.service';
 import { CreateCustomerDto, UpdateCustomerDto } from './dto';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 
-@Controller('api/customers')
+@Controller('customers')
 export class CustomersController {
   constructor(private customersService: CustomersService) {}
 
