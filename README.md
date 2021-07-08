@@ -1,6 +1,6 @@
 # nestjs-api-mongoose
 
-Simple example Api Rest with Nestjs 7.x and Mongoose 😻
+Simple example Api Rest with Nestjs 8.x and Mongoose 😻
 
 ## Installation
 
