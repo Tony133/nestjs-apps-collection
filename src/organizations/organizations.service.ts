@@ -4,7 +4,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { IOrganization } from './interfaces/organization.interface';
 import { CreateOrganizationDto, UpdateOrganizationDto } from './dto';
 import { Organization } from './schemas/organization.schema';
-import { PaginationQueryDto } from 'src/common/dto/pagination-query.dto';
+import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 
 @Injectable()
 export class OrganizationsService {
