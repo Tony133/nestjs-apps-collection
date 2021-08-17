@@ -35,12 +35,14 @@ export class OrganizationsController {
     @Res() res,
     @Param('id') organizationId: string,
   ) {
+    
+    if (!organizationId) {
+      throw new NotFoundException('organization does not exist!');
+    }
+  
     const organization = await this.organizationsService.findOne(
       organizationId,
     );
-    if (!organization) {
-      throw new NotFoundException('organization does not exist!');
-    }
     return res.status(HttpStatus.OK).json(organization);
   }
 
@@ -101,10 +103,6 @@ export class OrganizationsController {
     }
 
     const organization = await this.organizationsService.remove(organizationId);
-
-    if (!organization) {
-      throw new NotFoundException('organization does not exist');
-    }
 
     return res.status(HttpStatus.OK).json({
       message: 'organization has been deleted',

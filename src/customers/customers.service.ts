@@ -41,8 +41,8 @@ export class CustomersService {
   public async create(
     createCustomerDto: CreateCustomerDto,
   ): Promise<ICustomer> {
-    const newCustomer = await new this.customerModel(createCustomerDto);
-    return newCustomer.save();
+    const newCustomer = await this.customerModel.create(createCustomerDto);
+    return newCustomer;
   }
 
   public async update(
