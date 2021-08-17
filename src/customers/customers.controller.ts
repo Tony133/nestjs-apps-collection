@@ -30,10 +30,12 @@ export class CustomersController {
 
   @Get('/:id')
   public async getCustomer(@Res() res, @Param('id') customerId: string) {
-    const customer = await this.customersService.findOne(customerId);
-    if (!customer) {
-      throw new NotFoundException('Customer does not exist!');
+    if (!customerId) {
+      throw new NotFoundException('Customer ID does not exist');
     }
+
+    const customer = await this.customersService.findOne(customerId);
+
     return res.status(HttpStatus.OK).json(customer);
   }
 
@@ -89,10 +91,6 @@ export class CustomersController {
     }
 
     const customer = await this.customersService.remove(customerId);
-
-    if (!customer) {
-      throw new NotFoundException('Customer does not exist');
-    }
 
     return res.status(HttpStatus.OK).json({
       message: 'Customer has been deleted',

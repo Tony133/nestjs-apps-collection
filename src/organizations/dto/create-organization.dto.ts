@@ -1,4 +1,4 @@
-import { MaxLength, IsNotEmpty, IsString } from 'class-validator';
+import { MaxLength, IsNotEmpty, IsString, IsOptional } from 'class-validator';
 
 export class CreateOrganizationDto {
   @IsString()
@@ -16,5 +16,6 @@ export class CreateOrganizationDto {
   readonly description: string;
 
   @IsString()
+  @IsOptional()
   readonly customers: string;
 }

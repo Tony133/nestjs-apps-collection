@@ -34,16 +34,17 @@ export class OrganizationsService {
     if (!organization) {
       throw new NotFoundException(`Organization #${organizationId} not found`);
     }
+
     return organization;
   }
 
   public async create(
     createOrganizationDto: CreateOrganizationDto,
   ): Promise<IOrganization> {
-    const organization = await new this.organizationModel(
+    const organization = await this.organizationModel.create(
       createOrganizationDto,
     );
-    return organization.save();
+    return organization;
   }
 
   public async update(
@@ -57,7 +58,7 @@ export class OrganizationsService {
     );
 
     if (!existingOrganization) {
-      throw new NotFoundException(`Customer #${organizationId} not found`);
+      throw new NotFoundException(`Organization #${organizationId} not found`);
     }
     return existingOrganization;
   }
