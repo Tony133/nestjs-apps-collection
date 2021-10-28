@@ -29,39 +29,9 @@ const mockCustomerUpdate: any = {
   organizations: 'organization update',
 };
 
-describe('CustomersService', () => {
-  let service: CustomersService;
-  let model: Model<ICustomer>;
-
-  const paginationQueryDto: PaginationQueryDto = {
-    limit: 10,
-    offset: 1,
-  };
-
-  const customersArray = [
-    {
-      _id: 'anyid',
-      firstName: 'firstName #1',
-      lastName: 'lastName #1',
-      email: 'test@example.it',
-      phone: '1234567890',
-      address: 'address #1',
-      description: 'description #1',
-      organizations: 'organization #1',
-    },
-    {
-      _id: 'anyid',
-      firstName: 'firstName #2',
-      lastName: 'lastName #2',
-      email: 'test@example.it',
-      phone: '1234567890',
-      address: 'address #2',
-      description: 'description #2',
-      organizations: 'organization #2',
-    },
-  ];
-
-  const createCustomerDto: CreateCustomerDto = {
+const customersArray = [
+  {
+    _id: 'anyid',
     firstName: 'firstName #1',
     lastName: 'lastName #1',
     email: 'test@example.it',
@@ -69,16 +39,46 @@ describe('CustomersService', () => {
     address: 'address #1',
     description: 'description #1',
     organizations: 'organization #1',
-  };
-
-  const updateCustomerDto: UpdateCustomerDto = {
-    firstName: 'firstName update',
-    lastName: 'lastName update',
+  },
+  {
+    _id: 'anyid',
+    firstName: 'firstName #2',
+    lastName: 'lastName #2',
     email: 'test@example.it',
     phone: '1234567890',
-    address: 'address update',
-    description: 'description update',
-    organizations: 'organization update',
+    address: 'address #2',
+    description: 'description #2',
+    organizations: 'organization #2',
+  },
+];
+
+const createCustomerDto: CreateCustomerDto = {
+  firstName: 'firstName #1',
+  lastName: 'lastName #1',
+  email: 'test@example.it',
+  phone: '1234567890',
+  address: 'address #1',
+  description: 'description #1',
+  organizations: 'organization #1',
+};
+
+const updateCustomerDto: UpdateCustomerDto = {
+  firstName: 'firstName update',
+  lastName: 'lastName update',
+  email: 'test@example.it',
+  phone: '1234567890',
+  address: 'address update',
+  description: 'description update',
+  organizations: 'organization update',
+};
+
+describe('CustomersService', () => {
+  let service: CustomersService;
+  let model: Model<ICustomer>;
+
+  const paginationQueryDto: PaginationQueryDto = {
+    limit: 10,
+    offset: 1,
   };
 
   beforeEach(async () => {

@@ -38,6 +38,37 @@ class MockResponse {
     });
 }
 
+const mockCustomer: any = {
+  _id: 'anyid',
+  firstName: 'firstName#1',
+  lastName: 'lastName#1',
+  email: 'test@example.it',
+  phone: '1234567890',
+  address: 'address #1',
+  description: 'description #1',
+  organizations: 'organization #1',
+};
+
+const createCustomerDto: CreateCustomerDto = {
+  firstName: 'firstName#1',
+  lastName: 'lastName#1',
+  email: 'test@example.it',
+  phone: '1234567890',
+  address: 'address #1',
+  description: 'description #1',
+  organizations: 'organization #1',
+};
+
+const updateCustomerDto: UpdateCustomerDto = {
+  firstName: 'firstName update',
+  lastName: 'lastName update',
+  email: 'test@example.it',
+  phone: '1234567890',
+  address: 'address update',
+  description: 'description update',
+  organizations: 'organization update',
+};
+
 describe('Customers Controller', () => {
   let customersController: CustomersController;
   let customersService: CustomersService;
@@ -47,37 +78,6 @@ describe('Customers Controller', () => {
   };
 
   const response = new MockResponse();
-
-  const mockCustomer: any = {
-    _id: 'anyid',
-    firstName: 'firstName#1',
-    lastName: 'lastName#1',
-    email: 'test@example.it',
-    phone: '1234567890',
-    address: 'address #1',
-    description: 'description #1',
-    organizations: 'organization #1',
-  };
-
-  const createCustomerDto: CreateCustomerDto = {
-    firstName: 'firstName#1',
-    lastName: 'lastName#1',
-    email: 'test@example.it',
-    phone: '1234567890',
-    address: 'address #1',
-    description: 'description #1',
-    organizations: 'organization #1',
-  };
-
-  const updateCustomerDto: UpdateCustomerDto = {
-    firstName: 'firstName update',
-    lastName: 'lastName update',
-    email: 'test@example.it',
-    phone: '1234567890',
-    address: 'address update',
-    description: 'description update',
-    organizations: 'organization update',
-  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
