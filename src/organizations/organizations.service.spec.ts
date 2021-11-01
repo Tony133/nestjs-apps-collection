@@ -34,6 +34,38 @@ const mockCustomer: any = {
   organizations: 'organization #1',
 };
 
+const organizationsArray = [
+  {
+    _id: 'anyid',
+    name: 'name #1',
+    address: 'address #1',
+    description: 'description #1',
+    customers: 'customer #1',
+  },
+  {
+    _id: 'anyid',
+    name: 'name #2',
+    address: 'address #2',
+    description: 'description #2',
+    customers: 'customer #2',
+  },
+];
+
+const createOrganizationDto = {
+  name: 'name #1',
+  address: 'address #1',
+  description: 'description #1',
+  customers: 'customer #1',
+};
+
+const updateOrganizationDto = {
+  name: 'name update',
+  address: 'address update',
+  description: 'description update',
+  customers: 'customer update',
+  new: true,
+};
+
 describe('OrganizationsService', () => {
   let service: OrganizationsService;
   let model: Model<IOrganization>;

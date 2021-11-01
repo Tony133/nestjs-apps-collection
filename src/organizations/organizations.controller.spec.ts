@@ -34,6 +34,20 @@ class MockResponse {
     });
 }
 
+const createOrganizationDto: CreateOrganizationDto = {
+  name: 'name #1',
+  address: 'address #1',
+  description: 'description #1',
+  customers: 'customers #1',
+};
+
+const updateOrganizationDto: UpdateOrganizationDto = {
+  name: 'name update',
+  address: 'address update',
+  description: 'description update',
+  customers: 'customers update',
+};
+
 describe('Organizations Controller', () => {
   let organizationsController: OrganizationsController;
   let organizationsService: OrganizationsService;
@@ -43,20 +57,6 @@ describe('Organizations Controller', () => {
   };
 
   const response = new MockResponse();
-
-  const createOrganizationDto: CreateOrganizationDto = {
-    name: 'name #1',
-    address: 'address #1',
-    description: 'description #1',
-    customers: 'customers #1',
-  };
-
-  const updateOrganizationDto: UpdateOrganizationDto = {
-    name: 'name update',
-    address: 'address update',
-    description: 'description update',
-    customers: 'customers update',
-  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
