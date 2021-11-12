@@ -14,7 +14,9 @@ import {
 import { OrganizationsService } from './organizations.service';
 import { CreateOrganizationDto, UpdateOrganizationDto } from './dto';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('organizations')
 @Controller('organizations')
 export class OrganizationsController {
   constructor(private readonly organizationsService: OrganizationsService) {}
@@ -35,11 +37,10 @@ export class OrganizationsController {
     @Res() res,
     @Param('id') organizationId: string,
   ) {
-    
     if (!organizationId) {
       throw new NotFoundException('organization does not exist!');
     }
-  
+
     const organization = await this.organizationsService.findOne(
       organizationId,
     );

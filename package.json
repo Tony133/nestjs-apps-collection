@@ -26,12 +26,14 @@
     "@nestjs/mapped-types": "1.0.0",
     "@nestjs/mongoose": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/swagger": "^5.1.4",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "mongoose": "^5.13.12",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.4.0"
+    "rxjs": "^7.4.0",
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
