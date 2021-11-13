@@ -31,6 +31,11 @@ After running, you can stop the Docker container with
 
 `$ docker-compose down`
 
+## Url Swagger for Api Documentation
+```
+http://127.0.0.1:3000/api/doc
+```
+
 ## Getting with Curl Customers
 
 ```bash
@@ -41,7 +46,7 @@ After running, you can stop the Docker container with
     $ curl -H 'content-type: application/json' -v -X DELETE http://127.0.0.1:3000/api/customers/:id 
 ```
 
-## Getting with Curl Organization
+## Getting with Curl Organizations
 
 ```bash
     $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:3000/api/organizations  
