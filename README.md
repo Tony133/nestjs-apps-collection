@@ -8,6 +8,12 @@ Simple example Api Rest with Nestjs 8.x and Mongoose 😻
 $ npm install
 ```
 
+## Set environment
+
+```
+$ cp .env.example .env
+```
+
 ## Running the app
 
 ```bash
