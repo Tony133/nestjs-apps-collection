@@ -6,23 +6,23 @@ export class Customer extends Document {
   @Prop()
   firstName: string;
 
-  @Prop({ unique: true})
+  @Prop({ unique: true })
   lastName: string;
 
-  @Prop({ unique: true})
+  @Prop({ unique: true })
   email: string;
 
   @Prop()
   phone: string;
-  
+
   @Prop()
   address: string;
-  
+
   @Prop()
   description: string;
 
   @Prop({ type: [Types.ObjectId], ref: 'Organization' })
-  organizations: string
+  organizations: string;
 }
 
 export const CustomerSchema = SchemaFactory.createForClass(Customer);
