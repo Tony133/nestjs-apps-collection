@@ -16,8 +16,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       useFactory: (configService: ConfigService) => ({
         uri: configService.get<string>('MONGODB_URL'),
         useNewUrlParser: true,
-        useFindAndModify: false,
-        useCreateIndex: true,
       }),
       inject: [ConfigService],
     }),
