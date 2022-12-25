@@ -146,15 +146,6 @@ describe('Organizations Controller', () => {
       );
       expect(createSpy).toHaveBeenCalledWith(createOrganizationDto);
     });
-
-    it('should return a organization on success', async () => {
-      const createOrganizationSpy = jest.spyOn(organizationsService, 'create');
-      await organizationsController.addOrganization(
-        response,
-        createOrganizationDto,
-      );
-      expect(createOrganizationSpy).toHaveBeenCalledWith(createOrganizationDto);
-    });
   });
 
   describe('updateOrganization()', () => {
