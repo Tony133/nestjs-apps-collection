@@ -156,12 +156,6 @@ describe('Customers Controller', () => {
       await customersController.addCustomer(response, createCustomerDto);
       expect(createSpy).toHaveBeenCalledWith(createCustomerDto);
     });
-
-    it('should return a customer on success', async () => {
-      const createCustomerSpy = jest.spyOn(customersService, 'create');
-      await customersController.addCustomer(response, createCustomerDto);
-      expect(createCustomerSpy).toHaveBeenCalledWith(createCustomerDto);
-    });
   });
 
   describe('updateCustomer()', () => {
