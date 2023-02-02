@@ -9,7 +9,7 @@ Collection example apps with NestJS and Typeorm, Mongodb, PostgreSQL, GraphQL, M
 ## Install workspace 
 
 ```
-$ yarn install
+$ pnpm install
 ```
 
 ## Running a sample app
