@@ -3,9 +3,6 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { UsersService } from './users.service';
-import { Roles } from '../roles/entities/roles.entity';
-import { RolesService } from '../roles/roles.service';
-import { Article } from '../articles/entities/article.entity';
 import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
@@ -17,8 +14,6 @@ const oneUser: User = {
   username: 'tony_admin',
   email: 'tony_admin@example.it',
   password: 'secret',
-  roles: Roles['ADMIN'],
-  articles: Article['1'],
 };
 
 const createUserInput: CreateUserInput = {
@@ -26,7 +21,6 @@ const createUserInput: CreateUserInput = {
   email: 'test@example.it',
   username: 'username #1',
   password: 'secret',
-  roles: ['ADMIN'],
 };
 
 const updateUserInput: UpdateUserInput = {
@@ -34,7 +28,6 @@ const updateUserInput: UpdateUserInput = {
   email: 'test@example.it',
   username: 'username update',
   password: 'secret',
-  roles: ['ADMIN'],
 };
 
 const userArray: User = {
@@ -43,14 +36,11 @@ const userArray: User = {
   username: 'tony_admin',
   email: 'tony_admin@example.it',
   password: 'secret',
-  roles: Roles['ADMIN'],
-  articles: Article['1'],
 };
 
 describe('UsersService', () => {
   let service: UsersService;
   let repositoryUser: Repository<User>;
-  let repositoryRole: Repository<Roles>;
   const usersArgs: UsersArgs = {
     offset: 0,
     limit: 25,
@@ -59,15 +49,7 @@ describe('UsersService', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
-        RolesService,
         UsersService,
-        {
-          provide: getRepositoryToken(Roles),
-          useValue: {
-            findOne: jest.fn(),
-            create: jest.fn(),
-          },
-        },
         {
           provide: getRepositoryToken(User),
           useValue: {
@@ -84,7 +66,6 @@ describe('UsersService', () => {
 
     service = module.get<UsersService>(UsersService);
     repositoryUser = module.get<Repository<User>>(getRepositoryToken(User));
-    repositoryRole = module.get<Repository<Roles>>(getRepositoryToken(Roles));
   });
 
   it('should be defined', () => {
@@ -104,7 +85,7 @@ describe('UsersService', () => {
     it('should get a single user', () => {
       const repoSpy = jest.spyOn(repositoryUser, 'findOne');
       expect(service.findOne(1)).resolves.toEqual(oneUser);
-      expect(repoSpy).toBeCalledWith(1, { relations: ['roles'] });
+      expect(repoSpy).toBeCalledWith({ where: { id: 1 } });
     });
 
     it('should return a exception when doesnt find a user by id', async () => {
@@ -113,7 +94,7 @@ describe('UsersService', () => {
         .mockReturnValue(null);
       const userNotFound = service.findOne(1);
       expect(userNotFound).rejects.toThrow(NotFoundException);
-      expect(repoSpy).toHaveBeenCalledWith(1, { relations: ['roles'] });
+      expect(repoSpy).toHaveBeenCalledWith({ where: { id: 1 } });
     });
   });
 

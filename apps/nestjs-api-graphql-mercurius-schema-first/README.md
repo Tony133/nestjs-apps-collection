@@ -1,37 +1,28 @@
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
+
 # nestjs-api-graphql-mercurius-schema-first
 
 Simple example GraphQL(Schema First) Mercurius with NestJS and TypeORM for the NestJS community 😻
 
-## Installation
-
-```bash
-$ npm install
-```
-
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+$ npx nx serve nestjs-api-graphql-mercurius-schema-first
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ npx nx test nestjs-api-graphql-mercurius-schema-first
 
 # e2e tests
-$ npm run test:e2e
+$ npx nx test:e2e nestjs-api-graphql-mercurius-schema-first
 
 # test coverage
-$ npm run test:cov
+$ npx nx test:cov nestjs-api-graphql-mercurius-schema-first
 ```
 
 ## Docker
@@ -44,10 +35,10 @@ After running, you can stop the Docker container with
 
 `$ docker-compose down`
 
-## Url GraphQL Playground
+## Url GraphisQL
 
 ```
- http://localhost:3000/graphql
+ http://localhost:3000/graphiql
 ```
 
 ## Generate schema GQL run script on demand
@@ -66,9 +57,6 @@ After running, you can stop the Docker container with
         email
         username
         password
-        roles {
-            name
-        }
     }
 }
 
@@ -84,9 +72,6 @@ After running, you can stop the Docker container with
         email
         username
         password
-        roles {
-            name
-        }
     }
 }
 

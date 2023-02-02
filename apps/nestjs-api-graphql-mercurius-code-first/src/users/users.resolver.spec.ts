@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersResolver } from './users.resolver';
 import { UsersService } from './users.service';
-import { RolesService } from '../roles/roles.service';
 import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
@@ -20,7 +19,6 @@ describe('UsersResolver', () => {
     email: 'test@example.it',
     username: 'username #1',
     password: 'secret',
-    roles: ['ADMIN'],
   };
 
   const updateUserInput: UpdateUserInput = {
@@ -28,20 +26,12 @@ describe('UsersResolver', () => {
     email: 'test@example.it',
     username: 'username update',
     password: 'secret123',
-    roles: ['ADMIN'],
   };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         UsersResolver,
-        {
-          provide: RolesService,
-          useValue: {
-            findOne: jest.fn(() => []),
-            create: jest.fn(() => {}),
-          },
-        },
         {
           provide: UsersService,
           useFactory: () => ({
@@ -87,7 +77,7 @@ describe('UsersResolver', () => {
         .spyOn(service, 'findAll')
         .mockRejectedValueOnce(new NotFoundException());
       await expect(resolver.users(usersArgs)).rejects.toThrow(
-        new NotFoundException(),
+        new NotFoundException()
       );
     });
 
@@ -108,7 +98,7 @@ describe('UsersResolver', () => {
         .spyOn(service, 'findOneById')
         .mockRejectedValueOnce(new NotFoundException());
       await expect(resolver.user('anyid')).rejects.toThrow(
-        new NotFoundException(),
+        new NotFoundException()
       );
     });
 
@@ -152,7 +142,7 @@ describe('UsersResolver', () => {
         .spyOn(service, 'remove')
         .mockRejectedValueOnce(new NotFoundException());
       await expect(resolver.removeUser('anyid')).rejects.toThrow(
-        new NotFoundException(),
+        new NotFoundException()
       );
     });
   });

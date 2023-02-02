@@ -1,37 +1,28 @@
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
+
 # nestjs-api-graphql-mercurius-code-first
 
 Simple example GraphQL(Code First) Mercurius with NestJS and TypeORM for the NestJS community 😻
 
-## Installation
-
-```bash
-$ npm install
-```
-
 ## Running the app
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+$ npx nx serve nestjs-api-graphql-mercurius-code-first
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ npx nx test nestjs-api-graphql-mercurius-code-first
 
 # e2e tests
-$ npm run test:e2e
+$ npx nx test:e2e nestjs-api-graphql-mercurius-code-first
 
 # test coverage
-$ npm run test:cov
+$ npx nx test:cov nestjs-api-graphql-mercurius-code-first
 ```
 
 ## Docker
@@ -44,7 +35,7 @@ After running, you can stop the Docker container with
 
 `$ docker-compose down`
 
-## Url GraphQL Playground
+## Url GraphiQL
 
 ```
  http://localhost:3000/graphiql
@@ -60,9 +51,6 @@ After running, you can stop the Docker container with
         email
         username
         password
-        roles {
-            name
-        }
     }
 }
 
@@ -78,9 +66,6 @@ After running, you can stop the Docker container with
         email
         username
         password
-        roles {
-            name
-        }
     }
 }
 
@@ -96,15 +81,11 @@ mutation {
         email:"tony_admin@nest.it"
         username: "tony_admin"
         password: "secret123"
-        roles: ["ADMIN"]
     }) {
         name
         email
         username
         password
-        roles {
-            name
-        }
     }
 }
 
@@ -120,7 +101,6 @@ mutation {
             email: "tony_admin@nest.it"
             username: "tony_admin"
             password: "secret123"
-            roles: ["ADMIN]
         }
         id: "1"
     ) {
@@ -128,9 +108,6 @@ mutation {
         email
         username
         password
-        roles {
-            name
-        }
     }
 }
 ```

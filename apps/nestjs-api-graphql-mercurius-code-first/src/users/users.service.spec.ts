@@ -3,9 +3,6 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Users } from './entities/users.entity';
 import { UsersService } from './users.service';
-import { Roles } from '../roles/entities/roles.entity';
-import { Posts } from '../posts/entities/posts.entity';
-import { RolesService } from '../roles/roles.service';
 import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
@@ -17,8 +14,6 @@ const oneUser: Users = {
   username: 'tony_admin',
   email: 'tony_admin@example.it',
   password: 'secret',
-  roles: Roles['ADMIN'],
-  posts: Posts['1'],
 };
 
 const createUserInput: CreateUserInput = {
@@ -26,7 +21,6 @@ const createUserInput: CreateUserInput = {
   email: 'test@example.it',
   username: 'username #1',
   password: 'secret',
-  roles: ['ADMIN'],
 };
 
 const updateUserInput: UpdateUserInput = {
@@ -34,7 +28,6 @@ const updateUserInput: UpdateUserInput = {
   email: 'test@example.it',
   username: 'username update',
   password: 'secret',
-  roles: ['ADMIN'],
 };
 
 const userArray: Users = {
@@ -43,14 +36,11 @@ const userArray: Users = {
   username: 'tony_admin',
   email: 'tony_admin@example.it',
   password: 'secret',
-  roles: Roles['ADMIN'],
-  posts: Posts['1'],
 };
 
 describe('UsersService', () => {
   let service: UsersService;
   let repositoryUser: Repository<Users>;
-  let repositoryRole: Repository<Roles>;
   const usersArgs: UsersArgs = {
     offset: 0,
     limit: 25,
@@ -59,15 +49,7 @@ describe('UsersService', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
-        RolesService,
         UsersService,
-        {
-          provide: getRepositoryToken(Roles),
-          useValue: {
-            findOne: jest.fn(),
-            create: jest.fn(),
-          },
-        },
         {
           provide: getRepositoryToken(Users),
           useValue: {
@@ -85,7 +67,6 @@ describe('UsersService', () => {
 
     service = module.get<UsersService>(UsersService);
     repositoryUser = module.get<Repository<Users>>(getRepositoryToken(Users));
-    repositoryRole = module.get<Repository<Roles>>(getRepositoryToken(Roles));
   });
 
   it('should be defined', () => {
@@ -105,7 +86,7 @@ describe('UsersService', () => {
     it('should get a single user', () => {
       const repoSpy = jest.spyOn(repositoryUser, 'findOne');
       expect(service.findOneById('anyid')).resolves.toEqual(oneUser);
-      expect(repoSpy).toBeCalledWith('anyid', { relations: ['roles'] });
+      expect(repoSpy).toBeCalledWith('anyid');
     });
 
     it('should return a exception when doesnt find a user by id', async () => {
@@ -114,9 +95,9 @@ describe('UsersService', () => {
         .mockReturnValue(null);
       const userNotFound = service.findOneById('anyid');
       expect(userNotFound).rejects.toThrow(
-        new NotFoundException('User #anyid not found'),
+        new NotFoundException('User #anyid not found')
       );
-      expect(repoSpy).toHaveBeenCalledWith('anyid', { relations: ['roles'] });
+      expect(repoSpy).toHaveBeenCalledWith('anyid');
     });
   });
 
@@ -127,17 +108,13 @@ describe('UsersService', () => {
         email: 'test@example.it',
         username: 'username #1',
         password: 'secret',
-        roles: Roles['ADMIN'],
       };
 
-      const roles = ['ADMIN'];
-
-      await service.create({ ...user, roles });
+      await service.create({ ...user });
       expect(
         service.create({
           ...user,
-          roles,
-        }),
+        })
       ).resolves.toEqual(user);
     });
   });
@@ -149,18 +126,16 @@ describe('UsersService', () => {
         email: 'test@example.it',
         username: 'username #1',
         password: 'secret',
-        roles: Roles['ADMIN'],
       };
       const updateSpy = jest.spyOn(repositoryUser, 'preload');
       const updateUser = await service.update('anyid', updateUserInput);
       expect(
-        service.update('anyid', {
+        await service.update('anyid', {
           name: 'user #1',
           email: 'test@example.it',
           username: 'username #1',
           password: 'secret',
-          roles: Roles['ADMIN'],
-        }),
+        })
       ).resolves.toEqual(oneUser);
     });
 
@@ -169,7 +144,7 @@ describe('UsersService', () => {
         .spyOn(service, 'update')
         .mockRejectedValueOnce(new NotFoundException('User #anyid not found'));
       expect(service.update).rejects.toThrow(
-        new NotFoundException('User #anyid not found'),
+        new NotFoundException('User #anyid not found')
       );
     });
   });

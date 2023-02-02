@@ -1,30 +1,34 @@
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
+
 # nestjs-api-mongoose
 
 Simple example Api Rest with Nestjs and Mongoose for the NestJS community 😻
 
-## Installation
+## Running the app
 
 ```bash
-$ npm install
+$ npx nx serve nestjs-api-mongoose
+```
+
+## Test
+
+```bash
+# unit tests
+$ npx nx test nestjs-api-mongoose
+
+# e2e tests
+$ npx nx test:e2e nestjs-api-mongoose
+
+# test coverage
+$ npx nx test:cov nestjs-api-mongoose
 ```
 
 ## Set environment
 
 ```
 $ cp .env.example .env
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 ## Docker

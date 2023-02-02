@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersResolver } from './users.resolver';
 import { UsersService } from './users.service';
-import { RolesService } from '../roles/roles.service';
 import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
@@ -20,7 +19,6 @@ describe('UsersResolver', () => {
     email: 'test@example.it',
     username: 'username #1',
     password: 'secret',
-    roles: ['ADMIN'],
   };
 
   const updateUserInput: UpdateUserInput = {
@@ -28,20 +26,12 @@ describe('UsersResolver', () => {
     email: 'test@example.it',
     username: 'username update',
     password: 'secret123',
-    roles: ['ADMIN'],
   };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         UsersResolver,
-        {
-          provide: RolesService,
-          useValue: {
-            findOne: jest.fn(() => []),
-            create: jest.fn(() => {}),
-          },
-        },
         {
           provide: UsersService,
           useFactory: () => ({
@@ -50,7 +40,6 @@ describe('UsersResolver', () => {
               email: 'test@example.it',
               username: 'username #1',
               password: 'secret',
-              roles: ['ADMIN'],
               id: '1',
             }),
             update: jest.fn().mockResolvedValue({
@@ -58,7 +47,6 @@ describe('UsersResolver', () => {
               email: 'test@example.it',
               username: 'username update',
               password: 'secret123',
-              roles: ['ADMIN'],
             }),
             findOne: jest.fn(() => []),
             create: jest.fn(() => {}),
@@ -87,7 +75,7 @@ describe('UsersResolver', () => {
         .spyOn(service, 'findAll')
         .mockRejectedValueOnce(new NotFoundException());
       await expect(resolver.findAll(usersArgs)).rejects.toThrow(
-        new NotFoundException(),
+        new NotFoundException()
       );
     });
 
@@ -108,7 +96,7 @@ describe('UsersResolver', () => {
         .spyOn(service, 'findOne')
         .mockRejectedValueOnce(new NotFoundException());
       await expect(resolver.findOne(1)).rejects.toThrow(
-        new NotFoundException(),
+        new NotFoundException()
       );
     });
 
