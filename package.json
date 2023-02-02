@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +35,8 @@
     "typeorm": "^0.3.11"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-angular": "^17.4.2",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.3.1",
     "@nrwl/cli": "15.0.13",
@@ -75,5 +78,7 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "packageManager": "yarn@1.22.19"
+  "lint-staged": {
+    "**/*.{ts,json}": []
+  }
 }
