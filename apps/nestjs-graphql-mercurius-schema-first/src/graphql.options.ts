@@ -12,7 +12,7 @@ export class GraphqlOptions implements GqlOptionsFactory {
       typePaths: ['./**/*.graphql'],
       definitions: {
         path: join(
-          'apps/nestjs-api-graphql-mercurius-schema-first/src/graphql.schema.ts'
+          'apps/nestjs-graphql-mercurius-schema-first/src/graphql.schema.ts'
         ),
         outputAs: 'class',
       },

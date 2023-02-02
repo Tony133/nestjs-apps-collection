@@ -1,0 +1,60 @@
+{
+  "sourceRoot": "apps/nestjs-graphql-mercurius-code-first/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nestjs-graphql-mercurius-code-first",
+        "main": "apps/nestjs-graphql-mercurius-code-first/src/main.ts",
+        "tsConfig": "apps/nestjs-graphql-mercurius-code-first/tsconfig.app.json",
+        "target": "node",
+        "compiler": "tsc"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/nestjs-graphql-mercurius-code-first/src/environments/environment.ts",
+              "with": "apps/nestjs-graphql-mercurius-code-first/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "nestjs-graphql-mercurius-code-first:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nestjs-graphql-mercurius-code-first/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/nestjs-graphql-mercurius-code-first"
+      ],
+      "options": {
+        "jestConfig": "apps/nestjs-graphql-mercurius-code-first/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "e2e": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/nestjs-graphql-mercurius-code-first/test/jest-e2e.json"
+      }
+    }
+  },
+  "tags": []
+}

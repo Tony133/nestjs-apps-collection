@@ -5,8 +5,7 @@ import { MercuriusDriverConfig } from '@nestjs/mercurius';
 export class GraphqlOptions implements GqlOptionsFactory {
   createGqlOptions(): Promise<MercuriusDriverConfig> | MercuriusDriverConfig {
     return {
-      autoSchemaFile:
-        'apps/nestjs-api-graphql-mercurius-code-first/src/schema.gql',
+      autoSchemaFile: 'apps/nestjs-graphql-mercurius-code-first/src/schema.gql',
       subscription: true,
       graphiql: true,
     };

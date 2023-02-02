@@ -1,14 +1,14 @@
 {
-  "sourceRoot": "apps/nestjs-api-graphql-mercurius-code-first/src",
+  "sourceRoot": "apps/nestjs-graphql-mercurius-schema-first/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nestjs-api-graphql-mercurius-code-first",
-        "main": "apps/nestjs-api-graphql-mercurius-code-first/src/main.ts",
-        "tsConfig": "apps/nestjs-api-graphql-mercurius-code-first/tsconfig.app.json",
+        "outputPath": "dist/apps/nestjs-graphql-mercurius-schema-first",
+        "main": "apps/nestjs-graphql-mercurius-schema-first/src/main.ts",
+        "tsConfig": "apps/nestjs-graphql-mercurius-schema-first/tsconfig.app.json",
         "target": "node",
         "compiler": "tsc"
       },
@@ -19,8 +19,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/nestjs-api-graphql-mercurius-code-first/src/environments/environment.ts",
-              "with": "apps/nestjs-api-graphql-mercurius-code-first/src/environments/environment.prod.ts"
+              "replace": "apps/nestjs-graphql-mercurius-schema-first/src/environments/environment.ts",
+              "with": "apps/nestjs-graphql-mercurius-schema-first/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -29,30 +29,30 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "nestjs-api-graphql-mercurius-code-first:build"
+        "buildTarget": "nestjs-graphql-mercurius-schema-first:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/nestjs-api-graphql-mercurius-code-first/**/*.ts"]
+        "lintFilePatterns": ["apps/nestjs-graphql-mercurius-schema-first/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": [
-        "{workspaceRoot}/coverage/apps/nestjs-api-graphql-mercurius-code-first"
+        "{workspaceRoot}/coverage/apps/nestjs-graphql-mercurius-schema-first"
       ],
       "options": {
-        "jestConfig": "apps/nestjs-api-graphql-mercurius-code-first/jest.config.js",
+        "jestConfig": "apps/nestjs-graphql-mercurius-schema-first/jest.config.js",
         "passWithNoTests": true
       }
     },
     "e2e": {
       "executor": "@nrwl/jest:jest",
       "options": {
-        "jestConfig": "apps/nestjs-api-graphql-mercurius-code-first/test/jest-e2e.json"
+        "jestConfig": "apps/nestjs-graphql-mercurius-schema-first/test/jest-e2e.json"
       }
     }
   },

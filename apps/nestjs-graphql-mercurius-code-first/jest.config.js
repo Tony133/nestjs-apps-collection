@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'nestjs-api-graphql-mercurius-schema-first',
+  displayName: 'nestjs-graphql-mercurius-code-first',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/nestjs-api-graphql-mercurius-schema-first',
+  coverageDirectory: '../../coverage/apps/nestjs-graphql-mercurius-code-first',
 };

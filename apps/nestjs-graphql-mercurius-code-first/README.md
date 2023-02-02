@@ -2,27 +2,27 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-# nestjs-api-graphql-mercurius-code-first
+# nestjs-graphql-mercurius-code-first
 
 Simple example GraphQL(Code First) Mercurius with NestJS and TypeORM for the NestJS community 😻
 
 ## Running the app
 
 ```bash
-$ npx nx serve nestjs-api-graphql-mercurius-code-first
+$ npx nx serve nestjs-graphql-mercurius-code-first
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npx nx test nestjs-api-graphql-mercurius-code-first
+$ npx nx test nestjs-graphql-mercurius-code-first
 
 # e2e tests
-$ npx nx test:e2e nestjs-api-graphql-mercurius-code-first
+$ npx nx test:e2e nestjs-graphql-mercurius-code-first
 
 # test coverage
-$ npx nx test:cov nestjs-api-graphql-mercurius-code-first
+$ npx nx test:cov nestjs-graphql-mercurius-code-first
 ```
 
 ## Docker
