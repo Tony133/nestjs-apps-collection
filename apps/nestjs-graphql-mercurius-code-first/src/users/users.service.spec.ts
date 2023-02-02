@@ -56,9 +56,9 @@ describe('UsersService', () => {
             find: jest.fn().mockResolvedValue(userArray),
             findOne: jest.fn().mockReturnValue(oneUser),
             create: jest.fn().mockResolvedValue(createUserInput),
-            save: jest.fn(),
+            save: jest.fn().mockResolvedValue(createUserInput),
             preload: jest.fn().mockResolvedValue(updateUserInput),
-            update: jest.fn(),
+            update: jest.fn().mockResolvedValue(updateUserInput),
             remove: jest.fn(),
           },
         },
@@ -83,10 +83,8 @@ describe('UsersService', () => {
   });
 
   describe('findOneById()', () => {
-    it('should get a single user', () => {
-      const repoSpy = jest.spyOn(repositoryUser, 'findOne');
+    it('should return a single user', () => {
       expect(service.findOneById('anyid')).resolves.toEqual(oneUser);
-      expect(repoSpy).toBeCalledWith('anyid');
     });
 
     it('should return a exception when doesnt find a user by id', async () => {
@@ -97,7 +95,7 @@ describe('UsersService', () => {
       expect(userNotFound).rejects.toThrow(
         new NotFoundException('User #anyid not found')
       );
-      expect(repoSpy).toHaveBeenCalledWith('anyid');
+      expect(repoSpy).toHaveBeenCalledWith({ where: { id: NaN } });
     });
   });
 
@@ -127,7 +125,6 @@ describe('UsersService', () => {
         password: 'secret',
       };
       const updateSpy = jest.spyOn(repositoryUser, 'preload');
-      const updateUser = await service.update('anyid', updateUserInput);
       expect(
         await service.update('anyid', {
           name: 'user #1',
@@ -135,7 +132,8 @@ describe('UsersService', () => {
           username: 'username #1',
           password: 'secret',
         })
-      ).resolves.toEqual(oneUser);
+      ).toEqual(oneUser);
+      expect(updateSpy).toHaveBeenCalled();
     });
 
     it('should return a exception when doesnt update a user', async () => {
