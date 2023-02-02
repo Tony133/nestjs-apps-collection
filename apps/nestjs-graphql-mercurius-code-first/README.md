@@ -12,6 +12,12 @@ Simple example GraphQL(Code First) Mercurius with NestJS and TypeORM for the Nes
 $ npx nx serve nestjs-graphql-mercurius-code-first
 ```
 
+## Set environment
+
+```
+$ cp .env.example .env
+```
+
 ## Test
 
 ```bash
