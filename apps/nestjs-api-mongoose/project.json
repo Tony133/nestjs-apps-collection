@@ -1,6 +1,4 @@
 {
-  "name": "nestjs-api-mongoose",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/nestjs-api-mongoose/src",
   "projectType": "application",
   "targets": {
@@ -8,12 +6,11 @@
       "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "target": "node",
-        "compiler": "tsc",
         "outputPath": "dist/apps/nestjs-api-mongoose",
         "main": "apps/nestjs-api-mongoose/src/main.ts",
         "tsConfig": "apps/nestjs-api-mongoose/tsconfig.app.json",
-        "assets": ["apps/nestjs-api-mongoose/src/assets"]
+        "target": "node",
+        "compiler": "tsc"
       },
       "configurations": {
         "production": {
@@ -30,14 +27,9 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/js:node",
+      "executor": "@nrwl/node:node",
       "options": {
         "buildTarget": "nestjs-api-mongoose:build"
-      },
-      "configurations": {
-        "production": {
-          "buildTarget": "nestjs-api-mongoose:build:production"
-        }
       }
     },
     "lint": {
@@ -49,10 +41,16 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": ["{workspaceRoot}/coverage/apps/nestjs-api-mongoose"],
       "options": {
-        "jestConfig": "apps/nestjs-api-mongoose/jest.config.ts",
+        "jestConfig": "apps/nestjs-api-mongoose/jest.config.js",
         "passWithNoTests": true
+      }
+    },
+    "e2e": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/nestjs-api-mongoose/test/jest-e2e.json"
       }
     }
   },
