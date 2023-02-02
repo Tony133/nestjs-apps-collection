@@ -6,6 +6,12 @@
 
 Collection example apps with NestJS and Typeorm, Mongodb, PostgreSQL, GraphQL, Mercurius, etc. for the NestJS community 😻
 
+## Install workspace 
+
+```
+$ yarn install
+```
+
 ## Running a sample app
 
 ```bash
