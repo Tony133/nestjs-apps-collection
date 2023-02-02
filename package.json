@@ -49,6 +49,7 @@
     "@typescript-eslint/parser": "^5.36.1",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
+    "husky": "^8.0.3",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "nx": "15.0.13",
