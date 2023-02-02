@@ -1,0 +1,58 @@
+{
+  "sourceRoot": "apps/nestjs-api-mongoose/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nestjs-api-mongoose",
+        "main": "apps/nestjs-api-mongoose/src/main.ts",
+        "tsConfig": "apps/nestjs-api-mongoose/tsconfig.app.json",
+        "target": "node",
+        "compiler": "tsc"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/nestjs-api-mongoose/src/environments/environment.ts",
+              "with": "apps/nestjs-api-mongoose/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "nestjs-api-mongoose:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nestjs-api-mongoose/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/nestjs-api-mongoose"],
+      "options": {
+        "jestConfig": "apps/nestjs-api-mongoose/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "e2e": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/nestjs-api-mongoose/test/jest-e2e.json"
+      }
+    }
+  },
+  "tags": []
+}
