@@ -2,21 +2,46 @@
 
 Collection example apps with NestJS and Typeorm, Mongodb, PostgreSQL, GraphQL, Mercurius, etc. for the NestJS community 😻
 
+## Running a sample app
+
+```bash
+$ npx nx serve [name-app] # for example: npx nx serve nestjs-api-mongoose
+```
+
+or
+
+```bash
+$ nx serve [name-app] # for example: npx nx serve nestjs-api-mongoose
+```
+
+
 ## Running all unit tests
 
-```
+```bash
  $  npx nx affected:test 
+```
+
+or
+
+```bash
+ $  nx affected:test 
 ```
 
 ## Running all end-to-end tests
 
-```
+```bash
  $  npx nx affected:e2e 
+```
+
+or
+
+```bash
+ $  nx affected:e2e 
 ```
 
 ## Generate an application
 
-Run `nx g @nrwl/nestjs:app my-app` to generate an application.
+Run `npx nx g @nrwl/nest:app my-app` to generate an application.
 
 > You can use any of the plugins above to generate applications as well.
 
@@ -24,7 +49,7 @@ When using Nx, you can create multiple applications and libraries in the same wo
 
 ## Generate a library
 
-Run `nx g @nrwl/nestjs:lib my-lib` to generate a library.
+Run `npx nx g @nrwl/nest:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
@@ -32,18 +57,8 @@ Libraries are shareable across libraries and applications. They can be imported 
 
 ## Development server
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:3000/. The app will automatically reload if you change any of the source files.
+Run `npx nx serve my-app` for a dev server. Navigate to http://localhost:3000/. The app will automatically reload if you change any of the source files.
 
 ## Build
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
----
-
-<p style="text-align: left;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="50"></p>
+Run `npx nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
