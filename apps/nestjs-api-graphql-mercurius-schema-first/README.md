@@ -35,7 +35,7 @@ After running, you can stop the Docker container with
 
 `$ docker-compose down`
 
-## Url GraphisQL
+## Url GraphiQL
 
 ```
  http://localhost:3000/graphiql
