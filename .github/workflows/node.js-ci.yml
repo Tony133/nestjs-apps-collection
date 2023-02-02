@@ -27,8 +27,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
-    - run: pnpm install
-      with: 
-        version: 7
-        run_install: true
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 6.32.9
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+    - run: pnpm install --frozen-lockfile
     - run: npx nx test ${{ matrix.test }}
