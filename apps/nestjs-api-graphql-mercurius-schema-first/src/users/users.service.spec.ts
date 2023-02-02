@@ -12,20 +12,20 @@ const oneUser: User = {
   id: 1,
   name: 'tony',
   username: 'tony_admin',
-  email: 'tony_admin@example.it',
+  email: 'tony_admin@example.com',
   password: 'secret',
 };
 
 const createUserInput: CreateUserInput = {
   name: 'user #1',
-  email: 'test@example.it',
+  email: 'test@example.com',
   username: 'username #1',
   password: 'secret',
 };
 
 const updateUserInput: UpdateUserInput = {
   name: 'user update',
-  email: 'test@example.it',
+  email: 'test@example.com',
   username: 'username update',
   password: 'secret',
 };
@@ -34,7 +34,7 @@ const userArray: User = {
   id: 1,
   name: 'tony',
   username: 'tony_admin',
-  email: 'tony_admin@example.it',
+  email: 'tony_admin@example.com',
   password: 'secret',
 };
 

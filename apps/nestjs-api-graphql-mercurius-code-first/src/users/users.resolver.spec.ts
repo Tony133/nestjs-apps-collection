@@ -16,14 +16,14 @@ describe('UsersResolver', () => {
 
   const createUserInput: CreateUserInput = {
     name: 'user #1',
-    email: 'test@example.it',
+    email: 'test@example.com',
     username: 'username #1',
     password: 'secret',
   };
 
   const updateUserInput: UpdateUserInput = {
     name: 'user update',
-    email: 'test@example.it',
+    email: 'test@example.com',
     username: 'username update',
     password: 'secret123',
   };
@@ -37,21 +37,19 @@ describe('UsersResolver', () => {
           useFactory: () => ({
             findAll: jest.fn().mockResolvedValue({
               name: 'user #1',
-              email: 'test@example.it',
+              email: 'test@example.com',
               username: 'username #1',
               password: 'secret',
-              roles: ['ADMIN'],
               id: '1',
             }),
             update: jest.fn().mockResolvedValue({
               name: 'user update',
-              email: 'test@example.it',
+              email: 'test@example.com',
               username: 'username update',
               password: 'secret123',
-              roles: ['ADMIN'],
             }),
             findOneById: jest.fn(() => []),
-            create: jest.fn(() => {}),
+            create: jest.fn(() => createUserInput),
             remove: jest.fn(() => {}),
           }),
         },

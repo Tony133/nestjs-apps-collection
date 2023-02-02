@@ -12,20 +12,20 @@ const oneUser: Users = {
   id: 1,
   name: 'tony',
   username: 'tony_admin',
-  email: 'tony_admin@example.it',
+  email: 'tony_admin@example.com',
   password: 'secret',
 };
 
 const createUserInput: CreateUserInput = {
   name: 'user #1',
-  email: 'test@example.it',
+  email: 'test@example.com',
   username: 'username #1',
   password: 'secret',
 };
 
 const updateUserInput: UpdateUserInput = {
   name: 'user update',
-  email: 'test@example.it',
+  email: 'test@example.com',
   username: 'username update',
   password: 'secret',
 };
@@ -34,7 +34,7 @@ const userArray: Users = {
   id: 1,
   name: 'tony',
   username: 'tony_admin',
-  email: 'tony_admin@example.it',
+  email: 'tony_admin@example.com',
   password: 'secret',
 };
 
@@ -55,7 +55,7 @@ describe('UsersService', () => {
           useValue: {
             find: jest.fn().mockResolvedValue(userArray),
             findOne: jest.fn().mockResolvedValue(oneUser),
-            create: jest.fn(),
+            create: jest.fn().mockResolvedValue(createUserInput),
             save: jest.fn(),
             preload: jest.fn().mockResolvedValue(updateUserInput),
             update: jest.fn(),
@@ -105,17 +105,16 @@ describe('UsersService', () => {
     it('should successfully insert a user', async () => {
       const user = {
         name: 'user #1',
-        email: 'test@example.it',
+        email: 'test@example.com',
         username: 'username #1',
         password: 'secret',
       };
 
-      await service.create({ ...user });
       expect(
-        service.create({
-          ...user,
+        await service.create({
+          ...createUserInput,
         })
-      ).resolves.toEqual(user);
+      ).toEqual(user);
     });
   });
 
@@ -123,7 +122,7 @@ describe('UsersService', () => {
     it('should call the update method', async () => {
       const oneUser = {
         name: 'user #1',
-        email: 'test@example.it',
+        email: 'test@example.com',
         username: 'username #1',
         password: 'secret',
       };
@@ -132,7 +131,7 @@ describe('UsersService', () => {
       expect(
         await service.update('anyid', {
           name: 'user #1',
-          email: 'test@example.it',
+          email: 'test@example.com',
           username: 'username #1',
           password: 'secret',
         })
