@@ -89,8 +89,8 @@ describe('CustomersService', () => {
           provide: getModelToken('Customer'),
           useValue: {
             find: jest.fn().mockReturnValue(customersArray),
-            findById: jest.fn(),
-            findByIdAndUpdate: jest.fn(),
+            findById: jest.fn().mockReturnValue(mockCustomer),
+            findByIdAndUpdate: jest.fn().mockReturnValue(updateCustomerDto),
             findByIdAndRemove: jest.fn(),
             new: jest.fn().mockResolvedValue(mockCustomer),
             constructor: jest.fn().mockResolvedValue(mockCustomer),
@@ -102,6 +102,7 @@ describe('CustomersService', () => {
             exec: jest.fn(),
             populate: jest.fn(),
             skip: jest.fn(),
+            set: jest.fn(),
             offset: jest.fn(),
           },
         },
@@ -140,7 +141,7 @@ describe('CustomersService', () => {
       expect(response).toEqual(mockCustomer);
     });
 
-    it('should throw if find one customer throws', async () => {
+    it('should throw an exception if it not find a customer', async () => {
       jest.spyOn(model, 'findById').mockReturnValueOnce({
         exec: jest.fn(() => null),
         populate: jest.fn().mockReturnThis(),
@@ -152,7 +153,7 @@ describe('CustomersService', () => {
   });
 
   describe('create()', () => {
-    it('should insert a new organization', async () => {
+    it('should insert a new customer', async () => {
       jest.spyOn(model, 'create').mockImplementationOnce(() =>
         Promise.resolve({
           _id: 'a id',
@@ -188,7 +189,7 @@ describe('CustomersService', () => {
   });
 
   describe('update()', () => {
-    it('should call CustomerSchema update with correct values', async () => {
+    it('should update a customer with the correct values by id', async () => {
       jest.spyOn(model, 'findByIdAndUpdate').mockResolvedValueOnce({
         _id: 'anyid',
         updateCustomerDto,
@@ -202,28 +203,17 @@ describe('CustomersService', () => {
         new: true,
       });
     });
-
-    it('should throw if CustomerSchema throws', async () => {
-      jest
-        .spyOn(service, 'update')
-        .mockRejectedValueOnce(
-          new NotFoundException('Customer #anyid not found'),
-        );
-      await expect(service.update('anyid', updateCustomerDto)).rejects.toThrow(
-        new NotFoundException('Customer #anyid not found'),
-      );
-    });
   });
 
   describe('remove()', () => {
-    it('should call CustomerSchema remove with correct value', async () => {
+    it('should remove a customer by id', async () => {
       const removeSpy = jest.spyOn(model, 'findByIdAndRemove');
       const retVal = await service.remove('any id');
       expect(removeSpy).toBeCalledWith('any id');
       expect(retVal).toBeUndefined();
     });
 
-    it('should throw if CustomerSchema remove throws', async () => {
+    it('should throw an exception if it not remove a customer', async () => {
       jest
         .spyOn(service, 'remove')
         .mockRejectedValueOnce(new NotFoundException());

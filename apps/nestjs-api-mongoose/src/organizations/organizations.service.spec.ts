@@ -3,7 +3,7 @@ import { OrganizationsService } from './organizations.service';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 import { CreateOrganizationDto } from './dto/create-organization.dto';
 import { UpdateOrganizationDto } from './dto/update-organization.dto';
-import { BadRequestException, NotFoundException } from '@nestjs/common';
+import { NotFoundException } from '@nestjs/common';
 import { getModelToken } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { IOrganization } from './interfaces/organization.interface';
@@ -155,7 +155,7 @@ describe('OrganizationsService', () => {
   });
 
   describe('findOne()', () => {
-    it('should return one organization', async () => {
+    it('should return one organization by id', async () => {
       const findSpy = jest.spyOn(model, 'findById').mockReturnValueOnce({
         exec: jest.fn().mockResolvedValueOnce(mockOrganization),
         populate: jest.fn().mockReturnThis(),
@@ -165,7 +165,7 @@ describe('OrganizationsService', () => {
       expect(response).toEqual(mockOrganization);
     });
 
-    it('should throw if find one organization throws', async () => {
+    it('should throw an exception if it not find a organization', async () => {
       jest.spyOn(model, 'findById').mockReturnValueOnce({
         exec: jest.fn(() => null),
         populate: jest.fn().mockReturnThis(),
@@ -204,7 +204,7 @@ describe('OrganizationsService', () => {
   });
 
   describe('update()', () => {
-    it('should call OrganizationSchema update with correct values', async () => {
+    it('should update a organization with the correct values by id', async () => {
       jest.spyOn(model, 'findByIdAndUpdate').mockResolvedValueOnce({
         _id: 'anyid',
         updateOrganizationDto,
@@ -222,7 +222,7 @@ describe('OrganizationsService', () => {
       });
     });
 
-    it('should throw if OrganizationSchema throws', async () => {
+    it('should throw an exception if it not find a organization', async () => {
       jest
         .spyOn(model, 'findByIdAndUpdate')
         .mockRejectedValueOnce(
@@ -235,14 +235,14 @@ describe('OrganizationsService', () => {
   });
 
   describe('remove()', () => {
-    it('should call OrganizationSchema remove with correct value', async () => {
+    it('should remove a organization by id', async () => {
       const removeSpy = jest.spyOn(model, 'findByIdAndRemove');
       const retVal = await service.remove('any id');
       expect(removeSpy).toBeCalledWith('any id');
       expect(retVal).toBeUndefined();
     });
 
-    it('should throw if OrganizationSchema remove throws', async () => {
+    it('should throw an exception if it not remove a organization', async () => {
       jest
         .spyOn(model, 'findByIdAndRemove')
         .mockRejectedValueOnce(new NotFoundException());
