@@ -9,6 +9,7 @@ import { CustomersService } from './customers.service';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 import { CreateCustomerDto } from './dto/create-customer.dto';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
+import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
 
 class MockResponse {
   res: any;
@@ -94,7 +95,8 @@ describe('Customers Controller', () => {
           },
         },
       ],
-    }).compile();
+    })
+    .compile();
 
     customersController = module.get<CustomersController>(CustomersController);
     customersService = module.get<CustomersService>(CustomersService);

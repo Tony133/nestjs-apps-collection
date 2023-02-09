@@ -2,11 +2,11 @@ import { ArgumentMetadata, Injectable, PipeTransform, BadRequestException } from
 
 @Injectable()
 export class ParseIntPipe implements PipeTransform {
-  transform(value: string, metadata: ArgumentMetadata) {
+  transform(value: string, metadata?: ArgumentMetadata) {
     const val = parseInt(value, 10)
     if (isNaN(val)) {
       throw new BadRequestException(
-        `Validation failed. "${val}".`,
+        `Validation failed. Id parameter should be a number "${val}".`,
       )
     }
     return value;
