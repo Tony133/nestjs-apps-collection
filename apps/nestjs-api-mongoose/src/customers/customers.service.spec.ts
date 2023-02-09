@@ -207,10 +207,10 @@ describe('CustomersService', () => {
       jest
         .spyOn(service, 'update')
         .mockRejectedValueOnce(
-          new NotFoundException('Organization #anyid not found'),
+          new NotFoundException('Customer #anyid not found'),
         );
       await expect(service.update('anyid', updateCustomerDto)).rejects.toThrow(
-        new NotFoundException('Organization #anyid not found'),
+        new NotFoundException('Customer #anyid not found'),
       );
     });
   });
