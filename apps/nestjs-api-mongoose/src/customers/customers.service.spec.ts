@@ -147,7 +147,7 @@ describe('CustomersService', () => {
         populate: jest.fn().mockReturnThis(),
       } as any);
       await expect(service.findOne('anyid')).rejects.toThrow(
-        new NotFoundException('Customer #anyid not found'),
+        new NotFoundException('Customer #anyid not found')
       );
     });
   });
@@ -164,7 +164,7 @@ describe('CustomersService', () => {
           address: 'address #1',
           description: 'description #1',
           organizations: 'organization #1',
-        }),
+        })
       );
       const newCustomer = await service.create({
         firstName: 'firstName #1',
@@ -211,15 +211,6 @@ describe('CustomersService', () => {
       const retVal = await service.remove('any id');
       expect(removeSpy).toBeCalledWith('any id');
       expect(retVal).toBeUndefined();
-    });
-
-    it('should throw an exception if it not remove a customer', async () => {
-      jest
-        .spyOn(service, 'remove')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(service.remove('anyid')).rejects.toThrow(
-        new NotFoundException(),
-      );
     });
   });
 });

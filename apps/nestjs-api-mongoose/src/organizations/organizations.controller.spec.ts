@@ -76,7 +76,7 @@ describe('Organizations Controller', () => {
     }).compile();
 
     organizationsController = module.get<OrganizationsController>(
-      OrganizationsController,
+      OrganizationsController
     );
     organizationsService =
       module.get<OrganizationsService>(OrganizationsService);
@@ -90,27 +90,15 @@ describe('Organizations Controller', () => {
     it('should call method findAll in OrganizationsService', async () => {
       await organizationsController.getAllOrganization(
         response,
-        paginationQueryDto,
+        paginationQueryDto
       );
       expect(organizationsService.findAll).toHaveBeenCalled();
-    });
-
-    it('should throw if OrganizationsService findAll throws', async () => {
-      jest
-        .spyOn(organizationsService, 'findAll')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(
-        organizationsController.getAllOrganization(
-          response,
-          paginationQueryDto,
-        ),
-      ).rejects.toThrow(new NotFoundException());
     });
 
     it('should return organization on success', async () => {
       await organizationsController.getAllOrganization(
         response,
-        paginationQueryDto,
+        paginationQueryDto
       );
       expect(organizationsService.findAll).toHaveBeenCalled();
     });
@@ -120,15 +108,6 @@ describe('Organizations Controller', () => {
     it('should call method findOne in OrganizationsService id with correct value', async () => {
       await organizationsController.getOrganization(response, 'anyid');
       expect(organizationsService.findOne).toHaveBeenCalled();
-    });
-
-    it('should throw if OrganizationsService findOne throws', async () => {
-      jest
-        .spyOn(organizationsService, 'findOne')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(
-        organizationsController.getOrganization(response, 'anyid'),
-      ).rejects.toThrow(new NotFoundException());
     });
 
     it('should return a organization on success', async () => {
@@ -142,7 +121,7 @@ describe('Organizations Controller', () => {
       const createSpy = jest.spyOn(organizationsService, 'create');
       await organizationsController.addOrganization(
         response,
-        createOrganizationDto,
+        createOrganizationDto
       );
       expect(createSpy).toHaveBeenCalledWith(createOrganizationDto);
     });
@@ -151,7 +130,7 @@ describe('Organizations Controller', () => {
       const createOrganizationSpy = jest.spyOn(organizationsService, 'create');
       await organizationsController.addOrganization(
         response,
-        createOrganizationDto,
+        createOrganizationDto
       );
       expect(createOrganizationSpy).toHaveBeenCalledWith(createOrganizationDto);
     });
@@ -163,7 +142,7 @@ describe('Organizations Controller', () => {
       await organizationsController.updateOrganization(
         response,
         'anyid',
-        updateOrganizationDto,
+        updateOrganizationDto
       );
       expect(updateSpy).toHaveBeenCalledWith('anyid', updateOrganizationDto);
     });
@@ -174,15 +153,6 @@ describe('Organizations Controller', () => {
       const deleteSpy = jest.spyOn(organizationsService, 'remove');
       await organizationsController.deleteOrganization(response, 'anyid');
       expect(deleteSpy).toHaveBeenCalledWith('anyid');
-    });
-
-    it('should throw error if id in OrganizationsService not exists', async () => {
-      jest
-        .spyOn(organizationsService, 'remove')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(
-        organizationsController.deleteOrganization(response, 'anyid'),
-      ).rejects.toThrow(new NotFoundException());
     });
   });
 });

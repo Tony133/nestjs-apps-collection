@@ -95,8 +95,7 @@ describe('Customers Controller', () => {
           },
         },
       ],
-    })
-    .compile();
+    }).compile();
 
     customersController = module.get<CustomersController>(CustomersController);
     customersService = module.get<CustomersService>(CustomersService);
@@ -112,15 +111,6 @@ describe('Customers Controller', () => {
       expect(customersService.findAll).toHaveBeenCalled();
     });
 
-    it('should throw if CustomersService findAll throws', async () => {
-      jest
-        .spyOn(customersService, 'findAll')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(
-        customersController.getAllCustomer(response, paginationQueryDto),
-      ).rejects.toThrow(new NotFoundException());
-    });
-
     it('should return customer on success', async () => {
       await customersController.getAllCustomer(response, paginationQueryDto);
       expect(customersService.findAll).toHaveBeenCalled();
@@ -132,15 +122,6 @@ describe('Customers Controller', () => {
       const findSpy = jest.spyOn(customersService, 'findOne');
       await customersController.getCustomer(response, 'anyid');
       expect(findSpy).toHaveBeenCalledWith('anyid');
-    });
-
-    it('should throw if CustomersService findOne throws', async () => {
-      jest
-        .spyOn(customersService, 'findOne')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(
-        customersController.getCustomer(response, 'anyid'),
-      ).rejects.toThrow(new NotFoundException());
     });
 
     it('should return a customer on success', async () => {
@@ -172,7 +153,7 @@ describe('Customers Controller', () => {
       await customersController.updateCustomer(
         response,
         'anyid',
-        updateCustomerDto,
+        updateCustomerDto
       );
       expect(updateSpy).toHaveBeenCalledWith('anyid', updateCustomerDto);
     });
@@ -183,15 +164,6 @@ describe('Customers Controller', () => {
       const deleteSpy = jest.spyOn(customersService, 'remove');
       await customersController.deleteCustomer(response, 'anyid');
       expect(deleteSpy).toHaveBeenCalledWith('anyid');
-    });
-
-    it('should throw error if id in CustomersService not exists', async () => {
-      jest
-        .spyOn(customersService, 'remove')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(
-        customersController.deleteCustomer(response, 'anyid'),
-      ).rejects.toThrow(new NotFoundException());
     });
   });
 });

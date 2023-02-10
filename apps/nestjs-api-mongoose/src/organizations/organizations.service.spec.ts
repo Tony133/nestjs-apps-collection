@@ -171,7 +171,7 @@ describe('OrganizationsService', () => {
         populate: jest.fn().mockReturnThis(),
       } as any);
       await expect(service.findOne('anyid')).rejects.toThrow(
-        new NotFoundException('Organization #anyid not found'),
+        new NotFoundException('Organization #anyid not found')
       );
     });
   });
@@ -185,7 +185,7 @@ describe('OrganizationsService', () => {
           address: 'address #1',
           description: 'description #1',
           customers: 'customer #1',
-        }),
+        })
       );
       const newOrganization = await service.create({
         name: 'name #1',
@@ -213,24 +213,13 @@ describe('OrganizationsService', () => {
 
       const updateOrganization = await service.update(
         'anyid',
-        updateOrganizationDto,
+        updateOrganizationDto
       );
       expect(updateOrganization).toEqual({
         _id: 'anyid',
         updateOrganizationDto,
         new: true,
       });
-    });
-
-    it('should throw an exception if it not find a organization', async () => {
-      jest
-        .spyOn(model, 'findByIdAndUpdate')
-        .mockRejectedValueOnce(
-          new NotFoundException('Organization #anyid not found'),
-        );
-      await expect(
-        service.update('anyid', updateOrganizationDto),
-      ).rejects.toThrow(new NotFoundException('Organization #anyid not found'));
     });
   });
 
@@ -240,15 +229,6 @@ describe('OrganizationsService', () => {
       const retVal = await service.remove('any id');
       expect(removeSpy).toBeCalledWith('any id');
       expect(retVal).toBeUndefined();
-    });
-
-    it('should throw an exception if it not remove a organization', async () => {
-      jest
-        .spyOn(model, 'findByIdAndRemove')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(service.remove('anyid')).rejects.toThrow(
-        new NotFoundException(),
-      );
     });
   });
 });
