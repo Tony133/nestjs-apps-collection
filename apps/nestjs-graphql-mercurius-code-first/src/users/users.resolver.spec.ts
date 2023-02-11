@@ -99,21 +99,10 @@ describe('UsersResolver', () => {
         new NotFoundException()
       );
     });
-
-    it('should return a user on success', async () => {
-      await resolver.user('anyid');
-      expect(service.findOneById).toHaveBeenCalled();
-    });
   });
 
   describe('createUser()', () => {
     it('should call method create in UsersService with correct values', async () => {
-      const createSpy = jest.spyOn(service, 'create');
-      await resolver.createUser(createUserInput);
-      expect(createSpy).toHaveBeenCalledWith(createUserInput);
-    });
-
-    it('should return a user on success', async () => {
       const createSpy = jest.spyOn(service, 'create');
       await resolver.createUser(createUserInput);
       expect(createSpy).toHaveBeenCalledWith(createUserInput);
