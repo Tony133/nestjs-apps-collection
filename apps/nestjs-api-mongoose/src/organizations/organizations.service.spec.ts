@@ -221,6 +221,13 @@ describe('OrganizationsService', () => {
         new: true,
       });
     });
+
+    it('should throw an exception if it not find a organization', async () => {
+      model.findByIdAndUpdate = jest.fn().mockResolvedValueOnce(null);
+      await expect(
+        service.update('not correct id', updateOrganizationDto)
+      ).rejects.toThrow(NotFoundException);
+    });
   });
 
   describe('remove()', () => {

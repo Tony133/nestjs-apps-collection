@@ -203,6 +203,13 @@ describe('CustomersService', () => {
         new: true,
       });
     });
+
+    it('should throw an exception if it not find a customer', async () => {
+      model.findByIdAndUpdate = jest.fn().mockResolvedValueOnce(null);
+      await expect(
+        service.update('not correct id', updateCustomerDto)
+      ).rejects.toThrow(NotFoundException);
+    });
   });
 
   describe('remove()', () => {
