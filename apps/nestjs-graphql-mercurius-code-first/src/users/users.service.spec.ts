@@ -8,6 +8,11 @@ import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
 import { NotFoundException } from '@nestjs/common';
 
+const usersArgs: UsersArgs = {
+  offset: 0,
+  limit: 25,
+};
+
 const oneUser: Users = {
   id: 1,
   name: 'tony',
@@ -136,13 +141,15 @@ describe('UsersService', () => {
       expect(updateSpy).toHaveBeenCalled();
     });
 
-    it('should return a exception when doesnt update a user', async () => {
-      jest
-        .spyOn(service, 'update')
-        .mockRejectedValueOnce(new NotFoundException('User #anyid not found'));
-      expect(service.update).rejects.toThrow(
-        new NotFoundException('User #anyid not found')
-      );
+    it('should return a exception when doesnt update a user by id', async () => {
+      repositoryUser.preload = jest.fn().mockReturnValue(null);
+      const userNotFound = service.update('not correct id ', {
+        name: 'user update',
+        email: 'test@example.com',
+        username: 'username update',
+        password: 'secret',
+      });
+      expect(userNotFound).rejects.toThrow(NotFoundException);
     });
   });
 

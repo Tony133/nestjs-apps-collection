@@ -92,9 +92,9 @@ describe('UsersService', () => {
       const repoSpy = jest
         .spyOn(repositoryUser, 'findOne')
         .mockReturnValue(null);
-      const userNotFound = service.findOne(1);
+      const userNotFound = service.findOne(2);
       expect(userNotFound).rejects.toThrow(NotFoundException);
-      expect(repoSpy).toHaveBeenCalledWith({ where: { id: 1 } });
+      expect(repoSpy).toHaveBeenCalledWith({ where: { id: 2 } });
     });
   });
 
@@ -111,6 +111,17 @@ describe('UsersService', () => {
       const updateSpy = jest.spyOn(service, 'update');
       await service.update(1, updateUserInput);
       expect(updateSpy).toHaveBeenCalledWith(1, updateUserInput);
+    });
+
+    it('should return a exception when doesnt update a user by id', async () => {
+      repositoryUser.preload = jest.fn().mockReturnValue(null);
+      const userNotFound = service.update(2, {
+        name: 'user update',
+        email: 'test@example.com',
+        username: 'username update',
+        password: 'secret',
+      });
+      expect(userNotFound).rejects.toThrow(NotFoundException);
     });
   });
 

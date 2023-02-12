@@ -15,6 +15,7 @@ import { CustomersService } from './customers.service';
 import { CreateCustomerDto, UpdateCustomerDto } from './dto';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { BadRequestException } from '@nestjs/common';
 
 @ApiTags('customers')
 @Controller('customers')
@@ -22,81 +23,62 @@ export class CustomersController {
   constructor(private customersService: CustomersService) {}
 
   @Get()
-  public async getAllCustomer(
-    @Res() res,
-    @Query() paginationQuery: PaginationQueryDto,
-  ) {
-    const customers = await this.customersService.findAll(paginationQuery);
-    return res.status(HttpStatus.OK).json(customers);
+  public async getAllCustomer(@Query() paginationQuery: PaginationQueryDto) {
+    return await this.customersService.findAll(paginationQuery);
   }
 
   @Get('/:id')
-  public async getCustomer(@Res() res, @Param('id') customerId: string) {
-    if (!customerId) {
+  public async getCustomer(@Param('id') customerId: string) {
+    const customer = await this.customersService.findOne(customerId);
+    if (!customer) {
       throw new NotFoundException('Customer ID does not exist');
     }
 
-    const customer = await this.customersService.findOne(customerId);
-
-    return res.status(HttpStatus.OK).json(customer);
+    return customer;
   }
 
   @Post()
-  public async addCustomer(
-    @Res() res,
-    @Body() createCustomerDto: CreateCustomerDto,
-  ) {
+  public async addCustomer(@Body() createCustomerDto: CreateCustomerDto) {
     try {
-      const customer = await this.customersService.create(createCustomerDto);
-      return res.status(HttpStatus.OK).json({
-        message: 'Customer has been created successfully',
-        customer,
-      });
+      return await this.customersService.create(createCustomerDto);
     } catch (err) {
-      return res.status(HttpStatus.BAD_REQUEST).json({
-        message: 'Error: Customer not created!',
-        status: 400,
-      });
+      throw new BadRequestException(err, 'Error: Customer not created!');
     }
   }
 
   @Put('/:id')
   public async updateCustomer(
-    @Res() res,
     @Param('id') customerId: string,
-    @Body() updateCustomerDto: UpdateCustomerDto,
+    @Body() updateCustomerDto: UpdateCustomerDto
   ) {
     try {
-      const customer = await this.customersService.update(
-        customerId,
-        updateCustomerDto,
-      );
-      if (!customer) {
+      if (!customerId) {
         throw new NotFoundException('Customer does not exist!');
       }
-      return res.status(HttpStatus.OK).json({
+
+      const customer = await this.customersService.update(
+        customerId,
+        updateCustomerDto
+      );
+      return {
         message: 'Customer has been successfully updated',
         customer,
-      });
+      };
     } catch (err) {
-      return res.status(HttpStatus.BAD_REQUEST).json({
-        message: 'Error: Customer not updated!',
-        status: 400,
-      });
+      throw new BadRequestException(err, 'Error: Customer not updated!');
     }
   }
 
   @Delete('/:id')
-  public async deleteCustomer(@Res() res, @Param('id') customerId: string) {
+  public async deleteCustomer(@Param('id') customerId: string) {
     if (!customerId) {
       throw new NotFoundException('Customer ID does not exist');
     }
 
     const customer = await this.customersService.remove(customerId);
-
-    return res.status(HttpStatus.OK).json({
+    return {
       message: 'Customer has been deleted',
       customer,
-    });
+    };
   }
 }

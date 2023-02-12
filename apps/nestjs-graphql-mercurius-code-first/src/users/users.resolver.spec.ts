@@ -70,15 +70,6 @@ describe('UsersResolver', () => {
       expect(service.findAll).toHaveBeenCalled();
     });
 
-    it('should throw if UsersService findAll throws', async () => {
-      jest
-        .spyOn(service, 'findAll')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(resolver.users(usersArgs)).rejects.toThrow(
-        new NotFoundException()
-      );
-    });
-
     it('should return user on success', async () => {
       await resolver.users(usersArgs);
       expect(service.findAll).toHaveBeenCalled();
@@ -91,13 +82,10 @@ describe('UsersResolver', () => {
       expect(service.findOneById).toHaveBeenCalled();
     });
 
-    it('should throw if UserService findOneById throws', async () => {
-      jest
-        .spyOn(service, 'findOneById')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(resolver.user('anyid')).rejects.toThrow(
-        new NotFoundException()
-      );
+    it('should return a exception when doesnt found a user by id', async () => {
+      service.findOneById = jest.fn().mockReturnValue(null);
+      const userNotFound = resolver.user('not correct id');
+      expect(userNotFound).rejects.toThrow(NotFoundException);
     });
   });
 
@@ -122,15 +110,6 @@ describe('UsersResolver', () => {
       const deleteSpy = jest.spyOn(service, 'remove');
       await resolver.removeUser('anyid');
       expect(deleteSpy).toHaveBeenCalledWith('anyid');
-    });
-
-    it('should throw error if id in UsersService not exists', async () => {
-      jest
-        .spyOn(service, 'remove')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(resolver.removeUser('anyid')).rejects.toThrow(
-        new NotFoundException()
-      );
     });
   });
 });

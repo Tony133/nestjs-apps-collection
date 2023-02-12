@@ -4,46 +4,26 @@ import { OrganizationsService } from './organizations.service';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 import { CreateOrganizationDto } from './dto/create-organization.dto';
 import { UpdateOrganizationDto } from './dto/update-organization.dto';
-import { NotFoundException } from '@nestjs/common';
+import { BadRequestException, NotFoundException } from '@nestjs/common';
 
-class MockResponse {
-  res: any;
-  constructor() {
-    this.res = {};
-  }
-  status = jest
-    .fn()
-    .mockReturnThis()
-    .mockImplementationOnce((code) => {
-      this.res.code = code;
-      return this;
-    });
-  send = jest
-    .fn()
-    .mockReturnThis()
-    .mockImplementationOnce((message) => {
-      this.res.message = message;
-      return this;
-    });
-  json = jest
-    .fn()
-    .mockReturnThis()
-    .mockImplementationOnce((json) => {
-      this.res.json = json;
-      return this;
-    });
-}
+const mockOrganization: any = {
+  _id: 'anyid',
+  name: 'name #1',
+  address: 'address #1',
+  description: 'description #1',
+  customers: 'customers #1',
+};
 
 const createOrganizationDto: CreateOrganizationDto = {
   name: 'name #1',
-  address: 'address #1',
+  address: 'address #1',
   description: 'description #1',
   customers: 'customers #1',
 };
 
 const updateOrganizationDto: UpdateOrganizationDto = {
   name: 'name update',
-  address: 'address update',
+  address: 'address update',
   description: 'description update',
   customers: 'customers update',
 };
@@ -56,8 +36,6 @@ describe('Organizations Controller', () => {
     offset: 1,
   };
 
-  const response = new MockResponse();
-
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [OrganizationsController],
@@ -67,7 +45,7 @@ describe('Organizations Controller', () => {
           useValue: {
             create: jest.fn(() => []),
             findAll: jest.fn(() => []),
-            findOne: jest.fn(() => {}),
+            findOne: jest.fn(() => mockOrganization),
             update: jest.fn(() => {}),
             remove: jest.fn(() => {}),
           },
@@ -88,51 +66,37 @@ describe('Organizations Controller', () => {
 
   describe('getAllOrganization()', () => {
     it('should call method findAll in OrganizationsService', async () => {
-      await organizationsController.getAllOrganization(
-        response,
-        paginationQueryDto
-      );
-      expect(organizationsService.findAll).toHaveBeenCalled();
-    });
-
-    it('should return organization on success', async () => {
-      await organizationsController.getAllOrganization(
-        response,
-        paginationQueryDto
-      );
+      await organizationsController.getAllOrganization(paginationQueryDto);
       expect(organizationsService.findAll).toHaveBeenCalled();
     });
   });
 
   describe('getOrganization()', () => {
     it('should call method findOne in OrganizationsService id with correct value', async () => {
-      await organizationsController.getOrganization(response, 'anyid');
-      expect(organizationsService.findOne).toHaveBeenCalled();
-    });
-
-    it('should return a organization on success', async () => {
-      await organizationsController.getOrganization(response, 'anyid');
+      await organizationsController.getOrganization('anyid');
       expect(organizationsService.findOne).toHaveBeenCalled();
     });
   });
 
   describe('addOrganization()', () => {
     it('should call method create in OrganizationsService with correct values', async () => {
-      const createSpy = jest.spyOn(organizationsService, 'create');
-      await organizationsController.addOrganization(
-        response,
-        createOrganizationDto
-      );
-      expect(createSpy).toHaveBeenCalledWith(createOrganizationDto);
+      const createOrganizationSpy = jest.spyOn(organizationsService, 'create');
+      await organizationsController.addOrganization(createOrganizationDto);
+      expect(createOrganizationSpy).toHaveBeenCalledWith(createOrganizationDto);
     });
 
-    it('should return a organization on success', async () => {
-      const createOrganizationSpy = jest.spyOn(organizationsService, 'create');
-      await organizationsController.addOrganization(
-        response,
-        createOrganizationDto
-      );
-      expect(createOrganizationSpy).toHaveBeenCalledWith(createOrganizationDto);
+    it('should throw an exception if it not create a organization', async () => {
+      organizationsService.create = jest
+        .fn()
+        .mockRejectedValueOnce(BadRequestException);
+      expect(
+        organizationsController.addOrganization({
+          name: 'not correct name',
+          address: 'not correct address',
+          description: 'not correct description',
+          customers: 'not correct customers',
+        })
+      ).rejects.toThrow(BadRequestException);
     });
   });
 
@@ -140,18 +104,31 @@ describe('Organizations Controller', () => {
     it('should call method update in OrganizationsService with correct values', async () => {
       const updateSpy = jest.spyOn(organizationsService, 'update');
       await organizationsController.updateOrganization(
-        response,
         'anyid',
         updateOrganizationDto
       );
       expect(updateSpy).toHaveBeenCalledWith('anyid', updateOrganizationDto);
+    });
+
+    it('should throw an exception if it not update a organization', async () => {
+      organizationsService.update = jest
+        .fn()
+        .mockRejectedValueOnce(BadRequestException);
+      expect(
+        organizationsController.updateOrganization('not correct id', {
+          name: 'not correct name update',
+          address: 'not correct address update',
+          description: 'not correct description update',
+          customers: 'not correct customers update',
+        })
+      ).rejects.toThrow(BadRequestException);
     });
   });
 
   describe('deleteOrganization()', () => {
     it('should call method remove in OrganizationsService with correct value', async () => {
       const deleteSpy = jest.spyOn(organizationsService, 'remove');
-      await organizationsController.deleteOrganization(response, 'anyid');
+      await organizationsController.deleteOrganization('anyid');
       expect(deleteSpy).toHaveBeenCalledWith('anyid');
     });
   });
