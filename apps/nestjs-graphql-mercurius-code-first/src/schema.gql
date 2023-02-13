@@ -11,6 +11,7 @@ type Users {
 }
 
 type Query {
+  getHello: String!
   users(offset: Int! = 0, limit: Int! = 25): [Users!]!
   user(id: String!): Users!
 }

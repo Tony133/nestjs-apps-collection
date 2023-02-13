@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
+import { AppResolver } from './app.resolver';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { GraphqlOptions } from './graphql.options';
@@ -31,7 +31,6 @@ import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius';
     }),
     UsersModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AppResolver],
 })
 export class AppModule {}

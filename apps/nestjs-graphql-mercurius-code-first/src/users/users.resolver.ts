@@ -24,7 +24,7 @@ export class UsersResolver {
 
   @Mutation(() => Users)
   public async createUser(
-    @Args('createUserInput') createUserInput: CreateUserInput,
+    @Args('createUserInput') createUserInput: CreateUserInput
   ): Promise<Users> {
     return await this.usersService.create(createUserInput);
   }
@@ -32,7 +32,7 @@ export class UsersResolver {
   @Mutation(() => Users)
   public async updateUser(
     @Args('id') id: string,
-    @Args('updateUserInput') updateUserInput: UpdateUserInput,
+    @Args('updateUserInput') updateUserInput: UpdateUserInput
   ): Promise<Users> {
     return await this.usersService.update(id, updateUserInput);
   }
