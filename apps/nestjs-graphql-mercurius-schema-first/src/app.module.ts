@@ -6,7 +6,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { UsersModule } from './users/users.module';
 import { GraphqlOptions } from './graphql.options';
 import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius';
-import { AppResolver } from '../../nestjs-graphql-mercurius-code-first/src/app.resolver';
+import { AppResolver } from './app.resolver';
 
 @Module({
   imports: [

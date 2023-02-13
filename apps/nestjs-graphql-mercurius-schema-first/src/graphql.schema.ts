@@ -22,18 +22,20 @@ export class UpdateUserInput {
     password: string;
 }
 
+export abstract class IQuery {
+    abstract hello(): string | Promise<string>;
+
+    abstract users(): Nullable<User>[] | Promise<Nullable<User>[]>;
+
+    abstract user(id: number): Nullable<User> | Promise<Nullable<User>>;
+}
+
 export class User {
     id?: Nullable<string>;
     name: string;
     email: string;
     username: string;
     password: string;
-}
-
-export abstract class IQuery {
-    abstract users(): Nullable<User>[] | Promise<Nullable<User>[]>;
-
-    abstract user(id: number): Nullable<User> | Promise<Nullable<User>>;
 }
 
 export abstract class IMutation {
