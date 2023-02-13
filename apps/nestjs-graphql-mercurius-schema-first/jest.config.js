@@ -9,4 +9,8 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/apps/nestjs-graphql-mercurius-schema-first',
+  coveragePathIgnorePatterns: [
+    "/src/app.service.ts",
+    "/src/app.resolver.ts"
+  ],
 };
