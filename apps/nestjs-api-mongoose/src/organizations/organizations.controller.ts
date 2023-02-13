@@ -57,10 +57,6 @@ export class OrganizationsController {
     @Body() updateOrganizationDto: UpdateOrganizationDto
   ) {
     try {
-      if (!organizationId) {
-        throw new NotFoundException('organization does not exist!');
-      }
-
       const organization = await this.organizationsService.update(
         organizationId,
         updateOrganizationDto

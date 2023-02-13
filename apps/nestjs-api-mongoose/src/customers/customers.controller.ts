@@ -52,10 +52,6 @@ export class CustomersController {
     @Body() updateCustomerDto: UpdateCustomerDto
   ) {
     try {
-      if (!customerId) {
-        throw new NotFoundException('Customer does not exist!');
-      }
-
       const customer = await this.customersService.update(
         customerId,
         updateCustomerDto
