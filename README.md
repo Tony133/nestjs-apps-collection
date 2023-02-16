@@ -4,7 +4,7 @@
 
 # nestjs-collections-apps 
 
-Collection example apps with NestJS and Typeorm, Mongodb, PostgreSQL, GraphQL, Mercurius, etc. for the NestJS community 😻
+Collection example apps with NestJS and Typeorm, Sequelize, Mongodb, PostgreSQL, GraphQL, Mercurius, etc. for the NestJS community 😻
 
 ## Install workspace 
 
