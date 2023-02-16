@@ -5,6 +5,9 @@ dist
 tmp
 /out-tsc
 
+# testing coverage
+/coverage
+
 # dependencies
 node_modules
 .yarn/
@@ -25,6 +28,7 @@ node_modules
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+tags
 
 # misc
 /.sass-cache

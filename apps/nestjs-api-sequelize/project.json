@@ -1,0 +1,58 @@
+{
+  "sourceRoot": "apps/nestjs-api-sequelize/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nestjs-api-sequelize",
+        "main": "apps/nestjs-api-sequelize/src/main.ts",
+        "tsConfig": "apps/nestjs-api-sequelize/tsconfig.app.json",
+        "target": "node",
+        "compiler": "tsc"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/nestjs-api-sequelize/src/environments/environment.ts",
+              "with": "apps/nestjs-api-sequelize/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "nestjs-api-sequelize:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nestjs-api-sequelize/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/nestjs-api-sequelize"],
+      "options": {
+        "jestConfig": "apps/nestjs-api-sequelize/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "e2e": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/nestjs-api-sequelize/test/jest-e2e.json"
+      }
+    }
+  },
+  "tags": []
+}
