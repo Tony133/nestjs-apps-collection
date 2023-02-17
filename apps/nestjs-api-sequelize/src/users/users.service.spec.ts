@@ -87,25 +87,6 @@ describe('UsersService', () => {
     expect(service).toBeDefined();
   });
 
-  describe('findAll()', () => {
-    it('should get all users', async () => {
-      await expect(service.findAll()).resolves.toEqual(testUsers);
-    });
-  });
-
-  describe('findOne()', () => {
-    it('should get a single user', async () => {
-      await expect(service.findOne('1')).resolves.toEqual(testUser);
-    });
-
-    it('should throw an exception if it not found a user by id', async () => {
-      model.findOne = jest.fn().mockResolvedValueOnce(null);
-      await expect(service.findOne('not a correct id')).rejects.toThrow(
-        NotFoundException
-      );
-    });
-  });
-
   describe('create()', () => {
     it('should create a new user', async () => {
       await expect(
@@ -132,6 +113,25 @@ describe('UsersService', () => {
           roles: ['not a correct rols'],
         })
       ).rejects.toThrow(HttpException);
+    });
+  });
+
+  describe('findAll()', () => {
+    it('should get all users', async () => {
+      await expect(service.findAll()).resolves.toEqual(testUsers);
+    });
+  });
+
+  describe('findOne()', () => {
+    it('should get a single user', async () => {
+      await expect(service.findOne('1')).resolves.toEqual(testUser);
+    });
+
+    it('should throw an exception if it not found a user by id', async () => {
+      model.findOne = jest.fn().mockResolvedValueOnce(null);
+      await expect(service.findOne('not a correct id')).rejects.toThrow(
+        NotFoundException
+      );
     });
   });
 
