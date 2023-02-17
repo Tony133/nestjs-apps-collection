@@ -27,7 +27,7 @@
     "class-validator": "0.13.2",
     "graphql": "^16.6.0",
     "install": "^0.13.0",
-    "mercurius": "10.5.1",
+    "mercurius": "12.1.0",
     "mongoose": "^6.8.3",
     "mysql2": "^3.1.2",
     "pg": "^8.9.0",
