@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 services:
   mongodb:
@@ -7,3 +7,9 @@ services:
       - MONGODB_DATABASE="nest"
     ports:
       - 27017:27017
+  db-test:
+    image: mongo:latest
+    environment:
+      - MONGODB_DATABASE="test"
+    ports:
+      - 27018:27017

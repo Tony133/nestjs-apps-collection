@@ -1,92 +1,120 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, HttpStatus } from '@nestjs/common';
-import * as request from 'supertest';
+import request from 'supertest';
 import { OrganizationsModule } from './../../src/organizations/organizations.module';
-import { MongooseModule } from '@nestjs/mongoose';
+import { AppModule } from '../../src/app.module';
 
-describe('[Feature] Organizations - /organizations (e2e)', () => {
+const updateOrganizationDto = {
+  __v: 0,
+  _id: '611a80ee47347c2271183ccf',
+  name: 'name #1',
+  address: 'address #1',
+  description: 'description #1',
+  customers: ['6117cb11889cdebef449d776'],
+};
+
+describe('[Feature] Organizations - /api/organizations (e2e)', () => {
   let app: INestApplication;
-
-  const createOrganizationDto = {
-    name: 'name #1',
-    address: 'address #1',
-    description: 'description #1',
-    customers: '6117cb11889cdebef449d776',  
-  };
-
-  const updateOrganizationDto = {
-    name: 'name update',
-    address: 'address update',
-    description: 'description update',
-    customers: ['6117cb11889cdebef449d776']  
-  };
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [
-        MongooseModule.forRootAsync({
-            useFactory: () => ({
-              uri: 'mongodb://127.0.0.1:27017/test',
-              useNewUrlParser: true,
-              useFindAndModify: false,
-              useCreateIndex: true
-            }),
-        }),        
-        OrganizationsModule
-    ],
+      imports: [AppModule, OrganizationsModule],
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.setGlobalPrefix('api');
+
     await app.init();
   });
 
-  it('/organizations (GET)', () => {
+  it('Create [POST /api/organizations]', async () => {
     return request(app.getHttpServer())
-      .get('/organizations')
-      .expect(200)
-  });
-
-  it('Create [POST /organizations]', async () => {
-    return request(app.getHttpServer())
-      .post('/customers')
-      .send(createOrganizationDto)
+      .post('/api/organizations')
+      .send({
+        _id: '611a80ee47347c2271183ccf',
+        name: 'name #1',
+        address: 'address #1',
+        description: 'description #1',
+        customers: ['6117cb11889cdebef449d776'],
+      })
       .then(({ body }) => {
-        expect(body).toEqual(createOrganizationDto);
+        expect(body).toEqual({
+          organization: {
+            __v: 0,
+            _id: '611a80ee47347c2271183ccf',
+            name: 'name #1',
+            address: 'address #1',
+            description: 'description #1',
+            customers: ['6117cb11889cdebef449d776'],
+          },
+          message: 'Organization has been created successfully',
+        });
       });
   });
 
-  it('Get all [GET /organizations]', async () => {
+  it('Get all [GET /api/organizations]', async () => {
     return await request(app.getHttpServer())
-      .get('/customers')
+      .get('/api/organizations')
       .expect(HttpStatus.OK)
       .then(({ body }) => {
-        expect(body).toBeDefined();
+        expect(body).toEqual([
+          {
+            __v: 0,
+            _id: '611a80ee47347c2271183ccf',
+            name: 'name #1',
+            address: 'address #1',
+            description: 'description #1',
+            customers: [],
+          },
+        ]);
       });
   });
 
-  it('Get one [GET /organizations/:id]', async () => {
+  it('Get one [GET /api/organizations/:id]', async () => {
     return await request(app.getHttpServer())
-      .get('/customers/611a80ee47347c2271183ccf')
+      .get('/api/organizations/611a80ee47347c2271183ccf')
       .expect(HttpStatus.OK)
       .then(({ body }) => {
-        expect(body).toBeDefined();
-      });  
+        expect(body).toEqual({
+          __v: 0,
+          _id: '611a80ee47347c2271183ccf',
+          name: 'name #1',
+          address: 'address #1',
+          description: 'description #1',
+          customers: [],
+        });
+      });
   });
 
-  it('Update one [PUT /organizations/:id]', () => {
+  it('Update one [PUT /api/organizations/:id]', () => {
     return request(app.getHttpServer())
-      .put('/organizations/611a80ee47347c2271183ccf')
+      .put('/api/organizations/611a80ee47347c2271183ccf')
       .send(updateOrganizationDto)
       .expect(HttpStatus.OK)
       .then(({ body }) => {
-        expect(body).toEqual(updateOrganizationDto);
+        expect(body).toEqual({
+          organization: {
+            __v: 0,
+            _id: '611a80ee47347c2271183ccf',
+            name: 'name #1',
+            address: 'address #1',
+            description: 'description #1',
+            customers: ['6117cb11889cdebef449d776'],
+          },
+          message: 'Organization has been successfully updated',
+        });
       });
   });
 
-  it('Delete one [DELETE /organizations/:id]', () => {
+  it('Delete one [DELETE /api/organizations/:id]', () => {
     return request(app.getHttpServer())
-      .delete('/organizations/611a80ee47347c2271183ccf')
-      .expect(HttpStatus.OK);
+      .delete('/api/organizations/611a80ee47347c2271183ccf')
+      .expect(HttpStatus.OK)
+      .then(() => {
+        return request(app.getHttpServer())
+          .get('/api/organizations/611a80ee47347c2271183ccf')
+          .expect(HttpStatus.NOT_FOUND);
+      });
   });
 
   afterAll(async () => {

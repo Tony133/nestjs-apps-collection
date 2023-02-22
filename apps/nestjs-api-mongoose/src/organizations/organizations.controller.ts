@@ -43,7 +43,7 @@ export class OrganizationsController {
         createOrganizationDto
       );
       return {
-        message: 'organization has been created successfully',
+        message: 'Organization has been created successfully',
         organization,
       };
     } catch (err) {
@@ -63,7 +63,7 @@ export class OrganizationsController {
       );
 
       return {
-        message: 'organization has been successfully updated',
+        message: 'Organization has been successfully updated',
         organization,
       };
     } catch (err) {
@@ -80,7 +80,7 @@ export class OrganizationsController {
     const organization = await this.organizationsService.remove(organizationId);
 
     return {
-      message: 'organization has been deleted',
+      message: 'Organization has been deleted',
       organization,
     };
   }

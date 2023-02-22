@@ -10,25 +10,33 @@ import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 export class OrganizationsService {
   constructor(
     @InjectModel(Organization.name)
-    private readonly organizationModel: Model<Organization>,
+    private readonly organizationModel: Model<Organization>
   ) {}
 
   public async findAll(
-    paginationQuery: PaginationQueryDto,
+    paginationQuery: PaginationQueryDto
   ): Promise<Organization[]> {
     const { limit, offset } = paginationQuery;
     return await this.organizationModel
       .find()
       .skip(offset)
       .limit(limit)
-      .populate('customer')
+      .populate({
+        path: 'customers',
+        select: 'customers',
+        options: { strict: false },
+      })
       .exec();
   }
 
   public async findOne(organizationId: string): Promise<Organization> {
     const organization = await this.organizationModel
       .findById({ _id: organizationId })
-      .populate('customer')
+      .populate({
+        path: 'customers',
+        select: 'customers',
+        options: { strict: false },
+      })
       .exec();
 
     if (!organization) {
@@ -39,22 +47,22 @@ export class OrganizationsService {
   }
 
   public async create(
-    createOrganizationDto: CreateOrganizationDto,
+    createOrganizationDto: CreateOrganizationDto
   ): Promise<IOrganization> {
     const organization = await this.organizationModel.create(
-      createOrganizationDto,
+      createOrganizationDto
     );
     return organization;
   }
 
   public async update(
     organizationId: string,
-    updateOrganizationDto: UpdateOrganizationDto,
+    updateOrganizationDto: UpdateOrganizationDto
   ): Promise<IOrganization> {
     const existingOrganization = await this.organizationModel.findByIdAndUpdate(
       { _id: organizationId },
       updateOrganizationDto,
-      { new: true },
+      { new: true }
     );
 
     if (!existingOrganization) {
@@ -65,7 +73,7 @@ export class OrganizationsService {
 
   public async remove(organizationId: string): Promise<any> {
     const organization = await this.organizationModel.findByIdAndRemove(
-      organizationId,
+      organizationId
     );
     return organization;
   }

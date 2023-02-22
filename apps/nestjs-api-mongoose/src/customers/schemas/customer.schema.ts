@@ -22,7 +22,7 @@ export class Customer extends Document {
   description: string;
 
   @Prop({ type: [Types.ObjectId], ref: 'Organization' })
-  organizations: string;
+  organizations?: string;
 }
 
 export const CustomerSchema = SchemaFactory.createForClass(Customer);
