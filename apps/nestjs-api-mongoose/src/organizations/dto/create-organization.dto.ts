@@ -17,5 +17,5 @@ export class CreateOrganizationDto {
 
   @IsString()
   @IsOptional()
-  readonly customers: string;
+  readonly customers?: string;
 }

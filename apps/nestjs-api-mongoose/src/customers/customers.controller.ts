@@ -40,7 +40,12 @@ export class CustomersController {
   @Post()
   public async addCustomer(@Body() createCustomerDto: CreateCustomerDto) {
     try {
-      return await this.customersService.create(createCustomerDto);
+      const customer = await this.customersService.create(createCustomerDto);
+
+      return {
+        message: 'Customer has been created successfully',
+        customer,
+      };
     } catch (err) {
       throw new BadRequestException(err, 'Error: Customer not created!');
     }

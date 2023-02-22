@@ -38,5 +38,5 @@ export class CreateCustomerDto {
 
   @IsString()
   @IsOptional()
-  readonly organizations: string;
+  readonly organizations?: string;
 }

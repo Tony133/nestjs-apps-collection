@@ -9,11 +9,11 @@ import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
 @Injectable()
 export class CustomersService {
   constructor(
-    @InjectModel(Customer.name) private readonly customerModel: Model<Customer>,
+    @InjectModel(Customer.name) private readonly customerModel: Model<Customer>
   ) {}
 
   public async findAll(
-    paginationQuery: PaginationQueryDto,
+    paginationQuery: PaginationQueryDto
   ): Promise<Customer[]> {
     const { limit, offset } = paginationQuery;
 
@@ -21,14 +21,22 @@ export class CustomersService {
       .find()
       .skip(offset)
       .limit(limit)
-      .populate('organization')
+      .populate({
+        path: 'organizations',
+        select: 'organization',
+        options: { strict: false },
+      })
       .exec();
   }
 
   public async findOne(customerId: string): Promise<Customer> {
     const customer = await this.customerModel
       .findById({ _id: customerId })
-      .populate('organization')
+      .populate({
+        path: 'organizations',
+        select: 'organization',
+        options: { strict: false },
+      })
       .exec();
 
     if (!customer) {
@@ -39,7 +47,7 @@ export class CustomersService {
   }
 
   public async create(
-    createCustomerDto: CreateCustomerDto,
+    createCustomerDto: CreateCustomerDto
   ): Promise<ICustomer> {
     const newCustomer = await this.customerModel.create(createCustomerDto);
     return newCustomer;
@@ -47,11 +55,11 @@ export class CustomersService {
 
   public async update(
     customerId: string,
-    updateCustomerDto: UpdateCustomerDto,
+    updateCustomerDto: UpdateCustomerDto
   ): Promise<ICustomer> {
     const existingCustomer = await this.customerModel.findByIdAndUpdate(
       { _id: customerId },
-      updateCustomerDto,
+      updateCustomerDto
     );
 
     if (!existingCustomer) {
@@ -63,7 +71,7 @@ export class CustomersService {
 
   public async remove(customerId: string): Promise<any> {
     const deletedCustomer = await this.customerModel.findByIdAndRemove(
-      customerId,
+      customerId
     );
     return deletedCustomer;
   }

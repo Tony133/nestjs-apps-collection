@@ -35,3 +35,36 @@ jobs:
         name: Install pnpm
       - run: pnpm install --frozen-lockfile
       - run: npx nx test ${{ matrix.test }}
+
+  e2e-tests:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+        test:
+          [
+            nestjs-api-mongoose,
+          ]
+    needs: [unit-tests]
+
+    steps:
+      - uses: actions/checkout@v3
+        name: Use Node.js ${{ matrix.node-version }}
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.32.9
+      - name: Start Docker-Compose
+        run: cd apps/nestjs-api-mongoose && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: cd apps/nestjs-api-mongoose && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-api-mongoose --testFile=customers.e2e-spec.ts
+      - run: npx nx e2e nestjs-api-mongoose --testFile=organizations.e2e-spec.ts
+      - name: Start Docker-Compose
+        run: cd apps/nestjs-api-mongoose && docker-compose down
