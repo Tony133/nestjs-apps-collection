@@ -48,7 +48,7 @@ export class RolesService {
   public async update(
     roleId: string,
     updateRoleDto: UpdateRoleDto
-  ): Promise<any> {
+  ): Promise<unknown> {
     try {
       const role = await this.roleModel.update(
         {

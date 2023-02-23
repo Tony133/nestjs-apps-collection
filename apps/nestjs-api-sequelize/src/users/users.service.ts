@@ -68,7 +68,7 @@ export class UsersService {
   public async update(
     userId: string,
     updateUserDto: UpdateUserDto
-  ): Promise<any> {
+  ): Promise<unknown> {
     try {
       updateUserDto.password = bcrypt.hashSync(updateUserDto.password, 8);
 
