@@ -27,7 +27,7 @@ describe('[Feature] Organizations - /api/organizations (e2e)', () => {
     await app.init();
   });
 
-  it('Create [POST /api/organizations]', async () => {
+  it('Should create a new organization [POST /api/organizations]', async () => {
     return request(app.getHttpServer())
       .post('/api/organizations')
       .send({
@@ -52,7 +52,7 @@ describe('[Feature] Organizations - /api/organizations (e2e)', () => {
       });
   });
 
-  it('Get all [GET /api/organizations]', async () => {
+  it('Should get all organizations [GET /api/organizations]', async () => {
     return await request(app.getHttpServer())
       .get('/api/organizations')
       .expect(HttpStatus.OK)
@@ -70,7 +70,7 @@ describe('[Feature] Organizations - /api/organizations (e2e)', () => {
       });
   });
 
-  it('Get one [GET /api/organizations/:id]', async () => {
+  it('Should get a organization [GET /api/organizations/:id]', async () => {
     return await request(app.getHttpServer())
       .get('/api/organizations/611a80ee47347c2271183ccf')
       .expect(HttpStatus.OK)
@@ -86,7 +86,7 @@ describe('[Feature] Organizations - /api/organizations (e2e)', () => {
       });
   });
 
-  it('Update one [PUT /api/organizations/:id]', () => {
+  it('Should update a organization [PUT /api/organizations/:id]', () => {
     return request(app.getHttpServer())
       .put('/api/organizations/611a80ee47347c2271183ccf')
       .send(updateOrganizationDto)
@@ -106,7 +106,7 @@ describe('[Feature] Organizations - /api/organizations (e2e)', () => {
       });
   });
 
-  it('Delete one [DELETE /api/organizations/:id]', () => {
+  it('Should delete a organization [DELETE /api/organizations/:id]', () => {
     return request(app.getHttpServer())
       .delete('/api/organizations/611a80ee47347c2271183ccf')
       .expect(HttpStatus.OK)

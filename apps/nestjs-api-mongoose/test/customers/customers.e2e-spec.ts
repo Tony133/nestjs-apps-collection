@@ -30,7 +30,7 @@ describe('[Feature] Customers - /api/customers (e2e)', () => {
     await app.init();
   });
 
-  it('Should create an new customers [POST /api/customers]', async () => {
+  it('Should create a new customers [POST /api/customers]', async () => {
     return request(app.getHttpServer())
       .post('/api/customers')
       .send({
@@ -83,7 +83,7 @@ describe('[Feature] Customers - /api/customers (e2e)', () => {
       });
   });
 
-  it('Get one [GET /api/customers/:id]', async () => {
+  it('Should get a customer [GET /api/customers/:id]', async () => {
     return await request(app.getHttpServer())
       .get('/api/customers/6117cb11889cdebef449d776')
       .expect(HttpStatus.OK)
@@ -102,7 +102,7 @@ describe('[Feature] Customers - /api/customers (e2e)', () => {
       });
   });
 
-  it('Update one [PUT /api/customers/:id]', () => {
+  it('Should update a customer [PUT /api/customers/:id]', () => {
     return request(app.getHttpServer())
       .put('/api/customers/6117cb11889cdebef449d776')
       .send(updateCustomerDto)
@@ -125,7 +125,7 @@ describe('[Feature] Customers - /api/customers (e2e)', () => {
       });
   });
 
-  it('Delete one [DELETE /api/customers/:id]', () => {
+  it('Should delete a customers [DELETE /api/customers/:id]', () => {
     return request(app.getHttpServer())
       .delete('/api/customers/6117cb11889cdebef449d776')
       .expect(HttpStatus.OK)
