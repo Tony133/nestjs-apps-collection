@@ -40,13 +40,6 @@ describe('[Feature] Users - /api/users (e2e)', () => {
           password: body.password,
           createdAt: body.createdAt,
           updatedAt: body.updatedAt,
-          //   roles: [
-          //     {
-          //       id: 1,
-          //       createdAt: body.roles[0].createdAt,
-          //       updatedAt: body.roles[0].updatedAt,
-          //     },
-          //   ],
         });
         expect(HttpStatus.CREATED);
       });
@@ -67,19 +60,7 @@ describe('[Feature] Users - /api/users (e2e)', () => {
             password: body[0].password,
             createdAt: body[0].createdAt,
             updatedAt: body[0].updatedAt,
-            roles: [
-              //     {
-              //       id: 1,
-              //       createdAt: body[0].roles[0].createdAt,
-              //       updatedAt: body[0].roles[0].updatedAt,
-              //       UserRole: {
-              //         userId: 1,
-              //         roleId: 1,
-              //         createdAt: body[0].roles.createdAt,
-              //         updatedAt: body[0].roles.updatedAt,
-              //       },
-              //     },
-            ],
+            roles: [],
           },
         ]);
       });
@@ -99,19 +80,7 @@ describe('[Feature] Users - /api/users (e2e)', () => {
           password: body.password,
           createdAt: body.createdAt,
           updatedAt: body.updatedAt,
-          roles: [
-            //     {
-            //       id: 1,
-            //       createdAt: body[0].roles[0].createdAt,
-            //       updatedAt: body[0].roles[0].updatedAt,
-            //       UserRole: {
-            //         userId: 1,
-            //         roleId: 1,
-            //         createdAt: body[0].roles.createdAt,
-            //         updatedAt: body[0].roles.updatedAt,
-            //       },
-            //     },
-          ],
+          roles: [],
         });
       });
   });
@@ -121,23 +90,7 @@ describe('[Feature] Users - /api/users (e2e)', () => {
       .put('/api/users/1')
       .send(user)
       .then(({ body }) => {
-        expect(body).toEqual({
-          // id: 1,
-          // name: 'name #1',
-          // surname: 'surname #1',
-          // username: 'username #1',
-          // email: 'test@example.com',
-          // password: body.password,
-          // createdAt: body.createdAt,
-          // updatedAt: body.updatedAt,
-          //   roles: [
-          //     {
-          //       id: 1,
-          //       createdAt: body.roles[0].createdAt,
-          //       updatedAt: body.roles[0].updatedAt,
-          //     },
-          //   ],
-        });
+        expect(body).toEqual([1]);
         expect(HttpStatus.OK);
       });
   });

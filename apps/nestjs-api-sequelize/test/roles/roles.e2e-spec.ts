@@ -29,7 +29,7 @@ describe('[Feature] Roles - /api/roles (e2e)', () => {
       .then(({ body }) => {
         expect(body).toEqual({
           id: 1,
-          name: 'name #1',
+          name: 'ADMIN',
           createdAt: body.createdAt,
           updatedAt: body.updatedAt,
         });
@@ -45,7 +45,7 @@ describe('[Feature] Roles - /api/roles (e2e)', () => {
         expect(body).toEqual([
           {
             id: 1,
-            name: 'name #1',
+            name: 'ADMIN',
             createdAt: body[0].createdAt,
             updatedAt: body[0].updatedAt,
           },
@@ -60,7 +60,7 @@ describe('[Feature] Roles - /api/roles (e2e)', () => {
       .then(({ body }) => {
         expect(body).toEqual({
           id: 1,
-          name: 'name #1',
+          name: 'ADMIN',
           createdAt: body.createdAt,
           updatedAt: body.updatedAt,
         });
@@ -72,12 +72,7 @@ describe('[Feature] Roles - /api/roles (e2e)', () => {
       .put('/api/roles/1')
       .send(role)
       .then(({ body }) => {
-        console.log(body);
-        expect(body).toEqual([
-          0,
-          // id: 1,
-          // name: 'name #1',
-        ]);
+        expect(body).toEqual([1]);
         expect(HttpStatus.OK);
       });
   });

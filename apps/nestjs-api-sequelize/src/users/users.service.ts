@@ -25,7 +25,6 @@ export class UsersService {
       const user = await this.userModel.create(
         {
           ...createUserDto,
-          // roles: [{ name: createUserDto.roles }],
         },
         {
           include: [Role],
