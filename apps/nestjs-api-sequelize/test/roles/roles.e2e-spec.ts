@@ -70,7 +70,9 @@ describe('[Feature] Roles - /api/roles (e2e)', () => {
   it('should update a role by id - [PUT /api/roles/:id]', async () => {
     return await request(app.getHttpServer())
       .put('/api/roles/1')
-      .send(role)
+      .send({
+        name: 'USER',
+      })
       .then(({ body }) => {
         expect(body).toEqual([1]);
         expect(HttpStatus.OK);
