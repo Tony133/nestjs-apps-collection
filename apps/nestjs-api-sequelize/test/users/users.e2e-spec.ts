@@ -95,7 +95,7 @@ describe('[Feature] Users - /api/users (e2e)', () => {
       });
   });
 
-  it('Delete a user by id [DELETE /api/users/:id]', () => {
+  it('should delete a user by id [DELETE /api/users/:id]', () => {
     return request(app.getHttpServer())
       .delete('/api/users/1')
       .expect(HttpStatus.OK)

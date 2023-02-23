@@ -79,7 +79,7 @@ describe('[Feature] Roles - /api/roles (e2e)', () => {
       });
   });
 
-  it('Delete a role by id - [DELETE /api/roles/:id]', () => {
+  it('should delete a role by id - [DELETE /api/roles/:id]', () => {
     return request(app.getHttpServer())
       .delete('/api/roles/1')
       .expect(HttpStatus.OK)
