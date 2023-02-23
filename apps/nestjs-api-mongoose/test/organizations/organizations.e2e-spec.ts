@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, HttpStatus } from '@nestjs/common';
-import request from 'supertest';
+import * as request from 'supertest';
 import { OrganizationsModule } from './../../src/organizations/organizations.module';
 import { AppModule } from '../../src/app.module';
 
