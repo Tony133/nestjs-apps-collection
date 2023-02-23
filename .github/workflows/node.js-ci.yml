@@ -8,7 +8,7 @@ on:
 
 jobs:
   
-  unit-tests:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -34,6 +34,39 @@ jobs:
           cache: 'pnpm'
         name: Install pnpm
       - run: pnpm install --frozen-lockfile
+      - run: npx nx build nestjs-api-mongoose
+      - run: npx nx build nestjs-api-sequelize
+      - run: npx nx build nestjs-graphql-mercurius-code-first
+      - run: npx nx build nestjs-graphql-mercurius-schema-first
+
+  unit-tests:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+        test:
+          [
+            nestjs-api-mongoose,
+            nestjs-api-sequelize,
+            nestjs-graphql-mercurius-code-first,
+            nestjs-graphql-mercurius-schema-first,
+          ]
+    needs: [build]
+ 
+    steps:
+      - uses: actions/checkout@v3
+        name: Use Node.js ${{ matrix.node-version }}
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.32.9
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install --frozen-lockfile
       - run: npx nx test ${{ matrix.test }}
 
   e2e-tests:
@@ -46,6 +79,7 @@ jobs:
         test:
           [
             nestjs-api-mongoose,
+            nestjs-api-sequelize
           ]
     needs: [unit-tests]
 
@@ -55,7 +89,7 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 6.32.9
-      - name: Start Docker-Compose
+      - name: Start Docker-Compose (nestjs-api-mongoose)
         run: cd apps/nestjs-api-mongoose && docker-compose up -d db-test
       - uses: actions/setup-node@v3
         with:
@@ -66,5 +100,19 @@ jobs:
       - run: cd apps/nestjs-api-mongoose && cp .env.example-e2e-test .env
       - run: npx nx e2e nestjs-api-mongoose --testFile=customers.e2e-spec.ts
       - run: npx nx e2e nestjs-api-mongoose --testFile=organizations.e2e-spec.ts
-      - name: Start Docker-Compose
+      - name: Stop Docker-Compose (nestjs-api-mongoose)
         run: cd apps/nestjs-api-mongoose && docker-compose down
+
+      - name: Start Docker-Compose (nestjs-api-sequelize)
+        run: cd apps/nestjs-api-sequelize && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: cd apps/nestjs-api-sequelize && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-api-sequelize --testFile=users.e2e-spec.ts
+      - run: npx nx e2e nestjs-api-sequelize --testFile=roles.e2e-spec.ts
+      - name: Stop Docker-Compose (nestjs-api-sequelize)
+        run: cd apps/nestjs-api-sequelize && docker-compose down
