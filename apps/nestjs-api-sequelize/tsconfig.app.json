@@ -5,7 +5,8 @@
     "module": "commonjs",
     "types": ["node"],
     "emitDecoratorMetadata": true,
-    "target": "es2017"
+    "target": "es2017",
+    "esModuleInterop": false,
   },
   "exclude": ["**/*.spec.ts", "**/*.test.ts", "node_modules", "dist"],
 }
