@@ -72,10 +72,11 @@ export class UsersService {
   ): Promise<any> {
     try {
       updateUserDto.password = bcrypt.hashSync(updateUserDto.password, 8);
+
       const user = await this.userModel.update(
         {
           ...updateUserDto,
-          // roles: [{ name: updateUserDto.roles }],
+          roles: [{ name: updateUserDto.roles }],
         },
         {
           where: {
@@ -84,7 +85,7 @@ export class UsersService {
         }
       );
 
-      return user[0];
+      return user;
     } catch (err) {
       throw new HttpException(err, HttpStatus.BAD_REQUEST);
     }
