@@ -5,11 +5,7 @@ import { AppModule } from './../../src/app.module';
 
 const role = {
   id: 1,
-  name: 'name #1',
-  surname: 'surname #1',
-  rolename: 'rolename #1',
-  email: 'test@example.com',
-  password: 'pass123',
+  name: 'ADMIN',
 };
 
 describe('[Feature] Roles - /api/roles (e2e)', () => {
