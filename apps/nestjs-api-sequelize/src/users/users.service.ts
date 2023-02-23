@@ -9,6 +9,7 @@ import { Role } from '../roles/entities/role.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersService {
@@ -19,10 +20,11 @@ export class UsersService {
 
   public async create(createUserDto: CreateUserDto): Promise<User> {
     try {
+      createUserDto.password = bcrypt.hashSync(createUserDto.password, 8);
+
       const user = await this.userModel.create(
         {
           ...createUserDto,
-          roles: [{ name: createUserDto.roles }],
         },
         {
           include: [Role],
@@ -68,6 +70,8 @@ export class UsersService {
     updateUserDto: UpdateUserDto
   ): Promise<any> {
     try {
+      updateUserDto.password = bcrypt.hashSync(updateUserDto.password, 8);
+
       const user = await this.userModel.update(
         {
           ...updateUserDto,

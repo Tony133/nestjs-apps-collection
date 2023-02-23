@@ -29,5 +29,5 @@ export class CreateUserDto {
 
   @ApiProperty({ required: false })
   @IsString({ each: true })
-  readonly roles: string[];
+  readonly roles?: string[];
 }
