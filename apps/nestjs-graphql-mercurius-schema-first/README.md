@@ -25,7 +25,7 @@ $ cp .env.example .env
 $ npx nx test nestjs-graphql-mercurius-schema-first
 
 # e2e tests
-$ npx nx test:e2e nestjs-graphql-mercurius-schema-first
+$ npx nx e2e nestjs-graphql-mercurius-schema-first
 
 # test coverage
 $ npx nx test:cov nestjs-graphql-mercurius-schema-first

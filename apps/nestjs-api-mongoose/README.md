@@ -19,7 +19,7 @@ $ npx nx serve nestjs-api-mongoose
 $ npx nx test nestjs-api-mongoose
 
 # e2e tests
-$ npx nx test:e2e nestjs-api-mongoose
+$ npx nx e2e nestjs-api-mongoose
 
 # test coverage
 $ npx nx test:cov nestjs-api-mongoose

@@ -19,7 +19,7 @@ $ npx nx serve nestjs-api-sequelize
 $ npx nx test nestjs-api-sequelize
 
 # e2e tests
-$ npx nx test:e2e nestjs-api-sequelize
+$ npx nx e2e nestjs-api-sequelize
 
 # test coverage
 $ npx nx test:cov nestjs-api-sequelize
