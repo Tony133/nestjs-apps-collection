@@ -79,7 +79,9 @@ jobs:
         test:
           [
             nestjs-api-mongoose,
-            nestjs-api-sequelize
+            nestjs-api-sequelize,
+            nestjs-graphql-mercurius-code-first,
+            nestjs-graphql-mercurius-schema-first
           ]
     needs: [unit-tests]
 
@@ -116,3 +118,29 @@ jobs:
       - run: npx nx e2e nestjs-api-sequelize --testFile=roles.e2e-spec.ts
       - name: Stop Docker-Compose (nestjs-api-sequelize)
         run: cd apps/nestjs-api-sequelize && docker-compose down
+
+      - name: Start Docker-Compose (nestjs-graphql-mercurius-code-first)
+        run: cd apps/nestjs-graphql-mercurius-code-first && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: cd apps/nestjs-graphql-mercurius-code-first && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-graphql-mercurius-code-first
+      - name: Stop Docker-Compose (nestjs-graphql-mercurius-code-first)
+        run: cd apps/nestjs-graphql-mercurius-code-first && docker-compose down
+
+      - name: Start Docker-Compose (nestjs-graphql-mercurius-schema-first)
+        run: cd apps/nestjs-graphql-mercurius-schema-first && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: cd apps/nestjs-graphql-mercurius-schema-first && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-graphql-mercurius-schema-first
+      - name: Stop Docker-Compose (nestjs-graphql-mercurius-schema-first)
+        run: cd apps/nestjs-graphql-mercurius-schema-first && docker-compose down

@@ -5,22 +5,12 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
-
-const users =
-  '{"data":\
-        {"users": [\
-          {"id":"1", "name": "name#1", "username": "username#1", "email":"test1@example.it", "password":"pass123},\
-          {"id":"2", "name": "name#2", "username": "username#2", "email":"test2@example.it", "password":"pass123},\
-          {"id":"3", "name": "name#3", "username": "username#3", "email":"test3@example.it", "password":"pass123} ]"}}';
-
-const user =
-  '{"data":\
-{"users": [\
-  {"id":"1", "name": "name#1", "username": "username#1", "email":"test1@example.it", "password":"pass123} ]"}}';
+import { HttpStatus } from '@nestjs/common';
+import { HashingService } from '../../src/shared/hashing/hashing.service';
 
 const gql = '/graphql';
 
-describe('users [Graphql] (e2e)', () => {
+describe('Users [Graphql] (e2e)', () => {
   let app: NestFastifyApplication;
 
   beforeAll(async () => {
@@ -30,11 +20,20 @@ describe('users [Graphql] (e2e)', () => {
         {
           provide: UsersService,
           useValue: {
-            users: jest.fn(() => users),
+            users: jest.fn(() => {}),
+            user: jest.fn(() => {}),
+            createUser: jest.fn(() => {}),
+            updateUser: jest.fn(() => {}),
+            removeUser: jest.fn(() => {}),
           },
         },
       ],
-    }).compile();
+    })
+      .overrideProvider(HashingService)
+      .useValue({
+        hash: jest.fn(() => 'secret123'),
+      })
+      .compile();
 
     app = moduleFixture.createNestApplication<NestFastifyApplication>(
       new FastifyAdapter()
@@ -43,80 +42,103 @@ describe('users [Graphql] (e2e)', () => {
     await app.getHttpAdapter().getInstance().ready();
   });
 
-  it('should get the users array', () => {
-    return app
-      .inject({
-        method: 'POST',
-        url: gql,
-        payload: {
-          query: '{ users {id name email username password } }',
-        },
-      })
-      .then(({ payload, statusCode }) => {
-        expect(statusCode).toBe(200);
-        expect(payload).toEqual(users);
-      });
-  });
-
-  it('should get the single user', () => {
-    return app
-      .inject({
-        method: 'POST',
-        url: gql,
-        payload: {
-          query: '{ user (id: 1) {id name email username password } }',
-        },
-      })
-      .then(({ payload, statusCode }) => {
-        expect(statusCode).toBe(200);
-        expect(payload).toEqual(user);
-      });
-  });
-
-  it('should create a user', () => {
-    return app
+  it('should create a user', async () => {
+    return await app
       .inject({
         method: 'POST',
         url: gql,
         payload: {
           query:
-            'mutation {createUser(createUserInput: { name: "tony", email: "tony_admin@nest.it", username: "tony_admin", password:"pass123" }) { name username email, password}}',
+            'mutation { \
+              createUser(createUserInput: { \
+                  name: "name#1" \
+                  email:"test@example.com" \
+                  username: "username#1" \
+                  password: "secret123" \
+              }) { \
+                  name \
+                  email \
+                  username \
+                  password \
+              } \
+            }',
         },
       })
       .then(({ payload, statusCode }) => {
-        expect(statusCode).toBe(200);
-        expect(payload).toEqual(user);
+        expect(payload).toEqual(
+          '{"data":{"createUser":{"name":"name#1","email":"test@example.com","username":"username#1","password":"secret123"}}}'
+        );
+        expect(statusCode).toEqual(HttpStatus.OK);
       });
   });
 
-  it('should update a user', () => {
-    return app
+  it('should get the users array', async () => {
+    return await app
+      .inject({
+        method: 'POST',
+        url: gql,
+        payload: {
+          query: '{ users { id name email username password } }',
+        },
+      })
+      .then(({ payload, statusCode }) => {
+        expect(payload).toEqual(
+          '{"data":{"users":[{"id":"1","name":"name#1","email":"test@example.com","username":"username#1","password":"secret123"}]}}'
+        );
+        expect(statusCode).toEqual(HttpStatus.OK);
+      });
+  });
+
+  it('should get the single user by id', async () => {
+    return await app
+      .inject({
+        method: 'POST',
+        url: gql,
+        payload: {
+          query: '{ user (id: "1") { id name email username password } }',
+        },
+      })
+      .then(({ payload, statusCode }) => {
+        expect(payload).toEqual(
+          '{"data":{"user":{"id":"1","name":"name#1","email":"test@example.com","username":"username#1","password":"secret123"}}}'
+        );
+        expect(statusCode).toEqual(HttpStatus.OK);
+      });
+  });
+
+  it('should update a user by id', async () => {
+    return await app
       .inject({
         method: 'POST',
         url: gql,
         payload: {
           query:
-            'mutation {updateUser(updateUserInput: { name: "tony", email: "tony_admin@nest.it", username: "tony_admin", password:"pass123" }, id: 1) { name username email, password}}',
+            'mutation {updateUser(updateUserInput: { name: "name#1", email: "test@example.com", username: "username#1", password:"secret123" }, id: "1") { name username email password}}',
         },
       })
       .then(({ payload, statusCode }) => {
-        expect(statusCode).toBe(200);
-        expect(payload).toEqual(user);
+        expect(payload).toEqual(
+          '{"data":{"updateUser":{"name":"name#1","username":"username#1","email":"test@example.com","password":"secret123"}}}'
+        );
+        expect(statusCode).toEqual(HttpStatus.OK);
       });
   });
 
-  it('should delete a user', () => {
-    return app
+  it('should delete a user by id', async () => {
+    return await app
       .inject({
         method: 'POST',
         url: gql,
         payload: {
-          query: '{ removeUser (id: 1) {id name email username password } }',
+          query:
+            'mutation { removeUser(id: "1") { name email username password } }',
         },
       })
       .then(({ payload, statusCode }) => {
-        expect(statusCode).toBe(200);
-        expect(payload).toEqual(user);
+        expect(payload).toEqual(
+          '{"data":{"removeUser":{"name":"name#1","email":"test@example.com","username":"username#1","password":"secret123"}}}'
+        );
+        expect(statusCode).toEqual(HttpStatus.OK);
       });
   });
 

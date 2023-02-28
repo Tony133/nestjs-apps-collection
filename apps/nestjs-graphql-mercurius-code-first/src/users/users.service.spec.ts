@@ -7,6 +7,8 @@ import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
 import { NotFoundException } from '@nestjs/common';
+import { BcryptService } from '../shared/hashing/bcrypt.service';
+import { HashingService } from '../shared/hashing/hashing.service';
 
 const usersArgs: UsersArgs = {
   offset: 0,
@@ -55,6 +57,10 @@ describe('UsersService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         UsersService,
+        {
+          provide: HashingService,
+          useClass: BcryptService,
+        },
         {
           provide: getRepositoryToken(Users),
           useValue: {
