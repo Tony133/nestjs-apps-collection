@@ -1,17 +1,18 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import * as bcrypt from 'bcrypt';
 import { Repository } from 'typeorm';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
 import { UsersArgs } from './dto/users.args';
 import { Users } from './entities/users.entity';
+import { HashingService } from '../shared/hashing/hashing.service';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(Users)
-    private readonly usersRepository: Repository<Users>
+    private readonly usersRepository: Repository<Users>,
+    private readonly hashingService: HashingService
   ) {}
 
   public async findAll(usersArgs: UsersArgs): Promise<Users[]> {
@@ -36,7 +37,9 @@ export class UsersService {
   }
 
   public async create(createUserInput: CreateUserInput): Promise<Users> {
-    createUserInput.password = bcrypt.hashSync(createUserInput.password, 8);
+    createUserInput.password = await this.hashingService.hash(
+      createUserInput.password
+    );
 
     const user = this.usersRepository.create({ ...createUserInput });
     return this.usersRepository.save(user);
@@ -46,7 +49,9 @@ export class UsersService {
     id: string,
     updateUserInput: UpdateUserInput
   ): Promise<Users> {
-    updateUserInput.password = bcrypt.hashSync(updateUserInput.password, 8);
+    updateUserInput.password = await this.hashingService.hash(
+      updateUserInput.password
+    );
 
     const user = await this.usersRepository.preload({
       id: +id,

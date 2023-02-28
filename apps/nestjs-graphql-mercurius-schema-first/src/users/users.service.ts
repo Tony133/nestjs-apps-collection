@@ -1,15 +1,16 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import * as bcrypt from 'bcrypt';
 import { CreateUserInput, UpdateUserInput, UsersArgs } from './dto';
 import { User } from './entities/user.entity';
+import { HashingService } from '../shared/hashing/hashing.service';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private readonly usersRepository: Repository<User>
+    private readonly usersRepository: Repository<User>,
+    private readonly hashingService: HashingService
   ) {}
 
   public async findAll(usersArgs: UsersArgs): Promise<User[]> {
@@ -34,7 +35,9 @@ export class UsersService {
   }
 
   public async create(createUserInput: CreateUserInput): Promise<User> {
-    createUserInput.password = bcrypt.hashSync(createUserInput.password, 8);
+    createUserInput.password = await this.hashingService.hash(
+      createUserInput.password
+    );
 
     const user = this.usersRepository.create({ ...createUserInput });
     return this.usersRepository.save(user);
@@ -44,7 +47,9 @@ export class UsersService {
     id: number,
     updateUserInput: UpdateUserInput
   ): Promise<User> {
-    updateUserInput.password = bcrypt.hashSync(updateUserInput.password, 8);
+    updateUserInput.password = await this.hashingService.hash(
+      updateUserInput.password
+    );
 
     const user = await this.usersRepository.preload({
       id: +id,

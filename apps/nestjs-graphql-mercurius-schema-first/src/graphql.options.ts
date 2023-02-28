@@ -11,9 +11,7 @@ export class GraphqlOptions implements GqlOptionsFactory {
       graphiql: true,
       typePaths: ['./**/*.graphql'],
       definitions: {
-        path: join(
-          'apps/nestjs-graphql-mercurius-schema-first/src/graphql.schema.ts'
-        ),
+        path: join('./graphql.schema.ts'),
         outputAs: 'class',
       },
     };
