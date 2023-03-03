@@ -47,7 +47,7 @@
     "@nrwl/cli": "15.8.2",
     "@nrwl/eslint-plugin-nx": "15.8.2",
     "@nrwl/jest": "15.8.2",
-    "@nrwl/linter": "15.8.2",
+    "@nrwl/linter": "15.8.3",
     "@nrwl/nest": "15.8.2",
     "@nrwl/node": "15.8.2",
     "@nrwl/workspace": "15.8.2",
