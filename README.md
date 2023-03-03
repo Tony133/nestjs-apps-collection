@@ -72,3 +72,7 @@ Run `npx nx serve my-app` for a dev server. Navigate to http://localhost:3000/. 
 ## Build
 
 Run `npx nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## License
+
+ [MIT licensed](LICENSE)
