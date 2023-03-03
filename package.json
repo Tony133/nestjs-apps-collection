@@ -44,7 +44,7 @@
     "@commitlint/config-angular": "^17.4.2",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.3.1",
-    "@nrwl/cli": "15.8.2",
+    "@nrwl/cli": "15.8.3",
     "@nrwl/eslint-plugin-nx": "15.8.2",
     "@nrwl/jest": "15.8.2",
     "@nrwl/linter": "15.8.2",
