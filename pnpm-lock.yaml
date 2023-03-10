@@ -8,7 +8,7 @@ specifiers:
   '@nestjs/core': ^9.3.1
   '@nestjs/graphql': ^10.1.7
   '@nestjs/mapped-types': ^1.2.2
-  '@nestjs/mercurius': ^10.1.7
+  '@nestjs/mercurius': ^11.0.0
   '@nestjs/mongoose': ^9.2.1
   '@nestjs/platform-express': ^9.3.1
   '@nestjs/platform-fastify': ^9.3.1
@@ -62,7 +62,7 @@ dependencies:
   '@nestjs/core': 9.3.7_ipss6dxf5icme2x7c6jvrkkrmq
   '@nestjs/graphql': 10.2.0_4qkr6uszm5pj62lyl3f243c7py
   '@nestjs/mapped-types': 1.2.2_2r4p35dlrn4tfrb3pj5q26jjgy
-  '@nestjs/mercurius': 10.2.0_rhvlbhzvyafgrblqisgdxnyz3e
+  '@nestjs/mercurius': 11.0.0_rhvlbhzvyafgrblqisgdxnyz3e
   '@nestjs/mongoose': 9.2.1_c5o6hqf3y26aaxjdtsbrswybzu
   '@nestjs/platform-express': 9.3.7_zmctrozi6xxh3beaccl6ebop6u
   '@nestjs/platform-fastify': 9.3.7_zmctrozi6xxh3beaccl6ebop6u
@@ -3209,17 +3209,23 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mercurius/10.2.0_rhvlbhzvyafgrblqisgdxnyz3e:
-    resolution: {integrity: sha512-rKCB8972FKlIp3+osVK+6hBo1vvAIY/m3yr63Ter51cRs/QoXCpQdVhU3KaRIS/x66lxtgoOLaif+CrRK2RHEA==}
+  /@nestjs/mercurius/11.0.0_rhvlbhzvyafgrblqisgdxnyz3e:
+    resolution: {integrity: sha512-n+CYRs6+NV07hb3M21dRr5NnXe3bjUX2XoCI7/If8qkNS88m+ltXdkx4eBKCpYFsmS0oM6BPfopHoTQ4G8NBLQ==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
-      '@nestjs/common': ^8.2.3 || ^9.0.0
-      '@nestjs/graphql': ^10.0.0
-      fastify: ^3.25.0 || ^4.0.0
-      graphql: ^15.8.0 || ^16.0.0
-      mercurius: ^8.12.0 || ^9.0.0 || ^10.0.0
+      '@mercuriusjs/federation': ^1.0.0
+      '@mercuriusjs/gateway': ^1.0.0
+      '@nestjs/common': ^9.3.8
+      '@nestjs/graphql': ^10.1.7
+      fastify: ^4.12.0
+      graphql: ^16.0.0
+      mercurius: ^12.0.0
     peerDependenciesMeta:
       '@apollo/subgraph':
+        optional: true
+      '@mercuriusjs/federation':
+        optional: true
+      '@mercuriusjs/gateway':
         optional: true
     dependencies:
       '@nestjs/common': 9.3.7_welcnyot5bzd5wa2aovbkxpi4i
