@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@mercuriusjs/gateway": "^1.2.0",
     "@nestjs/common": "^9.3.8",
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.3.8",

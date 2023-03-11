@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^17.4.2
   '@commitlint/config-angular': ^17.4.2
+  '@mercuriusjs/gateway': ^1.2.0
   '@nestjs/common': ^9.3.8
   '@nestjs/config': ^2.2.0
   '@nestjs/core': ^9.3.8
@@ -57,12 +58,13 @@ specifiers:
   typescript: ~4.9.0
 
 dependencies:
+  '@mercuriusjs/gateway': 1.2.0
   '@nestjs/common': 9.3.9_welcnyot5bzd5wa2aovbkxpi4i
   '@nestjs/config': 2.3.1_jrq2rdgfp2sx67wmylmrqliwxe
   '@nestjs/core': 9.3.9_q6agyr4hwia55oswpsa7zjxcpm
   '@nestjs/graphql': 11.0.0_neqsyrtn5qk37n4fdpym5gzwom
   '@nestjs/mapped-types': 1.2.2_sm5si6oczf3vcbfl6qa276t67m
-  '@nestjs/mercurius': 11.0.3_6m3tklenldjyuky3t56mc6liz4
+  '@nestjs/mercurius': 11.0.3_sweqfheob56shmj42sq6itftsi
   '@nestjs/mongoose': 9.2.1_xfd6n7hp4cvurmghensp4uyxou
   '@nestjs/platform-express': 9.3.9_77foi4w27ghy47yutmnzv7krjy
   '@nestjs/platform-fastify': 9.3.9_77foi4w27ghy47yutmnzv7krjy
@@ -3074,6 +3076,51 @@ packages:
       - supports-color
     dev: false
 
+  /@mercuriusjs/federation/1.0.1:
+    resolution: {integrity: sha512-aski6H8SRfjK73Bruzh5kQ20OS0s0pkbFvcOex46Qm17bYWoJ3daMrbTw4caOSkru7R8pIA/bvAjSq97xkDJkQ==}
+    dependencies:
+      '@fastify/error': 3.2.0
+      graphql: 16.6.0
+      mercurius: 12.2.0_graphql@16.6.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
+  /@mercuriusjs/gateway/1.2.0:
+    resolution: {integrity: sha512-kwSTeY53NpO2VUaDKKl3PBUwcqQBLHzHAq2FDxCr4N2u2ELu9/yJVAcv7okkmwg7ImjsTOdgbvU2+VrG2foLHQ==}
+    dependencies:
+      '@mercuriusjs/federation': 1.0.1
+      '@mercuriusjs/subscription-client': 1.0.0_graphql@16.6.0
+      fastify-plugin: 4.5.0
+      graphql: 16.6.0
+      graphql-ws: 5.12.0_graphql@16.6.0
+      mercurius: 12.2.0_graphql@16.6.0
+      p-map: 4.0.0
+      single-user-cache: 0.6.0
+      tiny-lru: 10.0.1
+      use-strict: 1.0.1
+      ws: 8.13.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
+  /@mercuriusjs/subscription-client/1.0.0_graphql@16.6.0:
+    resolution: {integrity: sha512-hIGqNp6FBdcy7ZkrWNk4mHl/Qodtwvbu9/iRl3zQdNRl4UtlVI7xW/FPU+2AJy0qTB567yrpvtQPwtmQLuYHYg==}
+    engines: {node: '>=14.19.3'}
+    peerDependencies:
+      graphql: ^16.0.0
+    dependencies:
+      '@fastify/error': 3.2.0
+      graphql: 16.6.0
+      secure-json-parse: 2.7.0
+      ws: 8.13.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
   /@nestjs/common/9.3.9_welcnyot5bzd5wa2aovbkxpi4i:
     resolution: {integrity: sha512-GshTD9Xz+wD2em6NyzU4NXw5IXMUmapgDgD+iuj6XL0258hvDwODmNk37mBBnZvTZlqER+krvIUKnS34etqF/A==}
     peerDependencies:
@@ -3211,7 +3258,7 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mercurius/11.0.3_6m3tklenldjyuky3t56mc6liz4:
+  /@nestjs/mercurius/11.0.3_sweqfheob56shmj42sq6itftsi:
     resolution: {integrity: sha512-VuVcs2oFefvGsEi5lQBxT/vNbTPv0v6NZaVnvFaxP9IQFg07lNSONWWfTBI5ptvphftIqjAgPrMm2yYai/Af6g==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
@@ -3230,6 +3277,7 @@ packages:
       '@mercuriusjs/gateway':
         optional: true
     dependencies:
+      '@mercuriusjs/gateway': 1.2.0
       '@nestjs/common': 9.3.9_welcnyot5bzd5wa2aovbkxpi4i
       '@nestjs/graphql': 11.0.0_neqsyrtn5qk37n4fdpym5gzwom
       graphql: 16.6.0
@@ -11514,6 +11562,10 @@ packages:
       querystringify: 2.2.0
       requires-port: 1.0.0
     dev: true
+
+  /use-strict/1.0.1:
+    resolution: {integrity: sha512-IeiWvvEXfW5ltKVMkxq6FvNf2LojMKvB2OCeja6+ct24S1XOmQw2dGr2JyndwACWAGJva9B7yPHwAmeA9QCqAQ==}
+    dev: false
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
