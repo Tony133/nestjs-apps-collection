@@ -1,4 +1,6 @@
 {
+  "name": "nestjs-api-mongoose",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/nestjs-api-mongoose/src",
   "projectType": "application",
   "targets": {

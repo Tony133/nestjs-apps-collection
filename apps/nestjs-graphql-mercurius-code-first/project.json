@@ -1,4 +1,6 @@
 {
+  "name": "nestjs-graphql-mercurius-code-first",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/nestjs-graphql-mercurius-code-first/src",
   "projectType": "application",
   "targets": {
