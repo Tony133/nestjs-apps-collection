@@ -1,0 +1,29 @@
+type Article {
+  id: ID!
+  title: String!
+  description: String!
+  users: [User!]!
+}
+
+input CreateArticleInput {
+  title: String!
+  description: String!
+  users: [String!]!
+}
+
+input UpdateArticleInput {
+  title: String!
+  description: String!
+  users: [String!]!
+}
+
+type Query {
+  articles: [Article]!
+  article(id: Int!): Article
+}
+
+type Mutation {
+  createArticle(createArticleInput: CreateArticleInput!): Article!
+  updateArticle(id: Int!, updateArticleInput: UpdateArticleInput!): Article!
+  removeArticle(id: Int!): Article
+}
