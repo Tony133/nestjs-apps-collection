@@ -6,6 +6,25 @@ import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
 import { NotFoundException } from '@nestjs/common';
 
+const usersArgs: UsersArgs = {
+  offset: 0,
+  limit: 25,
+};
+
+const createUserInput: CreateUserInput = {
+  name: 'user #1',
+  email: 'test@example.com',
+  username: 'username #1',
+  password: 'secret',
+};
+
+const updateUserInput: UpdateUserInput = {
+  name: 'user update',
+  email: 'test@example.com',
+  username: 'username update',
+  password: 'secret123',
+};
+
 describe('UsersResolver', () => {
   let resolver: UsersResolver;
   let service: UsersService;

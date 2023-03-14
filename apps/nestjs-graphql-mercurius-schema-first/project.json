@@ -1,4 +1,6 @@
 {
+  "name": "nestjs-graphql-mercurius-schema-first",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/nestjs-graphql-mercurius-schema-first/src",
   "projectType": "application",
   "targets": {
@@ -36,7 +38,9 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/nestjs-graphql-mercurius-schema-first/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/nestjs-graphql-mercurius-schema-first/**/*.ts"
+        ]
       }
     },
     "test": {
