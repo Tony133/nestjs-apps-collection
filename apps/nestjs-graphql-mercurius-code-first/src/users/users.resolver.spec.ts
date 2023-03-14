@@ -9,24 +9,6 @@ import { NotFoundException } from '@nestjs/common';
 describe('UsersResolver', () => {
   let resolver: UsersResolver;
   let service: UsersService;
-  const usersArgs: UsersArgs = {
-    offset: 0,
-    limit: 25,
-  };
-
-  const createUserInput: CreateUserInput = {
-    name: 'user #1',
-    email: 'test@example.com',
-    username: 'username #1',
-    password: 'secret',
-  };
-
-  const updateUserInput: UpdateUserInput = {
-    name: 'user update',
-    email: 'test@example.com',
-    username: 'username update',
-    password: 'secret123',
-  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({

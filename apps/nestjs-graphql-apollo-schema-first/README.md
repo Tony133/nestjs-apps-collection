@@ -1,34 +1,36 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# nestjs-api-graphql-schema-first
+Simple example GraphQL(Schema First) with NestJS 7.x and TypeORM 😻
 
-# nestjs-graphql-apollo-schema-first
+## Installation
 
-Simple example GraphQL(Schema First) Apollo with NestJS and TypeORM for the NestJS community 😻
+```bash
+$ npm install
+```
 
 ## Running the app
 
 ```bash
-$ npx nx serve nestjs-graphql-apollo-code-first
-```
+# development
+$ npm run start
 
-## Set environment
+# watch mode
+$ npm run start:dev
 
-```
-$ cp .env.example .env
+# production mode
+$ npm run start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npx nx test nestjs-graphql-apollo-code-first
+$ npm run test
 
 # e2e tests
-$ npx nx e2e nestjs-graphql-apollo-code-first
+$ npm run test:e2e
 
 # test coverage
-$ npx nx test:cov nestjs-graphql-apollo-code-first
+$ npm run test:cov
 ```
 
 ## Docker

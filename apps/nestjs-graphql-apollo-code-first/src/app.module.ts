@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { GraphqlOptions } from './graphql.options';
@@ -8,7 +9,6 @@ import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
 import { PostsModule } from './posts/posts.module';
 import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo';
-import { AppResolver } from './app.resolver';
 
 @Module({
   imports: [
@@ -35,6 +35,7 @@ import { AppResolver } from './app.resolver';
     RolesModule,
     PostsModule,
   ],
-  providers: [AppService, AppResolver],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ArticlesModule } from './articles/articles.module';
@@ -8,7 +9,6 @@ import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
 import { GraphqlOptions } from './graphql.options';
 import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo';
-import { AppResolver } from '../../nestjs-graphql-mercurius-schema-first/src/app.resolver';
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { AppResolver } from '../../nestjs-graphql-mercurius-schema-first/src/app
       useFactory: (config: ConfigService) => ({
         type: 'postgres',
         host: config.get<string>('DATABASE_HOST', 'localhost'),
-        port: config.get('DATABASE_PORT', 5432),
+        port: config.get<number>('DATABASE_PORT', 5432),
         username: config.get<string>('DATABASE_USER', 'postgres'),
         password: config.get<string>('DATABASE_PASSWORD', 'pass123'),
         database: config.get<string>('DATABASE_NAME', 'postgres'),
@@ -35,6 +35,7 @@ import { AppResolver } from '../../nestjs-graphql-mercurius-schema-first/src/app
     UsersModule,
     RolesModule,
   ],
-  providers: [AppService, AppResolver],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
