@@ -25,7 +25,7 @@ specifiers:
   '@nrwl/nest': 15.8.6
   '@nrwl/node': 15.8.6
   '@nrwl/workspace': 15.8.6
-  '@types/jest': 29.4.3
+  '@types/jest': 29.4.4
   '@types/node': 18.15.3
   '@typescript-eslint/eslint-plugin': ^5.50.0
   '@typescript-eslint/parser': ^5.36.1
@@ -100,7 +100,7 @@ devDependencies:
   '@nrwl/nest': 15.8.6_grww2uo6pzez3ssyjga3ev3k24
   '@nrwl/node': 15.8.6_grww2uo6pzez3ssyjga3ev3k24
   '@nrwl/workspace': 15.8.6_cxk2izsnbljdhebs7ezdbimyva
-  '@types/jest': 29.4.3
+  '@types/jest': 29.4.4
   '@types/node': 18.15.3
   '@typescript-eslint/eslint-plugin': 5.54.1_4rfaf6mlw2mmutqjcopwvbftpu
   '@typescript-eslint/parser': 5.54.1_vgl77cfdswitgr47lm5swmv43m
@@ -4150,8 +4150,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.0
     dev: true
 
-  /@types/jest/29.4.3:
-    resolution: {integrity: sha512-rQ+fXtBHSDfgoTwGLLNuZ27fHpp14mCZSxGUZ3MlNExwJno5hz0uXEWtXfQlE8vaZmYAa6atbR9rpHk+NnlRaw==}
+  /@types/jest/29.4.4:
+    resolution: {integrity: sha512-qezb65VIH7X1wobSnd6Lvdve7PXSyQRa3dljTkhTtDhi603RvHQCshSlJcuyMLHJpeHgY3NKwvDJWxMOOHxGDQ==}
     dependencies:
       expect: 29.5.0
       pretty-format: 29.5.0
