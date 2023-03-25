@@ -71,9 +71,13 @@ describe('UsersResolver', () => {
       expect(service.findAll).toHaveBeenCalled();
     });
 
-    it('should return user on success', async () => {
-      await resolver.users(usersArgs);
-      expect(service.findAll).toHaveBeenCalled();
+    it('should throw if RolesService findAll throws', async () => {
+      jest
+        .spyOn(service, 'findAll')
+        .mockRejectedValueOnce(new NotFoundException());
+      await expect(resolver.users(usersArgs)).rejects.toThrow(
+        new NotFoundException()
+      );
     });
   });
 

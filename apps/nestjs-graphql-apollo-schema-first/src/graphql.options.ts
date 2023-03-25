@@ -9,7 +9,7 @@ export class GraphqlOptions implements GqlOptionsFactory {
     return {
       typePaths: ['./**/*.graphql'],
       definitions: {
-        path: join(process.cwd(), 'src/graphql.schema.ts'),
+        path: join(process.cwd(), './graphql.schema.ts'),
         outputAs: 'class',
       },
     };

@@ -11,7 +11,7 @@ export class ArticlesService {
     @InjectRepository(Article)
     private readonly articlesRepository: Repository<Article>,
     @InjectRepository(User)
-    private readonly usersRepository: Repository<User>,
+    private readonly usersRepository: Repository<User>
   ) {}
 
   public async findAll(articlesArgs: ArticlesArgs): Promise<Article[]> {
@@ -39,10 +39,10 @@ export class ArticlesService {
   }
 
   public async create(
-    createArticleInput: CreateArticleInput,
+    createArticleInput: CreateArticleInput
   ): Promise<Article> {
     const users = await Promise.all(
-      createArticleInput.users.map((name) => this.preloadUserByName(name)),
+      createArticleInput.users.map((name) => this.preloadUserByName(name))
     );
 
     const article = this.articlesRepository.create({
@@ -54,12 +54,12 @@ export class ArticlesService {
 
   public async update(
     id: number,
-    updateArticleInput: UpdateArticleInput,
+    updateArticleInput: UpdateArticleInput
   ): Promise<Article> {
     const users =
       updateArticleInput.users &&
       (await Promise.all(
-        updateArticleInput.users.map((name) => this.preloadUserByName(name)),
+        updateArticleInput.users.map((name) => this.preloadUserByName(name))
       ));
 
     const article = await this.articlesRepository.preload({
@@ -76,10 +76,6 @@ export class ArticlesService {
   }
 
   public async remove(id: number): Promise<any> {
-    if (id) {
-      throw new NotFoundException(`Article #${id} not found`);
-    }
-
     const article = await this.findOne(id);
     return this.articlesRepository.remove(article);
   }

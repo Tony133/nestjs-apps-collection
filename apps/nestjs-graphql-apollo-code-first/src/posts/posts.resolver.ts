@@ -15,16 +15,12 @@ export class PostsResolver {
 
   @Query(() => Posts)
   public async post(@Args('id') id: string): Promise<Posts> {
-    const post = await this.postsService.findOneById(id);
-    if (!post) {
-      throw new NotFoundException(id);
-    }
-    return post;
+    return await this.postsService.findOneById(id);
   }
 
   @Mutation(() => Posts)
   public async createPost(
-    @Args('createPostInput') createPostInput: CreatePostInput,
+    @Args('createPostInput') createPostInput: CreatePostInput
   ): Promise<Posts> {
     return await this.postsService.create(createPostInput);
   }
@@ -32,7 +28,7 @@ export class PostsResolver {
   @Mutation(() => Posts)
   public async updatePost(
     @Args('id') id: string,
-    @Args('updatePostInput') updatePostInput: UpdatePostInput,
+    @Args('updatePostInput') updatePostInput: UpdatePostInput
   ): Promise<Posts> {
     return await this.postsService.update(id, updatePostInput);
   }

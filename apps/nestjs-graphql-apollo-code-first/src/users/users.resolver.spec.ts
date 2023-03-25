@@ -1,3 +1,4 @@
+import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { CreateUserInput, UpdateUserInput, UsersArgs } from './dto';
 import { UsersResolver } from './users.resolver';
@@ -61,5 +62,49 @@ describe('UsersResolver', () => {
 
   it('should be defined', () => {
     expect(resolver).toBeDefined();
+  });
+
+  describe('users()', () => {
+    it('should call method findAll in UsersService', async () => {
+      await resolver.users(usersArgs);
+      expect(service.findAll).toHaveBeenCalled();
+    });
+  });
+
+  describe('user()', () => {
+    it('should call method findOneById in UsersService id with correct value', async () => {
+      await resolver.user('anyid');
+      expect(service.findOneById).toHaveBeenCalled();
+    });
+
+    it('should return a exception when doesnt found a user by id', async () => {
+      service.findOneById = jest.fn().mockReturnValue(null);
+      const userNotFound = resolver.user('not correct id');
+      expect(userNotFound).rejects.toThrow(NotFoundException);
+    });
+  });
+
+  describe('createUser()', () => {
+    it('should call method create in UsersService with correct values', async () => {
+      const createSpy = jest.spyOn(service, 'create');
+      await resolver.createUser(createUserInput);
+      expect(createSpy).toHaveBeenCalledWith(createUserInput);
+    });
+  });
+
+  describe('updateUser()', () => {
+    it('should call method update in UsersService with correct values', async () => {
+      const updateSpy = jest.spyOn(service, 'update');
+      await resolver.updateUser('anyid', updateUserInput);
+      expect(updateSpy).toHaveBeenCalledWith('anyid', updateUserInput);
+    });
+  });
+
+  describe('removeUser()', () => {
+    it('should call method remove in UsersService with correct value', async () => {
+      const deleteSpy = jest.spyOn(service, 'remove');
+      await resolver.removeUser('anyid');
+      expect(deleteSpy).toHaveBeenCalledWith('anyid');
+    });
   });
 });
