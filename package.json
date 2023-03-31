@@ -50,7 +50,7 @@
     "@nrwl/jest": "15.8.9",
     "@nrwl/linter": "15.8.9",
     "@nrwl/nest": "15.8.9",
-    "@nrwl/node": "15.8.9",
+    "@nrwl/node": "15.9.1",
     "@nrwl/workspace": "15.8.9",
     "@types/jest": "29.5.0",
     "@types/node": "18.15.10",
