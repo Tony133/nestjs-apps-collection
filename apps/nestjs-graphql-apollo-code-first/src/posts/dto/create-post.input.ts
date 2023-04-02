@@ -1,5 +1,5 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString, MaxLength } from 'class-validator';
 
 @InputType()
 export class CreatePostInput {
@@ -15,6 +15,8 @@ export class CreatePostInput {
   @IsNotEmpty()
   readonly description: string;
 
+  @IsOptional()
   @IsString({ each: true })
-  readonly users: string[];
+  @Field((type) => [String], { nullable: true })
+  users?: string[];
 }

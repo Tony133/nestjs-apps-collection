@@ -34,18 +34,11 @@ export class Users {
   password: string;
 
   @JoinTable()
-  @ManyToMany(
-    () => Roles,
-    roles => roles.users,
-    {
-      cascade: true,
-    },
-  )
-  roles: Roles[];
+  @ManyToMany(() => Roles, (roles) => roles.users, {
+    cascade: true,
+  })
+  roles?: Roles[];
 
-  @ManyToOne(
-    () => Posts,
-    posts => posts.users,
-  )
-  posts: Posts;
+  @ManyToOne(() => Posts, (posts) => posts.users)
+  posts?: Posts;
 }

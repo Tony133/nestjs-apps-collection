@@ -4,16 +4,16 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(
-    new ValidationPipe({
-      whitelist: true,
-      transform: true,
-      forbidNonWhitelisted: true,
-      transformOptions: {
-        enableImplicitConversion: true,
-      },
-    }),
-  );
+  // app.useGlobalPipes(
+  //   new ValidationPipe({
+  //     whitelist: false,
+  //     transform: false,
+  //     forbidNonWhitelisted: false,
+  //     transformOptions: {
+  //       enableImplicitConversion: false,
+  //     },
+  //   })
+  // );
 
   await app.listen(3000);
 }

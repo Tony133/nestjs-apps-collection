@@ -11,7 +11,6 @@ export class AuthGuard implements CanActivate {
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const gqlContext = GqlExecutionContext.create(context);
 
-    console.log(gqlContext);
     if (gqlContext) {
       throw new UnauthorizedException();
     }

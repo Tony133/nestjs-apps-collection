@@ -1,12 +1,10 @@
 import { NotFoundException, UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { AuthGuard } from '../common/auth.guard';
 import { CreateRoleInput, RolesArgs } from './dto';
 import { Roles } from './entities/roles.entity';
 import { RolesService } from './roles.service';
 
 @Resolver()
-@UseGuards(AuthGuard)
 export class RolesResolver {
   constructor(private readonly rolesService: RolesService) {}
 

@@ -6,7 +6,6 @@ type Posts {
   id: ID!
   title: String!
   description: String!
-  users: [Users!]!
 }
 
 type Users {
@@ -15,21 +14,18 @@ type Users {
   username: String!
   email: String!
   password: String!
-  roles: [Roles!]!
-  posts: Posts!
 }
 
 type Roles {
   id: ID!
   name: String!
-  users: [Users!]!
 }
 
 type Query {
   users(offset: Int! = 0, limit: Int! = 25): [Users!]!
   user(id: String!): Users!
-  roles(skip: Int! = 0, take: Int! = 10): [Roles!]!
-  role(id: String!): Roles!
+  findAllRole(skip: Int! = 0, take: Int! = 10): [Roles!]!
+  findOneRole(id: String!): Roles!
   posts(offset: Int! = 0, limit: Int! = 25): [Posts!]!
   post(id: String!): Posts!
 }
@@ -49,7 +45,6 @@ input CreateUserInput {
   email: String!
   username: String!
   password: String!
-  roles: [String!]!
 }
 
 input UpdateUserInput {
@@ -57,7 +52,6 @@ input UpdateUserInput {
   email: String
   username: String
   password: String
-  roles: [String!]
 }
 
 input CreateRoleInput {
@@ -67,11 +61,9 @@ input CreateRoleInput {
 input CreatePostInput {
   title: String!
   description: String!
-  users: [String!]!
 }
 
 input UpdatePostInput {
   title: String
   description: String
-  users: [String!]
 }

@@ -11,7 +11,7 @@ export class PostsService {
     @InjectRepository(Posts)
     private readonly postsRepository: Repository<Posts>,
     @InjectRepository(Users)
-    private readonly usersRepository: Repository<Users>,
+    private readonly usersRepository: Repository<Users>
   ) {}
 
   public async findAll(postsArgs: PostsArgs): Promise<Posts[]> {
@@ -39,7 +39,7 @@ export class PostsService {
 
   public async create(createPostInput: CreatePostInput): Promise<Posts> {
     const users = await Promise.all(
-      createPostInput.users.map((name) => this.preloadUserByName(name)),
+      createPostInput.users?.map((name) => this.preloadUserByName(name))
     );
 
     const post = this.postsRepository.create({ ...createPostInput, users });
@@ -48,12 +48,12 @@ export class PostsService {
 
   public async update(
     id: string,
-    updatePostInput: UpdatePostInput,
+    updatePostInput: UpdatePostInput
   ): Promise<Posts> {
     const users =
       updatePostInput.users &&
       (await Promise.all(
-        updatePostInput.users.map((name) => this.preloadUserByName(name)),
+        updatePostInput.users?.map((name) => this.preloadUserByName(name))
       ));
 
     const user = await this.postsRepository.preload({

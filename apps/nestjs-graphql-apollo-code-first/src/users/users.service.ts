@@ -7,6 +7,7 @@ import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
 import { UsersArgs } from './dto/users.args';
 import { Users } from './entities/users.entity';
+import { HashingService } from '../shared/hashing/hashing.service';
 
 @Injectable()
 export class UsersService {
@@ -15,6 +16,7 @@ export class UsersService {
     private readonly usersRepository: Repository<Users>,
     @InjectRepository(Roles)
     private readonly rolesRepository: Repository<Roles>,
+    private readonly hashingService: HashingService
   ) {}
 
   public async findAll(usersArgs: UsersArgs): Promise<Users[]> {
@@ -41,10 +43,12 @@ export class UsersService {
   }
 
   public async create(createUserInput: CreateUserInput): Promise<Users> {
-    createUserInput.password = bcrypt.hashSync(createUserInput.password, 8);
+    createUserInput.password = await this.hashingService.hash(
+      createUserInput.password
+    );
 
     const roles = await Promise.all(
-      createUserInput.roles.map((name) => this.preloadRoleByName(name)),
+      createUserInput.roles.map((name) => this.preloadRoleByName(name))
     );
 
     const user = this.usersRepository.create({ ...createUserInput, roles });
@@ -53,14 +57,16 @@ export class UsersService {
 
   public async update(
     id: string,
-    updateUserInput: UpdateUserInput,
+    updateUserInput: UpdateUserInput
   ): Promise<Users> {
-    updateUserInput.password = bcrypt.hashSync(updateUserInput.password, 8);
+    updateUserInput.password = await this.hashingService.hash(
+      updateUserInput.password
+    );
 
     const roles =
       updateUserInput.roles &&
       (await Promise.all(
-        updateUserInput.roles.map((name) => this.preloadRoleByName(name)),
+        updateUserInput.roles.map((name) => this.preloadRoleByName(name))
       ));
 
     const user = await this.usersRepository.preload({
