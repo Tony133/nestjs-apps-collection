@@ -50,7 +50,7 @@ specifiers:
   sequelize: ^6.28.0
   sequelize-typescript: ^2.1.5
   supertest: ^6.3.3
-  ts-jest: 29.0.5
+  ts-jest: 29.1.0
   ts-morph: ^17.0.1
   ts-node: 10.9.1
   tslib: ^2.5.0
@@ -112,7 +112,7 @@ devDependencies:
   nx: 15.9.3
   prettier: 2.8.4
   supertest: 6.3.3
-  ts-jest: 29.0.5_44ttdtjaknnkcgzh5px4h2qxl4
+  ts-jest: 29.1.0_44ttdtjaknnkcgzh5px4h2qxl4
   ts-node: 10.9.1_2xvfnlkss5voknohs74dndxfti
   typescript: 5.0.2
 
@@ -10489,8 +10489,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-jest/29.0.5_44ttdtjaknnkcgzh5px4h2qxl4:
-    resolution: {integrity: sha512-PL3UciSgIpQ7f6XjVOmbi96vmDHUqAyqDr8YxzopDqX3kfgYtX1cuNeBjP+L9sFXi6nzsGGA6R3fP3DDDJyrxA==}
+  /ts-jest/29.1.0_44ttdtjaknnkcgzh5px4h2qxl4:
+    resolution: {integrity: sha512-ZhNr7Z4PcYa+JjMl62ir+zPiNJfXJN6E8hSLnaUKhOgqcn8vb3e537cpkd0FuAfRK3sR1LSqM1MOhliXNgOFPA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
     peerDependencies:
@@ -10499,7 +10499,7 @@ packages:
       babel-jest: ^29.0.0
       esbuild: '*'
       jest: ^29.0.0
-      typescript: '>=4.3'
+      typescript: '>=4.3 <6'
     peerDependenciesMeta:
       '@babel/core':
         optional: true
