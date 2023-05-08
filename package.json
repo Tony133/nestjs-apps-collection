@@ -51,7 +51,7 @@
     "@nrwl/linter": "15.9.4",
     "@nrwl/nest": "15.9.4",
     "@nrwl/node": "15.9.4",
-    "@nrwl/workspace": "15.9.4",
+    "@nrwl/workspace": "16.1.2",
     "@types/jest": "29.5.1",
     "@types/node": "18.16.5",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
