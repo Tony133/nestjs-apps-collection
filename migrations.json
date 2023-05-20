@@ -1,0 +1,12 @@
+{
+  "migrations": [
+    {
+      "cli": "nx",
+      "version": "16.3.1-beta.0",
+      "description": "Replace @nx/node:webpack with @nx/node:webpack for all project targets",
+      "implementation": "./src/migrations/update-16-3-1/update-webpack-executor",
+      "package": "@nx/node",
+      "name": "update-16-3-1-update-executor"
+    }
+  ]
+}
