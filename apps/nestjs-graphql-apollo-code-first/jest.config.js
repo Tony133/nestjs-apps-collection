@@ -11,6 +11,9 @@ module.exports = {
   coverageDirectory: '../../coverage/apps/nestjs-graphql-apollo-code-first',
   coveragePathIgnorePatterns: [
     "/src/app.service.ts",
-    "/src/app.resolver.ts"
+    "/src/app.resolver.ts",
+    "/src/roles/entities/*",
+    "/src/users/entities/*",
+    "/src/posts/entities/*"
   ],
 };
