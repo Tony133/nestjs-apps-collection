@@ -51,7 +51,7 @@ specifiers:
   sequelize-typescript: ^2.1.5
   supertest: ^6.3.3
   ts-jest: 29.0.5
-  ts-morph: ^17.0.1
+  ts-morph: ^18.0.0
   ts-node: 10.9.1
   tslib: ^2.5.0
   typeorm: ^0.3.11
@@ -62,7 +62,7 @@ dependencies:
   '@nestjs/common': 9.3.9_welcnyot5bzd5wa2aovbkxpi4i
   '@nestjs/config': 2.3.1_jrq2rdgfp2sx67wmylmrqliwxe
   '@nestjs/core': 9.3.9_q6agyr4hwia55oswpsa7zjxcpm
-  '@nestjs/graphql': 11.0.0_neqsyrtn5qk37n4fdpym5gzwom
+  '@nestjs/graphql': 11.0.0_awbwxs55ygoeyc7fbk52jgbzsm
   '@nestjs/mapped-types': 1.2.2_sm5si6oczf3vcbfl6qa276t67m
   '@nestjs/mercurius': 11.0.3_sweqfheob56shmj42sq6itftsi
   '@nestjs/mongoose': 9.2.1_xfd6n7hp4cvurmghensp4uyxou
@@ -84,7 +84,7 @@ dependencies:
   rxjs: 7.8.0
   sequelize: 6.29.3_mysql2@3.2.0+pg@8.10.0
   sequelize-typescript: 2.1.5_slvurenaim4uhtd3ndqenmaosu
-  ts-morph: 17.0.1
+  ts-morph: 18.0.0
   tslib: 2.5.0
   typeorm: 0.3.12_svno4wzxcf4d2u33p5rsrd4elq
 
@@ -3011,7 +3011,7 @@ packages:
     transitivePeerDependencies:
       - encoding
 
-  /@nestjs/graphql/11.0.0_neqsyrtn5qk37n4fdpym5gzwom:
+  /@nestjs/graphql/11.0.0_awbwxs55ygoeyc7fbk52jgbzsm:
     resolution: {integrity: sha512-2rSSd7CS+RtFiQ2xcq2ErRdW/Q9Cxs8KLPe4f1JRdwcpbLTuQ46V9S/+eAEhP3Jg/DjaTgNiL1NI6Cb38r9lwQ==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
@@ -3049,7 +3049,7 @@ packages:
       normalize-path: 3.0.0
       reflect-metadata: 0.1.13
       subscriptions-transport-ws: 0.11.0_graphql@16.6.0
-      ts-morph: 17.0.1
+      ts-morph: 18.0.0
       tslib: 2.5.0
       uuid: 9.0.0
       ws: 8.12.1
@@ -3098,7 +3098,7 @@ packages:
     dependencies:
       '@mercuriusjs/gateway': 1.2.0
       '@nestjs/common': 9.3.9_welcnyot5bzd5wa2aovbkxpi4i
-      '@nestjs/graphql': 11.0.0_neqsyrtn5qk37n4fdpym5gzwom
+      '@nestjs/graphql': 11.0.0_awbwxs55ygoeyc7fbk52jgbzsm
       graphql: 16.6.0
       mercurius: 12.2.0_graphql@16.6.0
       tslib: 2.5.0
@@ -3834,12 +3834,12 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
-  /@ts-morph/common/0.18.1:
-    resolution: {integrity: sha512-RVE+zSRICWRsfrkAw5qCAK+4ZH9kwEFv5h0+/YeHTLieWP7F4wWq4JsKFuNWG+fYh/KF+8rAtgdj5zb2mm+DVA==}
+  /@ts-morph/common/0.19.0:
+    resolution: {integrity: sha512-Unz/WHmd4pGax91rdIKWi51wnVUW11QttMEPpBiBgIewnc9UQIX7UDLxr5vRlqeByXCwhkF6VabSsI0raWcyAQ==}
     dependencies:
       fast-glob: 3.2.12
-      minimatch: 5.1.6
-      mkdirp: 1.0.4
+      minimatch: 7.4.6
+      mkdirp: 2.1.6
       path-browserify: 1.0.1
     dev: false
 
@@ -5143,8 +5143,8 @@ packages:
     engines: {iojs: '>= 1.0.0', node: '>= 0.12.0'}
     dev: true
 
-  /code-block-writer/11.0.3:
-    resolution: {integrity: sha512-NiujjUFB4SwScJq2bwbYUtXbZhBSlY6vYzm++3Q6oC+U+injTqfPYFK8wS9COOmb2lueqp0ZRB4nK1VYeHgNyw==}
+  /code-block-writer/12.0.0:
+    resolution: {integrity: sha512-q4dMFMlXtKR3XNBHyMHt/3pwYNA69EDk00lloMOaaUMKPUXBw6lpXtbu3MMVG6/uOihGnRDOlkyqsONEUj60+w==}
     dev: false
 
   /collect-v8-coverage/1.0.1:
@@ -8176,6 +8176,13 @@ packages:
     dependencies:
       brace-expansion: 2.0.1
 
+  /minimatch/7.4.6:
+    resolution: {integrity: sha512-sBz8G/YjVniEz6lKPNpKxXwazJe4c19fEfV2GDMX6AjFz+MX9uDWIZW8XreVhkFW3fkIdTv/gxWr/Kks5FFAVw==}
+    engines: {node: '>=10'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: false
+
   /minimist-options/4.1.0:
     resolution: {integrity: sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==}
     engines: {node: '>= 6'}
@@ -8221,6 +8228,12 @@ packages:
 
   /mkdirp/2.1.5:
     resolution: {integrity: sha512-jbjfql+shJtAPrFoKxHOXip4xS+kul9W3OzfzzrqueWK2QMGon2bFH2opl6W9EagBThjEz+iysyi/swOoVfB/w==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: false
+
+  /mkdirp/2.1.6:
+    resolution: {integrity: sha512-+hEnITedc8LAtIP9u3HJDFIdcLV2vXP33sqLLIzkv1Db1zO/1OxbvYf0Y1OC/S/Qo5dxHXepofhmxL02PsKe+A==}
     engines: {node: '>=10'}
     hasBin: true
     dev: false
@@ -10701,11 +10714,11 @@ packages:
       webpack: 5.76.1
     dev: true
 
-  /ts-morph/17.0.1:
-    resolution: {integrity: sha512-10PkHyXmrtsTvZSL+cqtJLTgFXkU43Gd0JCc0Rw6GchWbqKe0Rwgt1v3ouobTZwQzF1mGhDeAlWYBMGRV7y+3g==}
+  /ts-morph/18.0.0:
+    resolution: {integrity: sha512-Kg5u0mk19PIIe4islUI/HWRvm9bC1lHejK4S0oh1zaZ77TMZAEmQC0sHQYiu2RgCQFZKXz1fMVi/7nOOeirznA==}
     dependencies:
-      '@ts-morph/common': 0.18.1
-      code-block-writer: 11.0.3
+      '@ts-morph/common': 0.19.0
+      code-block-writer: 12.0.0
     dev: false
 
   /ts-node/10.9.1_gbfmtwj2t57hq5iibp7xw5qwjq:
