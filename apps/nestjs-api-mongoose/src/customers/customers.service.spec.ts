@@ -5,7 +5,7 @@ import { CreateCustomerDto } from './dto/create-customer.dto';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
 import { NotFoundException } from '@nestjs/common';
 import { getModelToken } from '@nestjs/mongoose';
-import { ICustomer } from './interfaces/customer.interface';
+import { CustomersProfile } from './interfaces/customers-profile.interface';
 import { Model } from 'mongoose';
 
 const mockCustomer: any = {
@@ -74,7 +74,7 @@ const updateCustomerDto: UpdateCustomerDto = {
 
 describe('CustomersService', () => {
   let service: CustomersService;
-  let model: Model<ICustomer>;
+  let model: Model<CustomersProfile>;
 
   const paginationQueryDto: PaginationQueryDto = {
     limit: 10,
@@ -110,7 +110,7 @@ describe('CustomersService', () => {
     }).compile();
 
     service = module.get<CustomersService>(CustomersService);
-    model = module.get<Model<ICustomer>>(getModelToken('Customer'));
+    model = module.get<Model<CustomersProfile>>(getModelToken('Customer'));
   });
 
   it('should be defined', () => {
