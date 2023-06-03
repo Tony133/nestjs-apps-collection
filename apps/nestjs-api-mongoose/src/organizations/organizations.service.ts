@@ -1,10 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { IOrganization } from './interfaces/organization.interface';
 import { CreateOrganizationDto, UpdateOrganizationDto } from './dto';
 import { Organization } from './schemas/organization.schema';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
+import { OrganizationsProfile } from './interfaces/organizations-profile';
 
 @Injectable()
 export class OrganizationsService {
@@ -48,7 +48,7 @@ export class OrganizationsService {
 
   public async create(
     createOrganizationDto: CreateOrganizationDto
-  ): Promise<IOrganization> {
+  ): Promise<OrganizationsProfile> {
     const organization = await this.organizationModel.create(
       createOrganizationDto
     );
@@ -58,7 +58,7 @@ export class OrganizationsService {
   public async update(
     organizationId: string,
     updateOrganizationDto: UpdateOrganizationDto
-  ): Promise<IOrganization> {
+  ): Promise<OrganizationsProfile> {
     const existingOrganization = await this.organizationModel.findByIdAndUpdate(
       { _id: organizationId },
       updateOrganizationDto,

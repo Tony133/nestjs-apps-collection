@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { ICustomer } from './interfaces/customer.interface';
+import { CustomersProfile } from './interfaces/customers-profile.interface';
 import { CreateCustomerDto, UpdateCustomerDto } from './dto';
 import { Customer } from './schemas/customer.schema';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
@@ -48,7 +48,7 @@ export class CustomersService {
 
   public async create(
     createCustomerDto: CreateCustomerDto
-  ): Promise<ICustomer> {
+  ): Promise<CustomersProfile> {
     const newCustomer = await this.customerModel.create(createCustomerDto);
     return newCustomer;
   }
@@ -56,7 +56,7 @@ export class CustomersService {
   public async update(
     customerId: string,
     updateCustomerDto: UpdateCustomerDto
-  ): Promise<ICustomer> {
+  ): Promise<CustomersProfile> {
     const existingCustomer = await this.customerModel.findByIdAndUpdate(
       { _id: customerId },
       updateCustomerDto
