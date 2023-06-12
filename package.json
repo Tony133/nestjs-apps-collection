@@ -20,7 +20,7 @@
     "@nestjs/mongoose": "^9.2.1",
     "@nestjs/platform-express": "9.4.2",
     "@nestjs/platform-fastify": "^9.3.9",
-    "@nestjs/sequelize": "^9.0.0",
+    "@nestjs/sequelize": "^9.0.2",
     "@nestjs/swagger": "6.3.0",
     "@nestjs/typeorm": "^9.0.1",
     "bcrypt": "^5.1.0",
