@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@mercuriusjs/gateway':
-    specifier: ^1.2.0
-    version: 1.2.0
+    specifier: ^2.0.0
+    version: 2.0.0
   '@nestjs/common':
     specifier: 9.4.2
     version: 9.4.2(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -25,7 +25,7 @@ dependencies:
     version: 1.2.2(@nestjs/common@9.4.2)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
   '@nestjs/mercurius':
     specifier: ^11.0.3
-    version: 11.0.3(@mercuriusjs/gateway@1.2.0)(@nestjs/common@9.4.2)(@nestjs/graphql@11.0.0)(fastify@4.17.0)(graphql@16.6.0)(mercurius@12.2.0)
+    version: 11.0.3(@mercuriusjs/gateway@2.0.0)(@nestjs/common@9.4.2)(@nestjs/graphql@11.0.0)(fastify@4.17.0)(graphql@16.6.0)(mercurius@12.2.0)
   '@nestjs/mongoose':
     specifier: ^9.2.1
     version: 9.2.1(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(mongoose@6.8.3)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -2675,6 +2675,16 @@ packages:
       - utf-8-validate
     dev: false
 
+  /@fastify/websocket@8.1.0:
+    resolution: {integrity: sha512-7Tk+ODgvS/S9IyPXuXDU1v5tpchAeSWFH0B3Ldz+cnBKy5+lEmuj4ncLhVUzXgn9w3ycX/Vhf1mEEkcemBFUIQ==}
+    dependencies:
+      fastify-plugin: 4.5.0
+      ws: 8.13.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
   /@graphql-tools/merge@8.4.0(graphql@16.6.0):
     resolution: {integrity: sha512-3XYCWe0d3I4F1azNj1CdShlbHfTIfiDgj00R9uvFH8tHKh7i1IWN3F7QQYovcHKhayaR6zPok3YYMESYQcBoaA==}
     peerDependencies:
@@ -3045,29 +3055,29 @@ packages:
       - supports-color
     dev: false
 
-  /@mercuriusjs/federation@1.0.1:
-    resolution: {integrity: sha512-aski6H8SRfjK73Bruzh5kQ20OS0s0pkbFvcOex46Qm17bYWoJ3daMrbTw4caOSkru7R8pIA/bvAjSq97xkDJkQ==}
+  /@mercuriusjs/federation@2.0.0:
+    resolution: {integrity: sha512-hBL2Zhdf0p2Ab2SDPXcVnNsYTf5x50xPAyHm2HpmXreHS7aGt4obX8g8JrqRhIfOApcRg5l9RQ2OZqaUYeR8sQ==}
     dependencies:
       '@fastify/error': 3.2.0
       graphql: 16.6.0
-      mercurius: 12.2.0(graphql@16.6.0)
+      mercurius: 13.0.0(graphql@16.6.0)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
     dev: false
 
-  /@mercuriusjs/gateway@1.2.0:
-    resolution: {integrity: sha512-kwSTeY53NpO2VUaDKKl3PBUwcqQBLHzHAq2FDxCr4N2u2ELu9/yJVAcv7okkmwg7ImjsTOdgbvU2+VrG2foLHQ==}
+  /@mercuriusjs/gateway@2.0.0:
+    resolution: {integrity: sha512-Zga1RrD21/5V5SgYyCxfMjVEo4uLbipPHFyZdtmntHu2KmRwbQuipPy06NW9FVEUTfIzwJQmrZWv9IO9LGlyTA==}
     dependencies:
-      '@mercuriusjs/federation': 1.0.1
+      '@mercuriusjs/federation': 2.0.0
       '@mercuriusjs/subscription-client': 1.0.0(graphql@16.6.0)
       fastify-plugin: 4.5.0
       graphql: 16.6.0
       graphql-ws: 5.13.1(graphql@16.6.0)
-      mercurius: 12.2.0(graphql@16.6.0)
+      mercurius: 13.0.0(graphql@16.6.0)
       p-map: 4.0.0
       single-user-cache: 0.6.0
-      tiny-lru: 10.4.1
+      tiny-lru: 11.0.1
       use-strict: 1.0.1
       ws: 8.13.0
     transitivePeerDependencies:
@@ -3227,7 +3237,7 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mercurius@11.0.3(@mercuriusjs/gateway@1.2.0)(@nestjs/common@9.4.2)(@nestjs/graphql@11.0.0)(fastify@4.17.0)(graphql@16.6.0)(mercurius@12.2.0):
+  /@nestjs/mercurius@11.0.3(@mercuriusjs/gateway@2.0.0)(@nestjs/common@9.4.2)(@nestjs/graphql@11.0.0)(fastify@4.17.0)(graphql@16.6.0)(mercurius@12.2.0):
     resolution: {integrity: sha512-VuVcs2oFefvGsEi5lQBxT/vNbTPv0v6NZaVnvFaxP9IQFg07lNSONWWfTBI5ptvphftIqjAgPrMm2yYai/Af6g==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
@@ -3246,7 +3256,7 @@ packages:
       '@mercuriusjs/gateway':
         optional: true
     dependencies:
-      '@mercuriusjs/gateway': 1.2.0
+      '@mercuriusjs/gateway': 2.0.0
       '@nestjs/common': 9.4.2(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/graphql': 11.0.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@17.0.0)
       fastify: 4.17.0
@@ -8793,6 +8803,32 @@ packages:
       secure-json-parse: 2.7.0
       single-user-cache: 0.6.0
       tiny-lru: 10.4.1
+      undici: 5.22.1
+      ws: 8.13.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
+  /mercurius@13.0.0(graphql@16.6.0):
+    resolution: {integrity: sha512-gPJGw9qymc2JSee5lUgg5OeQLM7EtLzEWMY7dV2sMwUdh3k8iO3Y22iy6B8TnIX2atpVt2xSpWHRvfiUvH6wuQ==}
+    engines: {node: '>=14.19.3'}
+    peerDependencies:
+      graphql: ^16.0.0
+    dependencies:
+      '@fastify/error': 3.2.0
+      '@fastify/static': 6.10.2
+      '@fastify/websocket': 8.1.0
+      fastify-plugin: 4.5.0
+      graphql: 16.6.0
+      graphql-jit: 0.8.2(graphql@16.6.0)
+      mqemitter: 5.0.0
+      p-map: 4.0.0
+      readable-stream: 4.4.0
+      safe-stable-stringify: 2.4.3
+      secure-json-parse: 2.7.0
+      single-user-cache: 0.6.0
+      tiny-lru: 11.0.1
       undici: 5.22.1
       ws: 8.13.0
     transitivePeerDependencies:
