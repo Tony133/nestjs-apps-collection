@@ -36,8 +36,8 @@ dependencies:
     specifier: ^9.3.9
     version: 9.3.9(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)
   '@nestjs/sequelize':
-    specifier: ^9.0.0
-    version: 9.0.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.28.0)
+    specifier: ^10.0.0
+    version: 10.0.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.28.0)
   '@nestjs/swagger':
     specifier: 6.3.0
     version: 6.3.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
@@ -3327,11 +3327,11 @@ packages:
       - chokidar
     dev: true
 
-  /@nestjs/sequelize@9.0.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.28.0):
-    resolution: {integrity: sha512-8HwEcDuUka5sGR4eIv98tEWRTzNI87KGkoHLbmFx9rk1/OB3nF2gqvtLzU7WMLdgan0mNQdDzeBoVwAmedMEtQ==}
+  /@nestjs/sequelize@10.0.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.28.0):
+    resolution: {integrity: sha512-ofbIYwC3S1rRtS2LlmSKlVrLt/23zKLyuomAosF3ZNqqm5zdY4V87WeU8KXly+AdjmzNw6JVoW+i4iDGiatCNA==}
     peerDependencies:
-      '@nestjs/common': ^8.0.0 || ^9.0.0
-      '@nestjs/core': ^8.0.0 || ^9.0.0
+      '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^8.0.0 || ^9.0.0 || ^10.0.0
       reflect-metadata: ^0.1.13
       rxjs: ^7.2.0
       sequelize: ^6.3.5
@@ -3343,7 +3343,7 @@ packages:
       rxjs: 7.8.1
       sequelize: 6.28.0(mysql2@3.1.2)(pg@8.9.0)
       sequelize-typescript: 2.1.5(@types/node@20.2.5)(@types/validator@13.7.17)(reflect-metadata@0.1.13)(sequelize@6.28.0)
-      uuid: 8.3.2
+      uuid: 9.0.0
     dev: false
 
   /@nestjs/swagger@6.3.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13):
