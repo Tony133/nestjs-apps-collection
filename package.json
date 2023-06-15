@@ -15,7 +15,7 @@
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "9.4.2",
     "@nestjs/graphql": "^11.0.0",
-    "@nestjs/mapped-types": "^1.2.2",
+    "@nestjs/mapped-types": "^2.0.0",
     "@nestjs/mercurius": "^11.0.3",
     "@nestjs/mongoose": "^9.2.1",
     "@nestjs/platform-express": "9.4.2",
