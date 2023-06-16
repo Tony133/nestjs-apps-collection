@@ -18,17 +18,6 @@ const mockCustomer: any = {
   organizations: 'organization #1',
 };
 
-const mockCustomerUpdate: any = {
-  _id: 'anyid',
-  firstName: 'firstName update',
-  lastName: 'lastName update',
-  email: 'test@example.it',
-  phone: '1234567890',
-  address: 'address update',
-  description: 'description update',
-  organizations: 'organization update',
-};
-
 const customersArray = [
   {
     _id: 'anyid',
@@ -154,17 +143,18 @@ describe('CustomersService', () => {
 
   describe('create()', () => {
     it('should insert a new customer', async () => {
-      jest.spyOn(model, 'create').mockImplementationOnce(() =>
-        Promise.resolve({
-          _id: 'a id',
-          firstName: 'firstName #1',
-          lastName: 'lastName #1',
-          email: 'test@example.it',
-          phone: '1234567890',
-          address: 'address #1',
-          description: 'description #1',
-          organizations: 'organization #1',
-        })
+      jest.spyOn(model, 'create').mockImplementationOnce(
+        () =>
+          Promise.resolve({
+            _id: 'a id',
+            firstName: 'firstName #1',
+            lastName: 'lastName #1',
+            email: 'test@example.it',
+            phone: '1234567890',
+            address: 'address #1',
+            description: 'description #1',
+            organizations: 'organization #1',
+          }) as any
       );
       const newCustomer = await service.create({
         firstName: 'firstName #1',
