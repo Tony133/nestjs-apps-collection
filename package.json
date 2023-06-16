@@ -17,7 +17,7 @@
     "@nestjs/graphql": "^11.0.0",
     "@nestjs/mapped-types": "^1.2.2",
     "@nestjs/mercurius": "^11.0.3",
-    "@nestjs/mongoose": "^9.2.1",
+    "@nestjs/mongoose": "^10.0.0",
     "@nestjs/platform-express": "9.4.2",
     "@nestjs/platform-fastify": "^9.3.9",
     "@nestjs/sequelize": "^9.0.0",

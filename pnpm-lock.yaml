@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@mercuriusjs/gateway':
     specifier: ^1.2.0
@@ -23,8 +27,8 @@ dependencies:
     specifier: ^11.0.3
     version: 11.0.3(@mercuriusjs/gateway@1.2.0)(@nestjs/common@9.4.2)(@nestjs/graphql@11.0.0)(fastify@4.17.0)(graphql@16.6.0)(mercurius@12.2.0)
   '@nestjs/mongoose':
-    specifier: ^9.2.1
-    version: 9.2.1(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(mongoose@6.11.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+    specifier: ^10.0.0
+    version: 10.0.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(mongoose@6.11.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
   '@nestjs/platform-express':
     specifier: 9.4.2
     version: 9.4.2(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)
@@ -3251,12 +3255,12 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@nestjs/mongoose@9.2.1(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(mongoose@6.11.2)(reflect-metadata@0.1.13)(rxjs@7.8.1):
-    resolution: {integrity: sha512-tMK5kKFjQnNVhqJDw1wa352z+VsODOFznTn74xSzrziof03qS+O6rLU4q1kMx0B4AmFbADf03GOdpvBc9bMWqw==}
+  /@nestjs/mongoose@10.0.0(@nestjs/common@9.4.2)(@nestjs/core@9.4.2)(mongoose@6.11.2)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+    resolution: {integrity: sha512-Wqinhuess5AKGUTs5gtJxs+naXv1BBxADTBw8h6hPAdCkPL/knoIpo0cSxBNJ4COwRqpy4QWGilzPiPR0sJgJA==}
     peerDependencies:
-      '@nestjs/common': ^8.0.0 || ^9.0.0
-      '@nestjs/core': ^8.0.0 || ^9.0.0
-      mongoose: ^6.0.2
+      '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^8.0.0 || ^9.0.0 || ^10.0.0
+      mongoose: ^6.0.2 || ^7.0.0
       reflect-metadata: ^0.1.12
       rxjs: ^7.0.0
     dependencies:
@@ -12131,7 +12135,3 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
