@@ -36,7 +36,7 @@
     "rxjs": "^7.8.1",
     "sequelize": "^6.32.0",
     "sequelize-typescript": "^2.1.5",
-    "ts-morph": "^19.0.0",
+    "ts-morph": "^17.0.0",
     "tslib": "^2.5.3",
     "typeorm": "^0.3.11"
   },
