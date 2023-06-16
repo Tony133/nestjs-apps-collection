@@ -128,6 +128,15 @@ describe('OrganizationsService', () => {
 
   describe('create()', () => {
     it('should insert a new organization', async () => {
+      jest.spyOn(model, 'create').mockImplementationOnce(() =>
+        Promise.resolve({
+          _id: 'a id',
+          name: 'name #1',
+          address: 'address #1',
+          description: 'description #1',
+          customers: 'customer #1',
+        })
+      );
       const newOrganization = await service.create({
         name: 'name #1',
         address: 'address #1',
@@ -135,6 +144,7 @@ describe('OrganizationsService', () => {
         customers: 'customer #1',
       });
       expect(newOrganization).toEqual({
+        _id: 'a id',
         name: 'name #1',
         address: 'address #1',
         description: 'description #1',
