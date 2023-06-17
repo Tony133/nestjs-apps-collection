@@ -38,7 +38,7 @@
     "sequelize-typescript": "^2.1.5",
     "ts-morph": "^19.0.0",
     "tslib": "^2.5.3",
-    "typeorm": "^0.3.11"
+    "typeorm": "^0.3.16"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
