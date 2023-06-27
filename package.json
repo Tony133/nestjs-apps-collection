@@ -30,7 +30,7 @@
     "install": "^0.13.0",
     "mercurius": "13.0.0",
     "mongoose": "^7.3.0",
-    "mysql2": "^3.3.5",
+    "mysql2": "^3.4.2",
     "pg": "^8.11.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
