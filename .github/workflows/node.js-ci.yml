@@ -150,3 +150,29 @@ jobs:
       - run: npx nx e2e nestjs-graphql-mercurius-schema-first
       - name: Stop Docker-Compose (nestjs-graphql-mercurius-schema-first)
         run: cd apps/nestjs-graphql-mercurius-schema-first && docker-compose down
+
+      - name: Start Docker-Compose (nestjs-graphql-apollo-schema-first)
+        run: cd apps/nestjs-graphql-apollo-schema-first && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install
+      - run: cd apps/nestjs-graphql-apollo-schema-first && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-graphql-apollo-schema-first
+      - name: Stop Docker-Compose (nestjs-graphql-apollo-schema-first)
+        run: cd apps/nestjs-graphql-apollo-schema-first && docker-compose down
+
+      - name: Start Docker-Compose (nestjs-graphql-apollo-code-first)
+        run: cd apps/nestjs-graphql-apollo-code-first && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install
+      - run: cd apps/nestjs-graphql-apollo-code-first && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-graphql-apollo-code-first
+      - name: Stop Docker-Compose (nestjs-graphql-apollo-code-first)
+        run: cd apps/nestjs-graphql-apollo-code-first && docker-compose down
