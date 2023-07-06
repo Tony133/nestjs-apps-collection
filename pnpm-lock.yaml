@@ -25,7 +25,7 @@ dependencies:
     version: 2.0.0(@nestjs/common@10.0.5)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
   '@nestjs/mercurius':
     specifier: ^12.0.1
-    version: 12.0.1(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.1)(fastify@4.18.0)(graphql@16.6.0)(mercurius@13.0.0)
+    version: 12.0.1(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.1)(fastify@4.19.1)(graphql@16.6.0)(mercurius@13.0.0)
   '@nestjs/mongoose':
     specifier: ^10.0.0
     version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(mongoose@7.3.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -33,8 +33,8 @@ dependencies:
     specifier: 10.0.5
     version: 10.0.5(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)
   '@nestjs/platform-fastify':
-    specifier: ^10.0.0
-    version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)
+    specifier: ^10.0.5
+    version: 10.0.5(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)
   '@nestjs/sequelize':
     specifier: ^10.0.0
     version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.32.0)
@@ -2620,7 +2620,7 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mercurius@12.0.1(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.1)(fastify@4.18.0)(graphql@16.6.0)(mercurius@13.0.0):
+  /@nestjs/mercurius@12.0.1(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.1)(fastify@4.19.1)(graphql@16.6.0)(mercurius@13.0.0):
     resolution: {integrity: sha512-N3Y+eBbPRkudSXqZHe5Z+04sg1Z1DfT5zGXqiJuZTMouVftgeHVm2go1jjHbH9GR/Xr9Ti0mTFUxk2BsD+tvIA==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
@@ -2642,7 +2642,7 @@ packages:
       '@mercuriusjs/gateway': 2.0.0
       '@nestjs/common': 10.0.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/graphql': 12.0.1(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@19.0.0)
-      fastify: 4.18.0
+      fastify: 4.19.1
       graphql: 16.6.0
       mercurius: 13.0.0(graphql@16.6.0)
       tslib: 2.5.3
@@ -2680,8 +2680,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@nestjs/platform-fastify@10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5):
-    resolution: {integrity: sha512-s5Ck3nTWLWytWH/c2l7JauuPiYt2MMszX3n+3hNWfevM3wELxhvnA/6617W2AliSOsVgFJ1m1uMCKudNo2vEUQ==}
+  /@nestjs/platform-fastify@10.0.5(@nestjs/common@10.0.5)(@nestjs/core@10.0.5):
+    resolution: {integrity: sha512-kkQetzDuLmDWpC2uw14P+XGxANLfQ2dAxJ6GHoZ+rEN+TYUppV1EzKLX7rXfLlQgm+EM2WSvEvFuScmcw+gHLA==}
     peerDependencies:
       '@fastify/static': ^6.0.0
       '@fastify/view': ^7.0.0
@@ -2698,10 +2698,10 @@ packages:
       '@fastify/middie': 8.3.0
       '@nestjs/common': 10.0.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 10.0.5(@nestjs/common@10.0.5)(@nestjs/platform-express@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      fastify: 4.18.0
+      fastify: 4.19.1
       light-my-request: 5.10.0
       path-to-regexp: 3.2.0
-      tslib: 2.5.3
+      tslib: 2.6.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -5962,8 +5962,8 @@ packages:
     resolution: {integrity: sha512-79ak0JxddO0utAXAQ5ccKhvs6vX2MGyHHMMsmZkBANrq3hXc1CHzvNPHOcvTsVMEPl5I+NT+RO4YKMGehOfSIg==}
     dev: false
 
-  /fastify@4.18.0:
-    resolution: {integrity: sha512-L5o/2GEkBastQ3HV0dtKo7SUZ497Z1+q4fcqAoPyq6JCQ/8zdk1JQEoTQwnBWCp+EmA7AQa6mxNqSAEhzP0RwQ==}
+  /fastify@4.19.1:
+    resolution: {integrity: sha512-99r7xae02BUWI1H8exJidkFJXi/SUZpO18YIJ6SSWIB1bb5CN659ga0iB85oLD+C4D9LeTOKplOJ1/YcFsK7oQ==}
     dependencies:
       '@fastify/ajv-compiler': 3.5.0
       '@fastify/error': 3.2.0

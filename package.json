@@ -19,7 +19,7 @@
     "@nestjs/mercurius": "^12.0.1",
     "@nestjs/mongoose": "^10.0.0",
     "@nestjs/platform-express": "10.0.5",
-    "@nestjs/platform-fastify": "^10.0.0",
+    "@nestjs/platform-fastify": "^10.0.5",
     "@nestjs/sequelize": "^10.0.0",
     "@nestjs/swagger": "7.1.1",
     "@nestjs/typeorm": "^10.0.0",
