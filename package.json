@@ -34,7 +34,7 @@
     "pg": "^8.11.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "sequelize": "^6.32.0",
+    "sequelize": "^6.32.1",
     "sequelize-typescript": "^2.1.5",
     "ts-morph": "^19.0.0",
     "tslib": "^2.5.3",

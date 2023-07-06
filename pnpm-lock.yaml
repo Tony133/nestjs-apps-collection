@@ -37,7 +37,7 @@ dependencies:
     version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)
   '@nestjs/sequelize':
     specifier: ^10.0.0
-    version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.32.0)
+    version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.32.1)
   '@nestjs/swagger':
     specifier: 7.1.1
     version: 7.1.1(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
@@ -78,11 +78,11 @@ dependencies:
     specifier: ^7.8.1
     version: 7.8.1
   sequelize:
-    specifier: ^6.32.0
-    version: 6.32.0(mysql2@3.3.5)(pg@8.11.0)
+    specifier: ^6.32.1
+    version: 6.32.1(mysql2@3.3.5)(pg@8.11.0)
   sequelize-typescript:
     specifier: ^2.1.5
-    version: 2.1.5(@types/node@20.4.0)(@types/validator@13.7.17)(reflect-metadata@0.1.13)(sequelize@6.32.0)
+    version: 2.1.5(@types/node@20.4.0)(@types/validator@13.7.17)(reflect-metadata@0.1.13)(sequelize@6.32.1)
   ts-morph:
     specifier: ^19.0.0
     version: 19.0.0
@@ -2735,7 +2735,7 @@ packages:
       - chokidar
     dev: true
 
-  /@nestjs/sequelize@10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.32.0):
+  /@nestjs/sequelize@10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)(sequelize-typescript@2.1.5)(sequelize@6.32.1):
     resolution: {integrity: sha512-ofbIYwC3S1rRtS2LlmSKlVrLt/23zKLyuomAosF3ZNqqm5zdY4V87WeU8KXly+AdjmzNw6JVoW+i4iDGiatCNA==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -2749,8 +2749,8 @@ packages:
       '@nestjs/core': 10.0.5(@nestjs/common@10.0.5)(@nestjs/platform-express@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
-      sequelize: 6.32.0(mysql2@3.3.5)(pg@8.11.0)
-      sequelize-typescript: 2.1.5(@types/node@20.4.0)(@types/validator@13.7.17)(reflect-metadata@0.1.13)(sequelize@6.32.0)
+      sequelize: 6.32.1(mysql2@3.3.5)(pg@8.11.0)
+      sequelize-typescript: 2.1.5(@types/node@20.4.0)(@types/validator@13.7.17)(reflect-metadata@0.1.13)(sequelize@6.32.1)
       uuid: 9.0.0
     dev: false
 
@@ -5526,8 +5526,8 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /dottie@2.0.3:
-    resolution: {integrity: sha512-4liA0PuRkZWQFQjwBypdxPfZaRWiv5tkhMXY2hzsa2pNf5s7U3m9cwUchfNKe8wZQxdGPQQzO6Rm2uGe0rvohQ==}
+  /dottie@2.0.6:
+    resolution: {integrity: sha512-iGCHkfUc5kFekGiqhe8B/mdaurD+lakO9txNnTvKtA6PISrw86LgqHvRzWYPyoE2Ph5aMIrCw9/uko6XHTKCwA==}
     dev: false
 
   /duplexer@0.1.2:
@@ -9902,14 +9902,6 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /semver@7.5.1:
-    resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
-    dev: false
-
   /semver@7.5.3:
     resolution: {integrity: sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==}
     engines: {node: '>=10'}
@@ -9946,7 +9938,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: false
 
-  /sequelize-typescript@2.1.5(@types/node@20.4.0)(@types/validator@13.7.17)(reflect-metadata@0.1.13)(sequelize@6.32.0):
+  /sequelize-typescript@2.1.5(@types/node@20.4.0)(@types/validator@13.7.17)(reflect-metadata@0.1.13)(sequelize@6.32.1):
     resolution: {integrity: sha512-x1CNODct8gJyfZPwEZBU5uVGNwgJI2Fda913ZxD5ZtCSRyTDPBTS/0uXciF+MlCpyqjpmoCAPtudQWzw579bzA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -9959,11 +9951,11 @@ packages:
       '@types/validator': 13.7.17
       glob: 7.2.0
       reflect-metadata: 0.1.13
-      sequelize: 6.32.0(mysql2@3.3.5)(pg@8.11.0)
+      sequelize: 6.32.1(mysql2@3.3.5)(pg@8.11.0)
     dev: false
 
-  /sequelize@6.32.0(mysql2@3.3.5)(pg@8.11.0):
-    resolution: {integrity: sha512-gMd1M6kPANyrCeU/vtgEP5gnse7sVsiKbJyz7p4huuW8zZcRopj47UlglvdrMuIoqksZmsUPfApmMo6ZlJpcvg==}
+  /sequelize@6.32.1(mysql2@3.3.5)(pg@8.11.0):
+    resolution: {integrity: sha512-3Iv0jruv57Y0YvcxQW7BE56O7DC1BojcfIrqh6my+IQwde+9u/YnuYHzK+8kmZLhLvaziRT1eWu38nh9yVwn/g==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       ibm_db: '*'
@@ -9998,7 +9990,7 @@ packages:
       '@types/debug': 4.1.8
       '@types/validator': 13.7.17
       debug: 4.3.4
-      dottie: 2.0.3
+      dottie: 2.0.6
       inflection: 1.13.4
       lodash: 4.17.21
       moment: 2.29.4
@@ -10007,7 +9999,7 @@ packages:
       pg: 8.11.0
       pg-connection-string: 2.6.0
       retry-as-promised: 7.0.4
-      semver: 7.5.1
+      semver: 7.5.3
       sequelize-pool: 7.1.0
       toposort-class: 1.0.1
       uuid: 8.3.2
