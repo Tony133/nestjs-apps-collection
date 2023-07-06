@@ -160,7 +160,9 @@ jobs:
         name: Install pnpm
       - run: pnpm install
       - run: cd apps/nestjs-graphql-apollo-schema-first && cp .env.example-e2e-test .env
-      - run: npx nx e2e nestjs-graphql-apollo-schema-first
+      - run: npx nx e2e nestjs-graphql-apollo-schema-first --testFile=users.e2e-spec.ts
+      - run: npx nx e2e nestjs-graphql-apollo-schema-first --testFile=posts.e2e-spec.ts
+
       - name: Stop Docker-Compose (nestjs-graphql-apollo-schema-first)
         run: cd apps/nestjs-graphql-apollo-schema-first && docker-compose down
 
@@ -173,6 +175,7 @@ jobs:
         name: Install pnpm
       - run: pnpm install
       - run: cd apps/nestjs-graphql-apollo-code-first && cp .env.example-e2e-test .env
-      - run: npx nx e2e nestjs-graphql-apollo-code-first
+      - run: npx nx e2e nestjs-graphql-apollo-code-first --testFile=users.e2e-spec.ts
+      - run: npx nx e2e nestjs-graphql-apollo-code-first --testFile=posts.e2e-spec.ts
       - name: Stop Docker-Compose (nestjs-graphql-apollo-code-first)
         run: cd apps/nestjs-graphql-apollo-code-first && docker-compose down
