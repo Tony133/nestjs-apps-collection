@@ -50,6 +50,5 @@
     "sharedGlobals": [
       "{workspaceRoot}/babel.config.json"
     ]
-  },
-  "defaultProject": "nestjs-api-mongoose"
+  }
 }

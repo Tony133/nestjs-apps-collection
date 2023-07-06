@@ -161,7 +161,7 @@ devDependencies:
     specifier: 16.5.0
     version: 16.5.0
   nx-cloud:
-    specifier: ^16.0.5
+    specifier: 16.0.5
     version: 16.0.5
   prettier:
     specifier: ^3.0.0
