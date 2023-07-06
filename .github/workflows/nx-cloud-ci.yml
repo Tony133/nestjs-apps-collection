@@ -1,4 +1,4 @@
-name: nx-cloud-ci
+name: Nx cloud CI
 
 env:
   NX_BRANCH: ${{ github.event.pull_request.head.ref }}
