@@ -6,6 +6,11 @@
 
 Collection example apps with NestJS and Typeorm, Sequelize, Mongodb, PostgreSQL, GraphQL, Mercurius, etc. for the NestJS community 😻
 
+
+## Motivation
+
+This repository was created with the aim of helping developers who use NestJS or who use it for the first time to have examples (even simple ones) from which to take inspiration for their applications.
+
 ## Install workspace
 
 ```
