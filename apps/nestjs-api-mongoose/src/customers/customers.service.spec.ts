@@ -5,7 +5,7 @@ import { CreateCustomerDto } from './dto/create-customer.dto';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
 import { NotFoundException } from '@nestjs/common';
 import { getModelToken } from '@nestjs/mongoose';
-import { ICustomer } from './interfaces/customer.interface';
+import { CustomersProfile } from './interfaces/customers-profile.interface';
 import { Model } from 'mongoose';
 
 const mockCustomer: any = {
@@ -16,17 +16,6 @@ const mockCustomer: any = {
   address: 'address #1',
   description: 'description #1',
   organizations: 'organization #1',
-};
-
-const mockCustomerUpdate: any = {
-  _id: 'anyid',
-  firstName: 'firstName update',
-  lastName: 'lastName update',
-  email: 'test@example.it',
-  phone: '1234567890',
-  address: 'address update',
-  description: 'description update',
-  organizations: 'organization update',
 };
 
 const customersArray = [
@@ -74,7 +63,7 @@ const updateCustomerDto: UpdateCustomerDto = {
 
 describe('CustomersService', () => {
   let service: CustomersService;
-  let model: Model<ICustomer>;
+  let model: Model<CustomersProfile>;
 
   const paginationQueryDto: PaginationQueryDto = {
     limit: 10,
@@ -110,7 +99,7 @@ describe('CustomersService', () => {
     }).compile();
 
     service = module.get<CustomersService>(CustomersService);
-    model = module.get<Model<ICustomer>>(getModelToken('Customer'));
+    model = module.get<Model<CustomersProfile>>(getModelToken('Customer'));
   });
 
   it('should be defined', () => {
@@ -154,17 +143,18 @@ describe('CustomersService', () => {
 
   describe('create()', () => {
     it('should insert a new customer', async () => {
-      jest.spyOn(model, 'create').mockImplementationOnce(() =>
-        Promise.resolve({
-          _id: 'a id',
-          firstName: 'firstName #1',
-          lastName: 'lastName #1',
-          email: 'test@example.it',
-          phone: '1234567890',
-          address: 'address #1',
-          description: 'description #1',
-          organizations: 'organization #1',
-        })
+      jest.spyOn(model, 'create').mockImplementationOnce(
+        () =>
+          Promise.resolve({
+            _id: 'a id',
+            firstName: 'firstName #1',
+            lastName: 'lastName #1',
+            email: 'test@example.it',
+            phone: '1234567890',
+            address: 'address #1',
+            description: 'description #1',
+            organizations: 'organization #1',
+          }) as any
       );
       const newCustomer = await service.create({
         firstName: 'firstName #1',

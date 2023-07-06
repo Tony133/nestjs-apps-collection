@@ -1,0 +1,31 @@
+name: Nx cloud CI
+
+env:
+  NX_BRANCH: ${{ github.event.pull_request.head.ref }}
+  NX_RUN_GROUP: ${{ github.run_id }}
+  NX_CLOUD_DISTRIBUTED_EXECUTION: false
+  NX_CLOUD_AUTH_TOKEN: ${{ secrets.NX_CLOUD_TOKEN }}
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  main:
+    name: Nx Cloud - Main Job
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
+    with:
+      main-branch-name: main
+      number-of-agents: 3
+      init-commands: |
+        pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
+      parallel-commands-on-agents: |
+        pnpm exec nx affected --target=build --parallel=3
+
+  agents:
+    name: Nx Cloud - Agents
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.13.0
+    with:
+      number-of-agents: 3

@@ -1,12 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { OrganizationsService } from './organizations.service';
 import { PaginationQueryDto } from '../common/dto/pagination-query.dto';
-import { CreateOrganizationDto } from './dto/create-organization.dto';
-import { UpdateOrganizationDto } from './dto/update-organization.dto';
 import { NotFoundException } from '@nestjs/common';
 import { getModelToken } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { IOrganization } from './interfaces/organization.interface';
+import { OrganizationsProfile } from './interfaces/organizations-profile';
 
 const mockOrganization: any = {
   _id: 'anyid',
@@ -14,24 +12,6 @@ const mockOrganization: any = {
   address: 'address #1',
   description: 'description #1',
   customers: 'customer #1',
-};
-
-const mockOrganizationUpdate: any = {
-  _id: 'anyid',
-  name: 'name #1',
-  address: 'address #1',
-  description: 'description #1',
-  customers: 'customer #1',
-};
-
-const mockCustomer: any = {
-  firstName: 'firstName #1',
-  lastName: 'lastName #1',
-  email: 'test@example.it',
-  phone: '1234567890',
-  address: 'address #1',
-  description: 'description #1',
-  organizations: 'organization #1',
 };
 
 const organizationsArray = [
@@ -68,43 +48,11 @@ const updateOrganizationDto = {
 
 describe('OrganizationsService', () => {
   let service: OrganizationsService;
-  let model: Model<IOrganization>;
+  let model: Model<OrganizationsProfile>;
 
   const paginationQueryDto: PaginationQueryDto = {
     limit: 10,
     offset: 1,
-  };
-
-  const organizationsArray = [
-    {
-      _id: 'anyid',
-      name: 'name #1',
-      address: 'address #1',
-      description: 'description #1',
-      customers: 'customer #1',
-    },
-    {
-      _id: 'anyid',
-      name: 'name #2',
-      address: 'address #2',
-      description: 'description #2',
-      customers: 'customer #2',
-    },
-  ];
-
-  const createOrganizationDto = {
-    name: 'name #1',
-    address: 'address #1',
-    description: 'description #1',
-    customers: 'customer #1',
-  };
-
-  const updateOrganizationDto = {
-    name: 'name update',
-    address: 'address update',
-    description: 'description update',
-    customers: 'customer update',
-    new: true,
   };
 
   beforeEach(async () => {
@@ -134,7 +82,9 @@ describe('OrganizationsService', () => {
     }).compile();
 
     service = module.get<OrganizationsService>(OrganizationsService);
-    model = module.get<Model<IOrganization>>(getModelToken('Organization'));
+    model = module.get<Model<OrganizationsProfile>>(
+      getModelToken('Organization')
+    );
   });
 
   it('should be defined', () => {
@@ -178,14 +128,15 @@ describe('OrganizationsService', () => {
 
   describe('create()', () => {
     it('should insert a new organization', async () => {
-      jest.spyOn(model, 'create').mockImplementationOnce(() =>
-        Promise.resolve({
-          _id: 'a id',
-          name: 'name #1',
-          address: 'address #1',
-          description: 'description #1',
-          customers: 'customer #1',
-        })
+      jest.spyOn(model, 'create').mockImplementationOnce(
+        () =>
+          Promise.resolve({
+            _id: 'a id',
+            name: 'name #1',
+            address: 'address #1',
+            description: 'description #1',
+            customers: 'customer #1',
+          }) as any
       );
       const newOrganization = await service.create({
         name: 'name #1',
