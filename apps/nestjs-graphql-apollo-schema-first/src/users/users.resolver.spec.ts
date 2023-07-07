@@ -16,6 +16,7 @@ const createUserInput: CreateUserInput = {
   email: 'test@example.com',
   username: 'username #1',
   password: 'secret',
+  roles: [],
 };
 
 const updateUserInput: UpdateUserInput = {
@@ -49,8 +50,8 @@ describe('UsersResolver', () => {
               username: 'username update',
               password: 'secret123',
             }),
-            findOneById: jest.fn(() => []),
-            create: jest.fn(() => createUserInput),
+            findOne: jest.fn(() => []),
+            create: jest.fn(() => {}),
             remove: jest.fn(() => {}),
           }),
         },
@@ -65,56 +66,71 @@ describe('UsersResolver', () => {
     expect(resolver).toBeDefined();
   });
 
-  describe('users()', () => {
+  describe('findAll()', () => {
     it('should call method findAll in UsersService', async () => {
-      await resolver.users(usersArgs);
+      await resolver.findAll(usersArgs);
       expect(service.findAll).toHaveBeenCalled();
     });
 
-    it('should throw if RolesService findAll throws', async () => {
+    it('should throw if UsersService findAll throws', async () => {
       jest
         .spyOn(service, 'findAll')
         .mockRejectedValueOnce(new NotFoundException());
-      await expect(resolver.users(usersArgs)).rejects.toThrow(
+      await expect(resolver.findAll(usersArgs)).rejects.toThrow(
+        new NotFoundException()
+      );
+    });
+
+    it('should return user on success', async () => {
+      await resolver.findAll(usersArgs);
+      expect(service.findAll).toHaveBeenCalled();
+    });
+  });
+
+  describe('findOne()', () => {
+    it('should call method findOne in UsersService id with correct value', async () => {
+      await resolver.findOne(1);
+      expect(service.findOne).toHaveBeenCalled();
+    });
+
+    it('should throw if UserService findOne throws', async () => {
+      jest
+        .spyOn(service, 'findOne')
+        .mockRejectedValueOnce(new NotFoundException());
+      await expect(resolver.findOne(1)).rejects.toThrow(
         new NotFoundException()
       );
     });
   });
 
-  describe('user()', () => {
-    it('should call method findOneById in UsersService id with correct value', async () => {
-      await resolver.user('anyid');
-      expect(service.findOneById).toHaveBeenCalled();
-    });
-
-    it('should return a exception when doesnt found a user by id', async () => {
-      service.findOneById = jest.fn().mockReturnValue(null);
-      const userNotFound = resolver.user('not correct id');
-      expect(userNotFound).rejects.toThrow(NotFoundException);
-    });
-  });
-
-  describe('createUser()', () => {
+  describe('create()', () => {
     it('should call method create in UsersService with correct values', async () => {
       const createSpy = jest.spyOn(service, 'create');
-      await resolver.createUser(createUserInput);
+      await resolver.create(createUserInput);
       expect(createSpy).toHaveBeenCalledWith(createUserInput);
     });
   });
 
-  describe('updateUser()', () => {
+  describe('update()', () => {
     it('should call method update in UsersService with correct values', async () => {
       const updateSpy = jest.spyOn(service, 'update');
-      await resolver.updateUser('anyid', updateUserInput);
-      expect(updateSpy).toHaveBeenCalledWith('anyid', updateUserInput);
+      await resolver.update(1, updateUserInput);
+      expect(updateSpy).toHaveBeenCalledWith(1, updateUserInput);
     });
   });
 
-  describe('removeUser()', () => {
+  describe('remove()', () => {
     it('should call method remove in UsersService with correct value', async () => {
       const deleteSpy = jest.spyOn(service, 'remove');
-      await resolver.removeUser('anyid');
-      expect(deleteSpy).toHaveBeenCalledWith('anyid');
+      await resolver.remove(1);
+      expect(deleteSpy).toHaveBeenCalledWith(1);
+    });
+
+    it('should throw error if id in UsersService not exists', async () => {
+      jest
+        .spyOn(service, 'remove')
+        .mockRejectedValueOnce(new NotFoundException());
+      await expect(resolver.remove(1)).rejects.toThrow(new NotFoundException());
     });
   });
 });

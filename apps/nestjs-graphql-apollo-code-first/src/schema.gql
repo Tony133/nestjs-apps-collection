@@ -2,6 +2,12 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Posts {
+  id: ID!
+  title: String!
+  description: String!
+}
+
 type Users {
   id: ID!
   name: String!
@@ -10,16 +16,28 @@ type Users {
   password: String!
 }
 
+type Roles {
+  id: ID!
+  name: String!
+}
+
 type Query {
-  getHello: String!
   users(offset: Int! = 0, limit: Int! = 25): [Users!]!
   user(id: String!): Users!
+  findAllRole(skip: Int! = 0, take: Int! = 10): [Roles!]!
+  findOneRole(id: String!): Roles!
+  posts(offset: Int! = 0, limit: Int! = 25): [Posts!]!
+  post(id: String!): Posts!
 }
 
 type Mutation {
   createUser(createUserInput: CreateUserInput!): Users!
   updateUser(id: String!, updateUserInput: UpdateUserInput!): Users!
   removeUser(id: String!): Users!
+  createRole(createRoleInput: CreateRoleInput!): Roles!
+  removeRole(id: String!): Roles!
+  createPost(createPostInput: CreatePostInput!): Posts!
+  updatePost(id: String!, updatePostInput: UpdatePostInput!): Posts!
 }
 
 input CreateUserInput {
@@ -34,4 +52,18 @@ input UpdateUserInput {
   email: String
   username: String
   password: String
+}
+
+input CreateRoleInput {
+  name: String!
+}
+
+input CreatePostInput {
+  title: String!
+  description: String!
+}
+
+input UpdatePostInput {
+  title: String
+  description: String
 }

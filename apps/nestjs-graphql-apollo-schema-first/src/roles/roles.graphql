@@ -1,0 +1,24 @@
+type Roles {
+  id: ID!
+  name: String!
+  users: [User!]!
+}
+
+input CreateRoleInput {
+  name: String!
+}
+
+input UpdateRoleInput {
+  name: String!
+}
+
+type Query {
+  roles: [Roles]!
+  role(id: Int!): Roles
+}
+
+type Mutation {
+  createRole(createRoleInput: CreateRoleInput!): Roles!
+  updateRole(id: Int!, updateRoleInput: UpdateRoleInput!): Roles!
+  removeRole(id: Int!): Roles
+}

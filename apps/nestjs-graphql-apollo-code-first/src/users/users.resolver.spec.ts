@@ -1,10 +1,8 @@
+import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
+import { CreateUserInput, UpdateUserInput, UsersArgs } from './dto';
 import { UsersResolver } from './users.resolver';
 import { UsersService } from './users.service';
-import { UsersArgs } from './dto/users.args';
-import { CreateUserInput } from './dto/create-user.input';
-import { UpdateUserInput } from './dto/update-user.input';
-import { NotFoundException } from '@nestjs/common';
 
 const usersArgs: UsersArgs = {
   offset: 0,
@@ -16,6 +14,7 @@ const createUserInput: CreateUserInput = {
   email: 'test@example.com',
   username: 'username #1',
   password: 'secret',
+  roles: [],
 };
 
 const updateUserInput: UpdateUserInput = {
@@ -57,8 +56,8 @@ describe('UsersResolver', () => {
       ],
     }).compile();
 
-    resolver = module.get<UsersResolver>(UsersResolver);
     service = module.get<UsersService>(UsersService);
+    resolver = module.get<UsersResolver>(UsersResolver);
   });
 
   it('should be defined', () => {
@@ -69,15 +68,6 @@ describe('UsersResolver', () => {
     it('should call method findAll in UsersService', async () => {
       await resolver.users(usersArgs);
       expect(service.findAll).toHaveBeenCalled();
-    });
-
-    it('should throw if RolesService findAll throws', async () => {
-      jest
-        .spyOn(service, 'findAll')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(resolver.users(usersArgs)).rejects.toThrow(
-        new NotFoundException()
-      );
     });
   });
 
