@@ -88,7 +88,8 @@ jobs:
             nestjs-api-sequelize,
             nestjs-graphql-mercurius-code-first,
             nestjs-graphql-mercurius-schema-first,
-            nestjs-graphql-apollo-code-first
+            nestjs-graphql-apollo-code-first,
+            nestjs-graphql-apollo-schema-first
           ]
     needs: [unit-tests]
 
@@ -165,3 +166,18 @@ jobs:
       - run: npx nx e2e nestjs-graphql-apollo-code-first --testFile=posts.e2e-spec.ts
       - name: Stop Docker-Compose (nestjs-graphql-apollo-code-first)
         run: cd apps/nestjs-graphql-apollo-code-first && docker-compose down
+
+
+      - name: Start Docker-Compose (nestjs-graphql-apollo-schema-first)
+        run: cd apps/nestjs-graphql-apollo-schema-first && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install
+      - run: cd apps/nestjs-graphql-apollo-schema-first && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-graphql-apollo-schema-first --testFile=users.e2e-spec.ts
+      - run: npx nx e2e nestjs-graphql-apollo-schema-first --testFile=articles.e2e-spec.ts
+      - name: Stop Docker-Compose (nestjs-graphql-apollo-schema-first)
+        run: cd apps/nestjs-graphql-apollo-schema-first && docker-compose down
