@@ -87,7 +87,8 @@ jobs:
             nestjs-api-mongoose,
             nestjs-api-sequelize,
             nestjs-graphql-mercurius-code-first,
-            nestjs-graphql-mercurius-schema-first
+            nestjs-graphql-mercurius-schema-first,
+            nestjs-graphql-apollo-code-first
           ]
     needs: [unit-tests]
 
@@ -125,18 +126,18 @@ jobs:
       - name: Stop Docker-Compose (nestjs-api-sequelize)
         run: cd apps/nestjs-api-sequelize && docker-compose down
 
-      # - name: Start Docker-Compose (nestjs-graphql-mercurius-code-first)
-      #   run: cd apps/nestjs-graphql-mercurius-code-first && docker-compose up -d db-test
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
-      #     cache: 'pnpm'
-      #   name: Install pnpm
-      # - run: pnpm install
-      # - run: cd apps/nestjs-graphql-mercurius-code-first && cp .env.example-e2e-test .env
-      # - run: npx nx e2e nestjs-graphql-mercurius-code-first
-      # - name: Stop Docker-Compose (nestjs-graphql-mercurius-code-first)
-      #   run: cd apps/nestjs-graphql-mercurius-code-first && docker-compose down
+      - name: Start Docker-Compose (nestjs-graphql-mercurius-code-first)
+        run: cd apps/nestjs-graphql-mercurius-code-first && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install
+      - run: cd apps/nestjs-graphql-mercurius-code-first && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-graphql-mercurius-code-first
+      - name: Stop Docker-Compose (nestjs-graphql-mercurius-code-first)
+        run: cd apps/nestjs-graphql-mercurius-code-first && docker-compose down
 
       # - name: Start Docker-Compose (nestjs-graphql-mercurius-schema-first)
       #   run: cd apps/nestjs-graphql-mercurius-schema-first && docker-compose up -d db-test
@@ -150,3 +151,17 @@ jobs:
       # - run: npx nx e2e nestjs-graphql-mercurius-schema-first
       # - name: Stop Docker-Compose (nestjs-graphql-mercurius-schema-first)
       #   run: cd apps/nestjs-graphql-mercurius-schema-first && docker-compose down
+
+      - name: Start Docker-Compose (nestjs-graphql-apollo-code-first)
+        run: cd apps/nestjs-graphql-apollo-code-first && docker-compose up -d db-test
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+        name: Install pnpm
+      - run: pnpm install
+      - run: cd apps/nestjs-graphql-apollo-code-first && cp .env.example-e2e-test .env
+      - run: npx nx e2e nestjs-graphql-apollo-code-first --testFile=users.e2e-spec.ts
+      - run: npx nx e2e nestjs-graphql-apollo-code-first --testFile=posts.e2e-spec.ts
+      - name: Stop Docker-Compose (nestjs-graphql-apollo-code-first)
+        run: cd apps/nestjs-graphql-apollo-code-first && docker-compose down
