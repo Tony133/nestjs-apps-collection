@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/nestjs-graphql-mercurius-code-first",
         "main": "apps/nestjs-graphql-mercurius-code-first/src/main.ts",
@@ -36,9 +38,13 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/nestjs-graphql-mercurius-code-first/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/nestjs-graphql-mercurius-code-first/**/*.ts"
+        ]
       }
     },
     "test": {

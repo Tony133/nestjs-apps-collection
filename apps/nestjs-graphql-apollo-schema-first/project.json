@@ -1,10 +1,14 @@
 {
+  "name": "nestjs-graphql-apollo-schema-first",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/nestjs-graphql-apollo-schema-first/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/nestjs-graphql-apollo-schema-first",
         "main": "apps/nestjs-graphql-apollo-schema-first/src/main.ts",
@@ -34,9 +38,13 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/nestjs-graphql-apollo-schema-first/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/nestjs-graphql-apollo-schema-first/**/*.ts"
+        ]
       }
     },
     "test": {
