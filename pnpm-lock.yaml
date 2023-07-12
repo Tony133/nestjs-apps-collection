@@ -31,7 +31,7 @@ dependencies:
     version: 2.0.2(@nestjs/common@10.0.5)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
   '@nestjs/mercurius':
     specifier: ^12.0.4
-    version: 12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.7)(fastify@4.19.2)(graphql@16.6.0)(mercurius@13.0.0)
+    version: 12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.7)(fastify@4.19.2)(graphql@16.6.0)(mercurius@13.1.0)
   '@nestjs/mongoose':
     specifier: ^10.0.0
     version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(mongoose@7.3.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -66,8 +66,8 @@ dependencies:
     specifier: ^0.13.0
     version: 0.13.0
   mercurius:
-    specifier: 13.0.0
-    version: 13.0.0(graphql@16.6.0)
+    specifier: 13.1.0
+    version: 13.1.0(graphql@16.6.0)
   mongoose:
     specifier: ^7.3.2
     version: 7.3.2
@@ -2494,7 +2494,7 @@ packages:
     dependencies:
       '@fastify/error': 3.3.0
       graphql: 16.6.0
-      mercurius: 13.0.0(graphql@16.6.0)
+      mercurius: 13.1.0(graphql@16.6.0)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2508,7 +2508,7 @@ packages:
       fastify-plugin: 4.5.0
       graphql: 16.6.0
       graphql-ws: 5.14.0(graphql@16.6.0)
-      mercurius: 13.0.0(graphql@16.6.0)
+      mercurius: 13.1.0(graphql@16.6.0)
       p-map: 4.0.0
       single-user-cache: 0.6.0
       tiny-lru: 11.0.1
@@ -2696,7 +2696,7 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mercurius@12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.7)(fastify@4.19.2)(graphql@16.6.0)(mercurius@13.0.0):
+  /@nestjs/mercurius@12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.7)(fastify@4.19.2)(graphql@16.6.0)(mercurius@13.1.0):
     resolution: {integrity: sha512-Fma140kgFIzG1kcxAIbVkrfvxGMyMYJ31xjkp1qLsknxiDdB9jQCgW2DNbVxmpAeIXPTk5mR8ubdh9n/At06+Q==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
@@ -2720,7 +2720,7 @@ packages:
       '@nestjs/graphql': 12.0.7(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@19.0.0)
       fastify: 4.19.2
       graphql: 16.6.0
-      mercurius: 13.0.0(graphql@16.6.0)
+      mercurius: 13.1.0(graphql@16.6.0)
       tslib: 2.6.0
     dev: false
 
@@ -8012,8 +8012,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /mercurius@13.0.0(graphql@16.6.0):
-    resolution: {integrity: sha512-gPJGw9qymc2JSee5lUgg5OeQLM7EtLzEWMY7dV2sMwUdh3k8iO3Y22iy6B8TnIX2atpVt2xSpWHRvfiUvH6wuQ==}
+  /mercurius@13.1.0(graphql@16.6.0):
+    resolution: {integrity: sha512-MDCmgNLk77f6Epe4af78Z36XChQ/TeHIO3l8Aoyj3whEqzlXxODNaNHt4vEfLDHCSbuLoLJTaK6bpWN0MtomUA==}
     engines: {node: '>=14.19.3'}
     peerDependencies:
       graphql: ^16.0.0
