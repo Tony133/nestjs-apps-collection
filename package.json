@@ -48,7 +48,7 @@
     "@nestjs/schematics": "10.0.1",
     "@nestjs/testing": "10.0.5",
     "@nrwl/webpack": "16.5.1",
-    "@nx/eslint-plugin": "16.5.1",
+    "@nx/eslint-plugin": "16.5.3",
     "@nx/jest": "16.5.1",
     "@nx/linter": "16.5.1",
     "@nx/nest": "16.5.1",
