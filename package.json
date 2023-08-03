@@ -52,7 +52,7 @@
     "@nx/jest": "16.5.1",
     "@nx/linter": "16.5.1",
     "@nx/nest": "16.5.1",
-    "@nx/node": "16.5.1",
+    "@nx/node": "16.6.0",
     "@nx/webpack": "16.5.1",
     "@nx/workspace": "16.5.1",
     "@types/jest": "29.5.3",
