@@ -62,7 +62,7 @@
     "eslint": "~8.47.0",
     "eslint-config-prettier": "9.0.0",
     "husky": "^8.0.3",
-    "jest": "29.6.2",
+    "jest": "29.6.3",
     "jest-environment-jsdom": "29.6.2",
     "nx": "16.7.2",
     "nx-cloud": "16.3.0",
