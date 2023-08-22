@@ -34,7 +34,7 @@ dependencies:
     version: 12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.0.5)(@nestjs/graphql@12.0.7)(fastify@4.19.2)(graphql@16.6.0)(mercurius@13.0.0)
   '@nestjs/mongoose':
     specifier: ^10.0.0
-    version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(mongoose@7.3.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+    version: 10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(mongoose@7.4.4)(reflect-metadata@0.1.13)(rxjs@7.8.1)
   '@nestjs/platform-express':
     specifier: 10.0.5
     version: 10.0.5(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)
@@ -69,8 +69,8 @@ dependencies:
     specifier: 13.0.0
     version: 13.0.0(graphql@16.6.0)
   mongoose:
-    specifier: ^7.3.2
-    version: 7.3.2
+    specifier: ^7.4.4
+    version: 7.4.4
   mysql2:
     specifier: 3.5.0
     version: 3.5.0
@@ -2859,7 +2859,7 @@ packages:
       tslib: 2.6.0
     dev: false
 
-  /@nestjs/mongoose@10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(mongoose@7.3.2)(reflect-metadata@0.1.13)(rxjs@7.8.1):
+  /@nestjs/mongoose@10.0.0(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(mongoose@7.4.4)(reflect-metadata@0.1.13)(rxjs@7.8.1):
     resolution: {integrity: sha512-Wqinhuess5AKGUTs5gtJxs+naXv1BBxADTBw8h6hPAdCkPL/knoIpo0cSxBNJ4COwRqpy4QWGilzPiPR0sJgJA==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -2870,7 +2870,7 @@ packages:
     dependencies:
       '@nestjs/common': 10.0.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 10.0.5(@nestjs/common@10.0.5)(@nestjs/platform-express@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      mongoose: 7.3.2
+      mongoose: 7.4.4
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
     dev: false
@@ -8815,15 +8815,21 @@ packages:
       whatwg-url: 11.0.0
     dev: false
 
-  /mongodb@5.6.0:
-    resolution: {integrity: sha512-z8qVs9NfobHJm6uzK56XBZF8XwM9H294iRnB7wNjF0SnY93si5HPziIJn+qqvUR5QOff/4L0gCD6SShdR/GtVQ==}
+  /mongodb@5.7.0:
+    resolution: {integrity: sha512-zm82Bq33QbqtxDf58fLWBwTjARK3NSvKYjyz997KSy6hpat0prjeX/kxjbPVyZY60XYPDNETaHkHJI2UCzSLuw==}
     engines: {node: '>=14.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.201.0
+      '@mongodb-js/zstd': ^1.1.0
+      kerberos: ^2.0.1
       mongodb-client-encryption: '>=2.3.0 <3'
       snappy: ^7.2.2
     peerDependenciesMeta:
       '@aws-sdk/credential-providers':
+        optional: true
+      '@mongodb-js/zstd':
+        optional: true
+      kerberos:
         optional: true
       mongodb-client-encryption:
         optional: true
@@ -8837,19 +8843,21 @@ packages:
       saslprep: 1.0.3
     dev: false
 
-  /mongoose@7.3.2:
-    resolution: {integrity: sha512-Z86m5ASwYYFyT++wPQTtuTl5Jh052w6G1IM8LxPu/6iuqxQo6nUOaEoGZfMy0ovw3Dyw3415Jue3pYXkRqPkfA==}
+  /mongoose@7.4.4:
+    resolution: {integrity: sha512-LOOviiEqWOLH4PuBK+jbpm5vjBkdSNBcP/4UCevOJMTl5SXSbCXr68ulEYcthLcN2/xi08452HupKD8BfxNIQw==}
     engines: {node: '>=14.20.1'}
     dependencies:
       bson: 5.4.0
       kareem: 2.5.1
-      mongodb: 5.6.0
+      mongodb: 5.7.0
       mpath: 0.9.0
       mquery: 5.0.0
       ms: 2.1.3
       sift: 16.0.1
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - kerberos
       - mongodb-client-encryption
       - snappy
       - supports-color
