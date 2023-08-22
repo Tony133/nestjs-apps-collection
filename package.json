@@ -55,7 +55,7 @@
     "@nx/node": "16.7.3",
     "@nx/webpack": "16.7.3",
     "@nx/workspace": "16.7.3",
-    "@types/jest": "29.5.3",
+    "@types/jest": "29.5.4",
     "@types/node": "20.5.2",
     "@typescript-eslint/eslint-plugin": "6.4.1",
     "@typescript-eslint/parser": "6.4.1",
