@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@apollo/server':
-    specifier: ^4.7.5
-    version: 4.7.5(graphql@16.6.0)
+    specifier: ^4.9.2
+    version: 4.9.2(graphql@16.6.0)
   '@mercuriusjs/gateway':
     specifier: ^2.0.0
     version: 2.0.0
   '@nestjs/apollo':
     specifier: ^12.0.7
-    version: 12.0.7(@apollo/server@4.7.5)(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(@nestjs/graphql@12.0.7)(graphql@16.6.0)
+    version: 12.0.7(@apollo/server@4.9.2)(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(@nestjs/graphql@12.0.7)(graphql@16.6.0)
   '@nestjs/common':
     specifier: 10.0.5
     version: 10.0.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -301,18 +301,18 @@ packages:
       graphql: 16.6.0
     dev: false
 
-  /@apollo/server-plugin-landing-page-graphql-playground@4.0.0(@apollo/server@4.7.5):
+  /@apollo/server-plugin-landing-page-graphql-playground@4.0.0(@apollo/server@4.9.2):
     resolution: {integrity: sha512-PBDtKI/chJ+hHeoJUUH9Kuqu58txQl00vUGuxqiC9XcReulIg7RjsyD0G1u3drX4V709bxkL5S0nTeXfRHD0qA==}
     engines: {node: '>=14.0'}
     peerDependencies:
       '@apollo/server': ^4.0.0
     dependencies:
-      '@apollo/server': 4.7.5(graphql@16.6.0)
+      '@apollo/server': 4.9.2(graphql@16.6.0)
       '@apollographql/graphql-playground-html': 1.6.29
     dev: false
 
-  /@apollo/server@4.7.5(graphql@16.6.0):
-    resolution: {integrity: sha512-XobKpTnW/jbmr0DuJ+8zBzoeL6uEat4CkBN7kOCjhXEUuCNxiLrQGrWFVDqgV7bSdOJr6o2POmZYBPNQXLdyvA==}
+  /@apollo/server@4.9.2(graphql@16.6.0):
+    resolution: {integrity: sha512-DXARzsL7gvBfhUL2gTCpGduaH5wQFZi72/6ZOalpzT9InepIz0wL9TffSNVuaYla5u6JB9kX8WtnVUKf7IuHTA==}
     engines: {node: '>=14.16.0'}
     peerDependencies:
       graphql: ^16.6.0
@@ -2646,7 +2646,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@nestjs/apollo@12.0.7(@apollo/server@4.7.5)(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(@nestjs/graphql@12.0.7)(graphql@16.6.0):
+  /@nestjs/apollo@12.0.7(@apollo/server@4.9.2)(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(@nestjs/graphql@12.0.7)(graphql@16.6.0):
     resolution: {integrity: sha512-snY8uM/ypE5TZOVChIIuNlTFWGCrwJ8U/xq3EFYE6A+dIqY7/B9sou79snevCm3zTde69KdsOYg5FBmznasxNg==}
     peerDependencies:
       '@apollo/gateway': ^2.0.0
@@ -2665,8 +2665,8 @@ packages:
       '@as-integrations/fastify':
         optional: true
     dependencies:
-      '@apollo/server': 4.7.5(graphql@16.6.0)
-      '@apollo/server-plugin-landing-page-graphql-playground': 4.0.0(@apollo/server@4.7.5)
+      '@apollo/server': 4.9.2(graphql@16.6.0)
+      '@apollo/server-plugin-landing-page-graphql-playground': 4.0.0(@apollo/server@4.9.2)
       '@nestjs/common': 10.0.5(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 10.0.5(@nestjs/common@10.0.5)(@nestjs/platform-express@10.0.5)(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/graphql': 12.0.7(@nestjs/common@10.0.5)(@nestjs/core@10.0.5)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@19.0.0)
