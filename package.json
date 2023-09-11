@@ -20,7 +20,7 @@
     "@nestjs/mapped-types": "^2.0.2",
     "@nestjs/mercurius": "^12.0.4",
     "@nestjs/mongoose": "^10.0.0",
-    "@nestjs/platform-express": "10.0.5",
+    "@nestjs/platform-express": "10.2.5",
     "@nestjs/platform-fastify": "10.0.5",
     "@nestjs/sequelize": "^10.0.0",
     "@nestjs/swagger": "7.1.8",
