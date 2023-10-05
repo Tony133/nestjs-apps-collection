@@ -53,7 +53,7 @@
     "@nx/linter": "16.7.4",
     "@nx/nest": "16.7.4",
     "@nx/node": "16.7.4",
-    "@nx/webpack": "16.7.4",
+    "@nx/webpack": "16.10.0",
     "@nx/workspace": "16.7.4",
     "@types/jest": "29.5.4",
     "@types/node": "20.5.7",
