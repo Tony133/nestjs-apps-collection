@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
-    "@commitlint/config-angular": "^17.6.6",
+    "@commitlint/config-angular": "^17.8.0",
     "@nestjs/schematics": "10.0.1",
     "@nestjs/testing": "10.0.5",
     "@nrwl/webpack": "16.7.4",
