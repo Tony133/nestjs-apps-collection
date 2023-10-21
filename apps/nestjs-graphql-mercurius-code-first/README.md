@@ -84,7 +84,7 @@ After running, you can stop the Docker container with
 mutation {
     createUser(createUserInput: {
         name: "tony"
-        email:"tony_admin@nest.it"
+        email:"tony_admin@nest.com"
         username: "tony_admin"
         password: "secret123"
     }) {
@@ -104,7 +104,7 @@ mutation {
     updateUser(
         updateUserInput: {
             name: "tony"
-            email: "tony_admin@nest.it"
+            email: "tony_admin@nest.com"
             username: "tony_admin"
             password: "secret123"
         }
