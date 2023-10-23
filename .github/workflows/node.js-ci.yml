@@ -30,7 +30,7 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 6.32.9
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
@@ -67,7 +67,7 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 6.32.9
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
@@ -101,7 +101,7 @@ jobs:
           version: 6.32.9
       - name: Start Docker-Compose (nestjs-api-mongoose)
         run: cd apps/nestjs-api-mongoose && docker-compose up -d db-test
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
@@ -115,7 +115,7 @@ jobs:
 
       - name: Start Docker-Compose (nestjs-api-sequelize)
         run: cd apps/nestjs-api-sequelize && docker-compose up -d db-test
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
@@ -129,7 +129,7 @@ jobs:
 
       - name: Start Docker-Compose (nestjs-graphql-mercurius-code-first)
         run: cd apps/nestjs-graphql-mercurius-code-first && docker-compose up -d db-test
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
@@ -155,7 +155,7 @@ jobs:
 
       - name: Start Docker-Compose (nestjs-graphql-apollo-code-first)
         run: cd apps/nestjs-graphql-apollo-code-first && docker-compose up -d db-test
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
@@ -170,7 +170,7 @@ jobs:
 
       - name: Start Docker-Compose (nestjs-graphql-apollo-schema-first)
         run: cd apps/nestjs-graphql-apollo-schema-first && docker-compose up -d db-test
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
