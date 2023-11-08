@@ -33,7 +33,7 @@
     "mercurius": "13.0.0",
     "mongoose": "^7.3.2",
     "mysql2": "3.5.0",
-    "pg": "^8.11.1",
+    "pg": "^8.11.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "sequelize": "^6.32.1",
