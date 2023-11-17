@@ -30,7 +30,7 @@
     "class-validator": "0.14.0",
     "graphql": "^16.6.0",
     "install": "^0.13.0",
-    "mercurius": "13.0.0",
+    "mercurius": "13.3.0",
     "mongoose": "^7.3.2",
     "mysql2": "3.5.0",
     "pg": "^8.11.1",
