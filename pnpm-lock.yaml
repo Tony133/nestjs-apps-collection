@@ -31,7 +31,7 @@ dependencies:
     version: 2.0.2(@nestjs/common@10.2.8)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
   '@nestjs/mercurius':
     specifier: ^12.0.4
-    version: 12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.2.8)(@nestjs/graphql@12.0.7)(fastify@4.24.3)(graphql@16.6.0)(mercurius@13.0.0)
+    version: 12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.2.8)(@nestjs/graphql@12.0.7)(fastify@4.24.3)(graphql@16.6.0)(mercurius@13.3.1)
   '@nestjs/mongoose':
     specifier: ^10.0.0
     version: 10.0.0(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(mongoose@7.3.2)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -66,8 +66,8 @@ dependencies:
     specifier: ^0.13.0
     version: 0.13.0
   mercurius:
-    specifier: 13.0.0
-    version: 13.0.0(graphql@16.6.0)
+    specifier: 13.3.1
+    version: 13.3.1(graphql@16.6.0)
   mongoose:
     specifier: ^7.3.2
     version: 7.3.2
@@ -2009,10 +2009,6 @@ packages:
     resolution: {integrity: sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==}
     dev: false
 
-  /@fastify/error@3.3.0:
-    resolution: {integrity: sha512-dj7vjIn1Ar8sVXj2yAXiMNCJDmS9MQ9XMlIecX2dIzzhjSHCyKo4DdXjXMs7wKW2kj6yvVRSpuQjOZ3YLrh56w==}
-    dev: false
-
   /@fastify/error@3.4.0:
     resolution: {integrity: sha512-e/mafFwbK3MNqxUcFBLgHhgxsF8UT1m8aj0dAlqEa2nJEgPsRtpHTZ3ObgrgkZ2M1eJHPTwgyUl/tXkvabsZdQ==}
     dev: false
@@ -2033,7 +2029,7 @@ packages:
   /@fastify/middie@8.3.0:
     resolution: {integrity: sha512-h+zBxCzMlkEkh4fM7pZaSGzqS7P9M0Z6rXnWPdUEPfe7x1BCj++wEk/pQ5jpyYY4pF8AknFqb77n7uwh8HdxEA==}
     dependencies:
-      '@fastify/error': 3.3.0
+      '@fastify/error': 3.4.0
       fastify-plugin: 4.5.0
       path-to-regexp: 6.2.1
       reusify: 1.0.4
@@ -2484,9 +2480,9 @@ packages:
   /@mercuriusjs/federation@2.0.0:
     resolution: {integrity: sha512-hBL2Zhdf0p2Ab2SDPXcVnNsYTf5x50xPAyHm2HpmXreHS7aGt4obX8g8JrqRhIfOApcRg5l9RQ2OZqaUYeR8sQ==}
     dependencies:
-      '@fastify/error': 3.3.0
+      '@fastify/error': 3.4.0
       graphql: 16.6.0
-      mercurius: 13.0.0(graphql@16.6.0)
+      mercurius: 13.3.1(graphql@16.6.0)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2500,7 +2496,7 @@ packages:
       fastify-plugin: 4.5.0
       graphql: 16.6.0
       graphql-ws: 5.14.0(graphql@16.6.0)
-      mercurius: 13.0.0(graphql@16.6.0)
+      mercurius: 13.3.1(graphql@16.6.0)
       p-map: 4.0.0
       single-user-cache: 0.6.0
       tiny-lru: 11.0.1
@@ -2517,7 +2513,7 @@ packages:
     peerDependencies:
       graphql: ^16.0.0
     dependencies:
-      '@fastify/error': 3.3.0
+      '@fastify/error': 3.4.0
       graphql: 16.6.0
       secure-json-parse: 2.7.0
       ws: 8.13.0
@@ -2688,7 +2684,7 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mercurius@12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.2.8)(@nestjs/graphql@12.0.7)(fastify@4.24.3)(graphql@16.6.0)(mercurius@13.0.0):
+  /@nestjs/mercurius@12.0.4(@mercuriusjs/gateway@2.0.0)(@nestjs/common@10.2.8)(@nestjs/graphql@12.0.7)(fastify@4.24.3)(graphql@16.6.0)(mercurius@13.3.1):
     resolution: {integrity: sha512-Fma140kgFIzG1kcxAIbVkrfvxGMyMYJ31xjkp1qLsknxiDdB9jQCgW2DNbVxmpAeIXPTk5mR8ubdh9n/At06+Q==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
@@ -2712,7 +2708,7 @@ packages:
       '@nestjs/graphql': 12.0.7(@nestjs/common@10.2.8)(@nestjs/core@10.2.8)(class-transformer@0.5.1)(class-validator@0.14.0)(graphql@16.6.0)(reflect-metadata@0.1.13)(ts-morph@19.0.0)
       fastify: 4.24.3
       graphql: 16.6.0
-      mercurius: 13.0.0(graphql@16.6.0)
+      mercurius: 13.3.1(graphql@16.6.0)
       tslib: 2.6.0
     dev: false
 
@@ -6221,17 +6217,6 @@ packages:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
     dev: true
 
-  /fast-json-stringify@5.7.0:
-    resolution: {integrity: sha512-sBVPTgnAZseLu1Qgj6lUbQ0HfjFhZWXAmpZ5AaSGkyLh5gAXBga/uPJjQPHpDFjC9adWIpdOcCLSDTgrZ7snoQ==}
-    dependencies:
-      '@fastify/deepmerge': 1.3.0
-      ajv: 8.12.0
-      ajv-formats: 2.1.1(ajv@8.12.0)
-      fast-deep-equal: 3.1.3
-      fast-uri: 2.2.0
-      rfdc: 1.3.0
-    dev: false
-
   /fast-json-stringify@5.9.1:
     resolution: {integrity: sha512-NMrf+uU9UJnTzfxaumMDXK1NWqtPCfGoM9DYIE+ESlaTQqjlANFBy0VAbsm6FB88Mx0nceyi18zTo5kIEUlzxg==}
     dependencies:
@@ -6714,7 +6699,7 @@ packages:
       graphql: '>=15'
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
-      fast-json-stringify: 5.7.0
+      fast-json-stringify: 5.9.1
       generate-function: 2.3.1
       graphql: 16.6.0
       lodash.memoize: 4.1.2
@@ -8161,13 +8146,13 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /mercurius@13.0.0(graphql@16.6.0):
-    resolution: {integrity: sha512-gPJGw9qymc2JSee5lUgg5OeQLM7EtLzEWMY7dV2sMwUdh3k8iO3Y22iy6B8TnIX2atpVt2xSpWHRvfiUvH6wuQ==}
+  /mercurius@13.3.1(graphql@16.6.0):
+    resolution: {integrity: sha512-jUeo3pO1H/Etpipa9RB5kDbXX2NsIH3IBnAIlDYoNaOeuo3Ka9nNH0ujYTnjkpytuAdygnStU/hcm1afwTKYlA==}
     engines: {node: '>=14.19.3'}
     peerDependencies:
       graphql: ^16.0.0
     dependencies:
-      '@fastify/error': 3.3.0
+      '@fastify/error': 3.4.0
       '@fastify/static': 6.10.2
       '@fastify/websocket': 8.1.0
       fastify-plugin: 4.5.0
