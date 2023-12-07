@@ -31,7 +31,7 @@
     "graphql": "^16.6.0",
     "install": "^0.13.0",
     "mercurius": "13.0.0",
-    "mongoose": "^7.3.2",
+    "mongoose": "^7.6.7",
     "mysql2": "3.5.0",
     "pg": "^8.11.1",
     "reflect-metadata": "^0.1.13",
