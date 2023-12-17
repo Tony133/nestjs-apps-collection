@@ -1,8 +1,8 @@
-import { NotFoundException } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { CreateUserInput, UpdateUserInput, UsersArgs } from './dto';
 import { UsersService } from './users.service';
 import { Users } from './entities/users.entity';
+import { UserInputError } from '@nestjs/apollo';
 
 @Resolver()
 export class UsersResolver {
@@ -17,7 +17,7 @@ export class UsersResolver {
   public async user(@Args('id') id: string): Promise<Users> {
     const user = await this.usersService.findOneById(id);
     if (!user) {
-      throw new NotFoundException(id);
+      throw new UserInputError(id);
     }
     return user;
   }

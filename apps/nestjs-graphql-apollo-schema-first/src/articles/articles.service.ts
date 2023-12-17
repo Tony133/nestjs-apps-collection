@@ -1,9 +1,10 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from '../users/entities/user.entity';
 import { Repository } from 'typeorm';
 import { ArticlesArgs, CreateArticleInput, UpdateArticleInput } from './dto';
 import { Article } from './entities/article.entity';
+import { UserInputError } from '@nestjs/apollo';
 
 @Injectable()
 export class ArticlesService {
@@ -11,7 +12,7 @@ export class ArticlesService {
     @InjectRepository(Article)
     private readonly articlesRepository: Repository<Article>,
     @InjectRepository(User)
-    private readonly usersRepository: Repository<User>
+    private readonly usersRepository: Repository<User>,
   ) {}
 
   public async findAll(articlesArgs: ArticlesArgs): Promise<Article[]> {
@@ -32,17 +33,17 @@ export class ArticlesService {
     });
 
     if (!article) {
-      throw new NotFoundException(`Article #${id} not found`);
+      throw new UserInputError(`Article #${id} not found`);
     }
 
     return article;
   }
 
   public async create(
-    createArticleInput: CreateArticleInput
+    createArticleInput: CreateArticleInput,
   ): Promise<Article> {
     const users = await Promise.all(
-      createArticleInput.users.map((name) => this.preloadUserByName(name))
+      createArticleInput.users.map((name) => this.preloadUserByName(name)),
     );
 
     const article = this.articlesRepository.create({
@@ -54,12 +55,12 @@ export class ArticlesService {
 
   public async update(
     id: number,
-    updateArticleInput: UpdateArticleInput
+    updateArticleInput: UpdateArticleInput,
   ): Promise<Article> {
     const users =
       updateArticleInput.users &&
       (await Promise.all(
-        updateArticleInput.users.map((name) => this.preloadUserByName(name))
+        updateArticleInput.users.map((name) => this.preloadUserByName(name)),
       ));
 
     const article = await this.articlesRepository.preload({
@@ -69,7 +70,7 @@ export class ArticlesService {
     });
 
     if (!article) {
-      throw new NotFoundException(`Article #${id} not found`);
+      throw new UserInputError(`Article #${id} not found`);
     }
 
     return this.articlesRepository.save(article);

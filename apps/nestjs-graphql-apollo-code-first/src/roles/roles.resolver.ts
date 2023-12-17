@@ -1,5 +1,5 @@
-import { NotFoundException, UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { UserInputError } from '@nestjs/apollo';
 import { CreateRoleInput, RolesArgs } from './dto';
 import { Roles } from './entities/roles.entity';
 import { RolesService } from './roles.service';
@@ -17,14 +17,14 @@ export class RolesResolver {
   public async findOneRole(@Args('id') id: string): Promise<Roles> {
     const role = await this.rolesService.findOneById(id);
     if (!role) {
-      throw new NotFoundException(id);
+      throw new UserInputError(id);
     }
     return role;
   }
 
   @Mutation(() => Roles)
   public async createRole(
-    @Args('createRoleInput') createRoleInput: CreateRoleInput
+    @Args('createRoleInput') createRoleInput: CreateRoleInput,
   ): Promise<Roles> {
     return await this.rolesService.create(createRoleInput);
   }

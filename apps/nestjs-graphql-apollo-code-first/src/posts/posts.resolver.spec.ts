@@ -1,9 +1,9 @@
-import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { CreatePostInput, UpdatePostInput, PostsArgs } from './dto';
 import { Posts } from './entities/posts.entity';
 import { PostsResolver } from './posts.resolver';
 import { PostsService } from './posts.service';
+import { UserInputError } from '@nestjs/apollo';
 
 const postsArgs: PostsArgs = {
   offset: 0,
@@ -81,8 +81,10 @@ describe('PostsResolver', () => {
     it('should throw if not found post by id throws', async () => {
       jest
         .spyOn(service, 'findOneById')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(resolver.post('1')).rejects.toThrow(new NotFoundException());
+        .mockRejectedValueOnce(new UserInputError('error'));
+      await expect(resolver.post('1')).rejects.toThrow(
+        new UserInputError('error'),
+      );
     });
   });
 

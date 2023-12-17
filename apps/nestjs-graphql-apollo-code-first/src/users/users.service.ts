@@ -1,6 +1,5 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import * as bcrypt from 'bcrypt';
 import { Roles } from '../roles/entities/roles.entity';
 import { Repository } from 'typeorm';
 import { CreateUserInput } from './dto/create-user.input';
@@ -8,6 +7,7 @@ import { UpdateUserInput } from './dto/update-user.input';
 import { UsersArgs } from './dto/users.args';
 import { Users } from './entities/users.entity';
 import { HashingService } from '../shared/hashing/hashing.service';
+import { UserInputError } from '@nestjs/apollo';
 
 @Injectable()
 export class UsersService {
@@ -16,7 +16,7 @@ export class UsersService {
     private readonly usersRepository: Repository<Users>,
     @InjectRepository(Roles)
     private readonly rolesRepository: Repository<Roles>,
-    private readonly hashingService: HashingService
+    private readonly hashingService: HashingService,
   ) {}
 
   public async findAll(usersArgs: UsersArgs): Promise<Users[]> {
@@ -37,18 +37,18 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new NotFoundException(`User #${id} not found`);
+      throw new UserInputError(`User #${id} not found`);
     }
     return user;
   }
 
   public async create(createUserInput: CreateUserInput): Promise<Users> {
     createUserInput.password = await this.hashingService.hash(
-      createUserInput.password
+      createUserInput.password,
     );
 
     const roles = await Promise.all(
-      createUserInput.roles.map((name) => this.preloadRoleByName(name))
+      createUserInput.roles.map((name) => this.preloadRoleByName(name)),
     );
 
     const user = this.usersRepository.create({ ...createUserInput, roles });
@@ -57,16 +57,16 @@ export class UsersService {
 
   public async update(
     id: string,
-    updateUserInput: UpdateUserInput
+    updateUserInput: UpdateUserInput,
   ): Promise<Users> {
     updateUserInput.password = await this.hashingService.hash(
-      updateUserInput.password
+      updateUserInput.password,
     );
 
     const roles =
       updateUserInput.roles &&
       (await Promise.all(
-        updateUserInput.roles.map((name) => this.preloadRoleByName(name))
+        updateUserInput.roles.map((name) => this.preloadRoleByName(name)),
       ));
 
     const user = await this.usersRepository.preload({
@@ -76,7 +76,7 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new NotFoundException(`User #${id} not found`);
+      throw new UserInputError(`User #${id} not found`);
     }
     return this.usersRepository.save(user);
   }

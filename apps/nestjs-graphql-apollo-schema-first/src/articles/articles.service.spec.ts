@@ -1,4 +1,3 @@
-import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -6,6 +5,7 @@ import { User } from '../users/entities/user.entity';
 import { ArticlesService } from './articles.service';
 import { ArticlesArgs, CreateArticleInput, UpdateArticleInput } from './dto';
 import { Article } from './entities/article.entity';
+import { UserInputError } from '@nestjs/apollo';
 
 const articleArgs: ArticlesArgs = {
   offset: 0,
@@ -75,7 +75,7 @@ describe('ArticlesService', () => {
 
     service = module.get<ArticlesService>(ArticlesService);
     repositoryArticle = module.get<Repository<Article>>(
-      getRepositoryToken(Article)
+      getRepositoryToken(Article),
     );
   });
 
@@ -96,7 +96,7 @@ describe('ArticlesService', () => {
     it('should get a single article', () => {
       const repoSpy = jest.spyOn(repositoryArticle, 'findOne');
       expect(service.findOne(1)).resolves.toEqual(oneArticle);
-      expect(repoSpy).toBeCalledWith({
+      expect(repoSpy).toHaveBeenCalledWith({
         where: { id: 1 },
         relations: ['users'],
       });
@@ -107,7 +107,7 @@ describe('ArticlesService', () => {
         .spyOn(repositoryArticle, 'findOne')
         .mockReturnValue(null);
       const userNotFound = service.findOne(2);
-      expect(userNotFound).rejects.toThrow(NotFoundException);
+      expect(userNotFound).rejects.toThrow(UserInputError);
       expect(repoSpy).toHaveBeenCalledWith({
         where: { id: 2 },
         relations: ['users'],
@@ -137,7 +137,7 @@ describe('ArticlesService', () => {
         description: 'description #1',
         users: [],
       });
-      expect(articleNotFound).rejects.toThrow(NotFoundException);
+      expect(articleNotFound).rejects.toThrow(UserInputError);
     });
   });
 
@@ -145,7 +145,7 @@ describe('ArticlesService', () => {
     it('should return article remove', async () => {
       const deleteSpy = jest.spyOn(service, 'remove');
       await service.remove(1);
-      expect(deleteSpy).toBeCalledWith(1);
+      expect(deleteSpy).toHaveBeenCalledWith(1);
     });
   });
 });

@@ -1,8 +1,9 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateRoleInput, UpdateRoleInput, RolesArgs } from './dto';
 import { Roles } from './entities/roles.entity';
+import { UserInputError } from '@nestjs/apollo';
 
 @Injectable()
 export class RolesService {
@@ -22,7 +23,7 @@ export class RolesService {
   public async findOne(id: number): Promise<Roles> {
     const role = await this.rolesRepository.findOne({ where: { id: id } });
     if (!role) {
-      throw new NotFoundException(`Role #${id} not found`);
+      throw new UserInputError(`Role #${id} not found`);
     }
     return role;
   }
@@ -39,7 +40,7 @@ export class RolesService {
     });
 
     if (!role) {
-      throw new NotFoundException(`Role #${id} not found`);
+      throw new UserInputError(`Role #${id} not found`);
     }
     return this.rolesRepository.save(role);
   }
