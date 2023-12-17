@@ -6,15 +6,14 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/nestjs-graphql-mercurius-schema-first",
         "main": "apps/nestjs-graphql-mercurius-schema-first/src/main.ts",
         "tsConfig": "apps/nestjs-graphql-mercurius-schema-first/tsconfig.app.json",
         "target": "node",
-        "compiler": "tsc"
+        "compiler": "tsc",
+        "webpackConfig": "apps/nestjs-graphql-mercurius-schema-first/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -38,9 +37,7 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/nestjs-graphql-mercurius-schema-first/**/*.ts"
@@ -53,14 +50,14 @@
         "{workspaceRoot}/coverage/apps/nestjs-graphql-mercurius-schema-first"
       ],
       "options": {
-        "jestConfig": "apps/nestjs-graphql-mercurius-schema-first/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "apps/nestjs-graphql-mercurius-schema-first/jest.config.js"
       }
     },
     "e2e": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "apps/nestjs-graphql-mercurius-schema-first/test/jest-e2e.json"
+        "jestConfig": "apps/nestjs-graphql-mercurius-schema-first/test/jest-e2e.json",
+        "passWithNoTests": false
       }
     }
   },
