@@ -10,11 +10,11 @@ import { OrganizationsProfile } from './interfaces/organizations-profile';
 export class OrganizationsService {
   constructor(
     @InjectModel(Organization.name)
-    private readonly organizationModel: Model<Organization>
+    private readonly organizationModel: Model<Organization>,
   ) {}
 
   public async findAll(
-    paginationQuery: PaginationQueryDto
+    paginationQuery: PaginationQueryDto,
   ): Promise<Organization[]> {
     const { limit, offset } = paginationQuery;
     return await this.organizationModel
@@ -47,22 +47,22 @@ export class OrganizationsService {
   }
 
   public async create(
-    createOrganizationDto: CreateOrganizationDto
+    createOrganizationDto: CreateOrganizationDto,
   ): Promise<OrganizationsProfile> {
     const organization = await this.organizationModel.create(
-      createOrganizationDto
+      createOrganizationDto,
     );
     return organization;
   }
 
   public async update(
     organizationId: string,
-    updateOrganizationDto: UpdateOrganizationDto
+    updateOrganizationDto: UpdateOrganizationDto,
   ): Promise<OrganizationsProfile> {
     const existingOrganization = await this.organizationModel.findByIdAndUpdate(
       { _id: organizationId },
       updateOrganizationDto,
-      { new: true }
+      { new: true },
     );
 
     if (!existingOrganization) {
@@ -72,9 +72,8 @@ export class OrganizationsService {
   }
 
   public async remove(organizationId: string): Promise<any> {
-    const organization = await this.organizationModel.findByIdAndRemove(
-      organizationId
-    );
+    const organization =
+      await this.organizationModel.findByIdAndDelete(organizationId);
     return organization;
   }
 }

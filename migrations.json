@@ -1,12 +1,41 @@
 {
   "migrations": [
     {
+      "version": "17.1.0-beta.1",
+      "description": "Updates for @typescript-utils/utils v6.9.1+",
+      "implementation": "./src/migrations/update-17-1-0/update-typescript-eslint",
+      "package": "@nx/linter",
+      "name": "update-typescript-eslint"
+    },
+    {
+      "version": "17.2.0-beta.0",
+      "description": "Simplify eslintFilePatterns",
+      "implementation": "./src/migrations/update-17-2-0/simplify-eslint-patterns",
+      "package": "@nx/linter",
+      "name": "simplify-eslint-patterns"
+    },
+    {
+      "version": "17.1.0-beta.2",
+      "description": "Move jest executor options to nx.json targetDefaults",
+      "implementation": "./src/migrations/update-17-1-0/move-options-to-target-defaults",
+      "package": "@nx/jest",
+      "name": "move-options-to-target-defaults"
+    },
+    {
       "cli": "nx",
-      "version": "16.3.1-beta.0",
-      "description": "Replace @nx/node:webpack with @nx/node:webpack for all project targets",
-      "implementation": "./src/migrations/update-16-3-1/update-webpack-executor",
-      "package": "@nx/node",
-      "name": "update-16-3-1-update-executor"
+      "version": "17.2.1-beta.0",
+      "description": "Add webpack.config.js file when webpackConfig is not defined",
+      "implementation": "./src/migrations/update-17-2-1/webpack-config-setup",
+      "package": "@nx/webpack",
+      "name": "update-17-2-1-webpack-config-setup"
+    },
+    {
+      "cli": "nx",
+      "version": "17.2.1-beta.0",
+      "description": "Add webpack.config.js file when webpackConfig is not defined",
+      "implementation": "./src/migrations/update-17-2-1/webpack-config-setup",
+      "package": "@nrwl/webpack",
+      "name": "update-17-2-1-webpack-config-setup"
     }
   ]
 }

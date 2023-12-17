@@ -6,15 +6,14 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/nestjs-graphql-mercurius-code-first",
         "main": "apps/nestjs-graphql-mercurius-code-first/src/main.ts",
         "tsConfig": "apps/nestjs-graphql-mercurius-code-first/tsconfig.app.json",
         "target": "node",
-        "compiler": "tsc"
+        "compiler": "tsc",
+        "webpackConfig": "apps/nestjs-graphql-mercurius-code-first/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -38,13 +37,9 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/nestjs-graphql-mercurius-code-first/**/*.ts"
-        ]
+        "lintFilePatterns": ["apps/nestjs-graphql-mercurius-code-first/**/*.ts"]
       }
     },
     "test": {
@@ -53,14 +48,14 @@
         "{workspaceRoot}/coverage/apps/nestjs-graphql-mercurius-code-first"
       ],
       "options": {
-        "jestConfig": "apps/nestjs-graphql-mercurius-code-first/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "apps/nestjs-graphql-mercurius-code-first/jest.config.js"
       }
     },
     "e2e": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "apps/nestjs-graphql-mercurius-code-first/test/jest-e2e.json"
+        "jestConfig": "apps/nestjs-graphql-mercurius-code-first/test/jest-e2e.json",
+        "passWithNoTests": false
       }
     }
   },
