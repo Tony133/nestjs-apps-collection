@@ -1,9 +1,9 @@
-import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ArticlesResolver } from './articles.resolver';
 import { ArticlesService } from './articles.service';
 import { ArticlesArgs, CreateArticleInput, UpdateArticleInput } from './dto';
 import { Article } from './entities/article.entity';
+import { UserInputError } from '@nestjs/apollo';
 
 const articlesArgs: ArticlesArgs = {
   offset: 0,
@@ -74,9 +74,9 @@ describe('ArticlesResolver', () => {
     it('should throw if ArticlesService findAll throws', async () => {
       jest
         .spyOn(service, 'findAll')
-        .mockRejectedValueOnce(new NotFoundException());
+        .mockRejectedValueOnce(new UserInputError('error'));
       await expect(resolver.findAll(articlesArgs)).rejects.toThrow(
-        new NotFoundException()
+        new UserInputError('error'),
       );
     });
   });

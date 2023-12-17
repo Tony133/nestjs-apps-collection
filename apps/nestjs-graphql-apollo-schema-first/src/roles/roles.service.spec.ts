@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { RolesService } from './roles.service';
 import { RolesArgs, CreateRoleInput, UpdateRoleInput } from './dto';
-import { NotFoundException } from '@nestjs/common';
+import { UserInputError } from '@nestjs/apollo';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Roles } from './entities/roles.entity';
@@ -75,7 +75,7 @@ describe('RolesService', () => {
     it('should get a single role', () => {
       const repoSpy = jest.spyOn(repositoryRole, 'findOne');
       expect(service.findOne(1)).resolves.toEqual(oneRole);
-      expect(repoSpy).toBeCalledWith({ where: { id: 1 } });
+      expect(repoSpy).toHaveBeenCalledWith({ where: { id: 1 } });
     });
 
     it('should return a exception when doesnt find a role by id', async () => {
@@ -83,7 +83,7 @@ describe('RolesService', () => {
         .spyOn(repositoryRole, 'findOne')
         .mockReturnValue(null);
       const roleNotFound = service.findOne(2);
-      expect(roleNotFound).rejects.toThrow(NotFoundException);
+      expect(roleNotFound).rejects.toThrow(UserInputError);
       expect(repoSpy).toHaveBeenCalledWith({ where: { id: 2 } });
     });
   });
@@ -97,7 +97,7 @@ describe('RolesService', () => {
       expect(
         await service.create({
           ...createRoleInput,
-        })
+        }),
       ).toEqual(role);
     });
   });
@@ -111,7 +111,7 @@ describe('RolesService', () => {
       expect(
         await service.update(1, {
           ...updateRoleInput,
-        })
+        }),
       ).toEqual(updateRole);
     });
 
@@ -120,7 +120,7 @@ describe('RolesService', () => {
         .spyOn(repositoryRole, 'preload')
         .mockReturnValue(null);
       const roleNotFound = service.update(2, updateRoleInput);
-      expect(roleNotFound).rejects.toThrow(NotFoundException);
+      expect(roleNotFound).rejects.toThrow(UserInputError);
       expect(repoSpy).toHaveBeenCalledWith({ id: 2, name: 'ADMIN' });
     });
   });
@@ -129,7 +129,7 @@ describe('RolesService', () => {
     it('should return role remove', async () => {
       const deleteSpy = jest.spyOn(repositoryRole, 'remove');
       const response = await service.remove(2);
-      expect(deleteSpy).toBeCalledWith(oneRole);
+      expect(deleteSpy).toHaveBeenCalledWith(oneRole);
       expect(response).toBeUndefined();
     });
   });

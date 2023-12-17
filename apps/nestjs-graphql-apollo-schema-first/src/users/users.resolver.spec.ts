@@ -4,7 +4,7 @@ import { UsersService } from './users.service';
 import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
-import { NotFoundException } from '@nestjs/common';
+import { UserInputError } from '@nestjs/apollo';
 
 const usersArgs: UsersArgs = {
   offset: 0,
@@ -75,9 +75,9 @@ describe('UsersResolver', () => {
     it('should throw if UsersService findAll throws', async () => {
       jest
         .spyOn(service, 'findAll')
-        .mockRejectedValueOnce(new NotFoundException());
+        .mockRejectedValueOnce(new UserInputError('error'));
       await expect(resolver.findAll(usersArgs)).rejects.toThrow(
-        new NotFoundException()
+        new UserInputError('error'),
       );
     });
 
@@ -96,9 +96,9 @@ describe('UsersResolver', () => {
     it('should throw if UserService findOne throws', async () => {
       jest
         .spyOn(service, 'findOne')
-        .mockRejectedValueOnce(new NotFoundException());
+        .mockRejectedValueOnce(new UserInputError('error'));
       await expect(resolver.findOne(1)).rejects.toThrow(
-        new NotFoundException()
+        new UserInputError('error'),
       );
     });
   });
@@ -129,8 +129,10 @@ describe('UsersResolver', () => {
     it('should throw error if id in UsersService not exists', async () => {
       jest
         .spyOn(service, 'remove')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(resolver.remove(1)).rejects.toThrow(new NotFoundException());
+        .mockRejectedValueOnce(new UserInputError('error'));
+      await expect(resolver.remove(1)).rejects.toThrow(
+        new UserInputError('error'),
+      );
     });
   });
 });

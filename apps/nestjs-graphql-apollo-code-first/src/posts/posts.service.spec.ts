@@ -1,4 +1,3 @@
-import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -6,6 +5,7 @@ import { Users } from '../users/entities/users.entity';
 import { CreatePostInput, UpdatePostInput, PostsArgs } from './dto';
 import { Posts } from './entities/posts.entity';
 import { PostsService } from './posts.service';
+import { UserInputError } from '@nestjs/apollo';
 
 const postArgs: PostsArgs = {
   offset: 0,
@@ -101,7 +101,7 @@ describe('PostsService', () => {
         .mockReturnValue(null);
       const userNotFound = service.findOneById('anyid');
       expect(userNotFound).rejects.toThrow(
-        new NotFoundException('Post #anyid not found')
+        new UserInputError('Post #anyid not found'),
       );
       expect(repoSpy).toHaveBeenCalledWith({
         where: { id: NaN },
@@ -121,7 +121,7 @@ describe('PostsService', () => {
       expect(
         await service.create({
           ...createPostInput,
-        })
+        }),
       ).toEqual(post);
     });
   });
@@ -139,7 +139,7 @@ describe('PostsService', () => {
           title: 'title #1',
           description: 'description #1',
           users: [],
-        })
+        }),
       ).toEqual(onePost);
       expect(updateSpy).toHaveBeenCalled();
     });
@@ -151,7 +151,7 @@ describe('PostsService', () => {
         description: 'description not correct',
         users: [],
       });
-      expect(userNotFound).rejects.toThrow(NotFoundException);
+      expect(userNotFound).rejects.toThrow(UserInputError);
     });
   });
 });

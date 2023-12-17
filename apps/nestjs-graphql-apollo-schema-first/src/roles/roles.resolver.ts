@@ -1,6 +1,7 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { RolesService } from './roles.service';
 import { CreateRoleInput, UpdateRoleInput, RolesArgs } from './dto';
+
 @Resolver('Roles')
 export class RolesResolver {
   constructor(private readonly rolesService: RolesService) {}
@@ -21,7 +22,10 @@ export class RolesResolver {
   }
 
   @Mutation('updateRole')
-  update(@Args('id') id: number, @Args('updateRoleInput') updateRoleInput: UpdateRoleInput) {
+  update(
+    @Args('id') id: number,
+    @Args('updateRoleInput') updateRoleInput: UpdateRoleInput,
+  ) {
     return this.rolesService.update(id, updateRoleInput);
   }
 

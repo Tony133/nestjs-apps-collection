@@ -6,11 +6,11 @@ import { UsersService } from './users.service';
 import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
-import { NotFoundException } from '@nestjs/common';
 import { BcryptService } from '../shared/hashing/bcrypt.service';
 import { HashingService } from '../shared/hashing/hashing.service';
 import { Article } from '../articles/entities/article.entity';
 import { Roles } from '../roles/entities/roles.entity';
+import { UserInputError } from '@nestjs/apollo';
 
 const usersArgs: UsersArgs = {
   offset: 0,
@@ -110,7 +110,7 @@ describe('UsersService', () => {
     it('should get a single user', () => {
       const repoSpy = jest.spyOn(repositoryUser, 'findOne');
       expect(service.findOne(1)).resolves.toEqual(oneUser);
-      expect(repoSpy).toBeCalledWith({
+      expect(repoSpy).toHaveBeenCalledWith({
         where: { id: 1 },
         relations: ['roles'],
       });
@@ -121,7 +121,7 @@ describe('UsersService', () => {
         .spyOn(repositoryUser, 'findOne')
         .mockReturnValue(null);
       const userNotFound = service.findOne(2);
-      expect(userNotFound).rejects.toThrow(NotFoundException);
+      expect(userNotFound).rejects.toThrow(UserInputError);
       expect(repoSpy).toHaveBeenCalledWith({
         where: { id: 2 },
         relations: ['roles'],
@@ -153,7 +153,7 @@ describe('UsersService', () => {
         password: 'secret',
         roles: [],
       });
-      expect(userNotFound).rejects.toThrow(NotFoundException);
+      expect(userNotFound).rejects.toThrow(UserInputError);
     });
   });
 
@@ -161,7 +161,7 @@ describe('UsersService', () => {
     it('should return user remove', async () => {
       const deleteSpy = jest.spyOn(service, 'remove');
       await service.remove(1);
-      expect(deleteSpy).toBeCalledWith(1);
+      expect(deleteSpy).toHaveBeenCalledWith(1);
     });
   });
 });
