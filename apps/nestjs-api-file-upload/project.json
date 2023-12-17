@@ -1,16 +1,19 @@
 {
-  "sourceRoot": "apps/nestjs-api-upload/src",
+  "name": "nestjs-api-file-upload",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nestjs-api-file-upload/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nestjs-api-upload",
-        "main": "apps/nestjs-api-upload/src/main.ts",
-        "tsConfig": "apps/nestjs-api-upload/tsconfig.app.json",
+        "outputPath": "dist/apps/nestjs-api-file-upload",
+        "main": "apps/nestjs-api-file-upload/src/main.ts",
+        "tsConfig": "apps/nestjs-api-file-upload/tsconfig.app.json",
         "target": "node",
-        "compiler": "tsc"
+        "compiler": "tsc",
+        "webpackConfig": "apps/nestjs-api-file-upload/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -19,8 +22,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/nestjs-api-upload/src/environments/environment.ts",
-              "with": "apps/nestjs-api-upload/src/environments/environment.prod.ts"
+              "replace": "apps/nestjs-api-file-upload/src/environments/environment.ts",
+              "with": "apps/nestjs-api-file-upload/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -29,28 +32,28 @@
     "serve": {
       "executor": "@nx/js:node",
       "options": {
-        "buildTarget": "nestjs-api-upload:build"
+        "buildTarget": "nestjs-api-file-upload:build"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/nestjs-api-upload/**/*.ts"]
+        "lintFilePatterns": ["apps/nestjs-api-file-upload/**/*.ts"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/nestjs-api-upload"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/nestjs-api-file-upload"],
       "options": {
-        "jestConfig": "apps/nestjs-api-upload/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "apps/nestjs-api-file-upload/jest.config.js"
       }
     },
     "e2e": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "apps/nestjs-api-upload/test/jest-e2e.json"
+        "jestConfig": "apps/nestjs-api-file-upload/test/jest-e2e.json",
+        "passWithNoTests": false
       }
     }
   },
