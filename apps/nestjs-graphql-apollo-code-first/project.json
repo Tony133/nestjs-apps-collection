@@ -6,15 +6,14 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/nestjs-graphql-apollo-code-first",
         "main": "apps/nestjs-graphql-apollo-code-first/src/main.ts",
         "tsConfig": "apps/nestjs-graphql-apollo-code-first/tsconfig.app.json",
         "target": "node",
-        "compiler": "tsc"
+        "compiler": "tsc",
+        "webpackConfig": "apps/nestjs-graphql-apollo-code-first/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -38,13 +37,9 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/nestjs-graphql-apollo-code-first/**/*.ts"
-        ]
+        "lintFilePatterns": ["apps/nestjs-graphql-apollo-code-first/**/*.ts"]
       }
     },
     "test": {

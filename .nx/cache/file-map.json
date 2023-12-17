@@ -1,0 +1,2027 @@
+{
+  "version": "6.0",
+  "nxVersion": "v17.2.5",
+  "deps": {
+    "@apollo/server": "^4.9.4",
+    "@mercuriusjs/gateway": "^2.0.0",
+    "@nestjs/apollo": "^12.0.7",
+    "@nestjs/common": "10.2.8",
+    "@nestjs/config": "^3.0.0",
+    "@nestjs/core": "10.2.8",
+    "@nestjs/graphql": "^12.0.7",
+    "@nestjs/mapped-types": "^2.0.2",
+    "@nestjs/mercurius": "^12.0.4",
+    "@nestjs/mongoose": "^10.0.0",
+    "@nestjs/platform-express": "10.2.8",
+    "@nestjs/platform-fastify": "10.2.8",
+    "@nestjs/sequelize": "^10.0.0",
+    "@nestjs/swagger": "7.1.8",
+    "@nestjs/typeorm": "^10.0.0",
+    "bcrypt": "^5.1.1",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.0",
+    "graphql": "^16.6.0",
+    "install": "^0.13.0",
+    "mercurius": "13.0.0",
+    "mongoose": "^7.3.2",
+    "mysql2": "3.5.0",
+    "pg": "^8.11.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1",
+    "sequelize": "^6.32.1",
+    "sequelize-typescript": "^2.1.5",
+    "ts-morph": "^19.0.0",
+    "tslib": "^2.6.2",
+    "typeorm": "^0.3.11",
+    "@commitlint/cli": "^18.0.0",
+    "@commitlint/config-angular": "^18.0.0",
+    "@nestjs/schematics": "10.0.3",
+    "@nestjs/testing": "10.2.8",
+    "@nrwl/webpack": "v17.2.5",
+    "@nx/eslint-plugin": "v17.2.5",
+    "@nx/jest": "v17.2.5",
+    "@nx/linter": "v17.2.5",
+    "@nx/nest": "v17.2.5",
+    "@nx/node": "v17.2.5",
+    "@nx/webpack": "v17.2.5",
+    "@nx/workspace": "v17.2.5",
+    "@types/jest": "29.5.8",
+    "@types/node": "18.16.9",
+    "@typescript-eslint/eslint-plugin": "6.14.0",
+    "@typescript-eslint/parser": "6.14.0",
+    "eslint": "8.48.0",
+    "eslint-config-prettier": "9.0.0",
+    "husky": "^8.0.3",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
+    "nx": "v17.2.5",
+    "nx-cloud": "16.5.2",
+    "prettier": "^3.0.2",
+    "supertest": "^6.3.3",
+    "ts-jest": "29.1.1",
+    "ts-node": "10.9.1",
+    "typescript": "5.2.2"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "nestjs-graphql-apollo-schema-first": [
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/.env.example",
+          "hash": "13001353321263346647"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/.env.example-e2e-test",
+          "hash": "15862602221046637775"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/.gitignore",
+          "hash": "15774664122255168212"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/README.md",
+          "hash": "9478942021914070387"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/docker-compose.yml",
+          "hash": "8315434923411988412"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/jest.config.js",
+          "hash": "13264648113199285628"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/nest-cli.json",
+          "hash": "2199995894482895554"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/project.json",
+          "hash": "6764703139022918274"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/app.controller.spec.ts",
+          "hash": "2727664763654384995",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/app.controller.ts",
+          "hash": "4552329938751326480",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/app.module.ts",
+          "hash": "13986811355606951274",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:@nestjs/config",
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/app.service.ts",
+          "hash": "16892833931858030153",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/articles.graphql",
+          "hash": "16207109829765235349"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/articles.module.ts",
+          "hash": "3232868199725048515",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/articles.resolver.spec.ts",
+          "hash": "7258254147382481391",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/articles.resolver.ts",
+          "hash": "7393122217566013853",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/articles.service.spec.ts",
+          "hash": "14269697842835493359",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/articles.service.ts",
+          "hash": "15023519045228724862",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/dto/articles.args.ts",
+          "hash": "8794799552914437514",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/dto/create-article.input.ts",
+          "hash": "8077740106204744429",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/dto/index.ts",
+          "hash": "3902465758484311834"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/dto/update-article.input.ts",
+          "hash": "12456766010570681541",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/mapped-types"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/articles/entities/article.entity.ts",
+          "hash": "1687145193391873650",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/generate-typings.ts",
+          "hash": "3397861163969949885",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/graphql.options.ts",
+          "hash": "9030224146199125494",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/common",
+            "npm:path",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/graphql.schema.ts",
+          "hash": "10264786734252384414"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/main.ts",
+          "hash": "9030915860197905957",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/dto/create-role.input.ts",
+          "hash": "14891105665545856240",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/dto/index.ts",
+          "hash": "12710370682711362289"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/dto/roles.args.ts",
+          "hash": "2424138349636979653",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/dto/update-role.input.ts",
+          "hash": "17198819090894916248",
+          "deps": [
+            "npm:@nestjs/mapped-types"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/entities/roles.entity.ts",
+          "hash": "9967593894084676445",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/roles.graphql",
+          "hash": "17391592524117243307"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/roles.module.ts",
+          "hash": "7235382959885206663",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/roles.resolver.spec.ts",
+          "hash": "8684666283770457219",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/roles.resolver.ts",
+          "hash": "5416522045178463333",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/roles.service.spec.ts",
+          "hash": "14031837611801177211",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/apollo",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/roles/roles.service.ts",
+          "hash": "9230418815234486467",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/shared/hashing/bcrypt.service.spec.ts",
+          "hash": "5170307455247397943",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/shared/hashing/bcrypt.service.ts",
+          "hash": "17371890920173855453",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:bcrypt"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/shared/hashing/hashing.service.spec.ts",
+          "hash": "4085436124941492324",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/shared/hashing/hashing.service.ts",
+          "hash": "1858843277575492410",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/dto/create-user.input.ts",
+          "hash": "5863530731175041173",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/dto/index.ts",
+          "hash": "16600950620946667007"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/dto/update-user.input.ts",
+          "hash": "13688115906297833179",
+          "deps": [
+            "npm:@nestjs/mapped-types"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/dto/users.args.ts",
+          "hash": "16822887856441562496",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/entities/user.entity.ts",
+          "hash": "7040248580232130018",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/users.graphql",
+          "hash": "11698675897505224255"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/users.module.ts",
+          "hash": "6417844046027703977",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/users.resolver.spec.ts",
+          "hash": "9694911485643787635",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/users.resolver.ts",
+          "hash": "4714653896374930763",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/users.service.spec.ts",
+          "hash": "239151937098383020",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/src/users/users.service.ts",
+          "hash": "6579141257325880912",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/test/app.e2e-spec.ts",
+          "hash": "15142680097789702029",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/test/articles/articles.e2e-spec.ts",
+          "hash": "2125521187319449989",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/test/jest-e2e.json",
+          "hash": "7570273541430074424"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/test/roles/roles.e2e-spec.ts",
+          "hash": "14343555422303949771",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/test/users/users.e2e-spec.ts",
+          "hash": "15815276252873724384",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/tsconfig.app.json",
+          "hash": "13068867892384842602"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/tsconfig.build.json",
+          "hash": "276845246908739715"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-schema-first/tsconfig.spec.json",
+          "hash": "9890306705623532975"
+        }
+      ],
+      "nestjs-graphql-mercurius-code-first": [
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/.env.example",
+          "hash": "13001353321263346647"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/.env.example-e2e-test",
+          "hash": "15862602221046637775"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/.gitignore",
+          "hash": "15774664122255168212"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/README.md",
+          "hash": "9435874517980383038"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/docker-compose.yml",
+          "hash": "8315434923411988412"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/jest.config.js",
+          "hash": "17470558667401672131"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/project.json",
+          "hash": "12224225207215744002"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/app.module.ts",
+          "hash": "2213418404492967635",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/config",
+            "npm:@nestjs/mercurius"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/app.resolver.spec.ts",
+          "hash": "14503553481711146593",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/app.resolver.ts",
+          "hash": "18234572924107137673",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/app.service.ts",
+          "hash": "16892833931858030153",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/graphql.options.ts",
+          "hash": "14794939699390478320",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/common",
+            "npm:@nestjs/mercurius"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/main.ts",
+          "hash": "6681343381747769994",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/platform-fastify"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/shared/hashing/bcrypt.service.spec.ts",
+          "hash": "5170307455247397943",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/shared/hashing/bcrypt.service.ts",
+          "hash": "17371890920173855453",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:bcrypt"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/shared/hashing/hashing.service.spec.ts",
+          "hash": "4085436124941492324",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/shared/hashing/hashing.service.ts",
+          "hash": "1858843277575492410",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/dto/create-user.input.ts",
+          "hash": "17740136051518132995",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/dto/index.ts",
+          "hash": "8289675406307775520"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/dto/update-user.input.ts",
+          "hash": "3163935214114966482",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/dto/users.args.ts",
+          "hash": "16822887856441562496",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/entities/users.entity.ts",
+          "hash": "4920781656355223034",
+          "deps": [
+            "npm:typeorm",
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/users.module.ts",
+          "hash": "11592666588159401465",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/users.resolver.spec.ts",
+          "hash": "556887623390928423",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/users.resolver.ts",
+          "hash": "16811285867489964470",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/users.service.spec.ts",
+          "hash": "5407849104294981782",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/src/users/users.service.ts",
+          "hash": "4312939734493646008",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/test/app.e2e-spec.ts",
+          "hash": "14006581921594497826",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/platform-fastify"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/test/jest-e2e.json",
+          "hash": "7570273541430074424"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/test/users/users.e2e-spec.ts",
+          "hash": "8972702007317079369",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/platform-fastify",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/tsconfig.app.json",
+          "hash": "13068867892384842602"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/tsconfig.build.json",
+          "hash": "276845246908739715"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-code-first/tsconfig.spec.json",
+          "hash": "9890306705623532975"
+        }
+      ],
+      "nestjs-api-mongoose": [
+        {
+          "file": "apps/nestjs-api-mongoose/.env.example",
+          "hash": "1513289891498240503"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/.env.example-e2e-test",
+          "hash": "18307856446729794122"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/.gitignore",
+          "hash": "15774664122255168212"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/README.md",
+          "hash": "16649678469548773327"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/docker-compose.yml",
+          "hash": "6257625901619461653"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/jest.config.js",
+          "hash": "4721079855609444910"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/project.json",
+          "hash": "7282785830329936640"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/app.controller.spec.ts",
+          "hash": "2727664763654384995",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/app.controller.ts",
+          "hash": "4552329938751326480",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/app.module.ts",
+          "hash": "2334198356744256796",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/mongoose",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/app.service.ts",
+          "hash": "16892833931858030153",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/common/dto/pagination-query.dto.ts",
+          "hash": "3589512089748441018",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/common/pipes/parse-int.pipe.spec.ts",
+          "hash": "13916475531038215253",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/common/pipes/parse-int.pipe.ts",
+          "hash": "3177920025314267361",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/customers.controller.spec.ts",
+          "hash": "15698441270576218144",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/customers.controller.ts",
+          "hash": "1888735947858421161",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/customers.module.ts",
+          "hash": "13169083801354105711",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/customers.service.spec.ts",
+          "hash": "8066259751826934078",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:@nestjs/mongoose",
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/customers.service.ts",
+          "hash": "12502851012597014098",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:mongoose",
+            "npm:@nestjs/mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/dto/create-customer.dto.ts",
+          "hash": "13870808913071315032",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/dto/index.ts",
+          "hash": "1380208647250821520"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/dto/update-customer.dto.ts",
+          "hash": "13389479735678537420",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/interfaces/customers-profile.interface.ts",
+          "hash": "1451139348687544566",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/customers/schemas/customer.schema.ts",
+          "hash": "7744250127908815674",
+          "deps": [
+            "npm:@nestjs/mongoose",
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/main.ts",
+          "hash": "16322901979318170717",
+          "deps": [
+            "npm:@nestjs/core",
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/dto/create-organization.dto.ts",
+          "hash": "7151178934468019804",
+          "deps": [
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/dto/index.ts",
+          "hash": "13733836939917246724"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/dto/update-organization.dto.ts",
+          "hash": "9469164637180389076",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/interfaces/organizations-profile.ts",
+          "hash": "12749453721633568044",
+          "deps": [
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/organizations.controller.spec.ts",
+          "hash": "12795218785895056176",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/organizations.controller.ts",
+          "hash": "4373542159841442592",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/organizations.module.ts",
+          "hash": "13363212243721502430",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/organizations.service.spec.ts",
+          "hash": "12748783631571105482",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:@nestjs/mongoose",
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/organizations.service.ts",
+          "hash": "6949108608126215019",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:mongoose",
+            "npm:@nestjs/mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/src/organizations/schemas/organization.schema.ts",
+          "hash": "15941759471673732603",
+          "deps": [
+            "npm:@nestjs/mongoose",
+            "npm:mongoose"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/test/app.e2e-spec.ts",
+          "hash": "9001707502868017586",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/test/customers/customers.e2e-spec.ts",
+          "hash": "17093635046543444028",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/test/jest-e2e.json",
+          "hash": "7570273541430074424"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/test/organizations/organizations.e2e-spec.ts",
+          "hash": "8044221815590615162",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/tsconfig.app.json",
+          "hash": "13068867892384842602"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/tsconfig.build.json",
+          "hash": "276845246908739715"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/nestjs-api-mongoose/tsconfig.spec.json",
+          "hash": "9890306705623532975"
+        }
+      ],
+      "nestjs-api-sequelize": [
+        {
+          "file": "apps/nestjs-api-sequelize/.env.example",
+          "hash": "6580874551469081489"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/.env.example-e2e-test",
+          "hash": "5704884171966554294"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/.gitignore",
+          "hash": "13402879593237521044"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/README.md",
+          "hash": "10437612710833986474"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/docker-compose.yml",
+          "hash": "16330389949313709205"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/jest.config.js",
+          "hash": "7908040895738605797"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/project.json",
+          "hash": "13376734910857109009"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/app.controller.spec.ts",
+          "hash": "2727664763654384995",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/app.controller.ts",
+          "hash": "4552329938751326480",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/app.module.ts",
+          "hash": "16986725786985949848",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/sequelize",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/app.service.ts",
+          "hash": "16892833931858030153",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/main.ts",
+          "hash": "3690419325403339835",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/roles/dto/create-role.dto.ts",
+          "hash": "18240896068409807185",
+          "deps": [
+            "npm:@nestjs/swagger",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/roles/dto/update-role.dto.ts",
+          "hash": "10226807389230685723",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/roles/entities/role.entity.ts",
+          "hash": "14078907400656929470",
+          "deps": [
+            "npm:sequelize-typescript"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/roles/roles.controller.spec.ts",
+          "hash": "3803295088933672076",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/roles/roles.controller.ts",
+          "hash": "10651316887719819033",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/roles/roles.module.ts",
+          "hash": "953068248930963820",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/sequelize"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/roles/roles.service.spec.ts",
+          "hash": "6803174227326783986",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/sequelize",
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/roles/roles.service.ts",
+          "hash": "5041429631302779691",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/sequelize"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/dto/create-user.dto.ts",
+          "hash": "16698173993263449637",
+          "deps": [
+            "npm:@nestjs/swagger",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/dto/update-user.dto.ts",
+          "hash": "18378884879315876314",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/entities/user-role.entity.ts",
+          "hash": "11415187722881365804",
+          "deps": [
+            "npm:sequelize-typescript"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/entities/user.entity.ts",
+          "hash": "4070583497905329535",
+          "deps": [
+            "npm:sequelize-typescript"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/users.controller.spec.ts",
+          "hash": "7204873950394832039",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/users.controller.ts",
+          "hash": "3238296953154429055",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/users.module.ts",
+          "hash": "2049507877578737122",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/sequelize"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/users.service.spec.ts",
+          "hash": "10764293117146383101",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/sequelize",
+            "npm:node:test",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/src/users/users.service.ts",
+          "hash": "4145867760089328394",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/sequelize",
+            "npm:bcrypt"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/test/app.e2e-spec.ts",
+          "hash": "10848708640518916517",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/test/jest-e2e.json",
+          "hash": "7570273541430074424"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/test/roles/roles.e2e-spec.ts",
+          "hash": "164387341839793561",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/test/users/users.e2e-spec.ts",
+          "hash": "12723331792859419732",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/tsconfig.app.json",
+          "hash": "3204514120905829583"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/tsconfig.build.json",
+          "hash": "276845246908739715"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/nestjs-api-sequelize/tsconfig.spec.json",
+          "hash": "9890306705623532975"
+        }
+      ],
+      "nestjs-graphql-apollo-code-first": [
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/.env.example",
+          "hash": "13001353321263346647"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/.env.example-e2e-test",
+          "hash": "15862602221046637775"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/.gitignore",
+          "hash": "15774664122255168212"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/README.md",
+          "hash": "14309842955625464624"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/docker-compose.yml",
+          "hash": "478829939311078075"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/jest.config.js",
+          "hash": "12996878069433115900"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/nest-cli.json",
+          "hash": "2199995894482895554"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/project.json",
+          "hash": "7869351891943687527"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/app.controller.spec.ts",
+          "hash": "2727664763654384995",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/app.controller.ts",
+          "hash": "4552329938751326480",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/app.module.ts",
+          "hash": "17089900145490777086",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/config",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/app.service.ts",
+          "hash": "16892833931858030153",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/common/auth.guard.spec.ts",
+          "hash": "4535299700144361694"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/common/auth.guard.ts",
+          "hash": "9596340944153035677",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/graphql.options.ts",
+          "hash": "13309078051397350200",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/common",
+            "npm:@nestjs/apollo",
+            "npm:@apollo/server",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/main.ts",
+          "hash": "3094946313990990959",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/dto/create-post.input.ts",
+          "hash": "6449516564705330230",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/dto/index.ts",
+          "hash": "11085296556923144351"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/dto/posts.args.ts",
+          "hash": "9943206976965958051",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/dto/update-post.input.ts",
+          "hash": "4284820672516342145",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/entities/posts.entity.ts",
+          "hash": "6002009885883290076",
+          "deps": [
+            "npm:typeorm",
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/posts.module.ts",
+          "hash": "6612298038293061299",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/posts.resolver.spec.ts",
+          "hash": "1767411352696903799",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/posts.resolver.ts",
+          "hash": "3207568851858013269",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/posts.service.spec.ts",
+          "hash": "16298815464404121477",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/posts/posts.service.ts",
+          "hash": "16790516434160200366",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/dto/create-role.input.ts",
+          "hash": "16838964305708730944",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/dto/index.ts",
+          "hash": "1726950183721357415"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/dto/roles.args.ts",
+          "hash": "17007029054837045367",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/entities/roles.entity.ts",
+          "hash": "14074238090751736299",
+          "deps": [
+            "npm:typeorm",
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/roles.module.ts",
+          "hash": "8896748230993593053",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/roles.resolver.spec.ts",
+          "hash": "1632360675887839877",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/roles.resolver.ts",
+          "hash": "18114523384391294057",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/roles.service.spec.ts",
+          "hash": "17169534844679393017",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/roles/roles.service.ts",
+          "hash": "3292401059593120164",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/schema.gql",
+          "hash": "2233044200452877415"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/shared/hashing/bcrypt.service.spec.ts",
+          "hash": "5170307455247397943",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/shared/hashing/bcrypt.service.ts",
+          "hash": "17371890920173855453",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:bcrypt"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/shared/hashing/hashing.service.spec.ts",
+          "hash": "4085436124941492324",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/shared/hashing/hashing.service.ts",
+          "hash": "1858843277575492410",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/dto/create-user.input.ts",
+          "hash": "9247671365299408280",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/dto/index.ts",
+          "hash": "8289675406307775520"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/dto/update-user.input.ts",
+          "hash": "3163935214114966482",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/dto/users.args.ts",
+          "hash": "16822887856441562496",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/entities/users.entity.ts",
+          "hash": "17705998106489631393",
+          "deps": [
+            "npm:typeorm",
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/users.module.ts",
+          "hash": "17125006712050909718",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/users.resolver.spec.ts",
+          "hash": "5813518750282424599",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/users.resolver.ts",
+          "hash": "17230496889257136286",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/users.service.spec.ts",
+          "hash": "6392042210361981112",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/src/users/users.service.ts",
+          "hash": "11733708107272907327",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/apollo"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/test/app.e2e-spec.ts",
+          "hash": "15142680097789702029",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/test/jest-e2e.json",
+          "hash": "7570273541430074424"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/test/posts/posts.e2e-spec.ts",
+          "hash": "10397163490358241723",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/test/roles/roles.e2e-spec.ts",
+          "hash": "13600760482655072688",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/test/users/users.e2e-spec.ts",
+          "hash": "12898915128624100862",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common",
+            "npm:supertest"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/tsconfig.app.json",
+          "hash": "13068867892384842602"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/tsconfig.build.json",
+          "hash": "276845246908739715"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/nestjs-graphql-apollo-code-first/tsconfig.spec.json",
+          "hash": "9890306705623532975"
+        }
+      ],
+      "nestjs-graphql-mercurius-schema-first": [
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/.env.example",
+          "hash": "13001353321263346647"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/.env.example-e2e-test",
+          "hash": "15862602221046637775"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/.gitignore",
+          "hash": "15774664122255168212"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/README.md",
+          "hash": "4652609398805268719"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/docker-compose.yml",
+          "hash": "3547459860522036800"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/jest.config.js",
+          "hash": "16907848309214074875"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/project.json",
+          "hash": "2999487092237186"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/app.graphql",
+          "hash": "277018582516864905"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/app.module.ts",
+          "hash": "7384349919372619887",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:@nestjs/config",
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/mercurius"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/app.resolver.spec.ts",
+          "hash": "14503553481711146593",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/app.resolver.ts",
+          "hash": "9441894619119973400",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/app.service.ts",
+          "hash": "16892833931858030153",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/generate-typings.ts",
+          "hash": "3397861163969949885",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:path"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/graphql.options.ts",
+          "hash": "11949629481639708460",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:@nestjs/common",
+            "npm:path",
+            "npm:@nestjs/mercurius"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/graphql.schema.ts",
+          "hash": "3988118113894751418"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/main.ts",
+          "hash": "1791234992358583036",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/platform-fastify"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/shared/hashing/bcrypt.service.spec.ts",
+          "hash": "5170307455247397943",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/shared/hashing/bcrypt.service.ts",
+          "hash": "17371890920173855453",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:bcrypt"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/shared/hashing/hashing.service.spec.ts",
+          "hash": "4085436124941492324",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/shared/hashing/hashing.service.ts",
+          "hash": "1858843277575492410",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/dto/create-user.input.ts",
+          "hash": "13499358425360658207",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/dto/index.ts",
+          "hash": "16600950620946667007"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/dto/update-user.input.ts",
+          "hash": "13688115906297833179",
+          "deps": [
+            "npm:@nestjs/mapped-types"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/dto/users.args.ts",
+          "hash": "16822887856441562496",
+          "deps": [
+            "npm:@nestjs/graphql",
+            "npm:class-validator"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/entities/user.entity.ts",
+          "hash": "8921239948389461140",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/users.graphql",
+          "hash": "5624742912320401228"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/users.module.ts",
+          "hash": "5180924557010338147",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/users.resolver.spec.ts",
+          "hash": "8005261377122093037",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/users.resolver.ts",
+          "hash": "4714653896374930763",
+          "deps": [
+            "npm:@nestjs/graphql"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/users.service.spec.ts",
+          "hash": "3061985517763945337",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/src/users/users.service.ts",
+          "hash": "577904164618448002",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/test/app.e2e-spec.ts",
+          "hash": "5316346801833238842",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/platform-fastify"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/test/jest-e2e.json",
+          "hash": "7570273541430074424"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/test/users/users.e2e-spec.ts",
+          "hash": "17878152508739261748",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/platform-fastify",
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/tsconfig.app.json",
+          "hash": "13068867892384842602"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/tsconfig.build.json",
+          "hash": "276845246908739715"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/tsconfig.json",
+          "hash": "9214820933160915425"
+        },
+        {
+          "file": "apps/nestjs-graphql-mercurius-schema-first/tsconfig.spec.json",
+          "hash": "9890306705623532975"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": ".commitlintrc.json",
+        "hash": "2153992405103359725"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": ".github/dependabot.yml",
+        "hash": "3560738194836951658"
+      },
+      {
+        "file": ".github/workflows/codeql-analysis.yml",
+        "hash": "16895720789265108429"
+      },
+      {
+        "file": ".github/workflows/node.js-ci.yml",
+        "hash": "17201346739934039196"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "5378393929711992635"
+      },
+      {
+        "file": ".husky/.gitignore",
+        "hash": "4575667007673887251"
+      },
+      {
+        "file": ".husky/commit-msg",
+        "hash": "11118044558852958656"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "8906304965158091741"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "17733650430415207254"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "235626400633494639"
+      },
+      {
+        "file": "LICENSE",
+        "hash": "8266453973696639509"
+      },
+      {
+        "file": "README.md",
+        "hash": "17234276291879827213"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "babel.config.json",
+        "hash": "5546405625092116747"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "libs/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "migrations.json",
+        "hash": "3072326507150984325"
+      },
+      {
+        "file": "nx.json",
+        "hash": "11506193447716076539"
+      },
+      {
+        "file": "package.json",
+        "hash": "3052471868594133891"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "3073624920424261828"
+      },
+      {
+        "file": "renovate.json",
+        "hash": "11200061731491469081"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "7772226233137444385"
+      }
+    ]
+  }
+}
