@@ -6,15 +6,14 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/nestjs-api-sequelize",
         "main": "apps/nestjs-api-sequelize/src/main.ts",
         "tsConfig": "apps/nestjs-api-sequelize/tsconfig.app.json",
         "target": "node",
-        "compiler": "tsc"
+        "compiler": "tsc",
+        "webpackConfig": "apps/nestjs-api-sequelize/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -38,29 +37,23 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/nestjs-api-sequelize/**/*.ts"
-        ]
+        "lintFilePatterns": ["apps/nestjs-api-sequelize/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/nestjs-api-sequelize"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/apps/nestjs-api-sequelize"],
       "options": {
-        "jestConfig": "apps/nestjs-api-sequelize/jest.config.js",
-        "passWithNoTests": true
+        "jestConfig": "apps/nestjs-api-sequelize/jest.config.js"
       }
     },
     "e2e": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "apps/nestjs-api-sequelize/test/jest-e2e.json"
+        "jestConfig": "apps/nestjs-api-sequelize/test/jest-e2e.json",
+        "passWithNoTests": false
       }
     }
   },

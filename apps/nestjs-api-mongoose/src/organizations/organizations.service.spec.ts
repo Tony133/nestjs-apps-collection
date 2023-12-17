@@ -65,7 +65,7 @@ describe('OrganizationsService', () => {
             find: jest.fn().mockReturnValue(organizationsArray),
             findById: jest.fn(),
             findByIdAndUpdate: jest.fn(),
-            findByIdAndRemove: jest.fn(),
+            findByIdAndDelete: jest.fn(),
             new: jest.fn().mockResolvedValue(mockOrganization),
             constructor: jest.fn().mockResolvedValue(mockOrganization),
             findOne: jest.fn(),
@@ -83,7 +83,7 @@ describe('OrganizationsService', () => {
 
     service = module.get<OrganizationsService>(OrganizationsService);
     model = module.get<Model<OrganizationsProfile>>(
-      getModelToken('Organization')
+      getModelToken('Organization'),
     );
   });
 
@@ -121,7 +121,7 @@ describe('OrganizationsService', () => {
         populate: jest.fn().mockReturnThis(),
       } as any);
       await expect(service.findOne('anyid')).rejects.toThrow(
-        new NotFoundException('Organization #anyid not found')
+        new NotFoundException('Organization #anyid not found'),
       );
     });
   });
@@ -136,7 +136,7 @@ describe('OrganizationsService', () => {
             address: 'address #1',
             description: 'description #1',
             customers: 'customer #1',
-          }) as any
+          }) as any,
       );
       const newOrganization = await service.create({
         name: 'name #1',
@@ -164,7 +164,7 @@ describe('OrganizationsService', () => {
 
       const updateOrganization = await service.update(
         'anyid',
-        updateOrganizationDto
+        updateOrganizationDto,
       );
       expect(updateOrganization).toEqual({
         _id: 'anyid',
@@ -176,16 +176,16 @@ describe('OrganizationsService', () => {
     it('should throw an exception if it not find a organization', async () => {
       model.findByIdAndUpdate = jest.fn().mockResolvedValueOnce(null);
       await expect(
-        service.update('not correct id', updateOrganizationDto)
+        service.update('not correct id', updateOrganizationDto),
       ).rejects.toThrow(NotFoundException);
     });
   });
 
   describe('remove()', () => {
     it('should remove a organization by id', async () => {
-      const removeSpy = jest.spyOn(model, 'findByIdAndRemove');
+      const removeSpy = jest.spyOn(model, 'findByIdAndDelete');
       const retVal = await service.remove('any id');
-      expect(removeSpy).toBeCalledWith('any id');
+      expect(removeSpy).toHaveBeenCalledWith('any id');
       expect(retVal).toBeUndefined();
     });
   });

@@ -4,7 +4,7 @@ import { RolesService } from './roles.service';
 import { CreateRoleInput, RolesArgs } from './dto';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { NotFoundException } from '@nestjs/common';
+import { UserInputError } from '@nestjs/apollo';
 
 const rolesArgs: RolesArgs = {
   skip: 0,
@@ -77,7 +77,7 @@ describe('RolesService', () => {
         .spyOn(repositoryRole, 'findOne')
         .mockReturnValue(null);
       const roleNotFound = service.findOneById('2');
-      expect(roleNotFound).rejects.toThrow(NotFoundException);
+      expect(roleNotFound).rejects.toThrow(UserInputError);
       expect(repoSpy).toHaveBeenCalledWith({ where: { id: 2 } });
     });
   });
@@ -91,7 +91,7 @@ describe('RolesService', () => {
       expect(
         await service.create({
           ...createRoleInput,
-        })
+        }),
       ).toEqual(role);
     });
   });
@@ -100,7 +100,7 @@ describe('RolesService', () => {
     it('should return role remove', async () => {
       const deleteSpy = jest.spyOn(repositoryRole, 'remove');
       const response = await service.remove('anyid');
-      expect(deleteSpy).toBeCalledWith(oneRole);
+      expect(deleteSpy).toHaveBeenCalledWith(oneRole);
       expect(response).toBeUndefined();
     });
   });

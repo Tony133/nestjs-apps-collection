@@ -1,8 +1,8 @@
-import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { CreateUserInput, UpdateUserInput, UsersArgs } from './dto';
 import { UsersResolver } from './users.resolver';
 import { UsersService } from './users.service';
+import { UserInputError } from '@nestjs/apollo';
 
 const usersArgs: UsersArgs = {
   offset: 0,
@@ -80,7 +80,7 @@ describe('UsersResolver', () => {
     it('should return a exception when doesnt found a user by id', async () => {
       service.findOneById = jest.fn().mockReturnValue(null);
       const userNotFound = resolver.user('not correct id');
-      expect(userNotFound).rejects.toThrow(NotFoundException);
+      expect(userNotFound).rejects.toThrow(UserInputError);
     });
   });
 

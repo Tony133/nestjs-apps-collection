@@ -1,8 +1,8 @@
-import { NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { RolesArgs, CreateRoleInput, UpdateRoleInput } from './dto';
 import { RolesResolver } from './roles.resolver';
 import { RolesService } from './roles.service';
+import { UserInputError } from '@nestjs/apollo';
 
 const rolesArgs: RolesArgs = {
   offset: 0,
@@ -61,9 +61,9 @@ describe('RolesResolver', () => {
     it('should throw if RolesService findAll throws', async () => {
       jest
         .spyOn(service, 'findAll')
-        .mockRejectedValueOnce(new NotFoundException());
+        .mockRejectedValueOnce(new UserInputError('error'));
       await expect(resolver.findAll(rolesArgs)).rejects.toThrow(
-        new NotFoundException()
+        new UserInputError('error'),
       );
     });
   });
@@ -77,9 +77,9 @@ describe('RolesResolver', () => {
     it('should throw if RoleService findOne throws', async () => {
       jest
         .spyOn(service, 'findOne')
-        .mockRejectedValueOnce(new NotFoundException());
+        .mockRejectedValueOnce(new UserInputError('error'));
       await expect(resolver.findOne(1)).rejects.toThrow(
-        new NotFoundException()
+        new UserInputError('error'),
       );
     });
   });
@@ -110,8 +110,10 @@ describe('RolesResolver', () => {
     it('should throw error if id in RolesService not exists', async () => {
       jest
         .spyOn(service, 'remove')
-        .mockRejectedValueOnce(new NotFoundException());
-      await expect(resolver.remove(1)).rejects.toThrow(new NotFoundException());
+        .mockRejectedValueOnce(new UserInputError('error'));
+      await expect(resolver.remove(1)).rejects.toThrow(
+        new UserInputError('error'),
+      );
     });
   });
 });

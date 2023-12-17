@@ -80,7 +80,7 @@ describe('CustomersService', () => {
             find: jest.fn().mockReturnValue(customersArray),
             findById: jest.fn().mockReturnValue(mockCustomer),
             findByIdAndUpdate: jest.fn().mockReturnValue(updateCustomerDto),
-            findByIdAndRemove: jest.fn(),
+            findByIdAndDelete: jest.fn(),
             new: jest.fn().mockResolvedValue(mockCustomer),
             constructor: jest.fn().mockResolvedValue(mockCustomer),
             create: jest.fn().mockResolvedValue(createCustomerDto),
@@ -136,7 +136,7 @@ describe('CustomersService', () => {
         populate: jest.fn().mockReturnThis(),
       } as any);
       await expect(service.findOne('anyid')).rejects.toThrow(
-        new NotFoundException('Customer #anyid not found')
+        new NotFoundException('Customer #anyid not found'),
       );
     });
   });
@@ -154,7 +154,7 @@ describe('CustomersService', () => {
             address: 'address #1',
             description: 'description #1',
             organizations: 'organization #1',
-          }) as any
+          }) as any,
       );
       const newCustomer = await service.create({
         firstName: 'firstName #1',
@@ -197,16 +197,16 @@ describe('CustomersService', () => {
     it('should throw an exception if it not find a customer', async () => {
       model.findByIdAndUpdate = jest.fn().mockResolvedValueOnce(null);
       await expect(
-        service.update('not correct id', updateCustomerDto)
+        service.update('not correct id', updateCustomerDto),
       ).rejects.toThrow(NotFoundException);
     });
   });
 
   describe('remove()', () => {
     it('should remove a customer by id', async () => {
-      const removeSpy = jest.spyOn(model, 'findByIdAndRemove');
+      const removeSpy = jest.spyOn(model, 'findByIdAndDelete');
       const retVal = await service.remove('any id');
-      expect(removeSpy).toBeCalledWith('any id');
+      expect(removeSpy).toHaveBeenCalledWith('any id');
       expect(retVal).toBeUndefined();
     });
   });

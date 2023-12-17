@@ -1,9 +1,10 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Roles } from '../roles/entities/roles.entity';
 import { Repository } from 'typeorm';
 import { CreateUserInput, UpdateUserInput, UsersArgs } from './dto';
 import { User } from './entities/user.entity';
+import { UserInputError } from '@nestjs/apollo';
 
 @Injectable()
 export class UsersService {
@@ -32,7 +33,7 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new NotFoundException(`User #${id} not found`);
+      throw new UserInputError(`User #${id} not found`);
     }
     return user;
   }
@@ -63,7 +64,7 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new NotFoundException(`User #${id} not found`);
+      throw new UserInputError(`User #${id} not found`);
     }
     return this.usersRepository.save(user);
   }
