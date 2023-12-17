@@ -1,5 +1,5 @@
 # nestjs-api-graphql-schema-first
-Simple example GraphQL(Schema First) with NestJS 7.x and TypeORM 😻
+Simple example GraphQL(Schema First) with NestJS and TypeORM for the NestJS community 😻
 
 ## Installation
 

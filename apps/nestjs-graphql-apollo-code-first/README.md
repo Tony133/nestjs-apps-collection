@@ -1,6 +1,6 @@
 # nestjs-api-graphql-code-first
 
-Simple example GraphQL(Code First) with NestJS 7.x and TypeORM 😻
+Simple example GraphQL(Code First) with NestJS and TypeORM for the NestJS community 😻
 
 ## Installation
 
