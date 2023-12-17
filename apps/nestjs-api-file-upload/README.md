@@ -1,6 +1,6 @@
 # nestjs-api-file-upload
 
-Simple example file upload with NestJS 7.x 😻
+Simple example file upload with NestJS and TypeORM for the NestJS community 😻
 
 ## Installation
 
