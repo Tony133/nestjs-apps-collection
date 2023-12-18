@@ -48,7 +48,7 @@
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-angular": "^18.4.3",
     "@nestjs/schematics": "10.0.3",
-    "@nestjs/testing": "10.2.10",
+    "@nestjs/testing": "10.3.0",
     "@nrwl/webpack": "17.2.6",
     "@nx/eslint-plugin": "17.2.6",
     "@nx/jest": "17.2.6",
