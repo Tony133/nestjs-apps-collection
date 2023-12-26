@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateUserInput } from './dto/create-user.input';
@@ -6,13 +6,14 @@ import { UpdateUserInput } from './dto/update-user.input';
 import { UsersArgs } from './dto/users.args';
 import { Users } from './entities/users.entity';
 import { HashingService } from '../shared/hashing/hashing.service';
+import { ErrorWithProps } from 'mercurius';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(Users)
     private readonly usersRepository: Repository<Users>,
-    private readonly hashingService: HashingService
+    private readonly hashingService: HashingService,
   ) {}
 
   public async findAll(usersArgs: UsersArgs): Promise<Users[]> {
@@ -31,14 +32,14 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new NotFoundException(`User #${id} not found`);
+      throw new ErrorWithProps(`User #${id} not found`);
     }
     return user;
   }
 
   public async create(createUserInput: CreateUserInput): Promise<Users> {
     createUserInput.password = await this.hashingService.hash(
-      createUserInput.password
+      createUserInput.password,
     );
 
     const user = this.usersRepository.create({ ...createUserInput });
@@ -47,10 +48,10 @@ export class UsersService {
 
   public async update(
     id: string,
-    updateUserInput: UpdateUserInput
+    updateUserInput: UpdateUserInput,
   ): Promise<Users> {
     updateUserInput.password = await this.hashingService.hash(
-      updateUserInput.password
+      updateUserInput.password,
     );
 
     const user = await this.usersRepository.preload({
@@ -59,7 +60,7 @@ export class UsersService {
     });
 
     if (!user) {
-      throw new NotFoundException(`User #${id} not found`);
+      throw new ErrorWithProps(`User #${id} not found`);
     }
     return this.usersRepository.save(user);
   }

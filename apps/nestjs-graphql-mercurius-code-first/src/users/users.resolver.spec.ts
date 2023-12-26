@@ -4,7 +4,7 @@ import { UsersService } from './users.service';
 import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
-import { NotFoundException } from '@nestjs/common';
+import { ErrorWithProps } from 'mercurius';
 
 const usersArgs: UsersArgs = {
   offset: 0,
@@ -74,9 +74,9 @@ describe('UsersResolver', () => {
     it('should throw if RolesService findAll throws', async () => {
       jest
         .spyOn(service, 'findAll')
-        .mockRejectedValueOnce(new NotFoundException());
+        .mockRejectedValueOnce(new ErrorWithProps('error'));
       await expect(resolver.users(usersArgs)).rejects.toThrow(
-        new NotFoundException()
+        new ErrorWithProps('error'),
       );
     });
   });
@@ -90,7 +90,7 @@ describe('UsersResolver', () => {
     it('should return a exception when doesnt found a user by id', async () => {
       service.findOneById = jest.fn().mockReturnValue(null);
       const userNotFound = resolver.user('not correct id');
-      expect(userNotFound).rejects.toThrow(NotFoundException);
+      expect(userNotFound).rejects.toThrow(ErrorWithProps);
     });
   });
 

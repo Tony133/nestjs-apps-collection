@@ -6,9 +6,9 @@ import { UsersService } from './users.service';
 import { UsersArgs } from './dto/users.args';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
-import { NotFoundException } from '@nestjs/common';
 import { BcryptService } from '../shared/hashing/bcrypt.service';
 import { HashingService } from '../shared/hashing/hashing.service';
+import { ErrorWithProps } from 'mercurius';
 
 const usersArgs: UsersArgs = {
   offset: 0,
@@ -104,7 +104,7 @@ describe('UsersService', () => {
         .mockReturnValue(null);
       const userNotFound = service.findOneById('anyid');
       expect(userNotFound).rejects.toThrow(
-        new NotFoundException('User #anyid not found')
+        new ErrorWithProps('User #anyid not found'),
       );
       expect(repoSpy).toHaveBeenCalledWith({ where: { id: NaN } });
     });
@@ -122,7 +122,7 @@ describe('UsersService', () => {
       expect(
         await service.create({
           ...createUserInput,
-        })
+        }),
       ).toEqual(user);
     });
   });
@@ -142,7 +142,7 @@ describe('UsersService', () => {
           email: 'test@example.com',
           username: 'username #1',
           password: 'secret',
-        })
+        }),
       ).toEqual(oneUser);
       expect(updateSpy).toHaveBeenCalled();
     });
@@ -155,7 +155,7 @@ describe('UsersService', () => {
         username: 'username update',
         password: 'secret',
       });
-      expect(userNotFound).rejects.toThrow(NotFoundException);
+      expect(userNotFound).rejects.toThrow(ErrorWithProps);
     });
   });
 
@@ -163,7 +163,7 @@ describe('UsersService', () => {
     it('should return user remove', async () => {
       const deleteSpy = jest.spyOn(repositoryUser, 'remove');
       const response = await service.remove('anyid');
-      expect(deleteSpy).toBeCalledWith(oneUser);
+      expect(deleteSpy).toHaveBeenCalledWith(oneUser);
       expect(response).toBeUndefined();
     });
   });
