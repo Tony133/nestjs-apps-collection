@@ -31,7 +31,7 @@
     "express": "^4.18.2",
     "graphql": "^16.8.1",
     "install": "^0.13.0",
-    "mercurius": "13.3.2",
+    "mercurius": "13.3.3",
     "mongoose": "^8.0.3",
     "mysql2": "3.6.5",
     "pg": "^8.11.3",
