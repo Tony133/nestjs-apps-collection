@@ -110,8 +110,8 @@ devDependencies:
     specifier: ^18.4.3
     version: 18.4.3(typescript@5.3.3)
   '@commitlint/config-angular':
-    specifier: ^18.4.3
-    version: 18.4.3
+    specifier: ^18.4.4
+    version: 18.4.4
   '@nestjs/schematics':
     specifier: 10.1.0
     version: 10.1.0(typescript@5.3.3)
@@ -1752,16 +1752,16 @@ packages:
       - typescript
     dev: true
 
-  /@commitlint/config-angular-type-enum@18.4.3:
-    resolution: {integrity: sha512-Gg65txKHYG5zPJxIrE9/ESS7CItyz2BB9VgFy8orK0uDg9KUb+yjL/tRKttuHmrHppK2HO/PUs5Qe1BMzdrSPQ==}
+  /@commitlint/config-angular-type-enum@18.4.4:
+    resolution: {integrity: sha512-a4FKpTP52x69usmnio9ukffcefYRhZICs952bRts0Q3GpvkTsM1f4/natPVHU7XMG++J02XUKZOs+I0F+4LRwg==}
     engines: {node: '>=v18'}
     dev: true
 
-  /@commitlint/config-angular@18.4.3:
-    resolution: {integrity: sha512-LaoWW56jymtWPubIe8ndFg6wYLWixbNrXVk8EtV24ZaY8R223bO3iA2by+YD7aorQGxvMJFyyeFc3e0Gs40NWw==}
+  /@commitlint/config-angular@18.4.4:
+    resolution: {integrity: sha512-bmW32RPEn5UH1bM5nyPM8kO2B6+cJgP9sWa8uUD9yI8hRshcKUFuK7gVUxZLcXO7gZWuJRcvXXcC2Vv76cKNHg==}
     engines: {node: '>=v18'}
     dependencies:
-      '@commitlint/config-angular-type-enum': 18.4.3
+      '@commitlint/config-angular-type-enum': 18.4.4
     dev: true
 
   /@commitlint/config-validator@18.4.3:
