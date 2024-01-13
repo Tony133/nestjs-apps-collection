@@ -34,7 +34,7 @@ dependencies:
     version: 12.0.11(@mercuriusjs/gateway@2.1.0)(@nestjs/common@10.3.0)(@nestjs/graphql@12.0.11)(fastify@4.25.1)(graphql@16.8.1)(mercurius@13.3.3)
   '@nestjs/mongoose':
     specifier: ^10.0.2
-    version: 10.0.2(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)(mongoose@8.0.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+    version: 10.0.2(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)(mongoose@8.0.4)(reflect-metadata@0.2.1)(rxjs@7.8.1)
   '@nestjs/platform-express':
     specifier: 10.3.0
     version: 10.3.0(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)
@@ -72,8 +72,8 @@ dependencies:
     specifier: 13.3.3
     version: 13.3.3(graphql@16.8.1)
   mongoose:
-    specifier: ^8.0.3
-    version: 8.0.3
+    specifier: ^8.0.4
+    version: 8.0.4
   mysql2:
     specifier: 3.7.0
     version: 3.7.0
@@ -2694,7 +2694,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@nestjs/mongoose@10.0.2(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)(mongoose@8.0.3)(reflect-metadata@0.2.1)(rxjs@7.8.1):
+  /@nestjs/mongoose@10.0.2(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)(mongoose@8.0.4)(reflect-metadata@0.2.1)(rxjs@7.8.1):
     resolution: {integrity: sha512-ITHh075DynjPIaKeJh6WkarS21WXYslu4nrLkNPbWaCP6JfxVAOftaA2X5tPSiiE/gNJWgs+QFWsfCFZUUenow==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -2705,7 +2705,7 @@ packages:
     dependencies:
       '@nestjs/common': 10.3.0(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.2.1)(rxjs@7.8.1)
       '@nestjs/core': 10.3.0(@nestjs/common@10.3.0)(@nestjs/platform-express@10.3.0)(reflect-metadata@0.2.1)(rxjs@7.8.1)
-      mongoose: 8.0.3
+      mongoose: 8.0.4
       reflect-metadata: 0.2.1
       rxjs: 7.8.1
     dev: false
@@ -8369,8 +8369,8 @@ packages:
       mongodb-connection-string-url: 2.6.0
     dev: false
 
-  /mongoose@8.0.3:
-    resolution: {integrity: sha512-LJRT0yP4TW14HT4r2RkxqyvoTylMSzWpl5QOeVHTnRggCLQSpkoBdgbUtORFq/mSL2o9cLCPJz+6uzFj25qbHw==}
+  /mongoose@8.0.4:
+    resolution: {integrity: sha512-wN9qvdevX3+922VnLT7CpaZRT3jmVCBOK2QMHMGeScQxDRnFMPpkuI9StEPpZo/3x8t+kbzH7F8RMPsyNwyM4w==}
     engines: {node: '>=16.20.1'}
     dependencies:
       bson: 6.2.0
