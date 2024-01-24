@@ -23,7 +23,7 @@
     "@nestjs/platform-express": "10.3.0",
     "@nestjs/platform-fastify": "10.3.0",
     "@nestjs/sequelize": "^10.0.0",
-    "@nestjs/swagger": "7.1.17",
+    "@nestjs/swagger": "7.2.0",
     "@nestjs/typeorm": "^10.0.1",
     "bcrypt": "^5.1.1",
     "class-transformer": "0.5.1",
