@@ -68,7 +68,7 @@
     "jest-environment-jsdom": "29.7.0",
     "nx": "18.0.4",
     "nx-cloud": "18.0.0",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "supertest": "^6.3.4",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
