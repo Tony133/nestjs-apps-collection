@@ -7,7 +7,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 export class GraphqlOptions implements GqlOptionsFactory {
   createGqlOptions(): Promise<ApolloDriverConfig> | ApolloDriverConfig {
     return {
-      autoSchemaFile: './../code-first/src/schema.gql',
+      autoSchemaFile: 'src/schema.gql',
       playground: false,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     };
