@@ -24,7 +24,7 @@
     "@nestjs/platform-fastify": "10.3.3",
     "@nestjs/sequelize": "^10.0.0",
     "@nestjs/swagger": "7.3.0",
-    "@nestjs/typeorm": "^10.0.1",
+    "@nestjs/typeorm": "^10.0.2",
     "bcrypt": "^5.1.1",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.1",
