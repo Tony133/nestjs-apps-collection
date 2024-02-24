@@ -1,4 +1,4 @@
-# nestjs-api-file-upload
+# nestjs-file-upload-multer-express
 
 Simple example file upload with NestJS, Multer and TypeORM for the NestJS community 😻
 
@@ -6,7 +6,7 @@ Simple example file upload with NestJS, Multer and TypeORM for the NestJS commun
 
 ```bash
 # development
-$ npx nx serve nestjs-api-file-upload
+$ npx nx serve nestjs-file-upload-multer-express
 ```
 
 ## Set environment
@@ -19,13 +19,13 @@ cp .env.example .env
 
 ```bash
 # unit tests
-$ npx nx test nestjs-api-file-upload
+$ npx nx test nestjs-file-upload-multer-express
 
 # e2e tests
-$ npx nx e2e nestjs-api-file-upload
+$ npx nx e2e nestjs-file-upload-multer-express
 
 # test coverage
-$ npx nx test:cov nestjs-api-file-upload
+$ npx nx test:cov nestjs-file-upload-multer-express
 ```
 
 ## Docker

@@ -1,0 +1,61 @@
+{
+  "name": "nestjs-file-upload-multer-express",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nestjs-file-upload-multer-express/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nestjs-file-upload-multer-express",
+        "main": "apps/nestjs-file-upload-multer-express/src/main.ts",
+        "tsConfig": "apps/nestjs-file-upload-multer-express/tsconfig.app.json",
+        "target": "node",
+        "compiler": "tsc",
+        "webpackConfig": "apps/nestjs-file-upload-multer-express/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/nestjs-file-upload-multer-express/src/environments/environment.ts",
+              "with": "apps/nestjs-file-upload-multer-express/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "options": {
+        "buildTarget": "nestjs-file-upload-multer-express:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nestjs-file-upload-multer-express/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/nestjs-file-upload-multer-express"],
+      "options": {
+        "jestConfig": "apps/nestjs-file-upload-multer-express/jest.config.js"
+      }
+    },
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "apps/nestjs-file-upload-multer-express/test/jest-e2e.json",
+        "passWithNoTests": false
+      }
+    }
+  },
+  "tags": []
+}
