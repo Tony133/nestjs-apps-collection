@@ -19,7 +19,6 @@
     "@nestjs/graphql": "^12.1.1",
     "@nestjs/mapped-types": "^2.0.5",
     "@nestjs/mercurius": "^12.1.1",
-    "@nestjs/mongoose": "^10.0.4",
     "@nestjs/platform-express": "10.3.3",
     "@nestjs/platform-fastify": "10.3.3",
     "@nestjs/sequelize": "^10.0.1",
@@ -32,8 +31,11 @@
     "graphql": "^16.8.1",
     "install": "^0.13.0",
     "mercurius": "13.3.3",
-    "mongoose": "^8.1.2",
+    "mongodb": "^6.3.0",
     "mysql2": "3.9.1",
+    "nest-mongodb-driver": "^0.0.13",
+    "nest-mysql": "^0.0.12",
+    "nest-postgres": "^0.0.11",
     "pg": "^8.11.3",
     "reflect-metadata": "^0.2.1",
     "rxjs": "^7.8.1",
@@ -95,4 +97,3 @@
     "**/*.{ts,json}": []
   }
 }
-
