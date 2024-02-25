@@ -20,13 +20,13 @@ $ pnpm install
 ## Running a sample app
 
 ```bash
-$ npx nx serve [name-app] # for example: npx nx serve nestjs-api-mongoose
+$ npx nx serve [name-app] # for example: npx nx serve nestjs-api-sequelize
 ```
 
 or
 
 ```bash
-$ nx serve [name-app] # for example: npx nx serve nestjs-api-mongoose
+$ nx serve [name-app] # for example: npx nx serve nestjs-api-sequelize
 ```
 
 ## Running all unit tests

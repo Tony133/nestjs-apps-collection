@@ -32,9 +32,6 @@ dependencies:
   '@nestjs/mercurius':
     specifier: ^12.1.1
     version: 12.1.1(@mercuriusjs/gateway@2.2.0)(@nestjs/common@10.3.3)(@nestjs/graphql@12.1.1)(fastify@4.26.1)(graphql@16.8.1)(mercurius@13.3.3)
-  '@nestjs/mongoose':
-    specifier: ^10.0.4
-    version: 10.0.4(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mongoose@8.2.0)(rxjs@7.8.1)
   '@nestjs/platform-express':
     specifier: 10.3.3
     version: 10.3.3(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)
@@ -71,12 +68,21 @@ dependencies:
   mercurius:
     specifier: 13.3.3
     version: 13.3.3(graphql@16.8.1)
-  mongoose:
-    specifier: ^8.1.2
-    version: 8.2.0
+  mongodb:
+    specifier: ^6.3.0
+    version: 6.3.0
   mysql2:
     specifier: 3.9.1
     version: 3.9.1
+  nest-mongodb-driver:
+    specifier: ^0.0.13
+    version: 0.0.13(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mongodb@6.3.0)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+  nest-mysql:
+    specifier: ^0.0.12
+    version: 0.0.12(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mysql2@3.9.1)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+  nest-postgres:
+    specifier: ^0.0.11
+    version: 0.0.11(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(pg@8.11.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
   pg:
     specifier: ^8.11.3
     version: 8.11.3
@@ -100,7 +106,7 @@ dependencies:
     version: 2.6.2
   typeorm:
     specifier: ^0.3.18
-    version: 0.3.20(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2)
+    version: 0.3.20(mongodb@6.3.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2)
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
@@ -2689,20 +2695,6 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@nestjs/mongoose@10.0.4(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mongoose@8.2.0)(rxjs@7.8.1):
-    resolution: {integrity: sha512-OXcguhrv+ahXmpPD3FJgnCLU3eUSBcbE7OwClJL+3inpPAyvMbhLrYvk3Zi7/34aMCzBOILdCBh95AQ7ghd1sg==}
-    peerDependencies:
-      '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
-      '@nestjs/core': ^8.0.0 || ^9.0.0 || ^10.0.0
-      mongoose: ^6.0.2 || ^7.0.0 || ^8.0.0
-      rxjs: ^7.0.0
-    dependencies:
-      '@nestjs/common': 10.3.3(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.1)(rxjs@7.8.1)
-      '@nestjs/core': 10.3.3(@nestjs/common@10.3.3)(@nestjs/platform-express@10.3.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
-      mongoose: 8.2.0
-      rxjs: 7.8.1
-    dev: false
-
   /@nestjs/platform-express@10.3.3(@nestjs/common@10.3.3)(@nestjs/core@10.3.3):
     resolution: {integrity: sha512-GGKSEU48Os7nYFIsUM0nutuFUGn5AbeP8gzFBiBCAtiuJWrXZXpZ58pMBYxAbMf7IrcOZFInHEukjHGAQU0OZw==}
     peerDependencies:
@@ -2855,7 +2847,7 @@ packages:
       '@nestjs/core': 10.3.3(@nestjs/common@10.3.3)(@nestjs/platform-express@10.3.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
       reflect-metadata: 0.2.1
       rxjs: 7.8.1
-      typeorm: 0.3.20(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2)
+      typeorm: 0.3.20(mongodb@6.3.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2)
       uuid: 9.0.1
     dev: false
 
@@ -3773,8 +3765,8 @@ packages:
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
     dev: true
 
-  /@types/semver@7.5.7:
-    resolution: {integrity: sha512-/wdoPq1QqkSj9/QOeKkFquEuPzQbHTWAMPH/PaUMB+JuR31lXhlWXRZ52IpfDYVlDOUBvX09uBrPwxGT1hjNBg==}
+  /@types/semver@7.5.8:
+    resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
     dev: true
 
   /@types/send@0.17.4:
@@ -4007,7 +3999,7 @@ packages:
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@types/json-schema': 7.0.15
-      '@types/semver': 7.5.7
+      '@types/semver': 7.5.8
       '@typescript-eslint/scope-manager': 6.21.0
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.3.3)
@@ -4026,7 +4018,7 @@ packages:
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@types/json-schema': 7.0.15
-      '@types/semver': 7.5.7
+      '@types/semver': 7.5.8
       '@typescript-eslint/scope-manager': 7.0.2
       '@typescript-eslint/types': 7.0.2
       '@typescript-eslint/typescript-estree': 7.0.2(typescript@5.3.3)
@@ -7793,11 +7785,6 @@ packages:
     engines: {'0': node >= 0.2.0}
     dev: true
 
-  /kareem@2.5.1:
-    resolution: {integrity: sha512-7jFxRVm+jD+rkq3kY0iZDJfsO2/t4BBPeEb2qKn2lR/9KhuksYk5hxzfRYWMPV8P/x2d0kHD306YyWLzjjH+uA==}
-    engines: {node: '>=12.0.0'}
-    dev: false
-
   /keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
     dependencies:
@@ -8383,48 +8370,12 @@ packages:
       mongodb-connection-string-url: 3.0.0
     dev: false
 
-  /mongoose@8.2.0:
-    resolution: {integrity: sha512-la93n6zCYRbPS+c5N9oTDAktvREy5OT9OCljp1Tah0y3+p8UPMTAoabWaLZMdzYruOtF9/9GRf6MasaZjiZP1A==}
-    engines: {node: '>=16.20.1'}
-    dependencies:
-      bson: 6.3.0
-      kareem: 2.5.1
-      mongodb: 6.3.0
-      mpath: 0.9.0
-      mquery: 5.0.0
-      ms: 2.1.3
-      sift: 16.0.1
-    transitivePeerDependencies:
-      - '@aws-sdk/credential-providers'
-      - '@mongodb-js/zstd'
-      - gcp-metadata
-      - kerberos
-      - mongodb-client-encryption
-      - snappy
-      - socks
-      - supports-color
-    dev: false
-
-  /mpath@0.9.0:
-    resolution: {integrity: sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==}
-    engines: {node: '>=4.0.0'}
-    dev: false
-
   /mqemitter@5.0.0:
     resolution: {integrity: sha512-rqNRQhGgl0W/NV+Zrx0rpAUTZcSlAtivCVUmXBUPcFYt+AeDEpoJgy5eKlFWJP6xnatONL59WIFdV0W6niOMhw==}
     engines: {node: '>=10'}
     dependencies:
       fastparallel: 2.4.1
       qlobber: 7.0.1
-    dev: false
-
-  /mquery@5.0.0:
-    resolution: {integrity: sha512-iQMncpmEK8R8ncT8HJGsGc9Dsp8xcgYMVSbs5jgnm1lFHTZqMJTUWTDx1LBO8+mK3tPNZWFLBghQEIOULSTHZg==}
-    engines: {node: '>=14.0.0'}
-    dependencies:
-      debug: 4.3.4
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /ms@2.0.0:
@@ -8513,6 +8464,54 @@ packages:
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
+
+  /nest-mongodb-driver@0.0.13(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mongodb@6.3.0)(reflect-metadata@0.2.1)(rxjs@7.8.1):
+    resolution: {integrity: sha512-LLN51dIgOXzlZYiJr4Vo0np7cA3zeOBJ8Jpow/a13WzpRSpvvpy5GhNPXc9fPiGkShpfsjcH7SI8mV3KJIqF3g==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      mongodb: ^4.5.0 || ^5.0.0 || ^6.0.0
+      reflect-metadata: ^0.1.13 || ^0.2.0
+      rxjs: ^6.6.3 || ^7.2.0
+    dependencies:
+      '@nestjs/common': 10.3.3(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+      '@nestjs/core': 10.3.3(@nestjs/common@10.3.3)(@nestjs/platform-express@10.3.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+      mongodb: 6.3.0
+      reflect-metadata: 0.2.1
+      rxjs: 7.8.1
+    dev: false
+
+  /nest-mysql@0.0.12(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mysql2@3.9.1)(reflect-metadata@0.2.1)(rxjs@7.8.1):
+    resolution: {integrity: sha512-yf6afO1uILLX7fpbX6CLEDBuKYq1jg2/35NgIXxluqpThT2vjvzqqSaQX05VESWwuAEiIZ1pFTWJRvlT6l5QPQ==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      mysql2: ^2.3.3 || ^3.0.0
+      reflect-metadata: ^0.1.13 || ^0.2.0
+      rxjs: ^6.6.3 || ^7.2.0
+    dependencies:
+      '@nestjs/common': 10.3.3(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+      '@nestjs/core': 10.3.3(@nestjs/common@10.3.3)(@nestjs/platform-express@10.3.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+      mysql2: 3.9.1
+      reflect-metadata: 0.2.1
+      rxjs: 7.8.1
+    dev: false
+
+  /nest-postgres@0.0.11(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(pg@8.11.3)(reflect-metadata@0.2.1)(rxjs@7.8.1):
+    resolution: {integrity: sha512-03y8hTvW3aEA0TbwxcSLJnEAvIOZ+vqYlrsNx4EwRT9MNTILSpPpzu1SgF+WDN+p4KdCmN08i0klyE6OVG2ZaQ==}
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
+      pg: ^8.7.3
+      reflect-metadata: ^0.1.13 || ^0.2.0
+      rxjs: ^6.6.3 || ^7.2.0
+    dependencies:
+      '@nestjs/common': 10.3.3(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+      '@nestjs/core': 10.3.3(@nestjs/common@10.3.3)(@nestjs/platform-express@10.3.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+      pg: 8.11.3
+      reflect-metadata: 0.2.1
+      rxjs: 7.8.1
+    dev: false
 
   /node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
@@ -10169,10 +10168,6 @@ packages:
       get-intrinsic: 1.2.4
       object-inspect: 1.13.1
 
-  /sift@16.0.1:
-    resolution: {integrity: sha512-Wv6BjQ5zbhW7VFefWusVP33T/EM0vYikCaQ2qR8yULbsilAT8/wQaXvuQ3ptGLpoKx+lihJE3y2UTgKDyyNHZQ==}
-    dev: false
-
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
 
@@ -10981,7 +10976,7 @@ packages:
   /typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm@0.3.20(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2):
+  /typeorm@0.3.20(mongodb@6.3.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -11049,6 +11044,7 @@ packages:
       dotenv: 16.4.5
       glob: 10.3.10
       mkdirp: 2.1.6
+      mongodb: 6.3.0
       mysql2: 3.9.1
       pg: 8.11.3
       reflect-metadata: 0.2.1
