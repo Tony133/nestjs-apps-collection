@@ -47,8 +47,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.6.1",
-    "@commitlint/config-angular": "^18.6.1",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-angular": "^19.0.0",
     "@nestjs/schematics": "10.1.1",
     "@nestjs/testing": "10.3.3",
     "@nrwl/webpack": "18.0.5",
