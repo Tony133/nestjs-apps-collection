@@ -70,13 +70,13 @@ dependencies:
     version: 13.3.3(graphql@16.8.1)
   mongodb:
     specifier: ^6.3.0
-    version: 6.3.0
+    version: 6.4.0
   mysql2:
     specifier: 3.9.1
     version: 3.9.1
   nest-mongodb-driver:
     specifier: ^0.0.13
-    version: 0.0.13(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mongodb@6.3.0)(reflect-metadata@0.2.1)(rxjs@7.8.1)
+    version: 0.0.13(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mongodb@6.4.0)(reflect-metadata@0.2.1)(rxjs@7.8.1)
   nest-mysql:
     specifier: ^0.0.12
     version: 0.0.12(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mysql2@3.9.1)(reflect-metadata@0.2.1)(rxjs@7.8.1)
@@ -106,7 +106,7 @@ dependencies:
     version: 2.6.2
   typeorm:
     specifier: ^0.3.18
-    version: 0.3.20(mongodb@6.3.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2)
+    version: 0.3.20(mongodb@6.4.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2)
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
@@ -2843,7 +2843,7 @@ packages:
       '@nestjs/core': 10.3.3(@nestjs/common@10.3.3)(@nestjs/platform-express@10.3.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
       reflect-metadata: 0.2.1
       rxjs: 7.8.1
-      typeorm: 0.3.20(mongodb@6.3.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2)
+      typeorm: 0.3.20(mongodb@6.4.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2)
       uuid: 9.0.1
     dev: false
 
@@ -4776,8 +4776,8 @@ packages:
       node-int64: 0.4.0
     dev: true
 
-  /bson@6.3.0:
-    resolution: {integrity: sha512-balJfqwwTBddxfnidJZagCBPP/f48zj9Sdp3OJswREOgsJzHiQSaOIAtApSgDQFYgHqAvFkp53AFSqjMDZoTFw==}
+  /bson@6.4.0:
+    resolution: {integrity: sha512-6/gSSEdbkuFlSb+ufj5jUSU4+wo8xQOwm2bDSqwmxiPE17JTpsP63eAwoN8iF8Oy4gJYj+PAL3zdRCTdaw5Y1g==}
     engines: {node: '>=16.20.1'}
     dev: false
 
@@ -8282,8 +8282,8 @@ packages:
       whatwg-url: 13.0.0
     dev: false
 
-  /mongodb@6.3.0:
-    resolution: {integrity: sha512-tt0KuGjGtLUhLoU263+xvQmPHEGTw5LbcNC73EoFRYgSHwZt5tsoJC110hDyO1kjQzpgNrpdcSza9PknWN4LrA==}
+  /mongodb@6.4.0:
+    resolution: {integrity: sha512-MdFHsyb1a/Ee0H3NmzWTSLqchacDV/APF0H6BNQvraWrOiIocys2EmTFZPgHxWhcfO94c1F34I9MACU7x0hHKA==}
     engines: {node: '>=16.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
@@ -8310,7 +8310,7 @@ packages:
         optional: true
     dependencies:
       '@mongodb-js/saslprep': 1.1.4
-      bson: 6.3.0
+      bson: 6.4.0
       mongodb-connection-string-url: 3.0.0
     dev: false
 
@@ -8409,7 +8409,7 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
-  /nest-mongodb-driver@0.0.13(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mongodb@6.3.0)(reflect-metadata@0.2.1)(rxjs@7.8.1):
+  /nest-mongodb-driver@0.0.13(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(mongodb@6.4.0)(reflect-metadata@0.2.1)(rxjs@7.8.1):
     resolution: {integrity: sha512-LLN51dIgOXzlZYiJr4Vo0np7cA3zeOBJ8Jpow/a13WzpRSpvvpy5GhNPXc9fPiGkShpfsjcH7SI8mV3KJIqF3g==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -8420,7 +8420,7 @@ packages:
     dependencies:
       '@nestjs/common': 10.3.3(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.1)(rxjs@7.8.1)
       '@nestjs/core': 10.3.3(@nestjs/common@10.3.3)(@nestjs/platform-express@10.3.3)(reflect-metadata@0.2.1)(rxjs@7.8.1)
-      mongodb: 6.3.0
+      mongodb: 6.4.0
       reflect-metadata: 0.2.1
       rxjs: 7.8.1
     dev: false
@@ -10826,7 +10826,7 @@ packages:
   /typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm@0.3.20(mongodb@6.3.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2):
+  /typeorm@0.3.20(mongodb@6.4.0)(mysql2@3.9.1)(pg@8.11.3)(ts-node@10.9.2):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -10894,7 +10894,7 @@ packages:
       dotenv: 16.4.5
       glob: 10.3.10
       mkdirp: 2.1.6
-      mongodb: 6.3.0
+      mongodb: 6.4.0
       mysql2: 3.9.1
       pg: 8.11.3
       reflect-metadata: 0.2.1
