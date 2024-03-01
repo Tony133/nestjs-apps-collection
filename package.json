@@ -55,7 +55,7 @@
     "@nx/eslint-plugin": "18.0.5",
     "@nx/jest": "18.0.5",
     "@nx/linter": "18.0.5",
-    "@nx/nest": "18.0.5",
+    "@nx/nest": "18.0.6",
     "@nx/node": "18.0.5",
     "@nx/webpack": "18.0.5",
     "@nx/workspace": "18.0.5",
