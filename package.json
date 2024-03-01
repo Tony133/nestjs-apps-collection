@@ -57,7 +57,7 @@
     "@nx/linter": "18.0.5",
     "@nx/nest": "18.0.5",
     "@nx/node": "18.0.5",
-    "@nx/webpack": "18.0.5",
+    "@nx/webpack": "18.0.6",
     "@nx/workspace": "18.0.5",
     "@types/jest": "29.5.12",
     "@types/node": "20.11.24",
