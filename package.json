@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@apollo/server": "^4.10.0",
+    "@apollo/server": "^4.10.1",
     "@mercuriusjs/gateway": "^2.2.0",
     "@nestjs/apollo": "^12.1.0",
     "@nestjs/common": "10.3.3",
