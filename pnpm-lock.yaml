@@ -116,8 +116,8 @@ devDependencies:
     specifier: ^19.0.0
     version: 19.0.2(@types/node@20.11.26)(typescript@5.4.2)
   '@commitlint/config-angular':
-    specifier: ^19.0.0
-    version: 19.0.0
+    specifier: ^19.0.3
+    version: 19.0.3
   '@nestjs/schematics':
     specifier: 10.1.1
     version: 10.1.1(typescript@5.4.2)
@@ -1757,8 +1757,8 @@ packages:
     engines: {node: '>=v18'}
     dev: true
 
-  /@commitlint/config-angular@19.0.0:
-    resolution: {integrity: sha512-Xm4CCVnUFUI0T6NBbm60fRwylyXsfubopXBiSHxqxYz2JKkkE7gT2iNrwzfliOg219jwVrLc1yeka7a7jxiqcA==}
+  /@commitlint/config-angular@19.0.3:
+    resolution: {integrity: sha512-HxSFaJyGekLDs0YWG4jjWJdeZqrlGC9QgwvFclGCISdntqvf+Vk09FH3QPZb6hM5Kgbs9AMChCUlVAQIR4sRFQ==}
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/config-angular-type-enum': 19.0.0
