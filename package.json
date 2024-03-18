@@ -60,7 +60,7 @@
     "@nx/webpack": "18.1.2",
     "@nx/workspace": "18.1.2",
     "@types/jest": "29.5.12",
-    "@types/node": "20.11.28",
+    "@types/node": "20.11.29",
     "@typescript-eslint/eslint-plugin": "7.3.0",
     "@typescript-eslint/parser": "7.3.0",
     "eslint": "8.57.0",
