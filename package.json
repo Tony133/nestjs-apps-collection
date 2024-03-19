@@ -32,7 +32,7 @@
     "install": "^0.13.0",
     "mercurius": "13.3.3",
     "mongodb": "^6.3.0",
-    "mysql2": "3.9.1",
+    "mysql2": "3.9.2",
     "nest-mongodb-driver": "^0.0.13",
     "nest-mysql": "^0.0.12",
     "nest-postgres": "^0.0.11",
