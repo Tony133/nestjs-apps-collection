@@ -31,7 +31,7 @@ dependencies:
     version: 2.0.5(@nestjs/common@10.3.3)(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.1)
   '@nestjs/mercurius':
     specifier: ^12.1.1
-    version: 12.1.1(@mercuriusjs/gateway@2.2.0)(@nestjs/common@10.3.3)(@nestjs/graphql@12.1.1)(fastify@4.26.2)(graphql@16.8.1)(mercurius@13.3.3)
+    version: 12.1.1(@mercuriusjs/gateway@2.2.0)(@nestjs/common@10.3.3)(@nestjs/graphql@12.1.1)(fastify@4.26.2)(graphql@16.8.1)(mercurius@14.0.0)
   '@nestjs/platform-express':
     specifier: 10.3.3
     version: 10.3.3(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)
@@ -66,8 +66,8 @@ dependencies:
     specifier: ^0.13.0
     version: 0.13.0
   mercurius:
-    specifier: 13.3.3
-    version: 13.3.3(graphql@16.8.1)
+    specifier: 14.0.0
+    version: 14.0.0(graphql@16.8.1)
   mongodb:
     specifier: ^6.3.0
     version: 6.3.0
@@ -1977,7 +1977,7 @@ packages:
   /@fastify/fast-json-stringify-compiler@4.3.0:
     resolution: {integrity: sha512-aZAXGYo6m22Fk1zZzEUKBvut/CIIQe/BapEORnxiD5Qr0kPHqqI69NtEMCme74h+at72sPhbkb4ZrLd1W3KRLA==}
     dependencies:
-      fast-json-stringify: 5.12.0
+      fast-json-stringify: 5.13.0
     dev: false
 
   /@fastify/formbody@7.4.0:
@@ -2021,6 +2021,28 @@ packages:
       fastify-plugin: 4.5.1
       glob: 8.1.0
       p-limit: 3.1.0
+    dev: false
+
+  /@fastify/static@7.0.1:
+    resolution: {integrity: sha512-i1p/nELMknAisNfnjo7yhfoUOdKzA+n92QaMirv2NkZrJ1Wl12v2nyTYlDwPN8XoStMBAnRK/Kx6zKmfrXUPXw==}
+    dependencies:
+      '@fastify/accept-negotiator': 1.1.0
+      '@fastify/send': 2.1.0
+      content-disposition: 0.5.4
+      fastify-plugin: 4.5.1
+      fastq: 1.17.1
+      glob: 10.3.10
+    dev: false
+
+  /@fastify/websocket@10.0.1:
+    resolution: {integrity: sha512-8/pQIxTPRD8U94aILTeJ+2O3el/r19+Ej5z1O1mXlqplsUH7KzCjAI0sgd5DM/NoPjAi5qLFNIjgM5+9/rGSNw==}
+    dependencies:
+      duplexify: 4.1.3
+      fastify-plugin: 4.5.1
+      ws: 8.16.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
     dev: false
 
   /@fastify/websocket@8.3.1:
@@ -2665,7 +2687,7 @@ packages:
       reflect-metadata: 0.2.1
     dev: false
 
-  /@nestjs/mercurius@12.1.1(@mercuriusjs/gateway@2.2.0)(@nestjs/common@10.3.3)(@nestjs/graphql@12.1.1)(fastify@4.26.2)(graphql@16.8.1)(mercurius@13.3.3):
+  /@nestjs/mercurius@12.1.1(@mercuriusjs/gateway@2.2.0)(@nestjs/common@10.3.3)(@nestjs/graphql@12.1.1)(fastify@4.26.2)(graphql@16.8.1)(mercurius@14.0.0):
     resolution: {integrity: sha512-grBeL5o90aSMRJXw4Ewwj6eUnNL/KmqfG7rYekgnGHdstdzei5MmtS1Pu+gOiE5kkkwYcEBYiBxduyzYup4d7A==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
@@ -2689,7 +2711,7 @@ packages:
       '@nestjs/graphql': 12.1.1(@nestjs/common@10.3.3)(@nestjs/core@10.3.3)(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.1)(ts-morph@21.0.1)
       fastify: 4.26.2
       graphql: 16.8.1
-      mercurius: 13.3.3(graphql@16.8.1)
+      mercurius: 14.0.0(graphql@16.8.1)
       tslib: 2.6.2
     dev: false
 
@@ -5828,6 +5850,15 @@ packages:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
     dev: true
 
+  /duplexify@4.1.3:
+    resolution: {integrity: sha512-M3BmBhwJRZsSx38lZyhE53Csddgzl5R7xGJNk7CVddZD6CcmwMCH8J+7AprIrQKH7TonKxaCjcv27Qmf+sQ+oA==}
+    dependencies:
+      end-of-stream: 1.4.4
+      inherits: 2.0.4
+      readable-stream: 3.6.2
+      stream-shift: 1.0.3
+    dev: false
+
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: false
@@ -5872,7 +5903,6 @@ packages:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
     dependencies:
       once: 1.4.0
-    dev: true
 
   /enhanced-resolve@5.15.0:
     resolution: {integrity: sha512-LXYT42KJ7lpIKECr2mAXIaMldcNCh/7E0KBKOu4KSfkHmP+mZmSs+8V5gBAqisWBy0OO4W5Oyys0GO1Y8KtdKg==}
@@ -6760,7 +6790,7 @@ packages:
       graphql: '>=15'
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.1)
-      fast-json-stringify: 5.12.0
+      fast-json-stringify: 5.13.0
       generate-function: 2.3.1
       graphql: 16.8.1
       lodash.memoize: 4.1.2
@@ -8216,6 +8246,32 @@ packages:
       single-user-cache: 0.6.0
       tiny-lru: 11.2.5
       undici: 5.28.1
+      ws: 8.16.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
+  /mercurius@14.0.0(graphql@16.8.1):
+    resolution: {integrity: sha512-eGqBuc8ZfnBbJDnnedZWx0mPJ2ZQZz2HLmPCxRdMa5RZnRP9Uxn4Ew1x1OQ49MvNbut9xfvHCXKlr8uI6GOyZg==}
+    engines: {node: '>=14.19.3'}
+    peerDependencies:
+      graphql: ^16.0.0
+    dependencies:
+      '@fastify/error': 3.4.1
+      '@fastify/static': 7.0.1
+      '@fastify/websocket': 10.0.1
+      fastify-plugin: 4.5.1
+      graphql: 16.8.1
+      graphql-jit: 0.8.4(graphql@16.8.1)
+      mqemitter: 5.0.0
+      p-map: 4.0.0
+      readable-stream: 4.5.2
+      safe-stable-stringify: 2.4.3
+      secure-json-parse: 2.7.0
+      single-user-cache: 0.6.0
+      tiny-lru: 11.2.5
+      undici: 5.28.3
       ws: 8.16.0
     transitivePeerDependencies:
       - bufferutil
@@ -10327,6 +10383,10 @@ packages:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
 
+  /stream-shift@1.0.3:
+    resolution: {integrity: sha512-76ORR0DO1o1hlKwTbi/DM3EXWGf3ZJYO8cXX5RJwnul2DEg2oyoZyjLNoQM8WsvZiFKCRfC1O0J7iCvie3RZmQ==}
+    dev: false
+
   /streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
     engines: {node: '>=10.0.0'}
@@ -11062,6 +11122,13 @@ packages:
 
   /undici@5.28.1:
     resolution: {integrity: sha512-xcIIvj1LOQH9zAL54iWFkuDEaIVEjLrru7qRpa3GrEEHk6OBhb/LycuUY2m7VCcTuDeLziXCxobQVyKExyGeIA==}
+    engines: {node: '>=14.0'}
+    dependencies:
+      '@fastify/busboy': 2.1.0
+    dev: false
+
+  /undici@5.28.3:
+    resolution: {integrity: sha512-3ItfzbrhDlINjaP0duwnNsKpDQk3acHI3gVJ1z4fmwMK31k5G9OVIAMLSIaP6w4FaGkaAkN6zaQO9LUvZ1t7VA==}
     engines: {node: '>=14.0'}
     dependencies:
       '@fastify/busboy': 2.1.0
