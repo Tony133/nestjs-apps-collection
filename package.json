@@ -19,7 +19,7 @@
     "@nestjs/graphql": "^12.1.1",
     "@nestjs/mapped-types": "^2.0.5",
     "@nestjs/mercurius": "^12.1.1",
-    "@nestjs/platform-express": "10.3.3",
+    "@nestjs/platform-express": "10.3.4",
     "@nestjs/platform-fastify": "10.3.3",
     "@nestjs/sequelize": "^10.0.1",
     "@nestjs/swagger": "7.3.0",
