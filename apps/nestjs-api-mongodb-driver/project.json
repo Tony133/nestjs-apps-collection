@@ -45,7 +45,7 @@
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": [
-        "{workspaceRoot}/coverage/apps/nestjs-file-upload-multer-express"
+        "{workspaceRoot}/coverage/apps/nestjs-api-mongodb-driver"
       ],
       "options": {
         "jestConfig": "apps/nestjs-api-mongodb-driver/jest.config.js"
