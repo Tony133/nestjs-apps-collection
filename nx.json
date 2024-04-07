@@ -1,25 +1,18 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "nestjs-apps-collection",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "ZTdkMDBkMWUtMGFjOC00NTdmLTg4MDQtMjU4Y2I2M2EzNTU4fHJlYWQtd3JpdGU="
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "inputs": ["production", "^production"],
+      "cache": true
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "cache": true
     },
     "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
     },
     "@nx/jest:jest": {
       "cache": true,
@@ -33,11 +26,15 @@
           "codeCoverage": true
         }
       }
+    },
+    "e2e": {
+      "cache": true
     }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": ["default"],
     "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
-  }
+  },
+  "neverConnectToCloud": true,
 }

@@ -1,19 +1,19 @@
 {
-  "name": "nestjs-file-upload-multer-express",
+  "name": "nestjs-api-mongodb-driver",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nestjs-file-upload-multer-express/src",
+  "sourceRoot": "apps/nestjs-api-mongodb-driver/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nestjs-file-upload-multer-express",
-        "main": "apps/nestjs-file-upload-multer-express/src/main.ts",
-        "tsConfig": "apps/nestjs-file-upload-multer-express/tsconfig.app.json",
+        "outputPath": "dist/apps/nestjs-api-mongodb-driver",
+        "main": "apps/nestjs-api-mongodb-driver/src/main.ts",
+        "tsConfig": "apps/nestjs-api-mongodb-driver/tsconfig.app.json",
         "target": "node",
         "compiler": "tsc",
-        "webpackConfig": "apps/nestjs-file-upload-multer-express/webpack.config.js"
+        "webpackConfig": "apps/nestjs-api-mongodb-driver/webpack.config.js"
       },
       "configurations": {
         "production": {
@@ -22,8 +22,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/nestjs-file-upload-multer-express/src/environments/environment.ts",
-              "with": "apps/nestjs-file-upload-multer-express/src/environments/environment.prod.ts"
+              "replace": "apps/nestjs-api-mongodb-driver/src/environments/environment.ts",
+              "with": "apps/nestjs-api-mongodb-driver/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -32,14 +32,14 @@
     "serve": {
       "executor": "@nx/js:node",
       "options": {
-        "buildTarget": "nestjs-file-upload-multer-express:build"
+        "buildTarget": "nestjs-api-mongodb-driver:build"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/nestjs-file-upload-multer-express/**/*.ts"]
+        "lintFilePatterns": ["apps/nestjs-api-mongodb-driver/**/*.ts"]
       }
     },
     "test": {
@@ -48,13 +48,13 @@
         "{workspaceRoot}/coverage/apps/nestjs-file-upload-multer-express"
       ],
       "options": {
-        "jestConfig": "apps/nestjs-file-upload-multer-express/jest.config.js"
+        "jestConfig": "apps/nestjs-api-mongodb-driver/jest.config.js"
       }
     },
     "e2e": {
       "executor": "@nx/jest:jest",
       "options": {
-        "jestConfig": "apps/nestjs-file-upload-multer-express/test/jest-e2e.json",
+        "jestConfig": "apps/nestjs-api-mongodb-driver/test/jest-e2e.json",
         "passWithNoTests": false
       }
     }

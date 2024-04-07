@@ -1,36 +1,30 @@
 # nestjs-api-graphql-schema-first
 Simple example GraphQL(Schema First) with NestJS and TypeORM for the NestJS community 😻
 
-## Installation
-
-```bash
-$ npm install
-```
-
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ npx nx serve nestjs-graphql-apollo-schema-first
+```
 
-# watch mode
-$ npm run start:dev
+## Set environment
 
-# production mode
-$ npm run start:prod
+```
+cp .env.example .env
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ npx nx test nestjs-graphql-apollo-schema-first
 
 # e2e tests
-$ npm run test:e2e
+$ npx nx e2e nestjs-graphql-apollo-schema-first
 
 # test coverage
-$ npm run test:cov
+$ npx nx test:cov nestjs-graphql-apollo-schema-first
 ```
 
 ## Docker
