@@ -2,23 +2,30 @@
 
 Simple example Api rest with NestJS and MongoDB Driver
 
-## Installation
-
-```bash
-$ npm install
-```
-
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ npx nx serve nestjs-api-mongodb-driver
+```
+
+## Set environment
+
+```
+cp .env.example .env
+```
+
+## Test
+
+```bash
+# development
+$ npx nx test nestjs-api-mongodb-driver
 
 # watch mode
-$ npm run start:dev
+$ npx nx e2e nestjs-api-mongodb-driver
 
 # production mode
-$ npm run start:prod
+$ npx nx test:cov nestjs-api-mongodb-driver
 ```
 
 ## Docker
@@ -39,17 +46,4 @@ After running, you can stop the Docker container with
   $ curl -H 'content-type: application/json' -v -X POST -d '{"name": "tony", "email": "tony_admin@nest.com", "username":"tony_admin", "password": "secret"}' http://127.0.0.1:3000/api/users
   $ curl -H 'content-type: application/json' -v -X PATCH -d '{"name": "tony", "email": "tony_admin@nest.com", "username":"tony_admin", "password": "secret123"}' http://127.0.0.1:3000/api/users/:id
   $ curl -H 'content-type: application/json' -v -X DELETE http://127.0.0.1:3000/api/users/:id 
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
