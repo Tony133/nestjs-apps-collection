@@ -1,6 +1,6 @@
 # nestjs-file-upload-multer
 
-Simple example file upload with NestJS, Multer and TypeORM for the NestJS community 😻
+Simple example file upload with NestJS (Platform Express), Multer and TypeORM for the NestJS community 😻
 
 ## Running the app
 
