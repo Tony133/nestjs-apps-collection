@@ -12,7 +12,7 @@
   "dependencies": {
     "@apollo/server": "^4.10.2",
     "@as-integrations/fastify": "^2.1.1",
-    "@mercuriusjs/gateway": "^3.0.0",
+    "@mercuriusjs/gateway": "^3.0.1",
     "@nestjs/apollo": "^12.1.0",
     "@nestjs/common": "10.3.9",
     "@nestjs/config": "^3.2.2",
