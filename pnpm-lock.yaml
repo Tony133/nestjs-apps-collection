@@ -46,13 +46,13 @@ importers:
         version: 10.3.9(@fastify/static@7.0.3)(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))
       '@nestjs/sequelize':
         specifier: ^10.0.1
-        version: 10.0.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(sequelize-typescript@2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.11.5)))(sequelize@6.37.3(mysql2@3.9.3)(pg@8.11.5))
+        version: 10.0.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(sequelize-typescript@2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0)))(sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0))
       '@nestjs/swagger':
         specifier: 7.3.1
         version: 7.3.1(@fastify/static@7.0.3)(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)
       '@nestjs/typeorm':
         specifier: ^10.0.2
-        version: 10.0.2(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(typeorm@0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.11.5)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5)))
+        version: 10.0.2(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(typeorm@0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.12.0)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5)))
       bcrypt:
         specifier: ^5.1.1
         version: 5.1.1
@@ -88,10 +88,10 @@ importers:
         version: 0.0.13(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(mysql2@3.9.3)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       nest-postgres:
         specifier: ^0.0.13
-        version: 0.0.13(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(pg@8.11.5)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+        version: 0.0.13(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(pg@8.12.0)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       pg:
         specifier: ^8.11.5
-        version: 8.11.5
+        version: 8.12.0
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -100,10 +100,10 @@ importers:
         version: 7.8.1
       sequelize:
         specifier: ^6.37.2
-        version: 6.37.3(mysql2@3.9.3)(pg@8.11.5)
+        version: 6.37.3(mysql2@3.9.3)(pg@8.12.0)
       sequelize-typescript:
         specifier: ^2.1.6
-        version: 2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.11.5))
+        version: 2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0))
       ts-morph:
         specifier: ^21.0.1
         version: 21.0.1
@@ -112,7 +112,7 @@ importers:
         version: 2.6.2
       typeorm:
         specifier: ^0.3.18
-        version: 0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.11.5)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5))
+        version: 0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.12.0)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5))
       uuid:
         specifier: ^9.0.1
         version: 9.0.1
@@ -4569,8 +4569,8 @@ packages:
     resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
     engines: {node: '>=4'}
 
-  pg@8.11.5:
-    resolution: {integrity: sha512-jqgNHSKL5cbDjFlHyYsCXmQDrfIX/3RsNwYqpd4N0Kt8niLuNoRNH+aazv6cOd43gPh9Y4DjQCtb+X0MH0Hvnw==}
+  pg@8.12.0:
+    resolution: {integrity: sha512-A+LHUSnwnxrnL/tZ+OLfqR1SxLN3c/pgDztZ47Rpbsd4jUytsTtwQo/TLPRzPJMp/1pbhYVhH9cuSZLAajNfjQ==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
       pg-native: '>=3.0.1'
@@ -7645,14 +7645,14 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@nestjs/sequelize@10.0.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(sequelize-typescript@2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.11.5)))(sequelize@6.37.3(mysql2@3.9.3)(pg@8.11.5))':
+  '@nestjs/sequelize@10.0.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(sequelize-typescript@2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0)))(sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0))':
     dependencies:
       '@nestjs/common': 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
-      sequelize: 6.37.3(mysql2@3.9.3)(pg@8.11.5)
-      sequelize-typescript: 2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.11.5))
+      sequelize: 6.37.3(mysql2@3.9.3)(pg@8.12.0)
+      sequelize-typescript: 2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0))
       uuid: 9.0.1
 
   '@nestjs/swagger@7.3.1(@fastify/static@7.0.3)(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)':
@@ -7679,13 +7679,13 @@ snapshots:
     optionalDependencies:
       '@nestjs/platform-express': 10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9)
 
-  '@nestjs/typeorm@10.0.2(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(typeorm@0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.11.5)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5)))':
+  '@nestjs/typeorm@10.0.2(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(reflect-metadata@0.2.2)(rxjs@7.8.1)(typeorm@0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.12.0)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5)))':
     dependencies:
       '@nestjs/common': 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
-      typeorm: 0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.11.5)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5))
+      typeorm: 0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.12.0)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5))
       uuid: 9.0.1
 
   '@nodelib/fs.scandir@2.1.5':
@@ -11214,11 +11214,11 @@ snapshots:
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
 
-  nest-postgres@0.0.13(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(pg@8.11.5)(reflect-metadata@0.2.2)(rxjs@7.8.1):
+  nest-postgres@0.0.13(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(pg@8.12.0)(reflect-metadata@0.2.2)(rxjs@7.8.1):
     dependencies:
       '@nestjs/common': 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
-      pg: 8.11.5
+      pg: 8.12.0
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
 
@@ -11487,9 +11487,9 @@ snapshots:
 
   pg-int8@1.0.1: {}
 
-  pg-pool@3.6.2(pg@8.11.5):
+  pg-pool@3.6.2(pg@8.12.0):
     dependencies:
-      pg: 8.11.5
+      pg: 8.12.0
 
   pg-protocol@1.6.1: {}
 
@@ -11501,10 +11501,10 @@ snapshots:
       postgres-date: 1.0.7
       postgres-interval: 1.2.0
 
-  pg@8.11.5:
+  pg@8.12.0:
     dependencies:
       pg-connection-string: 2.6.4
-      pg-pool: 3.6.2(pg@8.11.5)
+      pg-pool: 3.6.2(pg@8.12.0)
       pg-protocol: 1.6.1
       pg-types: 2.2.0
       pgpass: 1.0.5
@@ -12044,15 +12044,15 @@ snapshots:
 
   sequelize-pool@7.1.0: {}
 
-  sequelize-typescript@2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.11.5)):
+  sequelize-typescript@2.1.6(@types/node@20.14.2)(@types/validator@13.11.9)(reflect-metadata@0.2.2)(sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0)):
     dependencies:
       '@types/node': 20.14.2
       '@types/validator': 13.11.9
       glob: 7.2.0
       reflect-metadata: 0.2.2
-      sequelize: 6.37.3(mysql2@3.9.3)(pg@8.11.5)
+      sequelize: 6.37.3(mysql2@3.9.3)(pg@8.12.0)
 
-  sequelize@6.37.3(mysql2@3.9.3)(pg@8.11.5):
+  sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0):
     dependencies:
       '@types/debug': 4.1.12
       '@types/validator': 13.11.9
@@ -12072,7 +12072,7 @@ snapshots:
       wkx: 0.5.0
     optionalDependencies:
       mysql2: 3.9.3
-      pg: 8.11.5
+      pg: 8.12.0
     transitivePeerDependencies:
       - supports-color
 
@@ -12575,7 +12575,7 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typeorm@0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.11.5)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5)):
+  typeorm@0.3.20(mongodb@6.5.0)(mysql2@3.9.3)(pg@8.12.0)(ts-node@10.9.2(@types/node@20.14.2)(typescript@5.4.5)):
     dependencies:
       '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
@@ -12595,7 +12595,7 @@ snapshots:
     optionalDependencies:
       mongodb: 6.5.0
       mysql2: 3.9.3
-      pg: 8.11.5
+      pg: 8.12.0
       ts-node: 10.9.2(@types/node@20.14.2)(typescript@5.4.5)
     transitivePeerDependencies:
       - supports-color
