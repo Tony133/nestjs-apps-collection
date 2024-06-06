@@ -16,7 +16,7 @@ importers:
         version: 2.1.1(@apollo/server@4.10.3(graphql@16.8.1))(fastify@4.27.0)
       '@mercuriusjs/gateway':
         specifier: ^3.0.0
-        version: 3.0.0
+        version: 3.0.1
       '@nestjs/apollo':
         specifier: ^12.1.0
         version: 12.1.0(@apollo/server@4.10.3(graphql@16.8.1))(@as-integrations/fastify@2.1.1(@apollo/server@4.10.3(graphql@16.8.1))(fastify@4.27.0))(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/graphql@12.1.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(ts-morph@21.0.1))(graphql@16.8.1)
@@ -37,7 +37,7 @@ importers:
         version: 2.0.5(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)
       '@nestjs/mercurius':
         specifier: ^12.1.1
-        version: 12.1.1(@mercuriusjs/gateway@3.0.0)(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/graphql@12.1.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(ts-morph@21.0.1))(fastify@4.27.0)(graphql@16.8.1)(mercurius@14.0.0(graphql@16.8.1))
+        version: 12.1.1(@mercuriusjs/gateway@3.0.1)(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/graphql@12.1.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(ts-morph@21.0.1))(fastify@4.27.0)(graphql@16.8.1)(mercurius@14.0.0(graphql@16.8.1))
       '@nestjs/platform-express':
         specifier: 10.3.9
         version: 10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9)
@@ -1268,8 +1268,8 @@ packages:
   '@mercuriusjs/federation@3.0.0':
     resolution: {integrity: sha512-GVk6n314p6rs2gfF3OtqsREftyuzYztiAq0XFl7wg/8w6bJMNctzn/nMkBcA8JYl++d52uchzWLD7eo2yQXQTw==}
 
-  '@mercuriusjs/gateway@3.0.0':
-    resolution: {integrity: sha512-KBShjsz5Q1DhEdH4GE9Z97vzaauJPwIhTxrTJL4uMs80z2DujiXGdiNSNpYBN3Dyi1Dn9pOg2WJ/TEAsyNg6hQ==}
+  '@mercuriusjs/gateway@3.0.1':
+    resolution: {integrity: sha512-t/a3U3SQS4bd0iiOzHUaqbnp7VSoHIGICyQFKYsQHPEGO8yhmZGk2zfAvDG5J2dgioPnk2af6BGA+/WZRlAlnw==}
 
   '@mercuriusjs/subscription-client@1.0.0':
     resolution: {integrity: sha512-hIGqNp6FBdcy7ZkrWNk4mHl/Qodtwvbu9/iRl3zQdNRl4UtlVI7xW/FPU+2AJy0qTB567yrpvtQPwtmQLuYHYg==}
@@ -3332,8 +3332,8 @@ packages:
     peerDependencies:
       graphql: '>=0.11 <=16'
 
-  graphql-ws@5.15.0:
-    resolution: {integrity: sha512-xWGAtm3fig9TIhSaNsg0FaDZ8Pyn/3re3RFlP4rhQcmjRDIPpk1EhRuNB+YSJtLzttyuToaDiNhwT1OMoGnJnw==}
+  graphql-ws@5.16.0:
+    resolution: {integrity: sha512-Ju2RCU2dQMgSKtArPbEtsK5gNLnsQyTNIo/T7cZNp96niC1x0KdJNZV0TIoilceBPQwfb5itrGl8pkFeOUMl4A==}
     engines: {node: '>=10'}
     peerDependencies:
       graphql: '>=0.11 <=16'
@@ -5517,6 +5517,10 @@ packages:
     resolution: {integrity: sha512-JpqM0K33lG6iQGKiigcwuURAKZlq6rHXfrgeL4/I8/REoyJTGU+tEMszvT/oTRVHG2OiylhGDjqPp1jWMlr3bw==}
     engines: {node: '>=12'}
 
+  tiny-lru@11.2.6:
+    resolution: {integrity: sha512-0PU3c9PjMnltZaFo2sGYv/nnJsMjG0Cxx8X6FXHPPGjFyoo1SJDxvUXW1207rdiSxYizf31roo+GrkIByQeZoA==}
+    engines: {node: '>=12'}
+
   tmp@0.2.1:
     resolution: {integrity: sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ==}
     engines: {node: '>=8.17.0'}
@@ -5956,6 +5960,18 @@ packages:
 
   ws@8.16.0:
     resolution: {integrity: sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
+  ws@8.17.0:
+    resolution: {integrity: sha512-uJq6108EgZMAl20KagGkzCKfMEjxmKvZHG7Tlq0Z6nOky7YF7aq4mOx6xK8TJ/i1LeK4Qus7INktacctDgY8Ow==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -7466,19 +7482,19 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@mercuriusjs/gateway@3.0.0':
+  '@mercuriusjs/gateway@3.0.1':
     dependencies:
       '@mercuriusjs/federation': 3.0.0
       '@mercuriusjs/subscription-client': 1.0.0(graphql@16.8.1)
       fastify-plugin: 4.5.1
       graphql: 16.8.1
-      graphql-ws: 5.15.0(graphql@16.8.1)
+      graphql-ws: 5.16.0(graphql@16.8.1)
       mercurius: 14.0.0(graphql@16.8.1)
       p-map: 4.0.0
       single-user-cache: 0.6.0
-      tiny-lru: 11.2.5
+      tiny-lru: 11.2.6
       use-strict: 1.0.1
-      ws: 8.16.0
+      ws: 8.17.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -7488,7 +7504,7 @@ snapshots:
       '@fastify/error': 3.4.1
       graphql: 16.8.1
       secure-json-parse: 2.7.0
-      ws: 8.16.0
+      ws: 8.17.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -7585,7 +7601,7 @@ snapshots:
       class-transformer: 0.5.1
       class-validator: 0.14.1
 
-  '@nestjs/mercurius@12.1.1(@mercuriusjs/gateway@3.0.0)(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/graphql@12.1.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(ts-morph@21.0.1))(fastify@4.27.0)(graphql@16.8.1)(mercurius@14.0.0(graphql@16.8.1))':
+  '@nestjs/mercurius@12.1.1(@mercuriusjs/gateway@3.0.1)(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/graphql@12.1.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(ts-morph@21.0.1))(fastify@4.27.0)(graphql@16.8.1)(mercurius@14.0.0(graphql@16.8.1))':
     dependencies:
       '@nestjs/common': 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/graphql': 12.1.1(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1))(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(ts-morph@21.0.1)
@@ -7594,7 +7610,7 @@ snapshots:
       mercurius: 14.0.0(graphql@16.8.1)
       tslib: 2.6.2
     optionalDependencies:
-      '@mercuriusjs/gateway': 3.0.0
+      '@mercuriusjs/gateway': 3.0.1
 
   '@nestjs/platform-express@10.3.9(@nestjs/common@10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.3.9)':
     dependencies:
@@ -10141,7 +10157,7 @@ snapshots:
     dependencies:
       graphql: 16.8.1
 
-  graphql-ws@5.15.0(graphql@16.8.1):
+  graphql-ws@5.16.0(graphql@16.8.1):
     dependencies:
       graphql: 16.8.1
 
@@ -12436,6 +12452,8 @@ snapshots:
 
   tiny-lru@11.2.5: {}
 
+  tiny-lru@11.2.6: {}
+
   tmp@0.2.1:
     dependencies:
       rimraf: 3.0.2
@@ -12851,6 +12869,8 @@ snapshots:
   ws@7.5.9: {}
 
   ws@8.16.0: {}
+
+  ws@8.17.0: {}
 
   xml-name-validator@4.0.0: {}
 
