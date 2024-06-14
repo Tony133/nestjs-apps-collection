@@ -75,14 +75,14 @@ dependencies:
     specifier: ^6.5.0
     version: 6.7.0
   mysql2:
-    specifier: 3.9.3
-    version: 3.9.3
+    specifier: 3.10.1
+    version: 3.10.1
   nest-mongodb-driver:
     specifier: ^0.0.14
     version: 0.0.14(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.7.0)(reflect-metadata@0.2.2)(rxjs@7.8.1)
   nest-mysql:
     specifier: ^0.0.13
-    version: 0.0.13(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mysql2@3.9.3)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+    version: 0.0.13(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mysql2@3.10.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
   nest-postgres:
     specifier: ^0.0.13
     version: 0.0.13(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(pg@8.12.0)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -97,7 +97,7 @@ dependencies:
     version: 7.8.1
   sequelize:
     specifier: ^6.37.2
-    version: 6.37.3(mysql2@3.9.3)(pg@8.12.0)
+    version: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
   sequelize-typescript:
     specifier: ^2.1.6
     version: 2.1.6(@types/node@20.14.2)(@types/validator@13.11.10)(reflect-metadata@0.2.2)(sequelize@6.37.3)
@@ -109,7 +109,7 @@ dependencies:
     version: 2.6.3
   typeorm:
     specifier: ^0.3.18
-    version: 0.3.20(mongodb@6.7.0)(mysql2@3.9.3)(pg@8.12.0)(ts-node@10.9.2)
+    version: 0.3.20(mongodb@6.7.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2)
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
@@ -2868,7 +2868,7 @@ packages:
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
-      sequelize: 6.37.3(mysql2@3.9.3)(pg@8.12.0)
+      sequelize: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
       sequelize-typescript: 2.1.6(@types/node@20.14.2)(@types/validator@13.11.10)(reflect-metadata@0.2.2)(sequelize@6.37.3)
       uuid: 9.0.1
     dev: false
@@ -2935,7 +2935,7 @@ packages:
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
-      typeorm: 0.3.20(mongodb@6.7.0)(mysql2@3.9.3)(pg@8.12.0)(ts-node@10.9.2)
+      typeorm: 0.3.20(mongodb@6.7.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2)
       uuid: 9.0.1
     dev: false
 
@@ -8386,8 +8386,8 @@ packages:
       thunky: 1.1.0
     dev: true
 
-  /mysql2@3.9.3:
-    resolution: {integrity: sha512-+ZaoF0llESUy7BffccHG+urErHcWPZ/WuzYAA9TEeLaDYyke3/3D+VQDzK9xzRnXpd0eMtRf0WNOeo4Q1Baung==}
+  /mysql2@3.10.1:
+    resolution: {integrity: sha512-6zo1T3GILsXMCex3YEu7hCz2OXLUarxFsxvFcUHWMpkPtmZLeTTWgRdc1gWyNJiYt6AxITmIf9bZDRy/jAfWew==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0
@@ -8460,7 +8460,7 @@ packages:
       rxjs: 7.8.1
     dev: false
 
-  /nest-mysql@0.0.13(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mysql2@3.9.3)(reflect-metadata@0.2.2)(rxjs@7.8.1):
+  /nest-mysql@0.0.13(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mysql2@3.10.1)(reflect-metadata@0.2.2)(rxjs@7.8.1):
     resolution: {integrity: sha512-7ufGYEDV1Z2vyQepptIrQlnTjwC2WPzI3xuln0myhWDuhikVJi4sdCZHmOVsJD5qN4srExpJYrb6NWeCE+sAUw==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -8471,7 +8471,7 @@ packages:
     dependencies:
       '@nestjs/common': 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
-      mysql2: 3.9.3
+      mysql2: 3.10.1
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
     dev: false
@@ -9927,10 +9927,10 @@ packages:
       '@types/validator': 13.11.10
       glob: 7.2.0
       reflect-metadata: 0.2.2
-      sequelize: 6.37.3(mysql2@3.9.3)(pg@8.12.0)
+      sequelize: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
     dev: false
 
-  /sequelize@6.37.3(mysql2@3.9.3)(pg@8.12.0):
+  /sequelize@6.37.3(mysql2@3.10.1)(pg@8.12.0):
     resolution: {integrity: sha512-V2FTqYpdZjPy3VQrZvjTPnOoLm0KudCRXfGWp48QwhyPPp2yW8z0p0sCYZd/em847Tl2dVxJJ1DR+hF+O77T7A==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -9971,7 +9971,7 @@ packages:
       lodash: 4.17.21
       moment: 2.30.1
       moment-timezone: 0.5.45
-      mysql2: 3.9.3
+      mysql2: 3.10.1
       pg: 8.12.0
       pg-connection-string: 2.6.4
       retry-as-promised: 7.0.4
@@ -10814,7 +10814,7 @@ packages:
   /typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm@0.3.20(mongodb@6.7.0)(mysql2@3.9.3)(pg@8.12.0)(ts-node@10.9.2):
+  /typeorm@0.3.20(mongodb@6.7.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -10883,7 +10883,7 @@ packages:
       glob: 10.4.1
       mkdirp: 2.1.6
       mongodb: 6.7.0
-      mysql2: 3.9.3
+      mysql2: 3.10.1
       pg: 8.12.0
       reflect-metadata: 0.2.2
       sha.js: 2.4.11
