@@ -5,7 +5,6 @@ Simple example Api rest with NestJS and MongoDB Driver
 ## Running the app
 
 ```bash
-# development
 $ npx nx serve nestjs-api-mongodb-driver
 ```
 
