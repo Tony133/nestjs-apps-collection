@@ -52,7 +52,7 @@
     "@commitlint/config-angular": "^19.1.0",
     "@nestjs/schematics": "10.1.1",
     "@nestjs/testing": "10.3.9",
-    "@nrwl/webpack": "19.1.2",
+    "@nrwl/webpack": "19.3.0",
     "@nx/eslint-plugin": "19.1.2",
     "@nx/jest": "19.1.2",
     "@nx/linter": "19.1.2",
