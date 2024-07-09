@@ -61,7 +61,7 @@
     "@nx/webpack": "19.3.2",
     "@nx/workspace": "19.3.2",
     "@types/jest": "29.5.12",
-    "@types/node": "20.14.9",
+    "@types/node": "20.14.10",
     "@typescript-eslint/eslint-plugin": "7.14.1",
     "@typescript-eslint/parser": "7.14.1",
     "eslint": "9.5.0",
