@@ -10,7 +10,7 @@ dependencies:
     version: 4.10.4(graphql@16.8.1)
   '@as-integrations/fastify':
     specifier: ^2.1.1
-    version: 2.1.1(@apollo/server@4.10.4)(fastify@4.27.0)
+    version: 2.1.1(@apollo/server@4.10.4)(fastify@4.28.1)
   '@mercuriusjs/gateway':
     specifier: ^3.0.0
     version: 3.0.1
@@ -22,7 +22,7 @@ dependencies:
     version: 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
   '@nestjs/config':
     specifier: ^3.2.2
-    version: 3.2.2(@nestjs/common@10.3.9)(rxjs@7.8.1)
+    version: 3.2.3(@nestjs/common@10.3.9)(rxjs@7.8.1)
   '@nestjs/core':
     specifier: 10.3.9
     version: 10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -34,7 +34,7 @@ dependencies:
     version: 2.0.5(@nestjs/common@10.3.9)(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)
   '@nestjs/mercurius':
     specifier: ^12.1.1
-    version: 12.1.1(@mercuriusjs/gateway@3.0.1)(@nestjs/common@10.3.9)(@nestjs/graphql@12.1.1)(fastify@4.27.0)(graphql@16.8.1)(mercurius@14.0.0)
+    version: 12.1.1(@mercuriusjs/gateway@3.0.1)(@nestjs/common@10.3.9)(@nestjs/graphql@12.1.1)(fastify@4.28.1)(graphql@16.8.1)(mercurius@14.0.0)
   '@nestjs/platform-express':
     specifier: 10.3.9
     version: 10.3.9(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)
@@ -100,7 +100,7 @@ dependencies:
     version: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
   sequelize-typescript:
     specifier: ^2.1.6
-    version: 2.1.6(@types/node@20.14.10)(@types/validator@13.11.10)(reflect-metadata@0.2.2)(sequelize@6.37.3)
+    version: 2.1.6(@types/node@20.14.10)(@types/validator@13.12.0)(reflect-metadata@0.2.2)(sequelize@6.37.3)
   ts-morph:
     specifier: ^21.0.1
     version: 21.0.1
@@ -466,7 +466,7 @@ packages:
       xss: 1.0.15
     dev: false
 
-  /@as-integrations/fastify@2.1.1(@apollo/server@4.10.4)(fastify@4.27.0):
+  /@as-integrations/fastify@2.1.1(@apollo/server@4.10.4)(fastify@4.28.1):
     resolution: {integrity: sha512-iupYSQyRrlBAdsDcCYzuKjJlJAKiQpRDLd33A6yAF3Ip/rGrSDDDrxfJWp6FqyVlivSL+MQkGIphmUI/ckfZkg==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -474,7 +474,7 @@ packages:
       fastify: ^4.4.0
     dependencies:
       '@apollo/server': 4.10.4(graphql@16.8.1)
-      fastify: 4.27.0
+      fastify: 4.28.1
       fastify-plugin: 4.5.1
     dev: false
 
@@ -2058,6 +2058,14 @@ packages:
       fast-uri: 2.3.1
     dev: false
 
+  /@fastify/ajv-compiler@3.6.0:
+    resolution: {integrity: sha512-LwdXQJjmMD+GwLOkP7TVC68qa+pSSogeWWmznRJ/coyTcfe9qA05AHFSe1eZFwK6q+xVRpChnvFUkf1iYaSZsQ==}
+    dependencies:
+      ajv: 8.16.0
+      ajv-formats: 2.1.1(ajv@8.16.0)
+      fast-uri: 2.4.0
+    dev: false
+
   /@fastify/busboy@2.1.1:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
@@ -2615,7 +2623,7 @@ packages:
     dependencies:
       '@apollo/server': 4.10.4(graphql@16.8.1)
       '@apollo/server-plugin-landing-page-graphql-playground': 4.0.0(@apollo/server@4.10.4)
-      '@as-integrations/fastify': 2.1.1(@apollo/server@4.10.4)(fastify@4.27.0)
+      '@as-integrations/fastify': 2.1.1(@apollo/server@4.10.4)(fastify@4.28.1)
       '@nestjs/common': 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/graphql': 12.1.1(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(ts-morph@21.0.1)
@@ -2646,8 +2654,8 @@ packages:
       tslib: 2.6.2
       uid: 2.0.2
 
-  /@nestjs/config@3.2.2(@nestjs/common@10.3.9)(rxjs@7.8.1):
-    resolution: {integrity: sha512-vGICPOui5vE6kPz1iwQ7oCnp3qWgqxldPmBQ9onkVoKlBtyc83KJCr7CjuVtf4OdovMAVcux1d8Q6jglU2ZphA==}
+  /@nestjs/config@3.2.3(@nestjs/common@10.3.9)(rxjs@7.8.1):
+    resolution: {integrity: sha512-p6yv/CvoBewJ72mBq4NXgOAi2rSQNWx3a+IMJLVKS2uiwFCOQQuiIatGwq6MRjXV3Jr+B41iUO8FIf4xBrZ4/w==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
       rxjs: ^7.1.0
@@ -2657,7 +2665,6 @@ packages:
       dotenv-expand: 10.0.0
       lodash: 4.17.21
       rxjs: 7.8.1
-      uuid: 9.0.1
     dev: false
 
   /@nestjs/core@10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1):
@@ -2757,7 +2764,7 @@ packages:
       reflect-metadata: 0.2.2
     dev: false
 
-  /@nestjs/mercurius@12.1.1(@mercuriusjs/gateway@3.0.1)(@nestjs/common@10.3.9)(@nestjs/graphql@12.1.1)(fastify@4.27.0)(graphql@16.8.1)(mercurius@14.0.0):
+  /@nestjs/mercurius@12.1.1(@mercuriusjs/gateway@3.0.1)(@nestjs/common@10.3.9)(@nestjs/graphql@12.1.1)(fastify@4.28.1)(graphql@16.8.1)(mercurius@14.0.0):
     resolution: {integrity: sha512-grBeL5o90aSMRJXw4Ewwj6eUnNL/KmqfG7rYekgnGHdstdzei5MmtS1Pu+gOiE5kkkwYcEBYiBxduyzYup4d7A==}
     peerDependencies:
       '@apollo/subgraph': ^2.0.0
@@ -2779,7 +2786,7 @@ packages:
       '@mercuriusjs/gateway': 3.0.1
       '@nestjs/common': 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/graphql': 12.1.1(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(class-transformer@0.5.1)(class-validator@0.14.1)(graphql@16.8.1)(reflect-metadata@0.2.2)(ts-morph@21.0.1)
-      fastify: 4.27.0
+      fastify: 4.28.1
       graphql: 16.8.1
       mercurius: 14.0.0(graphql@16.8.1)
       tslib: 2.6.2
@@ -2869,7 +2876,7 @@ packages:
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
       sequelize: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
-      sequelize-typescript: 2.1.6(@types/node@20.14.10)(@types/validator@13.11.10)(reflect-metadata@0.2.2)(sequelize@6.37.3)
+      sequelize-typescript: 2.1.6(@types/node@20.14.10)(@types/validator@13.12.0)(reflect-metadata@0.2.2)(sequelize@6.37.3)
       uuid: 9.0.1
     dev: false
 
@@ -3949,6 +3956,10 @@ packages:
 
   /@types/validator@13.11.10:
     resolution: {integrity: sha512-e2PNXoXLr6Z+dbfx5zSh9TRlXJrELycxiaXznp4S5+D2M3b9bqJEitNHA5923jhnB2zzFiZHa2f0SI1HoIahpg==}
+
+  /@types/validator@13.12.0:
+    resolution: {integrity: sha512-nH45Lk7oPIJ1RVOF6JgFI6Dy0QpHEzq4QecZhvguxYPDwT8c93prCMqAtiIttm39voZ+DDR+qkNnMpJmMBRqag==}
+    dev: false
 
   /@types/webidl-conversions@7.0.3:
     resolution: {integrity: sha512-CiJJvcRtIgzadHCYXw7dqEnMNRjhGZlYK05Mj9OyktqV8uVT8fD2BFOB7S1uwBE3Kj2Z+4UyPmFw/Ixgw/LAlA==}
@@ -6216,6 +6227,18 @@ packages:
       rfdc: 1.3.1
     dev: false
 
+  /fast-json-stringify@5.16.1:
+    resolution: {integrity: sha512-KAdnLvy1yu/XrRtP+LJnxbBGrhN+xXu+gt3EUvZhYGKCr3lFHq/7UFJHHFgmJKoqlh6B40bZLEv7w46B0mqn1g==}
+    dependencies:
+      '@fastify/merge-json-schemas': 0.1.1
+      ajv: 8.16.0
+      ajv-formats: 3.0.1(ajv@8.16.0)
+      fast-deep-equal: 3.1.3
+      fast-uri: 2.4.0
+      json-schema-ref-resolver: 1.0.1
+      rfdc: 1.4.1
+    dev: false
+
   /fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
     dev: true
@@ -6238,6 +6261,10 @@ packages:
     resolution: {integrity: sha512-iC7SLdMJx2KGdBkhJ6UulbNfpeIGTMS3/OIJpPa1JkZu9DKVQmPtBBme9Esoa4XP2eLGaHBv4vzRqlolXKo9cg==}
     dev: false
 
+  /fast-uri@2.4.0:
+    resolution: {integrity: sha512-ypuAmmMKInk5q7XcepxlnUWDLWv4GFtaJqAzWKqn62IpQ3pejtr5dTVbt3vwqVaMKmkNR55sTT+CqUKIaT21BA==}
+    dev: false
+
   /fastify-plugin@4.5.1:
     resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
     dev: false
@@ -6258,6 +6285,27 @@ packages:
       process-warning: 3.0.0
       proxy-addr: 2.0.7
       rfdc: 1.3.1
+      secure-json-parse: 2.7.0
+      semver: 7.6.2
+      toad-cache: 3.7.0
+    dev: false
+
+  /fastify@4.28.1:
+    resolution: {integrity: sha512-kFWUtpNr4i7t5vY2EJPCN2KgMVpuqfU4NjnJNCgiNB900oiDeYqaNDRcAfeBbOF5hGixixxcKnOU4KN9z6QncQ==}
+    dependencies:
+      '@fastify/ajv-compiler': 3.6.0
+      '@fastify/error': 3.4.1
+      '@fastify/fast-json-stringify-compiler': 4.3.0
+      abstract-logging: 2.0.1
+      avvio: 8.3.2
+      fast-content-type-parse: 1.1.0
+      fast-json-stringify: 5.16.1
+      find-my-way: 8.2.0
+      light-my-request: 5.13.0
+      pino: 9.2.0
+      process-warning: 3.0.0
+      proxy-addr: 2.0.7
+      rfdc: 1.4.1
       secure-json-parse: 2.7.0
       semver: 7.6.2
       toad-cache: 3.7.0
@@ -9034,6 +9082,23 @@ packages:
       thread-stream: 3.0.2
     dev: false
 
+  /pino@9.2.0:
+    resolution: {integrity: sha512-g3/hpwfujK5a4oVbaefoJxezLzsDgLcNJeITvC6yrfwYeT9la+edCK42j5QpEQSQCZgTKapXvnQIdgZwvRaZug==}
+    hasBin: true
+    dependencies:
+      atomic-sleep: 1.0.0
+      fast-redact: 3.5.0
+      on-exit-leak-free: 2.1.2
+      pino-abstract-transport: 1.2.0
+      pino-std-serializers: 7.0.0
+      process-warning: 3.0.0
+      quick-format-unescaped: 4.0.4
+      real-require: 0.2.0
+      safe-stable-stringify: 2.4.3
+      sonic-boom: 4.0.1
+      thread-stream: 3.1.0
+    dev: false
+
   /pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
@@ -9748,6 +9813,10 @@ packages:
     resolution: {integrity: sha512-r5a3l5HzYlIC68TpmYKlxWjmOP6wiPJ1vWv2HeLhNsRZMrCkxeqxiHlQ21oXmQ4F3SiryXBHhAD7JZqvOJjFmg==}
     dev: false
 
+  /rfdc@1.4.1:
+    resolution: {integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==}
+    dev: false
+
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     deprecated: Rimraf versions prior to v4 are no longer supported
@@ -9917,7 +9986,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: false
 
-  /sequelize-typescript@2.1.6(@types/node@20.14.10)(@types/validator@13.11.10)(reflect-metadata@0.2.2)(sequelize@6.37.3):
+  /sequelize-typescript@2.1.6(@types/node@20.14.10)(@types/validator@13.12.0)(reflect-metadata@0.2.2)(sequelize@6.37.3):
     resolution: {integrity: sha512-Vc2N++3en346RsbGjL3h7tgAl2Y7V+2liYTAOZ8XL0KTw3ahFHsyAUzOwct51n+g70I1TOUDgs06Oh6+XGcFkQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -9927,7 +9996,7 @@ packages:
       sequelize: '>=6.20.1'
     dependencies:
       '@types/node': 20.14.10
-      '@types/validator': 13.11.10
+      '@types/validator': 13.12.0
       glob: 7.2.0
       reflect-metadata: 0.2.2
       sequelize: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
@@ -10555,6 +10624,12 @@ packages:
 
   /thread-stream@3.0.2:
     resolution: {integrity: sha512-cBL4xF2A3lSINV4rD5tyqnKH4z/TgWPvT+NaVhJDSwK962oo/Ye7cHSMbDzwcu7tAE1SfU6Q4XtV6Hucmi6Hlw==}
+    dependencies:
+      real-require: 0.2.0
+    dev: false
+
+  /thread-stream@3.1.0:
+    resolution: {integrity: sha512-OqyPZ9u96VohAyMfJykzmivOrY2wfMSf3C5TtFJVgN+Hm6aj+voFhlK+kZEIv2FBh1X6Xp3DlnCOfEQ3B2J86A==}
     dependencies:
       real-require: 0.2.0
     dev: false
