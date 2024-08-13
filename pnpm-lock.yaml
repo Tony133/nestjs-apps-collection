@@ -73,13 +73,13 @@ dependencies:
     version: 14.0.0(graphql@16.8.1)
   mongodb:
     specifier: ^6.5.0
-    version: 6.7.0
+    version: 6.8.0
   mysql2:
     specifier: 3.10.1
     version: 3.10.1
   nest-mongodb-driver:
     specifier: ^0.0.14
-    version: 0.0.14(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.7.0)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+    version: 0.0.14(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.8.0)(reflect-metadata@0.2.2)(rxjs@7.8.1)
   nest-mysql:
     specifier: ^0.0.13
     version: 0.0.13(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mysql2@3.10.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -109,7 +109,7 @@ dependencies:
     version: 2.6.3
   typeorm:
     specifier: ^0.3.18
-    version: 0.3.20(mongodb@6.7.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2)
+    version: 0.3.20(mongodb@6.8.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2)
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
@@ -2772,8 +2772,8 @@ packages:
       '@module-federation/sdk': 0.2.8
     dev: true
 
-  /@mongodb-js/saslprep@1.1.7:
-    resolution: {integrity: sha512-dCHW/oEX0KJ4NjDULBo3JiOaK5+6axtpBbS+ao2ZInoAL9/YRQLhXzSNAFz7hP4nzLkIqsfYAK/PDE3+XHny0Q==}
+  /@mongodb-js/saslprep@1.1.8:
+    resolution: {integrity: sha512-qKwC/M/nNNaKUBMQ0nuzm47b7ZYWQHN3pcXq4IIcoSBc2hOIrflAxJduIvvqmhoz3gR2TacTAs8vlsCVPkiEdQ==}
     dependencies:
       sparse-bitfield: 3.0.3
     dev: false
@@ -3126,7 +3126,7 @@ packages:
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
-      typeorm: 0.3.20(mongodb@6.7.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2)
+      typeorm: 0.3.20(mongodb@6.8.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2)
       uuid: 9.0.1
     dev: false
 
@@ -5146,8 +5146,8 @@ packages:
       node-int64: 0.4.0
     dev: true
 
-  /bson@6.7.0:
-    resolution: {integrity: sha512-w2IquM5mYzYZv6rs3uN2DZTOBe2a0zXLj53TGDqwF4l6Sz/XsISrisXOJihArF9+BZ6Cq/GjVht7Sjfmri7ytQ==}
+  /bson@6.8.0:
+    resolution: {integrity: sha512-iOJg8pr7wq2tg/zSlCCHMi3hMm5JTOxLTagf3zxhcenHsFp+c6uOs6K7W5UE7A4QIJGtqh/ZovFNMP4mOPJynQ==}
     engines: {node: '>=16.20.1'}
     dev: false
 
@@ -8938,8 +8938,8 @@ packages:
       whatwg-url: 13.0.0
     dev: false
 
-  /mongodb@6.7.0:
-    resolution: {integrity: sha512-TMKyHdtMcO0fYBNORiYdmM25ijsHs+Njs963r4Tro4OQZzqYigAzYQouwWRg4OIaiLRUEGUh/1UAcH5lxdSLIA==}
+  /mongodb@6.8.0:
+    resolution: {integrity: sha512-HGQ9NWDle5WvwMnrvUxsFYPd3JEbqD3RgABHBQRuoCEND0qzhsd0iH5ypHsf1eJ+sXmvmyKpP+FLOKY8Il7jMw==}
     engines: {node: '>=16.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
@@ -8965,8 +8965,8 @@ packages:
       socks:
         optional: true
     dependencies:
-      '@mongodb-js/saslprep': 1.1.7
-      bson: 6.7.0
+      '@mongodb-js/saslprep': 1.1.8
+      bson: 6.8.0
       mongodb-connection-string-url: 3.0.1
     dev: false
 
@@ -9065,7 +9065,7 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
-  /nest-mongodb-driver@0.0.14(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.7.0)(reflect-metadata@0.2.2)(rxjs@7.8.1):
+  /nest-mongodb-driver@0.0.14(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.8.0)(reflect-metadata@0.2.2)(rxjs@7.8.1):
     resolution: {integrity: sha512-X5X1l3kpgrDqu2wW9m90BoXkjRbfudF4FF9+zzJWAPrnOT6a0J3Buy8SbVOq6iT07QagS4HtxrHl33pCuyqqdQ==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -9076,7 +9076,7 @@ packages:
     dependencies:
       '@nestjs/common': 10.3.9(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
-      mongodb: 6.7.0
+      mongodb: 6.8.0
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
     dev: false
@@ -11554,7 +11554,7 @@ packages:
   /typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm@0.3.20(mongodb@6.7.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2):
+  /typeorm@0.3.20(mongodb@6.8.0)(mysql2@3.10.1)(pg@8.12.0)(ts-node@10.9.2):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -11622,7 +11622,7 @@ packages:
       dotenv: 16.4.5
       glob: 10.4.1
       mkdirp: 2.1.6
-      mongodb: 6.7.0
+      mongodb: 6.8.0
       mysql2: 3.10.1
       pg: 8.12.0
       reflect-metadata: 0.2.2
