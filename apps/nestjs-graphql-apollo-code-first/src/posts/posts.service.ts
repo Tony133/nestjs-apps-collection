@@ -57,16 +57,16 @@ export class PostsService {
         updatePostInput.users?.map((name) => this.preloadUserByName(name)),
       ));
 
-    const user = await this.postsRepository.preload({
+    const post = await this.postsRepository.preload({
       id: +id,
       ...updatePostInput,
       users,
     });
 
-    if (!user) {
+    if (!post) {
       throw new UserInputError(`Post #${id} not found`);
     }
-    return this.postsRepository.save(user);
+    return this.postsRepository.save(post);
   }
 
   private async preloadUserByName(name: string): Promise<Users> {
