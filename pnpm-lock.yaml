@@ -78,8 +78,8 @@ dependencies:
     specifier: 3.10.1
     version: 3.10.1
   nest-mongodb-driver:
-    specifier: ^0.0.14
-    version: 0.0.14(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.7.0)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+    specifier: ^0.0.16
+    version: 0.0.16(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.7.0)(reflect-metadata@0.2.2)(rxjs@7.8.1)
   nest-mysql:
     specifier: ^0.0.16
     version: 0.0.16(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mysql2@3.10.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
@@ -9073,8 +9073,8 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
-  /nest-mongodb-driver@0.0.14(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.7.0)(reflect-metadata@0.2.2)(rxjs@7.8.1):
-    resolution: {integrity: sha512-X5X1l3kpgrDqu2wW9m90BoXkjRbfudF4FF9+zzJWAPrnOT6a0J3Buy8SbVOq6iT07QagS4HtxrHl33pCuyqqdQ==}
+  /nest-mongodb-driver@0.0.16(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(mongodb@6.7.0)(reflect-metadata@0.2.2)(rxjs@7.8.1):
+    resolution: {integrity: sha512-oaybUVlyO0FWrPbuG0ZnnXiaFHeL8fH1VAZMeykx6IXDdzGfXAzvU/mSAqMrZGfa/UOE0nOncUV5rrhrF8sSEQ==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
       '@nestjs/core': ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
