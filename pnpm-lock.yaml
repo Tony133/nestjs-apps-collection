@@ -43,7 +43,7 @@ dependencies:
     version: 10.3.9(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)
   '@nestjs/sequelize':
     specifier: ^10.0.1
-    version: 10.0.1(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)(sequelize-typescript@2.1.6)(sequelize@6.37.3)
+    version: 10.0.1(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)(sequelize-typescript@2.1.6)(sequelize@6.37.4)
   '@nestjs/swagger':
     specifier: 7.3.1
     version: 7.3.1(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)
@@ -97,10 +97,10 @@ dependencies:
     version: 7.8.1
   sequelize:
     specifier: ^6.37.2
-    version: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
+    version: 6.37.4(mysql2@3.10.1)(pg@8.12.0)
   sequelize-typescript:
     specifier: ^2.1.6
-    version: 2.1.6(@types/node@20.16.11)(@types/validator@13.12.2)(reflect-metadata@0.2.2)(sequelize@6.37.3)
+    version: 2.1.6(@types/node@20.16.11)(@types/validator@13.12.2)(reflect-metadata@0.2.2)(sequelize@6.37.4)
   ts-morph:
     specifier: ^21.0.1
     version: 21.0.1
@@ -591,7 +591,7 @@ packages:
       '@babel/core': 7.24.7
       '@babel/helper-compilation-targets': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
-      debug: 4.3.5
+      debug: 4.3.7
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -3065,7 +3065,7 @@ packages:
       - chokidar
     dev: true
 
-  /@nestjs/sequelize@10.0.1(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)(sequelize-typescript@2.1.6)(sequelize@6.37.3):
+  /@nestjs/sequelize@10.0.1(@nestjs/common@10.3.9)(@nestjs/core@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)(sequelize-typescript@2.1.6)(sequelize@6.37.4):
     resolution: {integrity: sha512-ICzmkB0IHLm3x9SBGG8c/T9KLU9CRmtLWtuMsLHwX373HBgiKHd8Wu/5b+FM+rNRh8zWINiTTjKHoOx9kjvSjA==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -3079,8 +3079,8 @@ packages:
       '@nestjs/core': 10.3.9(@nestjs/common@10.3.9)(@nestjs/platform-express@10.3.9)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       reflect-metadata: 0.2.2
       rxjs: 7.8.1
-      sequelize: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
-      sequelize-typescript: 2.1.6(@types/node@20.16.11)(@types/validator@13.12.2)(reflect-metadata@0.2.2)(sequelize@6.37.3)
+      sequelize: 6.37.4(mysql2@3.10.1)(pg@8.12.0)
+      sequelize-typescript: 2.1.6(@types/node@20.16.11)(@types/validator@13.12.2)(reflect-metadata@0.2.2)(sequelize@6.37.4)
       uuid: 9.0.1
     dev: false
 
@@ -4551,7 +4551,7 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -5899,6 +5899,17 @@ packages:
     dependencies:
       ms: 2.1.2
 
+  /debug@4.3.7:
+    resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.3
+
   /decimal.js@10.4.3:
     resolution: {integrity: sha512-VBBaLc1MgL5XpzgIP7ny5Z6Nx3UrRkIViUkPUdtl9aya5amy3De1gsUUSB1g3+3sExYNjCAsAznmukyxCb1GRA==}
     dev: true
@@ -6014,7 +6025,7 @@ packages:
     hasBin: true
     dependencies:
       address: 1.2.2
-      debug: 4.3.5
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7333,7 +7344,7 @@ packages:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.3.5
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7387,7 +7398,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.5
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -7735,7 +7746,7 @@ packages:
     resolution: {integrity: sha512-n3s8EwkdFIJCG3BPKBYvskgXGoy88ARzvegkitk60NxRdwltLOTaH7CUiMRXvwYorl0Q712iEjcWB+fK/MrWVw==}
     engines: {node: '>=10'}
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.7
       istanbul-lib-coverage: 3.2.2
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -8636,7 +8647,7 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       date-format: 4.0.14
-      debug: 4.3.5
+      debug: 4.3.7
       flatted: 3.3.1
       rfdc: 1.4.1
       streamroller: 3.1.5
@@ -8951,8 +8962,8 @@ packages:
       obliterator: 2.0.4
     dev: false
 
-  /moment-timezone@0.5.45:
-    resolution: {integrity: sha512-HIWmqA86KcmCAhnMAN0wuDOARV/525R2+lOLotuGFzn4HO+FH+/645z2wx0Dt3iDv6/p61SIvKnDstISainhLQ==}
+  /moment-timezone@0.5.46:
+    resolution: {integrity: sha512-ZXm9b36esbe7OmdABqIWJuBBiLLwAjrN7CE+7sYdCCx82Nabt1wHDj8TVseS59QIlfFPbOoiBPm6ca9BioG4hw==}
     dependencies:
       moment: 2.30.1
     dev: false
@@ -9604,6 +9615,10 @@ packages:
 
   /pg-connection-string@2.6.4:
     resolution: {integrity: sha512-v+Z7W/0EO707aNMaAEfiGnGL9sxxumwLl2fJvCQtMn9Fxsg+lPpPkdcyBSv/KFgpGdYkMfn+EI1Or2EHjpgLCA==}
+    dev: false
+
+  /pg-connection-string@2.7.0:
+    resolution: {integrity: sha512-PI2W9mv53rXJQEOb8xNR8lH7Hr+EKa6oJa38zsK0S/ky2er16ios1wLKhZyxzD7jUReiWokc9WK5nxSnC7W1TA==}
     dev: false
 
   /pg-int8@1.0.1:
@@ -10614,12 +10629,6 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  /semver@7.6.2:
-    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dev: false
-
   /semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
@@ -10654,7 +10663,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: false
 
-  /sequelize-typescript@2.1.6(@types/node@20.16.11)(@types/validator@13.12.2)(reflect-metadata@0.2.2)(sequelize@6.37.3):
+  /sequelize-typescript@2.1.6(@types/node@20.16.11)(@types/validator@13.12.2)(reflect-metadata@0.2.2)(sequelize@6.37.4):
     resolution: {integrity: sha512-Vc2N++3en346RsbGjL3h7tgAl2Y7V+2liYTAOZ8XL0KTw3ahFHsyAUzOwct51n+g70I1TOUDgs06Oh6+XGcFkQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -10667,11 +10676,11 @@ packages:
       '@types/validator': 13.12.2
       glob: 7.2.0
       reflect-metadata: 0.2.2
-      sequelize: 6.37.3(mysql2@3.10.1)(pg@8.12.0)
+      sequelize: 6.37.4(mysql2@3.10.1)(pg@8.12.0)
     dev: false
 
-  /sequelize@6.37.3(mysql2@3.10.1)(pg@8.12.0):
-    resolution: {integrity: sha512-V2FTqYpdZjPy3VQrZvjTPnOoLm0KudCRXfGWp48QwhyPPp2yW8z0p0sCYZd/em847Tl2dVxJJ1DR+hF+O77T7A==}
+  /sequelize@6.37.4(mysql2@3.10.1)(pg@8.12.0):
+    resolution: {integrity: sha512-+8B0p00EKmxJpwwruDI0drxh4wNSC0YB9pVhOajRzfMI+uIDi5V7rJPC8RTTkLmKUoAIatJZn6lW9gj6bmmYKQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       ibm_db: '*'
@@ -10704,18 +10713,18 @@ packages:
         optional: true
     dependencies:
       '@types/debug': 4.1.12
-      '@types/validator': 13.11.10
-      debug: 4.3.5
+      '@types/validator': 13.12.2
+      debug: 4.3.7
       dottie: 2.0.6
       inflection: 1.13.4
       lodash: 4.17.21
       moment: 2.30.1
-      moment-timezone: 0.5.45
+      moment-timezone: 0.5.46
       mysql2: 3.10.1
       pg: 8.12.0
-      pg-connection-string: 2.6.4
+      pg-connection-string: 2.7.0
       retry-as-promised: 7.0.4
-      semver: 7.6.2
+      semver: 7.6.3
       sequelize-pool: 7.1.0
       toposort-class: 1.0.1
       uuid: 8.3.2
@@ -10925,7 +10934,7 @@ packages:
   /spdy-transport@3.0.0:
     resolution: {integrity: sha512-hsLVFE5SjA6TCisWeJXFKniGGOpBgMLmerfO2aCyCU5s7nJ/rpAepqmFifv/GCbSbueEeAJJnmSQ2rKC/g8Fcw==}
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.7
       detect-node: 2.1.0
       hpack.js: 2.1.6
       obuf: 1.1.2
@@ -10939,7 +10948,7 @@ packages:
     resolution: {integrity: sha512-r46gZQZQV+Kl9oItvl1JZZqJKGr+oEkB08A6BzkiR7593/7IbtuncXHd2YoYeTsG4157ZssMu9KYvUHLcjcDoA==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.7
       handle-thing: 2.0.1
       http-deceiver: 1.2.7
       select-hose: 2.0.0
@@ -10986,7 +10995,7 @@ packages:
     engines: {node: '>=8.0'}
     dependencies:
       date-format: 4.0.14
-      debug: 4.3.5
+      debug: 4.3.7
       fs-extra: 8.1.0
     transitivePeerDependencies:
       - supports-color
