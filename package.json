@@ -36,7 +36,7 @@
     "mysql2": "3.10.1",
     "nest-mongodb-driver": "^0.0.14",
     "nest-mysql": "^0.0.16",
-    "nest-postgres": "^0.0.13",
+    "nest-postgres": "^0.0.15",
     "pg": "^8.11.5",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
